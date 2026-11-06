@@ -1,0 +1,2 @@
+# Thesis Figure Registry
+
