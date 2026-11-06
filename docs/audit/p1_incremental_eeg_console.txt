@@ -1,0 +1,36 @@
+===== INCREMENTAL EEG PIPELINE =====
+Processed 22/88 participants
+Processed 44/88 participants
+Processed 66/88 participants
+Processed 88/88 participants
+
+===== INCREMENTAL EEG RESULTS =====
+Participants: 88
+Feature rows: 440
+Durations: [np.int64(30), np.int64(60), np.int64(120), np.int64(180), np.int64(300)]
+Maximum streaming difference (V): 0.0
+
+Median raw amplitude flag fraction by group:
+group
+A    0.1960
+C    0.2305
+F    0.1813
+
+Median spectral features by duration:
+         median_relative_theta  median_relative_alpha
+seconds                                              
+30                      0.1182                 0.0470
+60                      0.1163                 0.0463
+120                     0.1187                 0.0470
+180                     0.1182                 0.0493
+300                     0.1166                 0.0483
+
+Important limitations:
+- Causal filter only; artifact handling is not complete.
+- Raw amplitude flags are not artifact diagnoses.
+- Nested 30-300s prefixes are not independent.
+- This is NOT a classification or significance test.
+- No participants have been excluded.
+
+ALL 88 INCREMENTAL PREFIX TESTS PASSED
+INCREMENTAL EEG PIPELINE COMPLETE

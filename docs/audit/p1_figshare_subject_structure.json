@@ -1,0 +1,266 @@
+{
+  "archive": "data/eeg/external/figshare_5450293/dataset.zip",
+  "groups": {
+    "AD": {
+      "mat_file_count": 305,
+      "distinct_parent_folders": 57,
+      "folder_file_counts": {
+        "AD1": 5,
+        "AD10": 9,
+        "AD11": 4,
+        "AD12": 8,
+        "AD13": 3,
+        "AD14": 7,
+        "AD15": 7,
+        "AD16": 3,
+        "AD17": 8,
+        "AD18": 10,
+        "AD19": 3,
+        "AD2": 3,
+        "AD20": 6,
+        "AD21": 6,
+        "AD22": 3,
+        "AD23": 5,
+        "AD24": 7,
+        "AD25": 5,
+        "AD26": 4,
+        "AD27": 8,
+        "AD28": 1,
+        "AD29": 7,
+        "AD3": 7,
+        "AD30": 7,
+        "AD31": 8,
+        "AD32": 7,
+        "AD34": 3,
+        "AD35": 8,
+        "AD36": 8,
+        "AD37": 6,
+        "AD38": 2,
+        "AD39": 2,
+        "AD4": 4,
+        "AD40": 6,
+        "AD41": 5,
+        "AD42": 4,
+        "AD43": 7,
+        "AD45": 4,
+        "AD46": 5,
+        "AD47": 4,
+        "AD48": 7,
+        "AD49": 3,
+        "AD5": 6,
+        "AD50": 5,
+        "AD51": 4,
+        "AD52": 4,
+        "AD53": 4,
+        "AD54": 2,
+        "AD55": 4,
+        "AD56": 7,
+        "AD57": 6,
+        "AD58": 4,
+        "AD59": 3,
+        "AD6": 6,
+        "AD7": 6,
+        "AD8": 6,
+        "AD9": 9
+      },
+      "samples": [
+        {
+          "path": "AD/AD1/1.mat",
+          "uncompressed_bytes": 510104,
+          "variables": [
+            {
+              "name": "export",
+              "shape": [
+                7208,
+                19
+              ],
+              "dtype": "single"
+            }
+          ]
+        },
+        {
+          "path": "AD/AD25/5.mat",
+          "uncompressed_bytes": 332630,
+          "variables": [
+            {
+              "name": "export",
+              "shape": [
+                4700,
+                19
+              ],
+              "dtype": "single"
+            }
+          ]
+        },
+        {
+          "path": "AD/AD43/5.mat",
+          "uncompressed_bytes": 477493,
+          "variables": [
+            {
+              "name": "export",
+              "shape": [
+                6746,
+                19
+              ],
+              "dtype": "single"
+            }
+          ]
+        },
+        {
+          "path": "AD/AD9/9.mat",
+          "uncompressed_bytes": 572978,
+          "variables": [
+            {
+              "name": "export",
+              "shape": [
+                8102,
+                19
+              ],
+              "dtype": "single"
+            }
+          ]
+        }
+      ]
+    },
+    "MCI": {
+      "mat_file_count": 56,
+      "distinct_parent_folders": 7,
+      "folder_file_counts": {
+        "MCI1": 9,
+        "MCI2": 9,
+        "MCI3": 17,
+        "MCI4": 6,
+        "MCI5": 4,
+        "MCI6": 7,
+        "MCI7": 4
+      },
+      "samples": [
+        {
+          "path": "MCI/MCI1/1.mat",
+          "uncompressed_bytes": 127879,
+          "variables": [
+            {
+              "name": "export",
+              "shape": [
+                1805,
+                19
+              ],
+              "dtype": "single"
+            }
+          ]
+        },
+        {
+          "path": "MCI/MCI3/1.mat",
+          "uncompressed_bytes": 140057,
+          "variables": [
+            {
+              "name": "export",
+              "shape": [
+                1977,
+                19
+              ],
+              "dtype": "single"
+            }
+          ]
+        },
+        {
+          "path": "MCI/MCI4/3.mat",
+          "uncompressed_bytes": 615951,
+          "variables": [
+            {
+              "name": "export",
+              "shape": [
+                8707,
+                19
+              ],
+              "dtype": "single"
+            }
+          ]
+        },
+        {
+          "path": "MCI/MCI7/4.mat",
+          "uncompressed_bytes": 534555,
+          "variables": [
+            {
+              "name": "export",
+              "shape": [
+                7554,
+                19
+              ],
+              "dtype": "single"
+            }
+          ]
+        }
+      ]
+    },
+    "CONTROL": {
+      "mat_file_count": 110,
+      "distinct_parent_folders": 3,
+      "folder_file_counts": {
+        "(none)": 100,
+        "normal1": 7,
+        "normal2": 3
+      },
+      "samples": [
+        {
+          "path": "CONTROL/10057fir.mat",
+          "uncompressed_bytes": 381605,
+          "variables": [
+            {
+              "name": "segmenty",
+              "shape": [
+                22,
+                12288
+              ],
+              "dtype": "single"
+            }
+          ]
+        },
+        {
+          "path": "CONTROL/18954fir.mat",
+          "uncompressed_bytes": 324967,
+          "variables": [
+            {
+              "name": "segmenty",
+              "shape": [
+                22,
+                10240
+              ],
+              "dtype": "single"
+            }
+          ]
+        },
+        {
+          "path": "CONTROL/29389fir.mat",
+          "uncompressed_bytes": 246966,
+          "variables": [
+            {
+              "name": "segmenty",
+              "shape": [
+                22,
+                9728
+              ],
+              "dtype": "single"
+            }
+          ]
+        },
+        {
+          "path": "CONTROL/normal2/3.mat",
+          "uncompressed_bytes": 181756,
+          "variables": [
+            {
+              "name": "export",
+              "shape": [
+                2567,
+                19
+              ],
+              "dtype": "single"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "chronological_continuity_verified": false,
+  "subject_identity_verified": false
+}
