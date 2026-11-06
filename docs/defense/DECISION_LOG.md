@@ -205,3 +205,48 @@ DEFENSE ANSWER:
 content through the archive's authoritative version manifest.
 This preserved exact dataset provenance while avoiding dependence
 on a local git-annex remote configuration problem."
+
+---
+
+## D005 - Recover incomplete prespecified inference without rerunning completed primary estimates
+
+WHEN:
+After the primary duration-model outputs had been generated, but before
+scientific interpretation or result commitment.
+
+WHAT:
+The paired bootstrap and shuffled-label permutation-control stages were
+recovered from the already saved feature and out-of-fold prediction artifacts.
+
+WHY:
+The primary model outputs, OOF predictions, condition summaries and spectral
+stability outputs existed and were internally coherent, but the downstream
+bootstrap and permutation files had not been created.
+
+Rerunning completed primary estimates would unnecessarily change execution
+history and could create avoidable differences. Therefore only the missing
+prespecified inferential stages were executed.
+
+WHAT DID NOT CHANGE:
+- participant cohort
+- diagnostic labels
+- durations
+- temporal anchors
+- spectral features
+- outer predictions
+- primary model
+- primary metric
+- hyperparameter grid
+- bootstrap sample count
+- permutation count
+- random seed
+
+SCIENTIFIC IMPACT:
+This is an execution recovery, not a post-result methodological change.
+
+DEFENSE ANSWER:
+"The core participant-level predictions had already completed successfully.
+The process stopped before two downstream prespecified checks were written.
+We preserved the completed predictions and executed only the missing bootstrap
+and permutation stages from those frozen artifacts rather than rerunning or
+altering the primary analysis."
