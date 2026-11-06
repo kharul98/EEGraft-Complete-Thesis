@@ -1,0 +1,2 @@
+9458283bcb6caf0e765c79cd340babf50734259062c7ba7f775be33142da7695  docs/literature/p1_close_work_evidence_2026-11-07.csv
+c9b345ae90b47ae78835030c4460346bf87741d5791154a79827cbcdfa1d82cd  docs/literature/p1_gap_status_2026-11-07.md
