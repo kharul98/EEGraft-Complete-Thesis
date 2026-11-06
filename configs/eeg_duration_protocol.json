@@ -1,0 +1,25 @@
+{
+  "protocol_version": "1.0",
+  "frozen_date": "2026-11-06",
+  "dataset": "NEMAR on004504 v1.0.0",
+  "durations_seconds": [30, 60, 120, 180, 300],
+  "anchors": ["start", "center", "end"],
+  "sampling_rate_hz": 500,
+  "welch_window_seconds": 4,
+  "welch_overlap_fraction": 0.5,
+  "frequency_range_hz": [1, 45],
+  "bands": {
+    "delta": [1, 4],
+    "theta": [4, 8],
+    "alpha": [8, 13],
+    "beta": [13, 30],
+    "gamma": [30, 45]
+  },
+  "outer_folds": 5,
+  "outer_repeats": 10,
+  "inner_folds": 4,
+  "random_seed": 20261106,
+  "logistic_C": [0.01, 0.1, 1, 10, 100],
+  "bootstrap_samples": 5000,
+  "permutation_samples": 100
+}
