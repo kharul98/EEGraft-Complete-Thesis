@@ -1,0 +1,12 @@
+{
+  "run_utc": "2026-11-06T18:38:52.479942+00:00",
+  "manifest_sha256": "f15e50c76c36422bc3e8b4061b0dadacaaf4c1e5df02e676eee131a5b64102e2",
+  "selected": 264,
+  "raw_eeg_count": 88,
+  "verified": 264,
+  "failures": [],
+  "already_verified": 1,
+  "downloaded_verified": 263,
+  "bytes_total": 2829887865,
+  "note": "Checksum-verified raw acquisition; no modeling."
+}

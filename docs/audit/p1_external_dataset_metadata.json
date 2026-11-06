@@ -1,0 +1,65 @@
+{
+  "run_utc": "2026-11-06T18:34:47.057094+00:00",
+  "scope": "Public metadata-only research feasibility",
+  "candidates": [
+    {
+      "name": "Cejnek_Figshare",
+      "url": "https://api.figshare.com/v2/articles/5450293",
+      "reported_context_not_verified": "Potential continuous independent EEG dataset; participants, labels and durations require verification.",
+      "api_status": 200,
+      "metadata_retrievable": true,
+      "title": "dataset.zip",
+      "doi": "10.6084/m9.figshare.5450293.v1",
+      "listed_files_count": 1,
+      "listed_files": [
+        {
+          "name": "dataset.zip",
+          "size": 305894766,
+          "id": 9423433
+        }
+      ],
+      "license": {
+        "value": 1,
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "research_eligibility": "UNVERIFIED: raw signal, participant identity, duration, diagnostic labels, license and cohort independence must be checked."
+    },
+    {
+      "name": "ADFSU_OSF_node",
+      "url": "https://api.osf.io/v2/nodes/jbysn/",
+      "reported_context_not_verified": "External EEG benchmark; published descriptions mention short segments.",
+      "api_status": 200,
+      "metadata_retrievable": true,
+      "title": "Data for 'Accounting for the complex hierarchical topology of EEG phase-based functional connectivity in network binarisation'",
+      "public": true,
+      "description_excerpt": "Two EEG datasets used in our study: http://dx.doi.org/10.7488/ds/2109. One contains eyes-open and eyes-closed resting states from 16 healthy volunteers, obtained from https://www.nbtwiki.net/.  The other is a dataset of Alzheimer's disease patients and healthy controls detailed in J. Escudero et al.,  Analysis of electroencephalograms in Alzheimer's disease patients with multiscale entropy. Physiological Measurement. 2016;27(11):1091-1106. Please cite these sources appropriately if used in your research. ",
+      "research_eligibility": "UNVERIFIED: raw signal, participant identity, duration, diagnostic labels, license and cohort independence must be checked."
+    },
+    {
+      "name": "ADFSU_OSF_files",
+      "url": "https://api.osf.io/v2/nodes/jbysn/files/",
+      "reported_context_not_verified": "Metadata-only inspection of OSF file providers.",
+      "api_status": 200,
+      "metadata_retrievable": true,
+      "listed_providers": [
+        {
+          "name": "osfstorage",
+          "id": "jbysn:osfstorage"
+        }
+      ],
+      "research_eligibility": "UNVERIFIED: raw signal, participant identity, duration, diagnostic labels, license and cohort independence must be checked."
+    },
+    {
+      "name": "BrainLat_Synapse",
+      "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn51549340",
+      "reported_context_not_verified": "Independent EEG candidate; registration or data-use authorization may be required.",
+      "api_status": 200,
+      "metadata_retrievable": true,
+      "name_from_api": "BrainLat_dataset",
+      "entity_type": "org.sagebionetworks.repo.model.Project",
+      "access_requirements": "Requires separate access and license review",
+      "research_eligibility": "UNVERIFIED: raw signal, participant identity, duration, diagnostic labels, license and cohort independence must be checked."
+    }
+  ]
+}
