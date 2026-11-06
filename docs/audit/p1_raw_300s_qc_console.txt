@@ -1,0 +1,21 @@
+===== RAW EEG QUALITY SCREEN =====
+Inspected 22/88 participants
+Inspected 44/88 participants
+Inspected 66/88 participants
+Inspected 88/88 participants
+
+===== RAW QUALITY SUMMARY =====
+Participants: 88
+Read/quality errors: 0
+Groups: {'A': 36, 'C': 29, 'F': 23}
+Finite recordings: 88
+Median channel RMS (uV): 124.304
+Median 99th-percentile amplitude (uV): 590.674
+Subjects with any >200 uV samples: 88
+Subjects with near-flat channels: 0
+
+IMPORTANT:
+Amplitude flags are exploratory QC descriptors.
+They are NOT validated artifact labels.
+No participants have been excluded.
+RAW QUALITY SCREEN COMPLETE

@@ -1,0 +1,35 @@
+===== P1 STATISTICAL PRECISION FEASIBILITY =====
+SCENARIOS ARE HYPOTHETICAL, NOT OBSERVED RESULTS
+
+AHEPA AD participants
+Hypothetical correct: 31 / 36
+Observed fraction in scenario: 0.8611
+Exact 95% interval: 0.705 to 0.9533
+Interval width: 0.2483
+
+BrainLat AD participants
+Hypothetical correct: 30 / 35
+Observed fraction in scenario: 0.8571
+Exact 95% interval: 0.6974 to 0.9519
+Interval width: 0.2545
+
+AHEPA controls
+Hypothetical correct: 25 / 29
+Observed fraction in scenario: 0.8621
+Exact 95% interval: 0.6834 to 0.9611
+Interval width: 0.2777
+
+BrainLat controls
+Hypothetical correct: 36 / 42
+Observed fraction in scenario: 0.8571
+Exact 95% interval: 0.7146 to 0.9457
+Interval width: 0.2311
+
+===== INTERPRETATION =====
+These are illustrative binomial intervals.
+They do not measure model uncertainty from training.
+They do not establish power for paired comparisons.
+A formal power/precision plan needs assumed paired
+discordance rates and the chosen primary hypothesis.
+Small effects may be difficult to establish credibly.
+===== P1 PRECISION CHECK COMPLETE =====
