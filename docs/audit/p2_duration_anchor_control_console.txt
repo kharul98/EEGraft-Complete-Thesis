@@ -1,0 +1,46 @@
+/home/user4/alzheimers-thesis/scripts/p2_duration_anchor_control.py:148: Pandas4Warning: The 'verify_integrity' keyword in DataFrame.set_index is deprecated and will be removed in a future version. Directly check the result.index.is_unique instead.
+  previous = previous.set_index(
+/home/user4/alzheimers-thesis/scripts/p2_duration_anchor_control.py:153: Pandas4Warning: The 'verify_integrity' keyword in DataFrame.set_index is deprecated and will be removed in a future version. Directly check the result.index.is_unique instead.
+  reference = reference.set_index(
+/home/user4/alzheimers-thesis/scripts/p2_duration_anchor_control.py:158: Pandas4Warning: The 'verify_integrity' keyword in DataFrame.set_index is deprecated and will be removed in a future version. Directly check the result.index.is_unique instead.
+  old_tv = old_tv.set_index(
+===== P2 DURATION / ANCHOR CONTROL =====
+Processed 22/88 participants
+Processed 44/88 participants
+Processed 66/88 participants
+Processed 88/88 participants
+
+===== DURATION AND ANCHOR MEDIANS =====
+       design  start_s  end_s  duration_s  tv_to_late_240_300
+fixed_end_180        0    180         180            0.021675
+fixed_end_180       60    180         120            0.022153
+fixed_end_180      120    180          60            0.024169
+fixed_end_180      150    180          30            0.031615
+ placement_60        0     60          60            0.027038
+ placement_60       60    120          60            0.025159
+ placement_60      120    180          60            0.024169
+ placement_60      180    240          60            0.024351
+       prefix        0     30          30            0.033349
+       prefix        0     60          60            0.027038
+       prefix        0    120         120            0.023538
+       prefix        0    180         180            0.021675
+
+===== PAIRED ANCHOR CONTRASTS =====
+                        comparison  mean_delta    ci_low   ci_high  fraction_improved  n
+               prefix_120_minus_60   -0.002958 -0.005546 -0.000343           0.670455 88
+               prefix_180_minus_60   -0.004732 -0.007766 -0.001754           0.670455 88
+            fixed_end_120_minus_60   -0.002895 -0.005757  0.000012           0.568182 88
+            fixed_end_180_minus_60   -0.003275 -0.006613  0.000125           0.613636 88
+placement_60_start120_minus_start0   -0.001457 -0.006476  0.003425           0.556818 88
+placement_60_start180_minus_start0   -0.002565 -0.007459  0.002315           0.534091 88
+    duration_effect_difference_120    0.000063 -0.002600  0.002702           0.477273 88
+    duration_effect_difference_180    0.001457 -0.003543  0.006606           0.443182 88
+
+===== REPRODUCTION CHECK =====
+Prefix feature error: 4.996419944447439e-13
+Late reference error: 4.99406072052011e-13
+Historical TV error: 4.453382107527659e-13
+Participants: 88
+Windows: 1056
+Reference overlap: NONE
+P2 ANCHOR CONTROL COMPLETE
