@@ -1,0 +1,158 @@
+==================================================
+EEG DATASET FEASIBILITY AUDIT
+==================================================
+Python: 3.14.4
+MNE: 1.13.2
+Data root: /home/user4/alzheimers-thesis/data/eeg/on004504_v1.0.0
+
+----- PARTICIPANTS -----
+participants.tsv: /home/user4/alzheimers-thesis/data/eeg/on004504_v1.0.0/participants.tsv
+Shape: (88, 5)
+Columns: ['participant_id', 'Gender', 'Age', 'Group', 'MMSE']
+
+participant_id Gender  Age Group  MMSE
+       sub-001      F   57     A    16
+       sub-002      F   78     A    22
+       sub-003      M   70     A    14
+       sub-004      F   67     A    20
+       sub-005      M   70     A    22
+       sub-006      F   61     A    14
+       sub-007      F   79     A    20
+       sub-008      M   62     A    16
+       sub-009      F   77     A    23
+       sub-010      M   69     A    20
+
+----- LOW-CARDINALITY PARTICIPANT VARIABLES -----
+
+Gender:
+Gender
+F    44
+M    44
+
+Group:
+Group
+A    36
+C    29
+F    23
+
+Participant IDs are unique.
+
+----- DERIVATIVE EEG FILES -----
+Derivative .set file count: 88
+Read 10/88 files
+Read 20/88 files
+Read 30/88 files
+Read 40/88 files
+Read 50/88 files
+Read 60/88 files
+Read 70/88 files
+Read 80/88 files
+Read 88/88 files
+
+----- RECORDING STRUCTURE -----
+Readable recordings: 88
+Read errors: 0
+Unique subjects in recordings: 88
+Sampling frequencies: [500.0]
+Channel counts: [19]
+Unique channel layouts: 1
+
+----- DURATION SUMMARY -----
+count      88.000000
+mean      793.535455
+std       139.121708
+min       306.100000
+5%        564.624000
+10%       609.648000
+25%       746.395000
+50%       804.520000
+75%       869.700000
+90%       924.528000
+95%       971.499000
+max      1281.720000
+
+----- GROUP COUNTS -----
+Group
+A    36
+C    29
+F    23
+
+----- DURATION BY GROUP (SECONDS) -----
+       count     min  median    mean      max
+Group                                        
+A         36  306.10  820.03  809.25  1281.72
+C         29  748.48  814.60  831.35   989.88
+F         23  479.10  699.14  721.27  1014.50
+
+----- FIXED-DURATION ELIGIBILITY -----
+ duration_seconds  eligible_recordings  eligible_subjects  group_A  group_C  group_F
+               30                   88                 88       36       29       23
+               60                   88                 88       36       29       23
+              120                   88                 88       36       29       23
+              180                   88                 88       36       29       23
+              240                   88                 88       36       29       23
+              300                   88                 88       36       29       23
+              360                   87                 87       35       29       23
+              480                   86                 86       35       29       22
+              600                   80                 80       33       29       18
+
+----- DEMOGRAPHIC SUMMARY -----
+
+Age:
+       count   mean   std   min   25%   50%    75%   max
+Group                                                   
+A       36.0  66.39  7.89  49.0  61.0  67.0  71.25  79.0
+C       29.0  67.90  5.40  57.0  64.0  67.0  71.00  78.0
+F       23.0  63.65  8.22  44.0  60.5  64.0  70.50  78.0
+
+Gender:
+Gender
+F    44
+M    44
+
+MMSE:
+       count   mean   std   min   25%   50%   75%   max
+Group                                                  
+A       36.0  17.75  4.50   4.0  16.0  20.0  20.0  23.0
+C       29.0  30.00  0.00  30.0  30.0  30.0  30.0  30.0
+F       23.0  22.17  2.64  18.0  20.0  22.0  24.0  27.0
+
+Group:
+Group
+A    36
+C    29
+F    23
+
+----- SAVED AUDIT ARTIFACTS -----
+/home/user4/alzheimers-thesis/results/eeg_feasibility/recording_inventory.csv
+/home/user4/alzheimers-thesis/results/eeg_feasibility/duration_eligibility.csv
+/home/user4/alzheimers-thesis/results/eeg_feasibility/read_errors.json
+/home/user4/alzheimers-thesis/docs/audit/eeg_feasibility_summary.json
+
+==================================================
+EEG FEASIBILITY SUMMARY
+==================================================
+{
+  "participant_rows": 88,
+  "unique_participant_ids": 88,
+  "derivative_set_files": 88,
+  "readable_recordings": 88,
+  "read_errors": 0,
+  "unique_recording_subjects": 88,
+  "sampling_frequencies": [
+    500.0
+  ],
+  "channel_counts": [
+    19
+  ],
+  "unique_channel_layouts": 1,
+  "min_duration_seconds": 306.1,
+  "median_duration_seconds": 804.52,
+  "max_duration_seconds": 1281.72,
+  "participant_group_counts": {
+    "A": 36,
+    "C": 29,
+    "F": 23
+  }
+}
+==================================================

@@ -1,0 +1,28 @@
+Manifest URL: https://data.nemar.org/on004504/v1.0.0/manifest.json
+
+Manifest entries: 361
+Manifest first-entry keys:
+['bytes_url', 'checksum', 'checksum_algorithm', 'path', 'size', 'url']
+Selected total files: 93
+Selected derivative files: 88
+Known selected byte total: 2.75 GiB
+
+Downloading with 8 workers...
+Completed 20/93 (failures=0)
+Completed 40/93 (failures=0)
+Completed 60/93 (failures=0)
+Completed 80/93 (failures=0)
+Completed 93/93 (failures=0)
+
+----- DOWNLOAD RESULT -----
+Successful: 93
+Failed: 0
+Materialized selected bytes: 2.75 GiB
+Manifest SHA256: f15e50c76c36422bc3e8b4061b0dadacaaf4c1e5df02e676eee131a5b64102e2
+
+----- LOCAL DERIVATIVE COUNTS -----
+.set: 88
+.fdt: 0
+Regular derivative files: 88
+
+MATERIALIZATION SUCCESSFUL
