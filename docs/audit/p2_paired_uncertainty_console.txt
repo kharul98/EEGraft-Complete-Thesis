@@ -1,0 +1,38 @@
+===== P2 PAIRED UNCERTAINTY =====
+Exploratory comparisons, selected post hoc
+Unique participants resampled within strata
+All three CV repeats kept together
+
+AD_vs_CN epoch_median@300 vs pilot_global_psd@300
+Balanced accuracy: 0.7372 vs 0.6739
+Paired BA difference: 0.0634
+Exploratory 95% bootstrap interval: (-0.0241, 0.1544)
+Mean recording-time difference (s): 0.0
+
+AD_vs_CN epoch_median@300 vs pilot_global_psd@60
+Balanced accuracy: 0.7372 vs 0.7269
+Paired BA difference: 0.0104
+Exploratory 95% bootstrap interval: (-0.076, 0.0971)
+Mean recording-time difference (s): 240.0
+
+AD_vs_CN stability_only vs fixed_60
+Balanced accuracy: 0.7419 vs 0.7269
+Paired BA difference: 0.015
+Exploratory 95% bootstrap interval: (-0.0115, 0.0485)
+Mean recording-time difference (s): 17.85
+
+AD_vs_FTD epoch_median@300 vs pilot_global_psd@300
+Balanced accuracy: 0.4398 vs 0.4104
+Paired BA difference: 0.0294
+Exploratory 95% bootstrap interval: (-0.1091, 0.1727)
+Mean recording-time difference (s): 0.0
+
+IMPORTANT LIMITATIONS:
+- Comparisons selected after inspecting pilot results.
+- Intervals are descriptive, not confirmatory.
+- Bootstrap conditions on saved OOF predictions.
+- Model retraining variability is not fully captured.
+- No multiple-comparison adjustment was performed.
+- No non-inferiority or clinical claim is justified.
+
+P2 PAIRED UNCERTAINTY COMPLETE

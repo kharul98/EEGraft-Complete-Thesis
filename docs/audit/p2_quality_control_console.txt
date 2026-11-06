@@ -1,0 +1,29 @@
+===== P2 EEG-QUALITY NEGATIVE CONTROL =====
+Completed AD_vs_CN: 65 participants
+Completed AD_vs_FTD: 59 participants
+
+===== QUALITY-ONLY CLASSIFICATION =====
+                   balanced_accuracy  sensitivity_ad  roc_auc
+task      seconds                                            
+AD_vs_CN  30                   0.584           0.593    0.544
+          60                   0.545           0.630    0.485
+          300                  0.503           0.639    0.489
+AD_vs_FTD 30                   0.509           0.454    0.479
+          60                   0.541           0.574    0.518
+          300                  0.469           0.546    0.409
+
+===== QUALITY FEATURE GROUP DISTRIBUTIONS =====
+       raw_fraction_above_200uv  median_epoch_rms_uv  median_epoch_ptp_uv
+group                                                                    
+A                        0.1960              97.6573             300.7080
+C                        0.2305             111.3863             307.0068
+F                        0.1813             100.7292             297.8515
+
+INTERPRETATION:
+- Quality-only prediction is a confounding probe.
+- Predictive QC features do not prove a specific cause.
+- Failure to predict does not exclude confounding.
+- Classification uses independent participant folds.
+- Results remain exploratory.
+
+P2 QUALITY NEGATIVE CONTROL COMPLETE
