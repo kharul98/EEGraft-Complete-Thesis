@@ -64,3 +64,31 @@ The final novelty statement will be written only after:
 - dataset feasibility,
 - final protocol definition,
 - actual executed results.
+
+## 2026-11-06 literature correction
+
+A broader search identified an important prior study:
+
+Tzimourta KD et al. (2019).
+EEG Window Length Evaluation for the Detection of Alzheimer's Disease over
+Different Brain Regions.
+Brain Sciences 9(4):81.
+DOI: 10.3390/brainsci9040081
+
+That study explicitly varied EEG epoch length from 5 to 12 seconds.
+
+Therefore this thesis MUST NOT claim that it is the first investigation of
+EEG window duration in Alzheimer's classification.
+
+The thesis contribution is instead positioned around:
+
+- total available recording duration from 30 to 300 seconds,
+- same-participant paired duration comparisons,
+- temporal-position robustness,
+- participant-level repeated nested evaluation,
+- spectral biomarker stability,
+- paired uncertainty estimates,
+- permutation negative control,
+- and AD-vs-FTD disease-specificity testing.
+
+This correction was made before manuscript novelty claims were finalized.

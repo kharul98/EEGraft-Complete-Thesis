@@ -1,0 +1,78 @@
+MANUSCRIPT OUTPUT BUILD COMPLETE
+
+Best primary point-estimate condition:
+{
+  "duration_seconds": 180,
+  "anchor": "center",
+  "balanced_accuracy": 0.8304597701149425,
+  "roc_auc": 0.861111111111111
+}
+
+Primary bootstrap rows:
+    task anchor  duration_seconds  reference_seconds  balanced_accuracy_delta  ci95_low  ci95_high
+AD_vs_CN center                30                300                  -0.0105   -0.0867     0.0690
+AD_vs_CN center                60                300                  -0.0311   -0.1245     0.0517
+AD_vs_CN center               120                300                  -0.0139   -0.0690     0.0378
+AD_vs_CN center               180                300                   0.0172    0.0000     0.0517
+AD_vs_CN    end                30                300                  -0.0556   -0.1351     0.0206
+AD_vs_CN    end                60                300                  -0.0795   -0.1590    -0.0034
+AD_vs_CN    end               120                300                   0.0000   -0.0623     0.0623
+AD_vs_CN    end               180                300                   0.0311    0.0000     0.0795
+AD_vs_CN  start                30                300                  -0.0139   -0.0967     0.0656
+AD_vs_CN  start                60                300                  -0.0034   -0.0690     0.0623
+AD_vs_CN  start               120                300                  -0.0311   -0.0900     0.0244
+AD_vs_CN  start               180                300                   0.0417   -0.0206     0.1039
+
+Anchor sensitivity:
+    task  duration_seconds  balanced_accuracy_min  balanced_accuracy_max  balanced_accuracy_range  roc_auc_min  roc_auc_max  roc_auc_range
+AD_vs_CN                30                 0.7438                 0.8027                   0.0589       0.8113       0.8391         0.0278
+AD_vs_CN                60                 0.7198                 0.7821                   0.0623       0.7797       0.8420         0.0623
+AD_vs_CN               120                 0.7337                 0.7993                   0.0656       0.7663       0.9215         0.1552
+AD_vs_CN               180                 0.8065                 0.8305                   0.0239       0.7883       0.8946         0.1063
+AD_vs_CN               300                 0.7648                 0.8132                   0.0484       0.8180       0.8716         0.0536
+
+Prediction stability:
+    task anchor  duration_seconds  probability_spearman_vs_300  probability_mae_vs_300  classification_agreement_vs_300
+AD_vs_CN center                30                       0.8913                  0.0898                           0.8923
+AD_vs_CN center                60                       0.9292                  0.0858                           0.8769
+AD_vs_CN center               120                       0.9522                  0.0556                           0.9538
+AD_vs_CN center               180                       0.9772                  0.0348                           0.9846
+AD_vs_CN center               300                       1.0000                  0.0000                           1.0000
+AD_vs_CN    end                30                       0.8154                  0.1374                           0.8769
+AD_vs_CN    end                60                       0.9281                  0.0893                           0.8923
+AD_vs_CN    end               120                       0.9191                  0.1187                           0.9385
+AD_vs_CN    end               180                       0.9691                  0.0532                           0.9692
+AD_vs_CN    end               300                       1.0000                  0.0000                           1.0000
+AD_vs_CN  start                30                       0.8407                  0.1229                           0.8923
+AD_vs_CN  start                60                       0.9081                  0.0877                           0.9385
+AD_vs_CN  start               120                       0.9369                  0.0644                           0.9385
+AD_vs_CN  start               180                       0.9338                  0.0626                           0.9231
+AD_vs_CN  start               300                       1.0000                  0.0000                           1.0000
+
+300 s center biomarkers with BH q-values:
+     task                  feature  cliffs_delta  mannwhitney_p  bh_q_within_task
+ AD_vs_CN             global_delta      0.250958       0.085037          0.097185
+ AD_vs_CN             global_theta      0.607280       0.000030          0.000074
+ AD_vs_CN             global_alpha     -0.599617       0.000037          0.000074
+ AD_vs_CN              global_beta     -0.409962       0.004840          0.006453
+ AD_vs_CN             global_gamma      0.063218       0.667999          0.667999
+ AD_vs_CN     global_slowing_ratio      0.588123       0.000052          0.000084
+ AD_vs_CN global_alpha_theta_ratio     -0.720307       0.000001          0.000003
+ AD_vs_CN            global_paf_hz     -0.694444       0.000001          0.000003
+AD_vs_FTD             global_delta      0.016908       0.919534          0.919534
+AD_vs_FTD             global_theta      0.369565       0.017782          0.142260
+AD_vs_FTD             global_alpha     -0.118357       0.450985          0.515411
+AD_vs_FTD              global_beta     -0.185990       0.234462          0.329228
+AD_vs_FTD             global_gamma     -0.219807       0.159567          0.319135
+AD_vs_FTD     global_slowing_ratio      0.181159       0.246921          0.329228
+AD_vs_FTD global_alpha_theta_ratio     -0.258454       0.097885          0.261026
+AD_vs_FTD            global_paf_hz     -0.285024       0.046025          0.184099
+
+Figures:
+/home/user4/alzheimers-thesis/figures/fig01_primary_balanced_accuracy.png
+/home/user4/alzheimers-thesis/figures/fig02_spectral_stability.png
+/home/user4/alzheimers-thesis/figures/fig03_primary_bootstrap_vs_300.png
+/home/user4/alzheimers-thesis/figures/fig04_permutation_control.png
+/home/user4/alzheimers-thesis/figures/fig05a_biomarker_effects_ad_vs_cn.png
+/home/user4/alzheimers-thesis/figures/fig05b_biomarker_effects_ad_vs_ftd.png
+/home/user4/alzheimers-thesis/figures/fig06_prediction_stability.png

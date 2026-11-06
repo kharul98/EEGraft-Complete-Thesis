@@ -1,0 +1,28 @@
+{
+  "best_primary_condition": {
+    "duration_seconds": 180,
+    "anchor": "center",
+    "balanced_accuracy": 0.8304597701149425,
+    "roc_auc": 0.861111111111111
+  },
+  "permutation_control": {
+    "condition": "AD_vs_CN_300s_center",
+    "observed_balanced_accuracy": 0.7993295019157088,
+    "null_mean": 0.4981992337164753,
+    "null_std": 0.07528237202482929,
+    "null_min": 0.3218390804597701,
+    "null_max": 0.6853448275862069,
+    "empirical_p": 0.009900990099009901,
+    "permutations": 100
+  },
+  "demographic_ad_vs_cn": {
+    "balanced_accuracy": 0.6020114942528736,
+    "roc_auc": 0.6187739463601533,
+    "sensitivity": 0.5833333333333334,
+    "specificity": 0.6206896551724138,
+    "f1": 0.6176470588235294,
+    "mcc": 0.20286045489160692,
+    "brier": 0.24586773788428995,
+    "task": "AD_vs_CN"
+  }
+}
