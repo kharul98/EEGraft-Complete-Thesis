@@ -11,3 +11,4 @@ checkpoints/
 *.ckpt
 .DS_Store
 data/eeg/
+*.part
