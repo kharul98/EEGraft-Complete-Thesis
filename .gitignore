@@ -12,3 +12,7 @@ checkpoints/
 .DS_Store
 data/eeg/
 *.part
+
+/data/
+
+*:Zone.Identifier
