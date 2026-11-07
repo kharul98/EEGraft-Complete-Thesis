@@ -1,0 +1,49 @@
+{
+  "status": "METADATA_ONLY; patients not verified",
+  "source_name": "alz_c1_new.mat",
+  "reference_slots": 129,
+  "unique_referenced_objects": 50,
+  "long_19channel_recording_slots": 49,
+  "unique_long_signal_references": 49,
+  "columns_with_long_recordings": 43,
+  "eligible_recordings_per_column": {
+    "1": 39,
+    "2": 2,
+    "3": 2
+  },
+  "long_recordings_by_row": {
+    "1": 43,
+    "2": 4,
+    "3": 2
+  },
+  "duration_seconds_if_500hz_min_median_max": [
+    521.604,
+    1207.004,
+    2525.004
+  ],
+  "within_column_metadata_consistency": {
+    "birth": {
+      "multi_recording_columns_with_metadata": 4,
+      "columns_with_matching_values": 4
+    },
+    "sex": {
+      "multi_recording_columns_with_metadata": 4,
+      "columns_with_matching_values": 4
+    },
+    "n": {
+      "multi_recording_columns_with_metadata": 4,
+      "columns_with_matching_values": 0
+    },
+    "eeg_files": {
+      "multi_recording_columns_with_metadata": 4,
+      "columns_with_matching_values": 0
+    }
+  },
+  "limitations": [
+    "Columns are candidate participant clusters.",
+    "Independent patient identities remain unverified.",
+    "Sampling frequency assumed from publication.",
+    "Recording length does not prove eyes-closed continuity.",
+    "Personal metadata values are not exported."
+  ]
+}
