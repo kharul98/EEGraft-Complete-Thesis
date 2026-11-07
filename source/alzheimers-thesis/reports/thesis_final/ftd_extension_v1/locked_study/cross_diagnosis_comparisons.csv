@@ -1,0 +1,6 @@
+contrast,estimate,conditional_CI_low,conditional_CI_high,note
+FTD_minus_AD_first_minute_BACC,0.0024154589371980784,-0.11208333333333337,0.12657004830917873,Exploratory; shared controls resampled jointly
+FTD_minus_AD_fifth_minute_BACC,0.04420289855072457,-0.08454106280193241,0.18067632850241544,Exploratory; shared controls resampled jointly
+FTD_minus_AD_class_balanced_reversal_rate,-0.10241545893719806,-0.24106884057971018,0.040821256038647336,Exploratory; shared controls resampled jointly
+FTD_fifth_minus_first_minute_BACC,-0.049516908212560384,-0.14928140096618353,0.04516908212560389,Exploratory; shared controls resampled jointly
+AD_fifth_minus_first_minute_BACC,-0.09130434782608687,-0.20000000000000007,0.013043478260869712,Exploratory; shared controls resampled jointly

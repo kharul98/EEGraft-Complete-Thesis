@@ -1,0 +1,10 @@
+*.pth
+*.pt
+*.csv
+!examples/manifest_template.csv
+__pycache__/
+results/*
+checkpoints/*
+external/
+.venv/
+.DS_Store

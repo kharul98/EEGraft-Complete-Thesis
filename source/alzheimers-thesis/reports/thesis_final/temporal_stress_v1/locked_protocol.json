@@ -1,0 +1,23 @@
+{
+  "analysis_name": "Within-recording held-out 60-second block transportability",
+  "cohort": "46 ds004504 participants, 23 AD and 23 healthy controls",
+  "comparison_1": "One held-out model evaluated on five nonoverlapping 60-second blocks",
+  "comparison_2": "Majority vote of first three and all five blocks without retraining",
+  "comparison_3": "Agreement-based retention at 4/5 and 5/5",
+  "comparison_4": "Comparison with existing 180s and 300s SVM models",
+  "evaluation_unit": "participant",
+  "exploratory_associations": "Class flips versus signal-quality and theta-alpha variability",
+  "fixed_splits": "Original repeat-1 matched 5-fold CV from duration_locked_v1",
+  "limitations": [
+    "One outer-CV repetition",
+    "Same retrospective cohort",
+    "No external validation",
+    "Full-session preprocessing",
+    "No clinical deployment claim"
+  ],
+  "model": "RBF_SVM trained and tuned on initial 60 seconds of training subjects; repeat 1 outer folds",
+  "primary_observation_already_known": "24 of 46 subject predictions changed across 60-second blocks",
+  "reporting": "Subject-level BACC, accuracy, reversal rates, stratified bootstrap CIs",
+  "status": "Post-hoc exploratory extension; not preregistered",
+  "version": "1.0"
+}

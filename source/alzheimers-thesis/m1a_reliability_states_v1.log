@@ -1,0 +1,30 @@
+===== MILESTONE 1A: STABILITY AND CORRECTNESS =====
+PASS: AD_vs_HC: 46 subjects, 5 repeats, 5 blocks; first-minute predictions reconciled
+PASS: FTD_vs_HC: 41 subjects, 5 repeats, 5 blocks; first-minute predictions reconciled
+
+===== STABILITY-CORRECTNESS DECOMPOSITION =====
+AD_vs_HC / A: stable-correct=0.5217, stable-wrong=0.0783, unstable=0.4000, accuracy among unanimous=0.8695652173913043
+AD_vs_HC / C: stable-correct=0.4174, stable-wrong=0.0957, unstable=0.4870, accuracy among unanimous=0.8135593220338984
+AD_vs_HC / ALL: stable-correct=0.4696, stable-wrong=0.0870, unstable=0.4435, accuracy among unanimous=0.84375
+FTD_vs_HC / F: stable-correct=0.5667, stable-wrong=0.0556, unstable=0.3778, accuracy among unanimous=0.9107142857142857
+FTD_vs_HC / C: stable-correct=0.5043, stable-wrong=0.1913, unstable=0.3043, accuracy among unanimous=0.725
+FTD_vs_HC / ALL: stable-correct=0.5317, stable-wrong=0.1317, unstable=0.3366, accuracy among unanimous=0.8014705882352942
+
+===== SAME-23-CONTROL PAIRED COMPARISONS =====
+stable_correct: AD=0.4174, FTD=0.5043, FTD-AD=+0.0870, conditional 95% CI [-0.0348, +0.2174]
+stable_wrong: AD=0.0957, FTD=0.1913, FTD-AD=+0.0957, conditional 95% CI [+0.0174, +0.1913]
+unstable: AD=0.4870, FTD=0.3043, FTD-AD=-0.1826, conditional 95% CI [-0.3217, -0.0522]
+
+===== RAW DECISION MARGIN AUDIT (NOT PROBABILITIES) =====
+AD_vs_HC / stable_correct: n=108, median absolute first-minute margin=1.0548844399099107
+AD_vs_HC / stable_wrong: n=20, median absolute first-minute margin=0.9089442691874569
+AD_vs_HC / unstable: n=102, median absolute first-minute margin=0.3317561389291126
+FTD_vs_HC / stable_correct: n=109, median absolute first-minute margin=0.8669977659944804
+FTD_vs_HC / stable_wrong: n=27, median absolute first-minute margin=0.565271771315143
+FTD_vs_HC / unstable: n=69, median absolute first-minute margin=0.23445560186450387
+
+===== MILESTONE 1A COMPLETE =====
+Output directory: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_1a_reliability_v1
+The analysis used only saved held-out predictions, with no model retraining.
+Raw SVM decision margins have NOT been calibrated; no probability claim is made.
+All intervals condition on existing cross-validation models and subject selection.

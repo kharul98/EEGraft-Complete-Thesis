@@ -1,0 +1,47 @@
+===== MILESTONE 5E: EDF UNIT/CALIBRATION DIAGNOSIS =====
+Original clinical labels retained; no EEG units corrected; no models trained.
+  Header+signal diagnostics: 10/61
+  Header+signal diagnostics: 20/61
+  Header+signal diagnostics: 30/61
+  Header+signal diagnostics: 40/61
+  Header+signal diagnostics: 50/61
+  Header+signal diagnostics: 60/61
+  Header+signal diagnostics: 61/61
+
+===== PHYSICAL DIMENSIONS DECLARED IN EDF HEADERS =====
+EEG_1: declared physical dimension='': 27 recordings
+EEG_2: declared physical dimension='': 34 recordings
+
+===== MNE INTERPRETED ORIGINAL UNITS =====
+EEG_1: MNE original units=('n/a',): 27 recordings
+EEG_2: MNE original units=('n/a',): 34 recordings
+
+===== REPRESENTATIVE EDF PHYSICAL/DIGITAL HEADER VALUES =====
+EEG_1-002 MCI: first-minute median MNE PTP=38,261,615.93 uV; interpreted=('n/a',)
+  Fp1: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+  Fp2: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+  F7: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+EEG_1-001 NORMAL: first-minute median MNE PTP=88,305,867.09 uV; interpreted=('n/a',)
+  Fp1: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+  Fp2: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+  F7: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+EEG_2-005 MCI: first-minute median MNE PTP=110,542,076.75 uV; interpreted=('n/a',)
+  Fp1: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+  Fp2: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+  F7: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+EEG_2-001 NORMAL: first-minute median MNE PTP=136,320,744.64 uV; interpreted=('n/a',)
+  Fp1: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+  Fp2: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+  F7: physical dimension=''; physical min/max=-335/335; digital min/max=-32768/32767; samples/record=256
+
+===== CANDIDATE SCALE FACTORS: DIAGNOSTIC ONLY =====
+These factors are hypothetical and applied only to temporary calculations.
+No correction has been accepted or written to an EEG file.
+as_MNE_read (factor=1): median first-minute epoch PTP across recordings=97185015.640 uV; median within 1-300uV range=0/61; at least 15/30 clean epochs (UNFILTERED)=0/61
+times_1e_minus_3 (factor=0.001): median first-minute epoch PTP across recordings=97185.016 uV; median within 1-300uV range=0/61; at least 15/30 clean epochs (UNFILTERED)=0/61
+times_1e_minus_6 (factor=1e-06): median first-minute epoch PTP across recordings=97.185 uV; median within 1-300uV range=57/61; at least 15/30 clean epochs (UNFILTERED)=44/61
+times_1e_minus_9 (factor=1e-09): median first-minute epoch PTP across recordings=0.097 uV; median within 1-300uV range=0/61; at least 15/30 clean epochs (UNFILTERED)=0/61
+
+===== MILESTONE 5E DIAGNOSTIC COMPLETE =====
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_5e_isfahan_unit_diagnosis_v2/all_61_edf_unit_and_scaling_diagnostics.csv
+No scaling applied, no EEG resaved, no exclusions finalized, no model training.

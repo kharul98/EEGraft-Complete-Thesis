@@ -1,0 +1,19 @@
+{
+  "age_sensitivity": "partial rank correlation and approximate Freedman-Lane age-adjusted permutation",
+  "analysis_unit": "one participant; classifier estimates averaged across five correlated CV repeats",
+  "cohorts": "23 selected AD and 18 selected FTD; no pooled healthy controls",
+  "inference": "5000 two-sided permutations, 3000 participant bootstraps",
+  "limitations": "small selected cohorts, cross-sectional MMSE, correlated CV, no external validation",
+  "multiplicity": "Holm over four primary raw p-values; BH FDR over all ten raw p-values",
+  "primary_endpoints": [
+    "disease_probability",
+    "class_reversal_rate"
+  ],
+  "secondary_endpoints": [
+    "temporal_probability_sd",
+    "original_label_support",
+    "stable_wrong_rate"
+  ],
+  "status": "exploratory, post-hoc; no new classifier training",
+  "version": "m2b_mmse_associations_v1"
+}

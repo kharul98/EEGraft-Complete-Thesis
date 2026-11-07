@@ -1,0 +1,14 @@
+===== PUBLICATION METADATA CHECK =====
+DOIs screened: 9
+Metadata retrieved: 8
+DOI_METADATA_RETRIEVED 10.3390/brainsci9040081 EEG Window Length Evaluation for the Detection of Alzheimer’s Disease over Different Brain Regions
+DOI_METADATA_RETRIEVED 10.1177/1550059420983624 Effects of the Duration of a Resting-State EEG Recording in Healthy Aging and Mild Cognitive Impairm
+DOI_METADATA_RETRIEVED 10.1002/alz.12311 Measures of resting state EEG rhythms for clinical trials in Alzheimer's disease: Recommendations of
+DOI_METADATA_RETRIEVED 10.3390/data8060095 A Dataset of Scalp EEG Recordings of Alzheimer’s Disease, Frontotemporal Dementia and Healthy Subjec
+DOI_METADATA_RETRIEVED 10.1007/s11517-021-02427-6 Novelty detection-based approach for Alzheimer’s disease and mild cognitive impairment diagnosis fro
+DOI_METADATA_RETRIEVED 10.1038/s41597-023-02806-8 The BrainLat project, a multimodal neuroimaging dataset of neurodegeneration from underrepresented b
+DOI_METADATA_RETRIEVED 10.1038/s41598-026-57069-1 Explainable EEG-based machine learning for early diagnosis of Alzheimer’s disease and frontotemporal
+DOI_METADATA_RETRIEVED 10.1186/s12984-026-01897-9 Multi-dimensional EEG analysis reveals distinct neurophysiological patterns in Alzheimer’s and front
+UNVERIFIED 10.1186/s40537-025-01107-0 
+
+NOTE: DOI metadata alone cannot prove novelty.

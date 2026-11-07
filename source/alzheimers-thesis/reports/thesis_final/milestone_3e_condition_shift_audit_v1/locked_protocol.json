@@ -1,0 +1,8 @@
+{
+  "data": "Only frozen EC/EO 30s spectral features and paired held-out predictions",
+  "interpretation": "Do not ascribe feature shifts to one physiological cause or call this external validation",
+  "resampling": "3000 stratified participant-cluster bootstraps; keep five CV repetitions together",
+  "spectral_shift": "EO minus EC; also divided by SD of 64 EC participant features for descriptive comparability",
+  "status": "Exploratory descriptive post-hoc audit, not another trained model",
+  "transition_states": "correct both, wrong both, EC-correct/EO-wrong, EC-wrong/EO-correct"
+}

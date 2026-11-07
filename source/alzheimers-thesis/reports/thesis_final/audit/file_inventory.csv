@@ -1,0 +1,15 @@
+file,exists,size_bytes
+/home/user4/alzheimers-thesis/reports/baseline_features_v2.csv,1,6237
+/home/user4/alzheimers-thesis/reports/baseline_predictions_v2.csv,1,3676
+/home/user4/alzheimers-thesis/reports/eeg_cnn_cv_predictions.csv,1,1401
+/home/user4/alzheimers-thesis/reports/eegnet_v2_cv_predictions.csv,1,1398
+/home/user4/alzheimers-thesis/reports/eeg_conformer_cv_predictions.csv,1,1397
+/home/user4/alzheimers-thesis/reports/cbramod_frozen_cv_predictions.csv,1,1364
+/home/user4/alzheimers-thesis/reports/fusion_ablation_cv_predictions.csv,1,2461
+/home/user4/alzheimers-thesis/reports/robustness_repeated_nested_cv_runs.csv,1,1698
+/home/user4/alzheimers-thesis/reports/robustness_subject_audit.csv,1,2492
+/home/user4/alzheimers-thesis/reports/spectral_explain_attributions.csv,1,551
+/home/user4/alzheimers-thesis/reports/spectral_explain_permutation.csv,1,757
+/home/user4/alzheimers-thesis/reports/duration_features_60_180_300.csv,0,0
+/home/user4/alzheimers-thesis/reports/duration_nested_cv_runs.csv,0,0
+/home/user4/alzheimers-thesis/reports/duration_theta_alpha_interaction.csv,0,0

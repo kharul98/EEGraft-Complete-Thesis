@@ -1,0 +1,68 @@
+===== MILESTONE 5C: ISFAHAN STATES.XLSX LABEL AUDIT =====
+Reported: EEG_1 = 11 MCI + 16 HC; EEG_2 = 18 MCI + 16 HC.
+No clinical labels will be assigned solely from numerical codes or filenames.
+
+===== EEG_1: EXCEL WORKBOOK STRUCTURE =====
+EDF files=27; numeric file IDs=27; unique=True; IDs 1..27=True
+EDF ID sample: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+Workbook: data/external/isfahan_mci_v1/EEG_1/states.xlsx
+Workbook SHA256: bc291f1fe316b2002ca2c527791e56b21ada39854cf9b48b6f29c5b162e9666e
+Sheet 'Sheet1': nonempty rows=28, max columns=2
+First 12 nonempty rows (free-text values redacted):
+  row  1: A:<text:11chars> | B:status
+  row  2: A:1 | B:NORMAL
+  row  3: A:2 | B:MCI
+  row  4: A:3 | B:MCI
+  row  5: A:4 | B:NORMAL
+  row  6: A:5 | B:NORMAL
+  row  7: A:6 | B:MCI
+  row  8: A:7 | B:MCI
+  row  9: A:8 | B:NORMAL
+  row 10: A:9 | B:MCI
+  row 11: A:10 | B:NORMAL
+  row 12: A:11 | B:MCI
+Complete ID vectors 1..n: NONE DETECTED
+Candidate diagnostic-code vectors:
+  column B: {'normal': 16, 'mci': 11}
+Low-cardinality distributions (first 12 columns):
+  B: normal:16, mci:11, status:1
+Sheet 'Sheet2': nonempty rows=0, max columns=0
+Sheet 'Sheet3': nonempty rows=0, max columns=0
+EEG_1: candidate class vectors found=1; diagnostic mapping NOT finalized.
+
+===== EEG_2: EXCEL WORKBOOK STRUCTURE =====
+EDF files=34; numeric file IDs=34; unique=True; IDs 1..34=True
+EDF ID sample: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+Workbook: data/external/isfahan_mci_v1/EEG_2/States.xlsx
+Workbook SHA256: 4638bacaa397af664db90c7c12c72e0b407ec9b63e7fb89a12dc871506ed97f1
+Sheet 'Sheet1': nonempty rows=35, max columns=2
+First 12 nonempty rows (free-text values redacted):
+  row  1: A:<text:11chars> | B:status
+  row  2: A:1 | B:NORMAL
+  row  3: A:2 | B:NORMAL
+  row  4: A:3 | B:NORMAL
+  row  5: A:4 | B:NORMAL
+  row  6: A:5 | B:MCI
+  row  7: A:6 | B:MCI
+  row  8: A:7 | B:NORMAL
+  row  9: A:8 | B:MCI
+  row 10: A:9 | B:NORMAL
+  row 11: A:10 | B:NORMAL
+  row 12: A:11 | B:NORMAL
+Complete ID vectors 1..n: NONE DETECTED
+Candidate diagnostic-code vectors:
+  column B: {'normal': 16, 'mci': 18}
+Low-cardinality distributions (first 12 columns):
+  B: mci:18, normal:16, status:1
+EEG_2: candidate class vectors found=1; diagnostic mapping NOT finalized.
+
+===== CROSS-RELEASE IDENTITY SAFEGUARD =====
+Each release contains its own numbered EEG files.
+Repeated numeric filenames do NOT prove participants are identical.
+Different EEG file bytes do NOT prove participants are distinct.
+Clinical code meanings and file-to-label linkage must be verified before classification.
+Participant independence between releases remains UNVERIFIED.
+
+===== MILESTONE 5C METADATA PREFLIGHT COMPLETE =====
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_5c_isfahan_label_audit_v1
+No classifiers trained; no EEG or previous thesis results altered.

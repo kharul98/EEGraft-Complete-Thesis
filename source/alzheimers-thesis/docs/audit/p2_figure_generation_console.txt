@@ -1,0 +1,12 @@
+FIGURE GENERATED: P2-F01 p2_posthoc_effects.png
+FIGURE GENERATED: P2-F02 p2_quality_negative_control.png
+FIGURE GENERATED: P2-F03 p2_policy_tradeoff.png
+FIGURE GENERATED: P0-F01 p0_raw_eeg_excerpt.png
+FIGURE GENERATED: P0-F02 p0_prefix_duration_construction.png
+FIGURE GENERATED: P0-F03 p0_causal_psd_example.png
+
+===== SCIENTIFIC FIGURE GENERATION =====
+Figures: 6
+Source-code commit: 463468adf7c524472f3f72f70f43e16099adcb50
+Status: GENERATED - VISUAL QA REQUIRED
+FIGURE EVIDENCE BATCH COMPLETE

@@ -1,0 +1,90 @@
+{
+  "experiment": "nestedcv5_f3_high_only_s42",
+  "model": "high_only",
+  "train_mode": "frozen",
+  "trained_with_pretrained_weights": true,
+  "backbone_weights_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "config": {
+    "manifest": "/home/user4/alzheimers-thesis/eeg_foundation_thesis_starter/eeg_foundation_thesis/manifests/nested_cv5_dev2026/fold_3.csv",
+    "run_name": "nestedcv5_f3_high_only_s42",
+    "model": "high_only",
+    "train_mode": "frozen",
+    "weights": "",
+    "seconds": 4,
+    "high_hz": 40.0,
+    "max_windows_per_subject": 24,
+    "artifact_limit_uv": null,
+    "car": false,
+    "epochs": 15,
+    "patience": 5,
+    "batch_size": 8,
+    "lr": null,
+    "seed": 42,
+    "robustness": false,
+    "cpu": false,
+    "overwrite": false,
+    "validation_only": true
+  },
+  "subjects_per_split": {
+    "train": 33,
+    "val": 9
+  },
+  "windows_per_split": {
+    "train": 792,
+    "val": 216
+  },
+  "validation": {
+    "n_subjects": 9,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 0.7777777777777778,
+    "balanced_accuracy": 0.8,
+    "macro_f1": 0.775,
+    "majority_rate": 0.6666666666666666,
+    "ece_10_bins": 0.2130042878841913,
+    "multiclass_brier": 0.35238471624802226,
+    "confusion_matrix": [
+      [
+        3,
+        2
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 1.0,
+        "recall": 0.6,
+        "f1-score": 0.75,
+        "support": 5.0
+      },
+      "CN": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1-score": 0.8,
+        "support": 4.0
+      },
+      "accuracy": 0.7777777777777778,
+      "macro avg": {
+        "precision": 0.8333333333333333,
+        "recall": 0.8,
+        "f1-score": 0.775,
+        "support": 9.0
+      },
+      "weighted avg": {
+        "precision": 0.8518518518518517,
+        "recall": 0.7777777777777778,
+        "f1-score": 0.7722222222222223,
+        "support": 9.0
+      }
+    },
+    "auroc_ovr_macro": 0.85
+  },
+  "test": null,
+  "test_not_evaluated": true
+}

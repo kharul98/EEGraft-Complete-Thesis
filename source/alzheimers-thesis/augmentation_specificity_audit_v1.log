@@ -1,0 +1,34 @@
+===== AUGMENTATION SPECIFICITY AUDIT =====
+PASS: 46 subjects x 5 repeats x 5 test blocks; all folds and source predictions reconciled.
+
+===== THREE-MODEL BACC COMPARISON =====
+First-minute training: all-block BACC=0.7174
+  minute 1: BACC=0.7348, AD sensitivity=0.7391, HC specificity=0.7304
+  minute 2: BACC=0.7304, AD sensitivity=0.7739, HC specificity=0.6870
+  minute 3: BACC=0.7609, AD sensitivity=0.7652, HC specificity=0.7565
+  minute 4: BACC=0.7174, AD sensitivity=0.7565, HC specificity=0.6783
+  minute 5: BACC=0.6435, AD sensitivity=0.6957, HC specificity=0.5913
+Position-matched training: all-block BACC=0.7148
+  minute 1: BACC=0.7348, AD sensitivity=0.7391, HC specificity=0.7304
+  minute 2: BACC=0.7130, AD sensitivity=0.7913, HC specificity=0.6348
+  minute 3: BACC=0.7391, AD sensitivity=0.7217, HC specificity=0.7565
+  minute 4: BACC=0.6870, AD sensitivity=0.7739, HC specificity=0.6000
+  minute 5: BACC=0.7000, AD sensitivity=0.7391, HC specificity=0.6609
+Five-block training: all-block BACC=0.7209
+  minute 1: BACC=0.7348, AD sensitivity=0.7478, HC specificity=0.7217
+  minute 2: BACC=0.7261, AD sensitivity=0.7739, HC specificity=0.6783
+  minute 3: BACC=0.7261, AD sensitivity=0.7391, HC specificity=0.7130
+  minute 4: BACC=0.7130, AD sensitivity=0.7739, HC specificity=0.6522
+  minute 5: BACC=0.7043, AD sensitivity=0.7652, HC specificity=0.6435
+
+===== SUBJECT-PAIRED CONDITIONAL 95% INTERVALS =====
+PRIMARY: augmented minus baseline, all blocks: +0.0035, CI [-0.0348, +0.0392], AD change=+0.0139, HC change=-0.0070
+Augmented minus position-matched, all blocks: +0.0061, CI [-0.0226, +0.0357], AD change=+0.0070, HC change=+0.0052
+Augmented minus baseline, minute 5: +0.0609, CI [+0.0217, +0.1087], AD change=+0.0696, HC change=+0.0522
+Augmented minus minute-5 specialist, minute 5: +0.0043, CI [-0.0478, +0.0522], AD change=+0.0261, HC change=-0.0174
+Minute-5 specialist minus baseline, minute 5: +0.0565, CI [-0.0087, +0.1262], AD change=+0.0435, HC change=+0.0696
+Augmented minus baseline, minute 3: -0.0348, CI [-0.0957, +0.0262], AD change=-0.0261, HC change=-0.0435
+
+===== AUGMENTATION SPECIFICITY AUDIT COMPLETE =====
+Outputs: /home/user4/alzheimers-thesis/reports/thesis_final/augmentation_specificity_audit_v1
+No retraining. Post-hoc conditional estimates; not independent external validation.

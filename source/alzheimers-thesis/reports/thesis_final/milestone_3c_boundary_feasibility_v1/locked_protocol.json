@@ -1,0 +1,13 @@
+{
+  "aim": "Assess uninterrupted shorter windows before zero-shot prediction",
+  "candidate_start_grid_seconds": 10,
+  "continuity": "Exclude candidates containing an EEGLAB boundary annotation",
+  "endpoint": "Group-specific eligibility only; no classification or label-based window choice",
+  "epoch_seconds": 2,
+  "min_clean_epochs": 8,
+  "new_window_seconds": 30,
+  "original_60s_eligibility": "Preserved as recorded in Milestone 3B",
+  "screen": "Reject >=3 EEG channels ptp>200uV; any ptp>300uV; any std<0.5uV",
+  "selection": "Earliest continuous quality-eligible 30-second window",
+  "version": "m3c_boundary_feasibility_v1"
+}

@@ -1,0 +1,47 @@
+{
+  "bootstrap": "2500 class-stratified subject-clustered resamples, same subject multiplicities across all five repeats and minutes; fixed predictions and no model refitting",
+  "classification": "Original SVM hard prediction; no threshold tuning or calibration",
+  "cross_release_identity": "Unknown; no pooling and no cross-release transfer in this experiment",
+  "grid": {
+    "C": [
+      0.1,
+      1,
+      10
+    ],
+    "gamma": [
+      "scale",
+      0.01,
+      0.1
+    ]
+  },
+  "inner_seed_rule": "1000 + 100*repeat_index + outer_fold_index; zero-based indexes",
+  "inner_selection": "3-fold stratified CV balanced accuracy using only outer-training first-minute vectors",
+  "model": "StandardScaler + class-weight-balanced RBF SVC",
+  "outer_assessment": "5-fold stratified CV x 5 repeats; each recording tested once per repeat",
+  "outer_seeds": [
+    42,
+    142,
+    242,
+    342,
+    442
+  ],
+  "prediction_minutes": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "release_handling": "Completely separate training, tuning, and testing by release",
+  "source_checksums": {
+    "M5D_v2_QC_sha256": "5e4f79f95981b8919040fb1c2bd71e5a217ada4e09e67c940daf8ab9727a5acf",
+    "M5D_v2_manifest_sha256": "c2bb272697b31c7e842e119e70d0ca567a3bc39dc1761ef1e132a8286ff2b1f7",
+    "M5F_v2_features_sha256": "ead8981b0741fa67c794be18e2ad6bcb3d719037238c02e53ed50955a39923f7",
+    "M5F_v2_protocol_sha256": "c352c25658bff50de9bb3dbb3886adfc2aa065b819744a550f1faec4e65e1576"
+  },
+  "temporal_state_rule": "stable-correct if all five predictions correct; stable-wrong if all five wrong; otherwise unstable",
+  "training_minutes": [
+    1
+  ],
+  "version": "m5g_v1"
+}

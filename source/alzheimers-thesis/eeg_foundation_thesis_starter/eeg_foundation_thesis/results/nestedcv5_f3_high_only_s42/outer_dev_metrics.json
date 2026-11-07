@@ -1,0 +1,58 @@
+{
+  "run_name": "nestedcv5_f3_high_only_s42",
+  "manifest": "/home/user4/alzheimers-thesis/eeg_foundation_thesis_starter/eeg_foundation_thesis/manifests/nested_cv5_dev2026/fold_3.csv",
+  "n_outer_subjects": 10,
+  "outer_development_metrics": {
+    "n_subjects": 10,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 0.8,
+    "balanced_accuracy": 0.8333333333333333,
+    "macro_f1": 0.8,
+    "majority_rate": 0.6,
+    "ece_10_bins": 0.1559250338468701,
+    "multiclass_brier": 0.2649190959985351,
+    "confusion_matrix": [
+      [
+        4,
+        2
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1-score": 0.8,
+        "support": 6.0
+      },
+      "CN": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1-score": 0.8,
+        "support": 4.0
+      },
+      "accuracy": 0.8,
+      "macro avg": {
+        "precision": 0.8333333333333333,
+        "recall": 0.8333333333333333,
+        "f1-score": 0.8,
+        "support": 10.0
+      },
+      "weighted avg": {
+        "precision": 0.8666666666666666,
+        "recall": 0.8,
+        "f1-score": 0.8,
+        "support": 10.0
+      }
+    },
+    "auroc_ovr_macro": 1.0
+  },
+  "original_final_test_evaluated": false
+}

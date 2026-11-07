@@ -1,0 +1,19 @@
+{
+  "cohort": "46 AD/HC subjects from ds004504",
+  "limitations": [
+    "Previously examined participants",
+    "Exploratory secondary comparisons",
+    "Unequal training durations",
+    "No external validation",
+    "Full-session preprocessing"
+  ],
+  "mechanism_check": "Augmented versus fifth-minute specialist on held-out minute five",
+  "models": [
+    "First-minute-trained SVM",
+    "Position-matched minute-specific SVM",
+    "Five-block-augmented SVM"
+  ],
+  "primary_check": "Augmented versus first-minute SVM; mean BACC across five test blocks",
+  "status": "Post-hoc exploratory audit; no new model fitting",
+  "uncertainty": "Stratified participant bootstrap; retain all repetitions and blocks together"
+}

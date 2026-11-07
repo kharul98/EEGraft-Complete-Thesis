@@ -1,0 +1,33 @@
+===== DISJOINT EEG REFERENCE STUDY =====
+Reference: 240-300s; early prefixes: 30-180s
+Processed 22/88 recordings
+Processed 44/88 recordings
+Processed 66/88 recordings
+Processed 88/88 recordings
+
+===== DISJOINT REFERENCE RESULTS =====
+Participants: 88
+Evaluation rows: 352
+Previous feature reproduction error: 4.996419944447439e-13
+
+Median spectral TV distance:
+seconds
+30     0.033349
+60     0.027038
+120    0.023538
+180    0.021675
+
+===== PAIRED REPRODUCIBILITY RESULTS =====
+120_minus_60 [-0.002958, -0.005462, -0.000195]
+180_minus_60 [-0.004732, -0.007646, -0.001791]
+other_subject_minus_same_subject_at_60 [0.033516, 0.022769, 0.045373]
+
+===== ONLINE STABILITY PREDICTIVENESS =====
+Spearman correlations: {'60': -0.06243175654256631, '120': 0.10903103096051567, '180': 0.13430312422950938}
+
+Late 30s halves median distance: 0.028075
+Early 60s distance: 0.027038
+Delayed 60s distance: 0.024169
+
+Not an independent-cohort or clinical validation.
+P2 DISJOINT REFERENCE ANALYSIS COMPLETE

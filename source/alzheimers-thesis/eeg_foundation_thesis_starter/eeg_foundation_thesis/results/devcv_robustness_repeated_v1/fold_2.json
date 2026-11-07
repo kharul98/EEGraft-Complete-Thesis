@@ -1,0 +1,12 @@
+{
+  "fold": 2,
+  "manifest_sha256": "4290cb90618cdc2cde68a35e8813f4b9c30064636205f648ebe3f0700a659cc6",
+  "backbone_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "n_repeats": 5,
+  "conditions": [
+    "noise_10pct",
+    "noise_20pct",
+    "one_channel_zeroed"
+  ],
+  "original_final_test_evaluated": false
+}

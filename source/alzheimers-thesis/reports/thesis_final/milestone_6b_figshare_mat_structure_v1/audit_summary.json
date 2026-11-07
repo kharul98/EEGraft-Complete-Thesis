@@ -1,0 +1,26 @@
+{
+  "archive_sha256": "180fd998a5260f20b57a95a5b3c7f7c8e86b00dc35db009d1475a1344e94277f",
+  "channel_alignment_verified": false,
+  "file_counts_by_group": {
+    "AD": 305,
+    "CONTROL": 110,
+    "MCI": 56
+  },
+  "folders_with_mat_by_group": {
+    "AD": 57,
+    "CONTROL": 2,
+    "MCI": 7
+  },
+  "mat_files": 471,
+  "mat_header_status": {
+    "MAT_HEADER_OK": 471
+  },
+  "minute_wise_temporal_continuity_verified": false,
+  "no_eeg_extracted": true,
+  "no_model_training": true,
+  "participant_independence_verified": false,
+  "root_mat_files_by_group": {
+    "CONTROL": 100
+  },
+  "sampling_rate_verified": false
+}

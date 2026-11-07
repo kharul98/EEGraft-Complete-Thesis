@@ -1,0 +1,30 @@
+===== DRYAD AD STRUCTURE AUDIT =====
+Reading: /home/user4/alzheimers-thesis/data/dryad_padic/alz_c1_new.mat
+
+===== DRYAD REFERENCE INVENTORY =====
+source_file : alz_c1_new.mat
+source_size_bytes : 3813216803
+reference_grid_shape : [3, 43]
+occupied_signal_slots : 129
+unique_signal_references : 50
+unique_filename_fingerprints : 49
+potential_300s_slots_assuming_500hz : 49
+slots_by_row : {'1': 43, '2': 43, '3': 43}
+column_occupancy_distribution : {'3': 43}
+n_first_ref_shape : (1, 1)
+n_first_ref_dtype : object
+
+===== SIGNAL SHAPE EXAMPLES =====
+ slot_row  slot_column signal_shape   dtype  candidate_300s_at_500hz
+        1            1 (452152, 19) float64                     True
+        1            2 (514502, 19) float64                     True
+        1            3 (616652, 19) float64                     True
+        1            4 (526802, 19) float64                     True
+        1            5 (616802, 19) float64                     True
+        1            6 (460702, 19) float64                     True
+        1            7 (618502, 19) float64                     True
+        1            8 (549502, 19) float64                     True
+
+Metadata audit saved.
+No complete EEG arrays were loaded.
+===== DRYAD STRUCTURE AUDIT COMPLETE =====

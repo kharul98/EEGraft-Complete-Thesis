@@ -1,0 +1,88 @@
+===== THESIS FINAL AUDIT =====
+
+===== DATASET COHORT =====
+Total subjects: 88
+Group counts: {'A': 36, 'C': 29, 'F': 23}
+A / CANDIDATE: 23
+A / NO_UNINTERRUPTED_WINDOW: 11
+A / REVIEW: 2
+C / CANDIDATE: 23
+C / NO_UNINTERRUPTED_WINDOW: 5
+C / REVIEW: 1
+F / CANDIDATE: 18
+F / NO_UNINTERRUPTED_WINDOW: 5
+
+===== PRIMARY COHORT =====
+Included subjects: 46
+Included AD: 23
+Included Healthy: 23
+Excluded AD/Healthy: 19
+
+===== EXCLUSION BREAKDOWN =====
+('A', 'NO_UNINTERRUPTED_WINDOW'): 11
+('A', 'REVIEW'): 2
+('C', 'NO_UNINTERRUPTED_WINDOW'): 5
+('C', 'REVIEW'): 1
+
+Participant metadata: FOUND
+Participant audit saved: /home/user4/alzheimers-thesis/reports/thesis_final/audit/participant_audit.csv
+
+===== EEG RECORDING VALIDATION =====
+Checked 10/46
+Checked 20/46
+Checked 30/46
+Checked 40/46
+Checked 46/46
+Files or metadata with errors: 0
+Selected windows crossing boundaries: 0
+
+===== SPECTRAL FEATURE AUDIT =====
+Spectral feature matrix: (46, 6)
+All spectral features finite: PASS
+
+===== MODEL PREDICTION AUDIT =====
+LogisticRegression: accuracy=0.7174, BACC=0.7174, AUC=0.8733
+SVM: accuracy=0.7609, BACC=0.7609, AUC=0.8129
+RandomForest: accuracy=0.6957, BACC=0.6957, AUC=0.7486
+NestedSelection: accuracy=0.6957, BACC=0.6957, AUC=0.8072
+BasicCNN: accuracy=0.7174, BACC=0.7174, AUC=0.7750
+EEGNetV1: accuracy=0.5217, BACC=0.5217, AUC=0.5747
+EEGNetV2: accuracy=0.6957, BACC=0.6957, AUC=0.8072
+EEGConformer: accuracy=0.7174, BACC=0.7174, AUC=0.8393
+CBraModFrozen: accuracy=0.7174, BACC=0.7174, AUC=0.7306
+
+===== REPEATED CV AUDIT =====
+LogisticRegression: runs=10, mean=0.7478, SD=0.0293, min=0.6957, max=0.8043
+RBF_SVM: runs=10, mean=0.7609, SD=0.0271, min=0.7174, max=0.8043
+
+===== DURATION EXPERIMENT AUDIT =====
+Duration feature report: NOT YET AVAILABLE
+Duration CV report: NOT YET AVAILABLE
+
+===== PROJECT INVENTORY =====
+FOUND   baseline_features_v2.csv
+FOUND   baseline_predictions_v2.csv
+FOUND   eeg_cnn_cv_predictions.csv
+FOUND   eegnet_v2_cv_predictions.csv
+FOUND   eeg_conformer_cv_predictions.csv
+FOUND   cbramod_frozen_cv_predictions.csv
+FOUND   fusion_ablation_cv_predictions.csv
+FOUND   robustness_repeated_nested_cv_runs.csv
+FOUND   robustness_subject_audit.csv
+FOUND   spectral_explain_attributions.csv
+FOUND   spectral_explain_permutation.csv
+MISSING duration_features_60_180_300.csv
+MISSING duration_nested_cv_runs.csv
+MISSING duration_theta_alpha_interaction.csv
+
+===== FINAL AUDIT SUMMARY =====
+Participants in primary cohort: 46
+Participant model predictions audited: 414
+Audited model result rows: 9
+Recording errors: 0
+Boundary crossing errors: 0
+Issues requiring review: 0
+
+Audit files: /home/user4/alzheimers-thesis/reports/thesis_final/audit
+Original EEG and existing experiment reports unchanged.
+Metrics verified from CSVs do not independently validate the original training implementations.

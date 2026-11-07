@@ -1,0 +1,130 @@
+slot_row,slot_column,reference_path,signal_shape,eeg_19channel_array,samples,seconds_if_500hz,eligible_by_length_only
+1,1,/#refs#/ld,"(452152, 19)",True,452152,904.304,True
+1,2,/#refs#/md,"(514502, 19)",True,514502,1029.004,True
+1,3,/#refs#/nd,"(616652, 19)",True,616652,1233.304,True
+1,4,/#refs#/od,"(526802, 19)",True,526802,1053.604,True
+1,5,/#refs#/pd,"(616802, 19)",True,616802,1233.604,True
+1,6,/#refs#/qd,"(460702, 19)",True,460702,921.404,True
+1,7,/#refs#/rd,"(618502, 19)",True,618502,1237.004,True
+1,8,/#refs#/sd,"(549502, 19)",True,549502,1099.004,True
+1,9,/#refs#/td,"(515502, 19)",True,515502,1031.004,True
+1,10,/#refs#/ud,"(509002, 19)",True,509002,1018.004,True
+1,11,/#refs#/vd,"(593502, 19)",True,593502,1187.004,True
+1,12,/#refs#/wd,"(485002, 19)",True,485002,970.004,True
+1,13,/#refs#/xd,"(666502, 19)",True,666502,1333.004,True
+1,14,/#refs#/yd,"(586502, 19)",True,586502,1173.004,True
+1,15,/#refs#/zd,"(646502, 19)",True,646502,1293.004,True
+1,16,/#refs#/Ad,"(611402, 19)",True,611402,1222.804,True
+1,17,/#refs#/Bd,"(482002, 19)",True,482002,964.004,True
+1,18,/#refs#/Cd,"(750002, 19)",True,750002,1500.004,True
+1,19,/#refs#/Dd,"(667002, 19)",True,667002,1334.004,True
+1,20,/#refs#/Ed,"(629502, 19)",True,629502,1259.004,True
+1,21,/#refs#/Fd,"(603502, 19)",True,603502,1207.004,True
+1,22,/#refs#/Gd,"(490502, 19)",True,490502,981.004,True
+1,23,/#refs#/Hd,"(489002, 19)",True,489002,978.004,True
+1,24,/#refs#/Id,"(456402, 19)",True,456402,912.804,True
+1,25,/#refs#/Jd,"(468002, 19)",True,468002,936.004,True
+1,26,/#refs#/Kd,"(471502, 19)",True,471502,943.004,True
+1,27,/#refs#/Ld,"(510202, 19)",True,510202,1020.404,True
+1,28,/#refs#/Md,"(525002, 19)",True,525002,1050.004,True
+1,29,/#refs#/Nd,"(561502, 19)",True,561502,1123.004,True
+1,30,/#refs#/Od,"(627502, 19)",True,627502,1255.004,True
+1,31,/#refs#/Pd,"(458502, 19)",True,458502,917.004,True
+1,32,/#refs#/Qd,"(640502, 19)",True,640502,1281.004,True
+1,33,/#refs#/Rd,"(604502, 19)",True,604502,1209.004,True
+1,34,/#refs#/Sd,"(619002, 19)",True,619002,1238.004,True
+1,35,/#refs#/Td,"(667502, 19)",True,667502,1335.004,True
+1,36,/#refs#/Ud,"(663002, 19)",True,663002,1326.004,True
+1,37,/#refs#/Vd,"(674502, 19)",True,674502,1349.004,True
+1,38,/#refs#/Wd,"(642002, 19)",True,642002,1284.004,True
+1,39,/#refs#/Xd,"(554502, 19)",True,554502,1109.004,True
+1,40,/#refs#/Yd,"(673002, 19)",True,673002,1346.004,True
+1,41,/#refs#/Zd,"(627002, 19)",True,627002,1254.004,True
+1,42,/#refs#/1d,"(680502, 19)",True,680502,1361.004,True
+1,43,/#refs#/2d,"(506202, 19)",True,506202,1012.404,True
+2,1,/#refs#/a,"(2,)",False,0,,False
+2,2,/#refs#/a,"(2,)",False,0,,False
+2,3,/#refs#/a,"(2,)",False,0,,False
+2,4,/#refs#/a,"(2,)",False,0,,False
+2,5,/#refs#/3d,"(623552, 19)",True,623552,1247.104,True
+2,6,/#refs#/a,"(2,)",False,0,,False
+2,7,/#refs#/a,"(2,)",False,0,,False
+2,8,/#refs#/a,"(2,)",False,0,,False
+2,9,/#refs#/a,"(2,)",False,0,,False
+2,10,/#refs#/a,"(2,)",False,0,,False
+2,11,/#refs#/a,"(2,)",False,0,,False
+2,12,/#refs#/a,"(2,)",False,0,,False
+2,13,/#refs#/a,"(2,)",False,0,,False
+2,14,/#refs#/a,"(2,)",False,0,,False
+2,15,/#refs#/a,"(2,)",False,0,,False
+2,16,/#refs#/a,"(2,)",False,0,,False
+2,17,/#refs#/a,"(2,)",False,0,,False
+2,18,/#refs#/a,"(2,)",False,0,,False
+2,19,/#refs#/4d,"(648652, 19)",True,648652,1297.304,True
+2,20,/#refs#/a,"(2,)",False,0,,False
+2,21,/#refs#/a,"(2,)",False,0,,False
+2,22,/#refs#/a,"(2,)",False,0,,False
+2,23,/#refs#/a,"(2,)",False,0,,False
+2,24,/#refs#/a,"(2,)",False,0,,False
+2,25,/#refs#/a,"(2,)",False,0,,False
+2,26,/#refs#/a,"(2,)",False,0,,False
+2,27,/#refs#/5d,"(1262502, 19)",True,1262502,2525.004,True
+2,28,/#refs#/a,"(2,)",False,0,,False
+2,29,/#refs#/a,"(2,)",False,0,,False
+2,30,/#refs#/a,"(2,)",False,0,,False
+2,31,/#refs#/a,"(2,)",False,0,,False
+2,32,/#refs#/a,"(2,)",False,0,,False
+2,33,/#refs#/6d,"(607202, 19)",True,607202,1214.404,True
+2,34,/#refs#/a,"(2,)",False,0,,False
+2,35,/#refs#/a,"(2,)",False,0,,False
+2,36,/#refs#/a,"(2,)",False,0,,False
+2,37,/#refs#/a,"(2,)",False,0,,False
+2,38,/#refs#/a,"(2,)",False,0,,False
+2,39,/#refs#/a,"(2,)",False,0,,False
+2,40,/#refs#/a,"(2,)",False,0,,False
+2,41,/#refs#/a,"(2,)",False,0,,False
+2,42,/#refs#/a,"(2,)",False,0,,False
+2,43,/#refs#/a,"(2,)",False,0,,False
+3,1,/#refs#/a,"(2,)",False,0,,False
+3,2,/#refs#/a,"(2,)",False,0,,False
+3,3,/#refs#/a,"(2,)",False,0,,False
+3,4,/#refs#/a,"(2,)",False,0,,False
+3,5,/#refs#/7d,"(417502, 19)",True,417502,835.004,True
+3,6,/#refs#/a,"(2,)",False,0,,False
+3,7,/#refs#/a,"(2,)",False,0,,False
+3,8,/#refs#/a,"(2,)",False,0,,False
+3,9,/#refs#/a,"(2,)",False,0,,False
+3,10,/#refs#/a,"(2,)",False,0,,False
+3,11,/#refs#/a,"(2,)",False,0,,False
+3,12,/#refs#/a,"(2,)",False,0,,False
+3,13,/#refs#/a,"(2,)",False,0,,False
+3,14,/#refs#/a,"(2,)",False,0,,False
+3,15,/#refs#/a,"(2,)",False,0,,False
+3,16,/#refs#/a,"(2,)",False,0,,False
+3,17,/#refs#/a,"(2,)",False,0,,False
+3,18,/#refs#/a,"(2,)",False,0,,False
+3,19,/#refs#/a,"(2,)",False,0,,False
+3,20,/#refs#/a,"(2,)",False,0,,False
+3,21,/#refs#/a,"(2,)",False,0,,False
+3,22,/#refs#/a,"(2,)",False,0,,False
+3,23,/#refs#/a,"(2,)",False,0,,False
+3,24,/#refs#/a,"(2,)",False,0,,False
+3,25,/#refs#/a,"(2,)",False,0,,False
+3,26,/#refs#/a,"(2,)",False,0,,False
+3,27,/#refs#/8d,"(260802, 19)",True,260802,521.604,True
+3,28,/#refs#/a,"(2,)",False,0,,False
+3,29,/#refs#/a,"(2,)",False,0,,False
+3,30,/#refs#/a,"(2,)",False,0,,False
+3,31,/#refs#/a,"(2,)",False,0,,False
+3,32,/#refs#/a,"(2,)",False,0,,False
+3,33,/#refs#/a,"(2,)",False,0,,False
+3,34,/#refs#/a,"(2,)",False,0,,False
+3,35,/#refs#/a,"(2,)",False,0,,False
+3,36,/#refs#/a,"(2,)",False,0,,False
+3,37,/#refs#/a,"(2,)",False,0,,False
+3,38,/#refs#/a,"(2,)",False,0,,False
+3,39,/#refs#/a,"(2,)",False,0,,False
+3,40,/#refs#/a,"(2,)",False,0,,False
+3,41,/#refs#/a,"(2,)",False,0,,False
+3,42,/#refs#/a,"(2,)",False,0,,False
+3,43,/#refs#/a,"(2,)",False,0,,False

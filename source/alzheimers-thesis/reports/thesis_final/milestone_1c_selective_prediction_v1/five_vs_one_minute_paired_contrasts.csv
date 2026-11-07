@@ -1,0 +1,13 @@
+task,five_minute_method,comparator,target_coverage,BACC_difference,conditional_ci_low,conditional_ci_high,note
+AD_vs_HC,five_minute_probability_consistency,first_minute_original_label_support,0.9,-0.006866324735187446,-0.041421962137867335,0.026568940672061902,Comparison uses unequal EEG acquisition durations
+AD_vs_HC,five_minute_probability_consistency,first_minute_original_label_support,0.8,-0.037905210418448854,-0.0879444899640772,0.033276501994316296,Comparison uses unequal EEG acquisition durations
+AD_vs_HC,five_minute_probability_consistency,first_minute_original_label_support,0.7,-0.009514302929406582,-0.09543140531448888,0.055355142769179515,Comparison uses unequal EEG acquisition durations
+AD_vs_HC,five_minute_label_consensus,first_minute_original_label_support,0.9,-0.007588678451114772,-0.03786446525983477,0.025268485937320135,Comparison uses unequal EEG acquisition durations
+AD_vs_HC,five_minute_label_consensus,first_minute_original_label_support,0.8,-0.02444273835628541,-0.06471090334328355,0.031222478772223745,Comparison uses unequal EEG acquisition durations
+AD_vs_HC,five_minute_label_consensus,first_minute_original_label_support,0.7,0.00280340134464796,-0.06444631414941238,0.04890392478046186,Comparison uses unequal EEG acquisition durations
+FTD_vs_HC,five_minute_probability_consistency,first_minute_original_label_support,0.9,-0.008919370027384854,-0.04172431173451983,0.031001792081270657,Comparison uses unequal EEG acquisition durations
+FTD_vs_HC,five_minute_probability_consistency,first_minute_original_label_support,0.8,-0.010205444471952374,-0.06748672243141242,0.05556667557037265,Comparison uses unequal EEG acquisition durations
+FTD_vs_HC,five_minute_probability_consistency,first_minute_original_label_support,0.7,0.008576391262367533,-0.07189226871619699,0.08847224851936074,Comparison uses unequal EEG acquisition durations
+FTD_vs_HC,five_minute_label_consensus,first_minute_original_label_support,0.9,0.003958989643150113,-0.028901475374041787,0.039423860184764875,Comparison uses unequal EEG acquisition durations
+FTD_vs_HC,five_minute_label_consensus,first_minute_original_label_support,0.8,0.004645342561061416,-0.04733871875037774,0.06721085632404974,Comparison uses unequal EEG acquisition durations
+FTD_vs_HC,five_minute_label_consensus,first_minute_original_label_support,0.7,0.02605634513670252,-0.05316415820605764,0.11001700879256662,Comparison uses unequal EEG acquisition durations

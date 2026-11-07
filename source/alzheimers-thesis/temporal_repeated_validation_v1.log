@@ -1,0 +1,48 @@
+===== REPEATED TEMPORAL TRANSPORTABILITY =====
+Source: /home/user4/alzheimers-thesis/reports/thesis_final/duration_locked_v1
+Reproduced repeat 1/5: saved 60s labels and scores match
+Reproduced repeat 2/5: saved 60s labels and scores match
+Reproduced repeat 3/5: saved 60s labels and scores match
+Reproduced repeat 4/5: saved 60s labels and scores match
+Reproduced repeat 5/5: saved 60s labels and scores match
+VALIDATION PASS: 5 repeats x 46 subjects x 5 blocks
+
+===== REPEAT-LEVEL SUMMARY =====
+Repeat 1: flips=24/46; block BACC=0.761/0.717/0.783/0.696/0.630; vote3=0.761; vote5=0.739; agree5=22/46
+Repeat 2: flips=19/46; block BACC=0.717/0.739/0.761/0.761/0.652; vote3=0.739; vote5=0.761; agree5=27/46
+Repeat 3: flips=18/46; block BACC=0.739/0.783/0.783/0.717/0.696; vote3=0.761; vote5=0.739; agree5=28/46
+Repeat 4: flips=20/46; block BACC=0.739/0.761/0.761/0.717/0.630; vote3=0.761; vote5=0.739; agree5=26/46
+Repeat 5: flips=21/46; block BACC=0.717/0.652/0.717/0.696/0.609; vote3=0.739; vote5=0.717; agree5=25/46
+
+===== MEAN ACROSS FIVE CORRELATED CV REPEATS =====
+first60        mean BACC=0.7348, repeat SD=0.0182
+vote3          mean BACC=0.7522, repeat SD=0.0119
+vote5          mean BACC=0.7391, repeat SD=0.0154
+retrained180   mean BACC=0.8130, repeat SD=0.0451
+retrained300   mean BACC=0.7652, repeat SD=0.0238
+block2         mean BACC=0.7304, repeat SD=0.0500
+block3         mean BACC=0.7609, repeat SD=0.0266
+block4         mean BACC=0.7174, repeat SD=0.0266
+block5         mean BACC=0.6435, repeat SD=0.0330
+Mean class-reversal rate: 0.4435
+Participants with a reversal in at least one repeat: 27/46
+Agreement >= 4/5: coverage=0.848, selected BACC=0.7747, selected accuracy=0.7740, first-60s accuracy on SAME people=0.7740
+Agreement >= 5/5: coverage=0.557, selected BACC=0.8421, selected accuracy=0.8443, first-60s accuracy on SAME people=0.8443
+
+===== SUBJECT-PAIRED CONDITIONAL 95% BOOTSTRAP =====
+block5_minus_block1: -0.0913, conditional 95% CI [-0.2000, +0.0174]
+block3_minus_block1: +0.0261, conditional 95% CI [-0.0632, +0.1174]
+vote3_minus_first60: +0.0174, conditional 95% CI [-0.0304, +0.0783]
+vote5_minus_first60: +0.0043, conditional 95% CI [-0.0609, +0.0739]
+vote3_minus_180s: -0.0609, conditional 95% CI [-0.1240, -0.0043]
+vote5_minus_300s: -0.0261, conditional 95% CI [-0.0979, +0.0435]
+retrained180_minus_first60: +0.0783, conditional 95% CI [+0.0000, +0.1652]
+retrained300_minus_first60: +0.0304, conditional 95% CI [-0.0609, +0.1261]
+
+Mean participant reversal rate: 0.4435
+Conditional participant-bootstrap 95% CI: [0.3304, 0.5652]
+
+===== REPEATED TEMPORAL STUDY COMPLETE =====
+Saved results: /home/user4/alzheimers-thesis/reports/thesis_final/temporal_repeated_v1
+Training-only scaling and tuning; held-out blocks were never used for fitting.
+Repeated CV results are correlated. Bootstrap intervals are conditional on the evaluated protocol.

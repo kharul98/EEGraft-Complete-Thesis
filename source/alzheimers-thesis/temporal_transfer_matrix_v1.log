@@ -1,0 +1,43 @@
+===== FIVE-BY-FIVE TEMPORAL TRANSFER TEST =====
+Source: /home/user4/alzheimers-thesis/reports/thesis_final/duration_locked_v1
+PASS: Feature values, participants, and original first-minute inputs verified.
+Repeat 1/5: all training positions complete; historical reproduction PASS
+Repeat 2/5: all training positions complete; historical reproduction PASS
+Repeat 3/5: all training positions complete; historical reproduction PASS
+Repeat 4/5: all training positions complete; historical reproduction PASS
+Repeat 5/5: all training positions complete; historical reproduction PASS
+
+===== MEAN CROSS-BLOCK BACC MATRIX =====
+Rows = TRAIN block; columns = HELD-OUT TEST block
+             test1   test2   test3   test4   test5
+train1       0.735 0.730 0.761 0.717 0.643
+train2       0.748 0.713 0.748 0.739 0.652
+train3       0.739 0.743 0.739 0.722 0.683
+train4       0.722 0.730 0.730 0.687 0.674
+train5       0.717 0.670 0.752 0.704 0.700
+
+===== MATCHED VS CROSS-POSITION PERFORMANCE =====
+matched_position: +0.7148, conditional 95% CI [+0.6261, +0.8000]
+cross_position: +0.7163, conditional 95% CI [+0.6257, +0.8007]
+match_minus_cross: -0.0015, conditional 95% CI [-0.0274, +0.0228]
+last_block_rescue: +0.0565, conditional 95% CI [-0.0087, +0.1261]
+source1_target5_minus_source1_target1: -0.0913, conditional 95% CI [-0.2000, +0.0174]
+source5_target5: +0.7000, conditional 95% CI [+0.5870, +0.8043]
+source1_target5: +0.6435, conditional 95% CI [+0.5174, +0.7652]
+
+===== PERFORMANCE BY TEMPORAL DISTANCE =====
+Distance 0: mean BACC=0.7148, conditional 95% CI [0.6261, 0.8000]
+Distance 1: mean BACC=0.7250, conditional 95% CI [0.6348, 0.8120]
+Distance 2: mean BACC=0.7341, conditional 95% CI [0.6420, 0.8181]
+Distance 3: mean BACC=0.6902, conditional 95% CI [0.5978, 0.7804]
+Distance 4: mean BACC=0.6804, conditional 95% CI [0.5826, 0.7740]
+
+===== QUALITY CHECK: BLOCK 1 VS BLOCK 5 =====
+A: median clean fraction block1=0.967, block5=0.967
+C: median clean fraction block1=0.967, block5=0.967
+
+===== TEMPORAL TRANSFER MATRIX COMPLETE =====
+Outputs: /home/user4/alzheimers-thesis/reports/thesis_final/temporal_transfer_matrix_v1
+No original EEG data or historical model results modified.
+Conditional intervals do not capture all model-retraining uncertainty.
+All results remain exploratory; no external validation was performed.

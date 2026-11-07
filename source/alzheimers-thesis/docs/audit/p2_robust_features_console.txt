@@ -1,0 +1,32 @@
+===== P2 CAUSAL ROBUST FEATURE DEVELOPMENT =====
+Processed 22/88 participants
+Processed 44/88 participants
+Processed 66/88 participants
+Processed 88/88 participants
+
+===== P2 PREFIX FEATURE SUMMARY =====
+Participants: 88
+Prefix rows: 440
+Durations: [30, 60, 120, 180, 300]
+
+Median fraction of samples above 200 uV:
+group
+A    0.1960
+C    0.2305
+F    0.1813
+
+Spectral drift median by duration:
+seconds
+30        NaN
+60     0.0177
+120    0.0114
+180    0.0075
+300    0.0065
+
+LIMITATIONS:
+- This is NOT validated artifact removal.
+- Amplitude flags are descriptive.
+- Prefixes are overlapping observations.
+- No participants were excluded.
+
+P2 PREFIX-VALID ROBUST FEATURES COMPLETE

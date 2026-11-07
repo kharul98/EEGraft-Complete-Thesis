@@ -1,0 +1,9 @@
+finding,estimate,ci_low,ci_high,ci_type,source,status
+Within-recording class reversal across five blocks,0.4434782608695652,0.32608695652173914,0.5652173913043478,conditional subject bootstrap,first_minute_blocks + repeat_level_results,exploratory
+Mean 180-second SVM duration BACC,0.8130434782608695,,,mean of correlated CV repeats,duration_runs,exploratory
+"PRIMARY: augmented minus baseline, all blocks",0.0034782608695652167,-0.034782608695652174,0.03915217391304357,conditional participant bootstrap,specificity_contrasts,exploratory
+"Augmented minus position-matched, all blocks",0.00608695652173913,-0.02263043478260869,0.03565217391304348,conditional participant bootstrap,specificity_contrasts,exploratory
+"Augmented minus baseline, minute 5",0.0608695652173913,0.021739130434782608,0.10869565217391305,conditional participant bootstrap,specificity_contrasts,exploratory
+"Augmented minus minute-5 specialist, minute 5",0.004347826086956526,-0.04782608695652175,0.052173913043478265,conditional participant bootstrap,specificity_contrasts,exploratory
+"Minute-5 specialist minus baseline, minute 5",0.05652173913043479,-0.008695652173913042,0.12619565217391346,conditional participant bootstrap,specificity_contrasts,exploratory
+"Augmented minus baseline, minute 3",-0.034782608695652174,-0.09565217391304348,0.026195652173913446,conditional participant bootstrap,specificity_contrasts,exploratory

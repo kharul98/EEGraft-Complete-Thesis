@@ -1,0 +1,23 @@
+===== BRAINLAT METADATA-LINKED SITE SENSITIVITY =====
+Previously analyzed recordings: 36
+Site labels unmatched: 0
+Unique recording IDs: 36
+
+===== BY COHORT AND SITE =====
+AD/AR: {'n': 10, 'mean_delta': 0.0020225063051664003, 'median_delta': -0.001971174740873, 'fraction_negative': 0.6, 'negative_count': 6, 'mean_leave_one_out_min': -0.0010744836559262217, 'mean_leave_one_out_max': 0.005645893451551556, 'max_abs_delta': 0.0305879780123, 'median_channel_rms_uv': 5.350913980745}
+AD/CL: {'n': 18, 'mean_delta': 0.009385929001810723, 'median_delta': 0.007743562797815, 'fraction_negative': 0.4444444444444444, 'negative_count': 8, 'mean_leave_one_out_min': 0.007012174333093707, 'mean_leave_one_out_max': 0.012469983725858412, 'max_abs_delta': 0.04973975837, 'median_channel_rms_uv': 4.84342050205}
+HC/AR: {'n': 8, 'mean_delta': 7.65058203854997e-05, 'median_delta': -0.003307215718748, 'fraction_negative': 0.5, 'negative_count': 4, 'mean_leave_one_out_min': -0.00557406859415943, 'mean_leave_one_out_max': 0.0031300618648977137, 'max_abs_delta': 0.0396305267222, 'median_channel_rms_uv': 1.1186543547799999}
+
+===== ACQUISITION FILE VARIANTS =====
+variant  rs  rs-HEP
+cohort             
+AD        0      28
+HC        8       0
+
+===== COHORT DISTRIBUTIONS =====
+AD: {'n': 28, 'mean_delta': 0.006756135181580606, 'median_delta': 0.001450075246182, 'fraction_negative': 0.5, 'negative_count': 14, 'mean_leave_one_out_min': 0.005164149137565073, 'mean_leave_one_out_max': 0.008600547644120628, 'max_abs_delta': 0.04973975837, 'median_channel_rms_uv': 4.986759995885}
+HC: {'n': 8, 'mean_delta': 7.65058203854997e-05, 'median_delta': -0.003307215718748, 'fraction_negative': 0.5, 'negative_count': 4, 'mean_leave_one_out_min': -0.00557406859415943, 'mean_leave_one_out_max': 0.0031300618648977137, 'max_abs_delta': 0.0396305267222, 'median_channel_rms_uv': 1.1186543547799999}
+
+Saved: /home/user4/alzheimers-thesis/docs/audit/p3_brainlat_site_outlier_summary.json
+No raw EEG read or changed. No hypothesis significance tested.
+===== BRAINLAT SITE SENSITIVITY COMPLETE =====

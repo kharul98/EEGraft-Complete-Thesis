@@ -1,0 +1,40 @@
+{
+  "PSD": "scipy.signal.welch per clean 2s epoch and each of 19 EEG channels; Hann; nperseg=512 at 256Hz (0.5Hz bins); noverlap=0; constant detrend; density scaling",
+  "band_aggregation": "Sum PSD bins in each band, divide by that epoch/channel denominator, then median across clean epochs and EEG channels",
+  "band_endpoints": "Lower-inclusive, upper-exclusive except gamma upper-inclusive at 45Hz",
+  "bands_hz": {
+    "alpha": [
+      8,
+      13
+    ],
+    "beta": [
+      13,
+      30
+    ],
+    "delta": [
+      1,
+      4
+    ],
+    "gamma": [
+      30,
+      45
+    ],
+    "theta": [
+      4,
+      8
+    ]
+  },
+  "cross_dataset_preprocessing_limitation": "Isfahan EDF uses assumed uV units and 0.5-45Hz Butterworth filtering; source signal preprocessing is not identical to OpenNeuro",
+  "denominator": "Sum PSD bins from 1 through 45Hz separately for each epoch and channel",
+  "epochs": "2s, nonoverlapping; same three artifact rules as M5D-v2",
+  "filter": "Butterworth 4th order 0.5-45 Hz, SOS zero-phase, full fixed first 300 seconds",
+  "legacy_feature_formula": "Matches m3d_condition_transfer_v1.py whose EC reference features reproduced the original historical vectors",
+  "legacy_parity_status": "Spectral feature formula reconciled with audited historical M3D extractor; different raw data preprocessing remains explicitly acknowledged",
+  "n_eligible": 49,
+  "no_models_fitted": true,
+  "quality_gate": "At least 15 clean epochs in each of five fixed minutes; exact equality with frozen M5D-v2 clean counts",
+  "ratio": "Median theta fraction divided by max(median alpha fraction, 1e-12)",
+  "unit_assumption": "Blank EDF physical dimensions treated as uV; MNE units=\"uV\", then returned SI volts converted to uV for QC",
+  "unit_of_analysis": "recording within release; cross-release identity not established",
+  "version": "m5f_v2"
+}

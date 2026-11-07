@@ -1,0 +1,45 @@
+===== MILESTONE 3E: CONDITION-SHIFT FAILURE-MODE AUDIT =====
+PASS: 64 EC and 54 paired EO feature vectors, matching group labels and 30s protocol
+EC-standardized changes use all 64 frozen EC feature rows for descriptive scaling only.
+
+===== SPECTRAL FEATURE SHIFT BY DIAGNOSIS =====
+A (n=19): mean standardized EO-minus-EC shift
+  delta             : -0.282 EC SD; conditional 95% CI [-1.002, +0.364]
+  theta             : +0.254 EC SD; conditional 95% CI [-0.582, +1.410]
+  alpha             : +0.261 EC SD; conditional 95% CI [-0.254, +0.760]
+  beta              : +0.223 EC SD; conditional 95% CI [-0.332, +0.826]
+  gamma             : +0.387 EC SD; conditional 95% CI [-0.350, +1.303]
+  theta_alpha_ratio : -0.232 EC SD; conditional 95% CI [-0.762, +0.349]
+F (n=13): mean standardized EO-minus-EC shift
+  delta             : -0.393 EC SD; conditional 95% CI [-2.103, +0.891]
+  theta             : -0.651 EC SD; conditional 95% CI [-1.748, +0.138]
+  alpha             : -0.112 EC SD; conditional 95% CI [-0.939, +0.842]
+  beta              : +1.265 EC SD; conditional 95% CI [-0.943, +4.586]
+  gamma             : +2.157 EC SD; conditional 95% CI [-0.532, +6.304]
+  theta_alpha_ratio : +0.022 EC SD; conditional 95% CI [-0.738, +0.800]
+C (n=22): mean standardized EO-minus-EC shift
+  delta             : -0.442 EC SD; conditional 95% CI [-1.730, +0.480]
+  theta             : -0.241 EC SD; conditional 95% CI [-0.646, +0.177]
+  alpha             : +0.535 EC SD; conditional 95% CI [-0.626, +2.043]
+  beta              : +1.235 EC SD; conditional 95% CI [-0.293, +3.627]
+  gamma             : +1.538 EC SD; conditional 95% CI [+0.047, +3.834]
+  theta_alpha_ratio : -0.122 EC SD; conditional 95% CI [-0.531, +0.317]
+
+===== AD_vs_HC: HELD-OUT PREDICTION TRANSITIONS =====
+AD_vs_HC / A (19 subjects): correct-both=0.453, wrong-both=0.179, EC-correct/EO-wrong=0.232, EC-wrong/EO-correct=0.137; label-agreement=0.632
+AD_vs_HC / C (22 subjects): correct-both=0.409, wrong-both=0.182, EC-correct/EO-wrong=0.245, EC-wrong/EO-correct=0.164; label-agreement=0.591
+PASS: matched EC BACC=0.6694; EO BACC=0.5811; EO-EC=-0.0883; agreement=0.6098
+
+===== FTD_vs_HC: HELD-OUT PREDICTION TRANSITIONS =====
+FTD_vs_HC / F (13 subjects): correct-both=0.662, wrong-both=0.046, EC-correct/EO-wrong=0.138, EC-wrong/EO-correct=0.154; label-agreement=0.708
+FTD_vs_HC / C (22 subjects): correct-both=0.436, wrong-both=0.191, EC-correct/EO-wrong=0.236, EC-wrong/EO-correct=0.136; label-agreement=0.627
+PASS: matched EC BACC=0.7364; EO BACC=0.6941; EO-EC=-0.0423; agreement=0.6571
+
+===== PAIRED SPECTRAL-SHIFT MAGNITUDE =====
+A: n=19; mean 6-feature standardized shift norm=3.230 (conditional CI [2.371, 4.385]); mean EO-minus-EC clean fraction=-0.021
+F: n=13; mean 6-feature standardized shift norm=5.811 (conditional CI [2.941, 10.664]); mean EO-minus-EC clean fraction=+0.005
+C: n=22; mean 6-feature standardized shift norm=4.491 (conditional CI [2.265, 8.006]); mean EO-minus-EC clean fraction=-0.039
+
+===== MILESTONE 3E COMPLETE =====
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_3e_condition_shift_audit_v1
+No new classifier trained and no EC/EO eligibility rules changed.

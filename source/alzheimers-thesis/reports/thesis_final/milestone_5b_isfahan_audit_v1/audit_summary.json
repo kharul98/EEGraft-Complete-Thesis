@@ -1,0 +1,29 @@
+{
+  "diagnostic_labels_verified_from_metadata": false,
+  "duplicate_basename_groups": 27,
+  "identical_file_groups": 0,
+  "n_eeg_files": 61,
+  "n_readable_headers": 61,
+  "note": "File-level audit only. Path label guesses are not yet verified clinical labels.",
+  "original_AD_FTD_thesis_modified": false,
+  "participant_uniqueness_verified": false,
+  "path_label_hints": {
+    "UNLABELED": 61
+  },
+  "sources": {
+    "EEG_1": {
+      "archive_entries": 28,
+      "edf_bdf_files": 27,
+      "sha256": "d2dac0e8026d96d3e1c2ae523aed8be62a5fa6a43ad026b530ff6c0bd72494f2",
+      "size_bytes": 382725035,
+      "source_path": "/mnt/c/Users/user4/Downloads/EEG_1.zip"
+    },
+    "EEG_2": {
+      "archive_entries": 35,
+      "edf_bdf_files": 34,
+      "sha256": "7762668fd92799406e4dc19f498c98039be2856e53362bf36653f6c743994c70",
+      "size_bytes": 523487067,
+      "source_path": "/mnt/c/Users/user4/Downloads/EEG_2.zip"
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "model": "random_forest",
+  "fold": 0,
+  "selected_hyperparameter": 4,
+  "selection_rule": "Inner-validation patient BAcc, then macro-F1",
+  "train_n_subjects": 32,
+  "inner_val_n_subjects": 9,
+  "outer_dev_n_subjects": 11,
+  "manifest_sha256": "8094e715442626090c5b98b720012d7572817a4b11b0a64ac46ef8f7dd80e7be",
+  "features": "Band power and Hjorth EEG features",
+  "inner_validation_metrics": {
+    "n_subjects": 9,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 0.6666666666666666,
+    "balanced_accuracy": 0.65,
+    "macro_f1": 0.6493506493506493,
+    "majority_rate": 0.6666666666666666,
+    "ece_10_bins": 0.21618645370066442,
+    "multiclass_brier": 0.4985078528583337,
+    "confusion_matrix": [
+      [
+        4,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 0.6666666666666666,
+        "recall": 0.8,
+        "f1-score": 0.7272727272727273,
+        "support": 5.0
+      },
+      "CN": {
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1-score": 0.5714285714285714,
+        "support": 4.0
+      },
+      "accuracy": 0.6666666666666666,
+      "macro avg": {
+        "precision": 0.6666666666666666,
+        "recall": 0.65,
+        "f1-score": 0.6493506493506493,
+        "support": 9.0
+      },
+      "weighted avg": {
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "f1-score": 0.658008658008658,
+        "support": 9.0
+      }
+    },
+    "auroc_ovr_macro": 0.5
+  },
+  "outer_development_metrics": {
+    "n_subjects": 11,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 0.6363636363636364,
+    "balanced_accuracy": 0.6333333333333333,
+    "macro_f1": 0.6333333333333333,
+    "majority_rate": 0.5454545454545454,
+    "ece_10_bins": 0.1631448644342068,
+    "multiclass_brier": 0.45848711321122393,
+    "confusion_matrix": [
+      [
+        4,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "f1-score": 0.6666666666666666,
+        "support": 6.0
+      },
+      "CN": {
+        "precision": 0.6,
+        "recall": 0.6,
+        "f1-score": 0.6,
+        "support": 5.0
+      },
+      "accuracy": 0.6363636363636364,
+      "macro avg": {
+        "precision": 0.6333333333333333,
+        "recall": 0.6333333333333333,
+        "f1-score": 0.6333333333333333,
+        "support": 11.0
+      },
+      "weighted avg": {
+        "precision": 0.6363636363636364,
+        "recall": 0.6363636363636364,
+        "f1-score": 0.6363636363636364,
+        "support": 11.0
+      }
+    },
+    "auroc_ovr_macro": 0.6666666666666666
+  },
+  "original_final_test_evaluated": false
+}

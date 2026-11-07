@@ -1,0 +1,4 @@
+model,subjects,accuracy,balanced_accuracy,roc_auc,sensitivity,specificity,tn,fp,fn,tp
+Spectral,46,0.76087,0.76087,0.86011,0.78261,0.73913,17.0,6.0,5.0,18.0
+CBraMod,46,0.76087,0.76087,0.80718,0.82609,0.69565,16.0,7.0,4.0,19.0
+Fusion,46,0.73913,0.73913,0.79773,0.78261,0.69565,16.0,7.0,5.0,18.0

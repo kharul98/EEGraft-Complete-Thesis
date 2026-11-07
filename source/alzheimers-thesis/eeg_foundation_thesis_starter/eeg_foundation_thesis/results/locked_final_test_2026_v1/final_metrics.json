@@ -1,0 +1,188 @@
+{
+  "models": {
+    "DSRF": {
+      "n_subjects": 13,
+      "n_classes": 2,
+      "classes": [
+        "AD",
+        "CN"
+      ],
+      "accuracy": 0.6923076923076923,
+      "balanced_accuracy": 0.7023809523809523,
+      "macro_f1": 0.6904761904761905,
+      "majority_rate": 0.6153846153846154,
+      "ece_10_bins": 0.24126929482027223,
+      "multiclass_brier": 0.31461750573716085,
+      "confusion_matrix": [
+        [
+          4,
+          3
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "classification_report": {
+        "AD": {
+          "precision": 0.8,
+          "recall": 0.5714285714285714,
+          "f1-score": 0.6666666666666666,
+          "support": 7.0
+        },
+        "CN": {
+          "precision": 0.625,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.7142857142857143,
+          "support": 6.0
+        },
+        "accuracy": 0.6923076923076923,
+        "macro avg": {
+          "precision": 0.7125,
+          "recall": 0.7023809523809523,
+          "f1-score": 0.6904761904761905,
+          "support": 13.0
+        },
+        "weighted avg": {
+          "precision": 0.7192307692307693,
+          "recall": 0.6923076923076923,
+          "f1-score": 0.6886446886446886,
+          "support": 13.0
+        }
+      },
+      "auroc_ovr_macro": 0.8571428571428572,
+      "accuracy_exact_95ci": [
+        0.3857383382492947,
+        0.9090796054279033
+      ],
+      "AD_recall_exact_95ci": [
+        0.18405156764008307,
+        0.9010117215574921
+      ],
+      "CN_recall_exact_95ci": [
+        0.3587654210023252,
+        0.9957892554855106
+      ]
+    },
+    "XGBoost": {
+      "n_subjects": 13,
+      "n_classes": 2,
+      "classes": [
+        "AD",
+        "CN"
+      ],
+      "accuracy": 0.7692307692307693,
+      "balanced_accuracy": 0.7738095238095238,
+      "macro_f1": 0.7692307692307693,
+      "majority_rate": 0.5384615384615384,
+      "ece_10_bins": 0.06740506695440181,
+      "multiclass_brier": 0.29758690110793146,
+      "confusion_matrix": [
+        [
+          5,
+          2
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "classification_report": {
+        "AD": {
+          "precision": 0.8333333333333334,
+          "recall": 0.7142857142857143,
+          "f1-score": 0.7692307692307693,
+          "support": 7.0
+        },
+        "CN": {
+          "precision": 0.7142857142857143,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.7692307692307693,
+          "support": 6.0
+        },
+        "accuracy": 0.7692307692307693,
+        "macro avg": {
+          "precision": 0.7738095238095238,
+          "recall": 0.7738095238095238,
+          "f1-score": 0.7692307692307693,
+          "support": 13.0
+        },
+        "weighted avg": {
+          "precision": 0.7783882783882785,
+          "recall": 0.7692307692307693,
+          "f1-score": 0.7692307692307693,
+          "support": 13.0
+        }
+      },
+      "auroc_ovr_macro": 0.9047619047619047,
+      "accuracy_exact_95ci": [
+        0.46186846076595905,
+        0.9496189265088485
+      ],
+      "AD_recall_exact_95ci": [
+        0.29042086373734277,
+        0.9633074338239145
+      ],
+      "CN_recall_exact_95ci": [
+        0.3587654210023252,
+        0.9957892554855106
+      ]
+    }
+  },
+  "paired": {
+    "bacc_delta_dsrf_minus_xgboost": -0.07142857142857151,
+    "dsrf_correct_only": 1,
+    "xgboost_correct_only": 2,
+    "discordant_n": 3,
+    "mcnemar_exact_two_sided_p_exploratory": 1.0,
+    "dsrf_bacc_bootstrap_95ci": [
+      0.4642857142857143,
+      0.9285714285714286
+    ],
+    "xgboost_bacc_bootstrap_95ci": [
+      0.5357142857142857,
+      1.0
+    ],
+    "paired_delta_bacc_bootstrap_95ci": [
+      -0.2857142857142858,
+      0.1428571428571429
+    ],
+    "bootstrap_replicates": 10000,
+    "note": "Exploratory within-cohort stratified patient bootstrap; 13 held-out patients."
+  },
+  "audit": {
+    "heldout_subjects": 13,
+    "heldout_AD": 7,
+    "heldout_CN": 6,
+    "development_subjects": 52,
+    "evaluation_type": "one-time within-cohort holdout",
+    "no_test_training": true,
+    "no_test_tuning": true,
+    "windows_per_subject": {
+      "sub-051": 24,
+      "sub-029": 24,
+      "sub-059": 24,
+      "sub-015": 24,
+      "sub-007": 24,
+      "sub-021": 24,
+      "sub-039": 24,
+      "sub-008": 24,
+      "sub-056": 24,
+      "sub-048": 24,
+      "sub-026": 24,
+      "sub-055": 24,
+      "sub-019": 24
+    },
+    "signatures": {
+      "protocol_sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+      "original_manifest_sha256": "73f9b5cf97c0ef3f9ad9fc5b031862701e258ea2538f1c8fe69c424c39f046e6",
+      "dsrf_checkpoint_sha256": "72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3",
+      "xgboost_checkpoint_sha256": "9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f"
+    },
+    "limitations": [
+      "Small held-out sample",
+      "No independent external cohort",
+      "Not a clinical diagnostic validation"
+    ]
+  }
+}

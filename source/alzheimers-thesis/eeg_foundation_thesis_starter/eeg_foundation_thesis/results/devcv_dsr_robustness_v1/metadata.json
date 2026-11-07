@@ -1,0 +1,8 @@
+{
+  "patients": 52,
+  "original_final_test_evaluated": false,
+  "noise_perturbation": "Window SD-scaled Gaussian noise as implemented in scripts/train.py",
+  "dropout_perturbation": "One randomly zeroed electrode per window",
+  "pretrained_checkpoint_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "limitations": "Artificial stress tests; not clinically realistic acquisition perturbations."
+}

@@ -1,0 +1,7 @@
+{
+  "frozen_quality_sha256": "5e4f79f95981b8919040fb1c2bd71e5a217ada4e09e67c940daf8ab9727a5acf",
+  "manifest_sha256": "c2bb272697b31c7e842e119e70d0ca567a3bc39dc1761ef1e132a8286ff2b1f7",
+  "mne_version": "1.13.2",
+  "numpy_version": "2.5.4",
+  "scipy_version": "1.18.1"
+}

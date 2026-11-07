@@ -1,0 +1,15 @@
+{
+  "archive_members": 472,
+  "archive_path": "/home/user4/alzheimers-thesis/data/external/cejnek_figshare_v1/dataset.zip",
+  "archive_sha256": "180fd998a5260f20b57a95a5b3c7f7c8e86b00dc35db009d1475a1344e94277f",
+  "archive_size_bytes": 305894766,
+  "article_id": 5450293,
+  "channel_harmonization_verified": false,
+  "continuous_EEG_verified": false,
+  "file_id": 9423433,
+  "mat_files": 471,
+  "official_name": "dataset.zip",
+  "official_size_bytes": 305894766,
+  "subject_identity_verified": false,
+  "training_performed": false
+}

@@ -1,0 +1,18 @@
+Device: cuda Classes: ['AD', 'CN'] subjects: {'train': 32, 'val': 9}
+Window counts: {'train': 768, 'val': 216}
+Loaded CBraMod-format state_dict (strict=True), SHA256=0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178
+Learnable params: 114436
+epoch 01 train_loss=0.8208 val_BAcc=0.600 val_macroF1=0.500
+epoch 02 train_loss=0.5646 val_BAcc=0.475 val_macroF1=0.416
+epoch 03 train_loss=0.5883 val_BAcc=0.650 val_macroF1=0.649
+epoch 04 train_loss=0.4454 val_BAcc=0.500 val_macroF1=0.308
+epoch 05 train_loss=0.4381 val_BAcc=0.625 val_macroF1=0.585
+epoch 06 train_loss=0.3562 val_BAcc=0.650 val_macroF1=0.649
+epoch 07 train_loss=0.4036 val_BAcc=0.625 val_macroF1=0.585
+epoch 08 train_loss=0.4409 val_BAcc=0.550 val_macroF1=0.550
+Early stop using VALIDATION subjects only
+VALIDATION ONLY
+Held-out test signals were not evaluated.
+Validation balanced accuracy: 0.65
+Validation macro-F1: 0.6493506493506493
+Saved: /home/user4/alzheimers-thesis/eeg_foundation_thesis_starter/eeg_foundation_thesis/results/nestedcv5_f0_no_skip_s42/best.pt

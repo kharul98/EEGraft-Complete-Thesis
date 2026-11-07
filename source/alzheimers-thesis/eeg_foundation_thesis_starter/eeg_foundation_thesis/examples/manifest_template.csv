@@ -1,0 +1,4 @@
+path,subject_id,label,fs_hz,unit
+/path/to/healthy_subject_001.csv,subject_001,healthy,200,uV
+/path/to/mild_subject_001.csv,subject_002,mild,200,uV
+/path/to/severe_subject_001.csv,subject_003,severe,200,uV

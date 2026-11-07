@@ -1,0 +1,69 @@
+===== MILESTONE 3B: PINNED EO DERIVATIVE DOWNLOAD =====
+
+===== MMSE TEXT-DIFFERENCE RECONCILIATION =====
+Numerically equal: 0/88; numeric differences: 0; missing or nonnumeric: 88
+A example sub-001: EC-MMSE='16', EO-MMSE=None
+F example sub-066: EC-MMSE='20', EO-MMSE=None
+C example sub-037: EC-MMSE='30', EO-MMSE=None
+Clinical severity analyses remain based exclusively on EC metadata.
+Preprocessed derivative SET files: 64/64; total listed size=0.830 GiB
+Destination: /home/user4/alzheimers-thesis/data/eeg/on006036_v1.0.0
+  1/64 sub-001 (A) downloaded: NO_ELIGIBLE_60S_WINDOW; start=; clean=/30
+     No continuity/quality passing window; max clean epochs in tested windows=-1
+  2/64 sub-066 (F) downloaded: ELIGIBLE_60S; start=110; clean=30/30
+  3/64 sub-037 (C) downloaded: ELIGIBLE_60S; start=0; clean=28/30
+
+===== THREE-GROUP PILOT QUALITY =====
+A sub-001: NO_ELIGIBLE_60S_WINDOW; seconds=303.35; starts_tested=25; detail=No continuity/quality passing window; max clean epochs in tested windows=-1
+F sub-066: ELIGIBLE_60S; seconds=252.578; starts_tested=12; detail=Earliest 10s-grid 60s window passing frozen epoch screen
+C sub-037: ELIGIBLE_60S; seconds=549.702; starts_tested=1; detail=Earliest 10s-grid 60s window passing frozen epoch screen
+  10/64 sub-010 (A) downloaded: NO_ELIGIBLE_60S_WINDOW; start=; clean=/30
+     No continuity/quality passing window; max clean epochs in tested windows=-1
+  20/64 sub-022 (A) downloaded: ELIGIBLE_60S; start=90; clean=30/30
+  30/64 sub-043 (C) downloaded: ELIGIBLE_60S; start=0; clean=29/30
+  40/64 sub-054 (C) downloaded: NO_ELIGIBLE_60S_WINDOW; start=; clean=/30
+     No continuity/quality passing window; max clean epochs in tested windows=-1
+  50/64 sub-069 (F) downloaded: ELIGIBLE_60S; start=200; clean=28/30
+  60/64 sub-079 (F) downloaded: NO_ELIGIBLE_60S_WINDOW; start=; clean=/30
+     No continuity/quality passing window; max clean epochs in tested windows=-1
+  64/64 sub-087 (F) downloaded: NO_ELIGIBLE_60S_WINDOW; start=; clean=/30
+     No continuity/quality passing window; max clean epochs in tested windows=-1
+
+===== FULL COHORT QUALITY SUMMARY =====
+A (23): {'NO_ELIGIBLE_60S_WINDOW': 11, 'ELIGIBLE_60S': 12}
+  chosen 60s window starts: min=0s, max=190s; minimum clean epochs=25/30
+F (18): {'ELIGIBLE_60S': 10, 'NO_ELIGIBLE_60S_WINDOW': 8}
+  chosen 60s window starts: min=0s, max=320s; minimum clean epochs=28/30
+C (23): {'ELIGIBLE_60S': 18, 'NO_ELIGIBLE_60S_WINDOW': 5}
+  chosen 60s window starts: min=0s, max=300s; minimum clean epochs=23/30
+Unusable subjects (technical/quality):
+  sub-001 A NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-002 A NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-005 A NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-010 A NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-015 A NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-021 A NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-024 A NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-029 A NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-031 A NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-033 A NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-034 A NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-040 C NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-050 C NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-054 C NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-059 C NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-065 C NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-067 F NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-068 F NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-073 F NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-079 F NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-082 F NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-083 F NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-084 F NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+  sub-087 F NO_ELIGIBLE_60S_WINDOW No continuity/quality passing window; max clean epochs in tested windows=-1
+
+===== MILESTONE 3B COMPLETE =====
+Quality manifest: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_3b_eyes_open_quality_v1/eo_quality_inventory.csv
+EEG root: /home/user4/alzheimers-thesis/data/eeg/on006036_v1.0.0
+No models trained; original EC features and results unchanged.
+Photic stimulation events are not treated as recording discontinuities; only boundary annotations invalidate windows.

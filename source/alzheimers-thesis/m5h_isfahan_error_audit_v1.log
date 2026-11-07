@@ -1,0 +1,41 @@
+===== MILESTONE 5H: HELD-OUT ERROR AUDIT =====
+
+===== EEG_1: FIRST-MINUTE ERROR BREAKDOWN =====
+MCI sensitivity=0.6727; NORMAL specificity=0.1429
+TP=37, FN=18; TN=10, FP=60 (across 5 correlated repeats)
+Predicted MCI fraction=0.7760; among MCI=0.6727, among NORMAL=0.8571
+BACC=0.4078; always-one-class comparator BACC=0.5000
+===== EEG_1: TEMPORAL STATES BY TRUE CLASS =====
+MCI: stable-correct=36/55, stable-wrong=16/55, unstable=3/55
+NORMAL: stable-correct=8/70, stable-wrong=58/70, unstable=4/70
+
+===== EEG_2: FIRST-MINUTE ERROR BREAKDOWN =====
+MCI sensitivity=0.6833; NORMAL specificity=0.4333
+TP=41, FN=19; TN=26, FP=34 (across 5 correlated repeats)
+Predicted MCI fraction=0.6250; among MCI=0.6833, among NORMAL=0.5667
+BACC=0.5583; always-one-class comparator BACC=0.5000
+===== EEG_2: TEMPORAL STATES BY TRUE CLASS =====
+MCI: stable-correct=32/60, stable-wrong=15/60, unstable=13/60
+NORMAL: stable-correct=21/60, stable-wrong=28/60, unstable=11/60
+
+===== EEG_1: INNER-CV MODEL SELECTION =====
+C=0.1, gamma=0.01: 4/25 folds
+C=0.1, gamma=0.1: 1/25 folds
+C=0.1, gamma=scale: 2/25 folds
+C=1, gamma=0.01: 15/25 folds
+C=10, gamma=0.01: 1/25 folds
+C=10, gamma=0.1: 1/25 folds
+C=10, gamma=scale: 1/25 folds
+
+===== EEG_2: INNER-CV MODEL SELECTION =====
+C=0.1, gamma=0.01: 3/25 folds
+C=0.1, gamma=scale: 10/25 folds
+C=1, gamma=0.01: 1/25 folds
+C=10, gamma=0.01: 4/25 folds
+C=10, gamma=0.1: 5/25 folds
+C=10, gamma=scale: 2/25 folds
+
+===== MILESTONE 5H COMPLETE =====
+PASS: 1,225 prediction rows, 245 temporal states, 50 folds, and 50 metrics cross-audited.
+No new training; all previous thesis results unchanged.
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_5h_isfahan_error_diagnostics_v1

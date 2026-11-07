@@ -1,0 +1,34 @@
+===== MILESTONE 5A: INDEPENDENT EEG DATASET PREFLIGHT =====
+PASS: Existing thesis evidence package is present.
+
+===== ISFAHAN UNIVERSITY EEG REPOSITORY =====
+Official university page: REACHABLE
+Google Drive file links found: 2
+EEG_1.zip - https://drive.google.com/file/d/1hG5v_COjPNzejRaL9XJAFERee9i2_V04/view
+  Current page link verified: True
+EEG_2.zip - https://drive.google.com/file/d/1gS7b9C1XuDp7c-yGgbDzZePIJxI9eRwF/view
+  Current page link verified: True
+
+Reported potential cohort: 29 MCI + 32 healthy = 61 recordings.
+Important: participant uniqueness across both archives remains UNVERIFIED.
+No clinical-label or raw EEG files inspected yet.
+
+===== FIGSHARE AD/MCI/CONTROL BACKUP =====
+Figshare API: REACHABLE
+Article: dataset.zip
+License: {'name': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by/4.0/'}
+File: dataset.zip | GiB: 0.285 | ID: 9423433
+Caution: Published analyses describe different AD/MCI and control recording representations.
+Subject identities, channel labels, and continuous recording availability must be verified before validation.
+
+===== LOCAL ENVIRONMENT AND STORAGE =====
+Available disk: 936.26 GiB
+MNE version: 1.13.2
+EDF reading supported: True
+gdown installed: False
+Existing matching external data directories: none detected
+
+===== MILESTONE 5A COMPLETE =====
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_5a_external_preflight_v1/external_dataset_preflight.json
+No full EEG data downloaded.
+No existing models retrained, modified, or overwritten.

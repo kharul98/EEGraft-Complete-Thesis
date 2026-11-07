@@ -1,0 +1,10 @@
+model,condition,mean_BAcc_pct,BAcc_min_pct,BAcc_max_pct,mean_flip_pct,mean_Brier
+DSRF,noise_10pct,71.87,69.72,74.06,23.08,0.3435
+DSRF,noise_20pct,70.07,67.99,73.61,27.69,0.41
+DSRF,one_channel_zeroed,76.78,74.89,78.34,7.31,0.3629
+No skip,noise_10pct,71.14,68.44,76.69,20.0,0.3987
+No skip,noise_20pct,69.75,66.27,74.96,28.08,0.4665
+No skip,one_channel_zeroed,71.65,67.17,74.06,17.69,0.3904
+High only,noise_10pct,69.66,66.19,72.26,20.77,0.3625
+High only,noise_20pct,72.19,70.54,74.44,25.0,0.4021
+High only,one_channel_zeroed,69.48,67.47,72.26,6.92,0.3544

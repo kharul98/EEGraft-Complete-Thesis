@@ -1,0 +1,36 @@
+{
+  "PSD": "scipy.signal.welch on each clean 2s epoch and 19 channels; Hann; nperseg=512; noverlap=0; constant detrend; density scaling; mean PSD across clean epochs and channels within each minute",
+  "bands_hz": {
+    "alpha": [
+      8,
+      13
+    ],
+    "beta": [
+      13,
+      30
+    ],
+    "delta": [
+      1,
+      4
+    ],
+    "gamma": [
+      30,
+      45
+    ],
+    "theta": [
+      4,
+      8
+    ]
+  },
+  "epochs": "2s, nonoverlapping; same three artifact rules as M5D-v2",
+  "filter": "Butterworth 4th order 0.5-45 Hz, SOS zero-phase, full fixed first 300 seconds",
+  "integration": "scipy.integrate.trapezoid, endpoints shared; relative to 1-45 Hz total power",
+  "legacy_parity_status": "NOT YET VERIFIED; compare original feature extraction before modeling",
+  "n_eligible": 49,
+  "no_models_fitted": true,
+  "quality_gate": "At least 15 clean epochs in each of five fixed minutes; exact equality with frozen M5D-v2 clean counts",
+  "ratio": "theta relative power / alpha relative power",
+  "unit_assumption": "Blank EDF physical dimensions treated as uV; MNE units=\"uV\", then returned SI volts converted to uV for QC",
+  "unit_of_analysis": "recording within release; cross-release identity not established",
+  "version": "m5f_v1"
+}

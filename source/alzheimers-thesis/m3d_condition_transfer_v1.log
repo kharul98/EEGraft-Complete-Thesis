@@ -1,0 +1,64 @@
+===== MILESTONE 3D: MATCHED 30S CONDITION TRANSFER =====
+PASS: EC 23 AD / 18 FTD / 23 HC; EO 19 AD / 13 FTD / 22 HC
+Extracted/validated: 10/64
+Extracted/validated: 20/64
+Extracted/validated: 30/64
+Extracted/validated: 40/64
+Extracted/validated: 50/64
+Extracted/validated: 60/64
+Extracted/validated: 64/64
+PASS: all 64 EC 60s reference features reproduced (max absolute diff=0).
+PASS: 64 EC and 54 EO 30s feature vectors; all EO QC decisions reproduced.
+AD_vs_HC: nested EC-only CV 1/5 completed
+AD_vs_HC: nested EC-only CV 2/5 completed
+AD_vs_HC: nested EC-only CV 3/5 completed
+AD_vs_HC: nested EC-only CV 4/5 completed
+AD_vs_HC: nested EC-only CV 5/5 completed
+
+===== AD_vs_HC: CROSS-CONDITION RESULTS =====
+Full-cohort EC 30s BACC=0.6957 (46 participants)
+Matched EC 30s BACC=0.6694; EO photic 30s BACC=0.5811 (41 participants)
+EO minus EC BACC=-0.0883
+EC sensitivity=0.6842; EO sensitivity=0.5895
+EC specificity=0.6545; EO specificity=0.5727
+Cross-condition class agreement=0.6098
+Mean paired raw SVM-margin change=-0.0114
+Within-patient score-rank rho=+0.012; within-HC rho=-0.005 (descriptive)
+  EO_minus_EC_BACC: -0.0883; conditional 95% CI [-0.2292, +0.0541]
+  same_pred_fraction: +0.6098; conditional 95% CI [+0.5122, +0.7171]
+  EO_sensitivity: +0.5895; conditional 95% CI [+0.4211, +0.7579]
+  EO_specificity: +0.5727; conditional 95% CI [+0.4091, +0.7364]
+  mean_EO_minus_EC_raw_margin: -0.0114; conditional 95% CI [-0.3047, +0.2927]
+FTD_vs_HC: nested EC-only CV 1/5 completed
+FTD_vs_HC: nested EC-only CV 2/5 completed
+FTD_vs_HC: nested EC-only CV 3/5 completed
+FTD_vs_HC: nested EC-only CV 4/5 completed
+FTD_vs_HC: nested EC-only CV 5/5 completed
+
+===== FTD_vs_HC: CROSS-CONDITION RESULTS =====
+Full-cohort EC 30s BACC=0.7249 (41 participants)
+Matched EC 30s BACC=0.7364; EO photic 30s BACC=0.6941 (35 participants)
+EO minus EC BACC=-0.0423
+EC sensitivity=0.8000; EO sensitivity=0.8154
+EC specificity=0.6727; EO specificity=0.5727
+Cross-condition class agreement=0.6571
+Mean paired raw SVM-margin change=+0.3466
+Within-patient score-rank rho=+0.280; within-HC rho=+0.020 (descriptive)
+  EO_minus_EC_BACC: -0.0423; conditional 95% CI [-0.2136, +0.1276]
+  same_pred_fraction: +0.6571; conditional 95% CI [+0.5200, +0.7829]
+  EO_sensitivity: +0.8154; conditional 95% CI [+0.6154, +0.9692]
+  EO_specificity: +0.5727; conditional 95% CI [+0.4000, +0.7455]
+  mean_EO_minus_EC_raw_margin: +0.3466; conditional 95% CI [-0.0212, +0.7431]
+
+===== EO ELIGIBILITY AND CLINICAL DESCRIPTIVES =====
+A EO_ELIGIBLE: n=19, median age=69.0, median EC-MMSE=20.0
+A EO_INELIGIBLE: n=4, median age=72.0, median EC-MMSE=19.0
+F EO_ELIGIBLE: n=13, median age=65.0, median EC-MMSE=22.0
+F EO_INELIGIBLE: n=5, median age=68.0, median EC-MMSE=24.0
+C EO_ELIGIBLE: n=22, median age=67.5, median EC-MMSE=30.0
+C EO_INELIGIBLE: n=1, median age=71.0, median EC-MMSE=30.0
+
+===== MILESTONE 3D COMPLETE =====
+Outputs: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_3d_30s_condition_transfer_v1
+All training, model selection, and preprocessing decisions used EC only; no EO labels were used for fitting.
+This is within-cohort condition transfer, NOT independent external-patient validation.

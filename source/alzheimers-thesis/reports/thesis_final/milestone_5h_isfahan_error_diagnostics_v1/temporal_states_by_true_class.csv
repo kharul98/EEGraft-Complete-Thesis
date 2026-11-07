@@ -1,0 +1,13 @@
+release,true_group,unique_recordings,recording_repeat_assessments,state,count_correlated,fraction
+EEG_1,MCI,11,55,stable_correct,36,0.6545454545454545
+EEG_1,MCI,11,55,stable_wrong,16,0.2909090909090909
+EEG_1,MCI,11,55,unstable,3,0.05454545454545454
+EEG_1,NORMAL,14,70,stable_correct,8,0.11428571428571428
+EEG_1,NORMAL,14,70,stable_wrong,58,0.8285714285714286
+EEG_1,NORMAL,14,70,unstable,4,0.05714285714285714
+EEG_2,MCI,12,60,stable_correct,32,0.5333333333333333
+EEG_2,MCI,12,60,stable_wrong,15,0.25
+EEG_2,MCI,12,60,unstable,13,0.21666666666666667
+EEG_2,NORMAL,12,60,stable_correct,21,0.35
+EEG_2,NORMAL,12,60,stable_wrong,28,0.4666666666666667
+EEG_2,NORMAL,12,60,unstable,11,0.18333333333333332

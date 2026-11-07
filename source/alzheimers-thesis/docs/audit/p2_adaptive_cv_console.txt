@@ -1,0 +1,47 @@
+===== P2 SUBJECT-LEVEL ADAPTIVE SMOKE TEST =====
+Source: existing 440 raw causal-prefix rows
+Evaluation: repeated 5-fold CV, 3 repeats
+Classifier probabilities: NOT calibrated
+Stopping rules: EXPLORATORY
+Completed AD_vs_CN: 65 participants, 3 repeats, 10 policies
+Completed AD_vs_FTD: 59 participants, 3 repeats, 10 policies
+
+===== P2 POLICY COMPARISON =====
+Descriptive means across three CV repeats
+
+TASK: AD_vs_CN
+                                       balanced_accuracy  sensitivity_ad  mean_seconds  early_stop_fraction
+policy                                                                                                     
+combined_quality_confidence_stability              0.683           0.769       264.308                0.174
+confidence_only                                    0.688           0.778       233.846                0.267
+confidence_quality                                 0.702           0.806       234.923                0.267
+confidence_stability                               0.683           0.769       252.923                0.226
+fixed_120                                          0.615           0.713       120.000                1.000
+fixed_180                                          0.667           0.759       180.000                1.000
+fixed_30                                           0.704           0.741        30.000                1.000
+fixed_300                                          0.674           0.750       300.000                0.000
+fixed_60                                           0.727           0.787        60.000                1.000
+stability_only                                     0.742           0.806        77.846                1.000
+
+TASK: AD_vs_FTD
+                                       balanced_accuracy  sensitivity_ad  mean_seconds  early_stop_fraction
+policy                                                                                                     
+combined_quality_confidence_stability              0.401           0.324       289.492                0.062
+confidence_only                                    0.402           0.296       278.305                0.107
+confidence_quality                                 0.392           0.306       282.203                0.085
+confidence_stability                               0.408           0.324       287.458                0.079
+fixed_120                                          0.374           0.472       120.000                1.000
+fixed_180                                          0.455           0.417       180.000                1.000
+fixed_30                                           0.495           0.556        30.000                1.000
+fixed_300                                          0.410           0.343       300.000                0.000
+fixed_60                                           0.473           0.481        60.000                1.000
+stability_only                                     0.478           0.463        79.322                1.000
+
+IMPORTANT LIMITATIONS:
+- Repeated CV folds are not independent cohorts.
+- No p-values or equivalence claims are made.
+- Probabilities are not calibrated.
+- Raw features remain artifact-sensitive.
+- This is exploratory method development.
+
+P2 PARTICIPANT-LEVEL ADAPTIVE PILOT COMPLETE

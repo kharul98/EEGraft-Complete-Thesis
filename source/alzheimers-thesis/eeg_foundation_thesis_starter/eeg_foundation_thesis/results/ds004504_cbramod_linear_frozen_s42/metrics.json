@@ -1,0 +1,90 @@
+{
+  "experiment": "ds004504_cbramod_linear_frozen_s42",
+  "model": "linear",
+  "train_mode": "frozen",
+  "trained_with_pretrained_weights": true,
+  "backbone_weights_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "config": {
+    "manifest": "manifests/ds004504_ad_cn_preprocessed.csv",
+    "run_name": "ds004504_cbramod_linear_frozen_s42",
+    "model": "linear",
+    "train_mode": "frozen",
+    "weights": "",
+    "seconds": 4,
+    "high_hz": 40.0,
+    "max_windows_per_subject": 24,
+    "artifact_limit_uv": null,
+    "car": false,
+    "epochs": 15,
+    "patience": 5,
+    "batch_size": 8,
+    "lr": null,
+    "seed": 42,
+    "robustness": false,
+    "cpu": false,
+    "overwrite": false,
+    "validation_only": true
+  },
+  "subjects_per_split": {
+    "train": 39,
+    "val": 13
+  },
+  "windows_per_split": {
+    "train": 936,
+    "val": 312
+  },
+  "validation": {
+    "n_subjects": 13,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 0.6923076923076923,
+    "balanced_accuracy": 0.7142857142857143,
+    "macro_f1": 0.675,
+    "majority_rate": 0.7692307692307693,
+    "ece_10_bins": 0.17115834718331302,
+    "multiclass_brier": 0.48355452579782743,
+    "confusion_matrix": [
+      [
+        3,
+        4
+      ],
+      [
+        0,
+        6
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 1.0,
+        "recall": 0.42857142857142855,
+        "f1-score": 0.6,
+        "support": 7.0
+      },
+      "CN": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1-score": 0.75,
+        "support": 6.0
+      },
+      "accuracy": 0.6923076923076923,
+      "macro avg": {
+        "precision": 0.8,
+        "recall": 0.7142857142857143,
+        "f1-score": 0.675,
+        "support": 13.0
+      },
+      "weighted avg": {
+        "precision": 0.8153846153846154,
+        "recall": 0.6923076923076923,
+        "f1-score": 0.6692307692307692,
+        "support": 13.0
+      }
+    },
+    "auroc_ovr_macro": 0.7142857142857143
+  },
+  "test": null,
+  "test_not_evaluated": true
+}

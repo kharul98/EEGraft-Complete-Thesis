@@ -1,0 +1,8 @@
+{
+  "n_development_patients": 52,
+  "n_outer_folds": 5,
+  "n_windows_per_patient": 24,
+  "target": "True-class probability",
+  "original_final_test_evaluated": false,
+  "limitation": "Electrode masking and gradients measure model sensitivity, not causal or clinically validated brain localization. Gate values are descriptive."
+}

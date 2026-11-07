@@ -1,0 +1,73 @@
+===== MILESTONE 1C: ERROR DETECTION AND SELECTIVE PREDICTION =====
+PASS: AD_vs_HC, 46 participants, all five repeats and all five blocks reconciled.
+
+AD_vs_HC: calibrated 0.5 threshold changes 12/230 original first-minute decisions; original labels remain unchanged.
+
+===== AD_vs_HC: ERROR DETECTION AUROC =====
+Participants=46; first-minute errors=61/230 correlated subject-repeats
+first_minute_original_label_support: all-errors AUROC=0.6565; stable-only error AUROC=0.5019
+five_minute_probability_consistency: all-errors AUROC=0.6658; stable-only error AUROC=0.7083
+five_minute_label_consensus: all-errors AUROC=0.6701; stable-only error AUROC=0.5000
+AD_vs_HC: participant bootstrap 500/1500
+AD_vs_HC: participant bootstrap 1000/1500
+AD_vs_HC: participant bootstrap 1500/1500
+
+===== AD_vs_HC: SELECTIVE FIRST-MINUTE PREDICTIONS =====
+All methods retain the SAME original first-minute SVM label.
+first_minute_original_label_support (60s of EEG required):
+  coverage=100%: BACC=0.7348, CI [0.6174, 0.8414], accuracy=0.7348, gain over full coverage=+0.0000
+  coverage=90%: BACC=0.7681, CI [0.6394, 0.8795], accuracy=0.7652, gain over full coverage=+0.0334
+  coverage=80%: BACC=0.8068, CI [0.6670, 0.9075], accuracy=0.8011, gain over full coverage=+0.0721
+  coverage=70%: BACC=0.7998, CI [0.6730, 0.9203], accuracy=0.7938, gain over full coverage=+0.0650
+five_minute_probability_consistency (300s of EEG required):
+  coverage=100%: BACC=0.7348, CI [0.6174, 0.8414], accuracy=0.7348, gain over full coverage=+0.0000
+  coverage=90%: BACC=0.7613, CI [0.6388, 0.8690], accuracy=0.7614, gain over full coverage=+0.0265
+  coverage=80%: BACC=0.7689, CI [0.6513, 0.8870], accuracy=0.7685, gain over full coverage=+0.0342
+  coverage=70%: BACC=0.7902, CI [0.6626, 0.9056], accuracy=0.7863, gain over full coverage=+0.0555
+five_minute_label_consensus (300s of EEG required):
+  coverage=100%: BACC=0.7348, CI [0.6174, 0.8414], accuracy=0.7348, gain over full coverage=+0.0000
+  coverage=90%: BACC=0.7606, CI [0.6384, 0.8687], accuracy=0.7602, gain over full coverage=+0.0258
+  coverage=80%: BACC=0.7824, CI [0.6545, 0.8937], accuracy=0.7822, gain over full coverage=+0.0476
+  coverage=70%: BACC=0.8026, CI [0.6706, 0.9161], accuracy=0.8034, gain over full coverage=+0.0678
+
+===== AD_vs_HC: UNCERTAINTY AUDIT COMPLETE =====
+PASS: FTD_vs_HC, 41 participants, all five repeats and all five blocks reconciled.
+
+FTD_vs_HC: calibrated 0.5 threshold changes 40/205 original first-minute decisions; original labels remain unchanged.
+
+===== FTD_vs_HC: ERROR DETECTION AUROC =====
+Participants=41; first-minute errors=56/205 correlated subject-repeats
+first_minute_original_label_support: all-errors AUROC=0.6663; stable-only error AUROC=0.6239
+five_minute_probability_consistency: all-errors AUROC=0.6094; stable-only error AUROC=0.6086
+five_minute_label_consensus: all-errors AUROC=0.6215; stable-only error AUROC=0.5000
+FTD_vs_HC: participant bootstrap 500/1500
+FTD_vs_HC: participant bootstrap 1000/1500
+FTD_vs_HC: participant bootstrap 1500/1500
+
+===== FTD_vs_HC: SELECTIVE FIRST-MINUTE PREDICTIONS =====
+All methods retain the SAME original first-minute SVM label.
+first_minute_original_label_support (60s of EEG required):
+  coverage=100%: BACC=0.7372, CI [0.6271, 0.8435], accuracy=0.7268, gain over full coverage=+0.0000
+  coverage=90%: BACC=0.7499, CI [0.6326, 0.8584], accuracy=0.7409, gain over full coverage=+0.0127
+  coverage=80%: BACC=0.7739, CI [0.6446, 0.8766], accuracy=0.7707, gain over full coverage=+0.0367
+  coverage=70%: BACC=0.7768, CI [0.6453, 0.8847], accuracy=0.7882, gain over full coverage=+0.0396
+five_minute_probability_consistency (300s of EEG required):
+  coverage=100%: BACC=0.7372, CI [0.6271, 0.8435], accuracy=0.7268, gain over full coverage=+0.0000
+  coverage=90%: BACC=0.7410, CI [0.6304, 0.8470], accuracy=0.7252, gain over full coverage=+0.0038
+  coverage=80%: BACC=0.7637, CI [0.6453, 0.8598], accuracy=0.7573, gain over full coverage=+0.0265
+  coverage=70%: BACC=0.7854, CI [0.6584, 0.8798], accuracy=0.7791, gain over full coverage=+0.0482
+five_minute_label_consensus (300s of EEG required):
+  coverage=100%: BACC=0.7372, CI [0.6271, 0.8435], accuracy=0.7268, gain over full coverage=+0.0000
+  coverage=90%: BACC=0.7539, CI [0.6387, 0.8636], accuracy=0.7405, gain over full coverage=+0.0167
+  coverage=80%: BACC=0.7785, CI [0.6498, 0.8865], accuracy=0.7628, gain over full coverage=+0.0413
+  coverage=70%: BACC=0.8029, CI [0.6659, 0.9104], accuracy=0.7869, gain over full coverage=+0.0657
+
+===== FTD_vs_HC: UNCERTAINTY AUDIT COMPLETE =====
+
+===== MILESTONE 1C COMPLETE =====
+Saved results: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_1c_selective_prediction_v1
+No classifier retrained and no historical predictions modified.
+Subject-bootstrap intervals are conditional; five CV repetitions are correlated.
+Selection rankings are retrospective and use unlabeled held-out certainty scores.
+Five-minute methods require 300 seconds of EEG and cannot make 60-second decisions.
+Fractional tie weights avoid arbitrary selection among identical consensus scores.

@@ -1,0 +1,68 @@
+{
+  "classes": [
+    "AD",
+    "CN"
+  ],
+  "development_subjects": 52,
+  "dsrf": {
+    "batch_size": 8,
+    "cv_best_epochs": [
+      5,
+      14,
+      1,
+      6,
+      4
+    ],
+    "epochs": 5,
+    "learning_rate": 0.001,
+    "seed": 42,
+    "train_mode": "frozen",
+    "weight_decay": 0.01
+  },
+  "final_development_manifest": "/home/user4/alzheimers-thesis/eeg_foundation_thesis_starter/eeg_foundation_thesis/manifests/final_dev52_only.csv",
+  "final_development_manifest_sha256": "5396a075fc5e797dff69dfbf17ed860357507af464569e0a97a3f5267b53665f",
+  "final_test_policy": "Evaluate each frozen final model once on the original 13 held-out patients. Do not retrain, reselect models, or adjust decision thresholds based on final-test results.",
+  "heldout_status": "NOT_EVALUATED",
+  "heldout_subject_ids_sha256": "559213b3a95f906c1027d259e900759d6bb07d2a0d099849b077fb37b22b78b5",
+  "heldout_subjects": 13,
+  "original_manifest_sha256": "73f9b5cf97c0ef3f9ad9fc5b031862701e258ea2538f1c8fe69c424c39f046e6",
+  "pretrained_weights_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "primary_architecture": "fusion",
+  "primary_metric": "patient_level_balanced_accuracy",
+  "secondary_metrics": [
+    "accuracy",
+    "macro_f1",
+    "AD_recall",
+    "CN_recall",
+    "AUROC",
+    "multiclass_brier",
+    "ECE"
+  ],
+  "selection_note": "DSRF is the proposed model selected using development cross-validation. XGBoost is the strongest classical comparator. Observed differences are exploratory.",
+  "subject_aggregation": "mean_window_softmax_probabilities",
+  "version": "development_locked_2026_v1",
+  "windows": {
+    "apply_car": false,
+    "artifact_limit_uv": null,
+    "high_hz": 40.0,
+    "max_per_subject": 24,
+    "sampling_hz": 200,
+    "seconds": 4
+  },
+  "xgboost": {
+    "colsample_bytree": 0.9,
+    "cv_selected_max_depths": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "learning_rate": 0.05,
+    "max_depth": 2,
+    "min_subject_class_weighting": "inverse_subject_window_count_and_class_frequency",
+    "n_estimators": 180,
+    "seed": 42,
+    "subsample": 0.9
+  }
+}

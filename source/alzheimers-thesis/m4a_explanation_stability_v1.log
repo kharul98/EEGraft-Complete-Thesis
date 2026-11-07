@@ -1,0 +1,42 @@
+===== MILESTONE 4A: TEMPORAL EXPLANATION STABILITY =====
+AD_vs_HC: verified and explained repeat 1/5
+AD_vs_HC: verified and explained repeat 2/5
+AD_vs_HC: verified and explained repeat 3/5
+AD_vs_HC: verified and explained repeat 4/5
+AD_vs_HC: verified and explained repeat 5/5
+
+===== AD_vs_HC: TEMPORAL GROUP-EXPLANATION STABILITY =====
+Group effects are raw SVM score differences, not probabilities or additive SHAP values.
+  delta               : mean absolute local SVM-margin effect=0.1124
+  theta_alpha_family  : mean absolute local SVM-margin effect=0.7299
+  beta                : mean absolute local SVM-margin effect=0.3031
+  gamma               : mean absolute local SVM-margin effect=0.3810
+  stable_correct : n=108; drift=0.6589, cosine=0.7972, top-group persistence=0.7639 (valid top=100.0%)
+  stable_wrong   : n=20; drift=0.9076, cosine=0.5614, top-group persistence=0.6250 (valid top=100.0%)
+  unstable       : n=102; drift=0.9442, cosine=0.3850, top-group persistence=0.5000 (valid top=99.0%)
+  unstable_minus_stable_correct: +0.2852, conditional CI [0.0847, 0.4678]
+  stable_wrong_minus_stable_correct: +0.2487, conditional CI [-0.2144, 0.8272]
+FTD_vs_HC: verified and explained repeat 1/5
+FTD_vs_HC: verified and explained repeat 2/5
+FTD_vs_HC: verified and explained repeat 3/5
+FTD_vs_HC: verified and explained repeat 4/5
+FTD_vs_HC: verified and explained repeat 5/5
+
+===== FTD_vs_HC: TEMPORAL GROUP-EXPLANATION STABILITY =====
+Group effects are raw SVM score differences, not probabilities or additive SHAP values.
+  delta               : mean absolute local SVM-margin effect=0.0803
+  theta_alpha_family  : mean absolute local SVM-margin effect=0.6411
+  beta                : mean absolute local SVM-margin effect=0.2216
+  gamma               : mean absolute local SVM-margin effect=0.2940
+  stable_correct : n=109; drift=0.4296, cosine=0.8448, top-group persistence=0.8020 (valid top=100.0%)
+  stable_wrong   : n=27; drift=0.6279, cosine=0.7477, top-group persistence=0.6667 (valid top=100.0%)
+  unstable       : n=69; drift=0.5546, cosine=0.5921, top-group persistence=0.6014 (valid top=100.0%)
+  unstable_minus_stable_correct: +0.1250, conditional CI [0.0365, 0.2252]
+  stable_wrong_minus_stable_correct: +0.1983, conditional CI [-0.0689, 0.4228]
+
+===== MILESTONE 4A COMPLETE =====
+Output directory: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_4a_temporal_explanation_v1
+Original historical SVM scores exactly reconciled for both tasks.
+Perturbation reference used outer-training data only; held-out diagnoses never used for fitting.
+Local score sensitivities are nonadditive perturbation diagnostics, NOT causal EEG biomarkers or SHAP values.
+All statistical intervals are conditional on this dataset, cohort, and correlated CV runs.

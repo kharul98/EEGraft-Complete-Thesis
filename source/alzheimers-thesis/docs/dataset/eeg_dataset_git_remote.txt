@@ -1,0 +1,4 @@
+nemar-s3	
+origin	https://github.com/nemarDatasets/on004504.git (fetch)
+origin	https://github.com/nemarDatasets/on004504.git (push)
+s3-PUBLIC	

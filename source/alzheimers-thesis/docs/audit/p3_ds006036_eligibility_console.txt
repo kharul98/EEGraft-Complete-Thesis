@@ -1,0 +1,46 @@
+===== DS006036 REAL EEG ELIGIBILITY =====
+EEG filenames: 88
+Checked 20/88
+Checked 40/88
+Checked 60/88
+Checked 80/88
+Checked 88/88
+
+===== ELIGIBILITY RESULTS =====
+Total filenames: 88
+Readable recordings: 88
+Eligible >=300s: 57
+Readable but ineligible: 31
+Unreadable: 0
+Duration min/median/max: 75.0 349.75 603.2
+Error categories: {}
+
+===== PHOTIC-STIMULATION EVENT CHECK =====
+Event files: 88
+Event columns: ['onset', 'duration', 'sample', 'value']
+First event-file sample:
+ onset  duration  sample                value
+ 3.797         0  1898.5 PHOTO 5Hz           
+ 3.800         0  1900.0        Photo/HV mark
+ 4.000         0  2000.0        Photo/HV mark
+ 4.200         0  2100.0        Photo/HV mark
+ 4.400         0  2200.0        Photo/HV mark
+Total event rows: 51939
+Most common event labels:
+  Photo/HV mark : 49342
+  closed eyes : 556
+  open eyes : 538
+  eye movement : 347
+  Swallowing : 166
+  Y        : 147
+  PHOTO 5Hz            : 123
+  RESET condition : 116
+  PHOTO 10Hz           : 95
+  PHOTO 15Hz           : 92
+  PHOTO 20Hz           : 87
+  CAL mode : 86
+
+Length eligibility does not establish
+uninterrupted or stimulation-free EEG.
+No EEG data was changed.
+===== DS006036 AUDIT COMPLETE =====

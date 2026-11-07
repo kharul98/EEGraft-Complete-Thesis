@@ -1,0 +1,7 @@
+task,state,n_subject_repeats,median_first_minute_abs_svm_decision_score,note
+AD_vs_HC,stable_correct,108,1.0548844399099107,Raw SVM scores are NOT calibrated probabilities
+AD_vs_HC,stable_wrong,20,0.9089442691874569,Raw SVM scores are NOT calibrated probabilities
+AD_vs_HC,unstable,102,0.3317561389291126,Raw SVM scores are NOT calibrated probabilities
+FTD_vs_HC,stable_correct,109,0.8669977659944804,Raw SVM scores are NOT calibrated probabilities
+FTD_vs_HC,stable_wrong,27,0.565271771315143,Raw SVM scores are NOT calibrated probabilities
+FTD_vs_HC,unstable,69,0.23445560186450387,Raw SVM scores are NOT calibrated probabilities

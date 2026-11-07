@@ -1,0 +1,66 @@
+===== DS006036 EVENT-WINDOW AUDIT =====
+Length-eligible participants: 57
+
+===== WINDOW EVENT SUMMARY =====
+
+WINDOW: short_120_180
+Participants assessed: 57
+all_events | median: 3.0 | any: 50 | zero: 7
+photo_frequency_labels | median: 0.0 | any: 5 | zero: 52
+photo_hv_marks | median: 0.0 | any: 7 | zero: 50
+condition_resets | median: 0.0 | any: 3 | zero: 54
+eye_state_events | median: 0.0 | any: 10 | zero: 47
+
+WINDOW: long_0_180
+Participants assessed: 57
+all_events | median: 576.0 | any: 57 | zero: 0
+photo_frequency_labels | median: 5.0 | any: 57 | zero: 0
+photo_hv_marks | median: 555.0 | any: 57 | zero: 0
+condition_resets | median: 0.0 | any: 6 | zero: 51
+eye_state_events | median: 10.0 | any: 57 | zero: 0
+
+WINDOW: reference_240_300
+Participants assessed: 57
+all_events | median: 3.0 | any: 56 | zero: 1
+photo_frequency_labels | median: 0.0 | any: 0 | zero: 57
+photo_hv_marks | median: 0.0 | any: 0 | zero: 57
+condition_resets | median: 0.0 | any: 3 | zero: 54
+eye_state_events | median: 1.0 | any: 30 | zero: 27
+
+===== COMPLETE 300S RECORDING CHECK =====
+Participants with photo/HV markers in both measurement and reference windows: 0
+
+===== EVENT DEFINITIONS =====
+{
+  "onset": {
+    "Description": "Time of event onset, in seconds, measured from the start of the EEG recording.",
+    "Units": "seconds"
+  },
+  "duration": {
+    "Description": "Duration of the event, in seconds.",
+    "Units": "seconds"
+  },
+  "sample": {
+    "Description": "EEG data sample index at which the event occurred.",
+    "Units": "samples"
+  },
+  "value": {
+    "Description": "Event code or label indicating the type of event.",
+    "Levels": {
+      "PHOTO 5Hz":       "Presentation onset of a 5 Hz flickering photic stimulus.",
+      "PHOTO 10Hz":      "Presentation onset of a 10 Hz flickering photic stimulus.",
+      "PHOTO 15Hz":      "Presentation onset of a 15 Hz flickering photic stimulus.",
+      "PHOTO 20Hz":      "Presentation onset of a 20 Hz flickering photic stimulus.",
+      "Photo/HV mark":   "Hardware photomark synchronization pulse.",
+      "open eyes":       "Subject opened eyes.",
+      "closed eyes":     "Subject closed eyes.",
+      "eye movement":    "Detected saccade or gaze shift."
+    }
+  }
+}
+
+IMPORTANT: Zero events within a window
+does not prove stimulation-free EEG.
+Markers may describe ongoing conditions.
+No EEG data was loaded or modified.
+===== WINDOW AUDIT COMPLETE =====

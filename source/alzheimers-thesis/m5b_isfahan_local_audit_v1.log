@@ -1,0 +1,86 @@
+===== MILESTONE 5B: LOCAL ISFAHAN EEG AUDIT =====
+===== LOCAL BROWSER DOWNLOAD DISCOVERY =====
+Downloads directories detected:
+  /mnt/c/Users/Default/Downloads
+  /mnt/c/Users/Default User/Downloads
+  /mnt/c/Users/Public/Downloads
+  /mnt/c/Users/user4/Downloads
+EEG_1:
+  /mnt/c/Users/user4/Downloads/EEG_1.zip (382725035 bytes)
+  SELECTED: /mnt/c/Users/user4/Downloads/EEG_1.zip
+EEG_2:
+  /mnt/c/Users/user4/Downloads/EEG_2.zip (523487067 bytes)
+  SELECTED: /mnt/c/Users/user4/Downloads/EEG_2.zip
+
+===== ZIP FILE VALIDATION AND SAFE EXTRACTION =====
+EEG_1: archive entries=28, expanded size=0.462 GiB
+  EEG_1: 20 files extracted...
+EEG_1: extracted=28, reused=0; EDF/BDF files=27
+EEG_2: archive entries=35, expanded size=0.569 GiB
+  EEG_2: 20 files extracted...
+EEG_2: extracted=35, reused=0; EDF/BDF files=34
+
+===== ARCHIVE CONTENTS AND DIAGNOSTIC LABEL HINTS =====
+EEG_1: extensions={'.edf': 27, '.xlsx': 1}
+   15.edf
+   16.edf
+   17.edf
+   18.edf
+   19.edf
+   20.edf
+   21.edf
+   22.edf
+   23.edf
+   24.edf
+EEG_2: extensions={'.edf': 34, '.xlsx': 1}
+   29.edf
+   30.edf
+   31.edf
+   32.edf
+   33.edf
+   34.edf
+   States.xlsx
+   1.edf
+   2.edf
+   3.edf
+
+===== EDF HEADER AND MONTAGE AUDIT =====
+  Inspected 10/61 EEG headers
+  Inspected 20/61 EEG headers
+  Inspected 30/61 EEG headers
+  Inspected 40/61 EEG headers
+  Inspected 50/61 EEG headers
+  Inspected 60/61 EEG headers
+  Inspected 61/61 EEG headers
+EEG_1: recordings=27, headers readable=27
+  Path label hints: {'UNLABELED': 27}
+  Sampling rates: {256.0: 27}
+  Full canonical 19-channel montage detected: 27/27
+  Duration min/median/max: 30.05 / 31.03 / 35.08 min
+  Example: 15.edf; channels=Fp1|Fp2|F7|F3|Fz|F4|F8|T3|C3|Cz|C4|T4|T5|P3|Pz|P4|T6|O1|O2
+  Example: 16.edf; channels=Fp1|Fp2|F7|F3|Fz|F4|F8|T3|C3|Cz|C4|T4|T5|P3|Pz|P4|T6|O1|O2
+EEG_2: recordings=34, headers readable=34
+  Path label hints: {'UNLABELED': 34}
+  Sampling rates: {256.0: 34}
+  Full canonical 19-channel montage detected: 34/34
+  Duration min/median/max: 27.33 / 30.38 / 37.87 min
+  Example: 29.edf; channels=Fp1|Fp2|F7|F3|Fz|F4|F8|T3|C3|Cz|C4|T4|T5|P3|Pz|P4|T6|O1|O2
+  Example: 30.edf; channels=Fp1|Fp2|F7|F3|Fz|F4|F8|T3|C3|Cz|C4|T4|T5|P3|Pz|P4|T6|O1|O2
+
+===== CROSS-ARCHIVE DUPLICATE WARNINGS =====
+Repeated EDF/BDF basenames across archives: 27
+  NAME: EEG_1/15.edf | EEG_2/15.edf
+  NAME: EEG_1/16.edf | EEG_2/16.edf
+  NAME: EEG_1/17.edf | EEG_2/17.edf
+  NAME: EEG_1/18.edf | EEG_2/18.edf
+  NAME: EEG_1/19.edf | EEG_2/19.edf
+  NAME: EEG_1/20.edf | EEG_2/20.edf
+  NAME: EEG_1/21.edf | EEG_2/21.edf
+  NAME: EEG_1/22.edf | EEG_2/22.edf
+Identical EEG files across archives (SHA256): 0
+NOTE: No filename/hash match does NOT prove participants are distinct.
+
+===== MILESTONE 5B COMPLETE =====
+Extracted recordings: /home/user4/alzheimers-thesis/data/external/isfahan_mci_v1
+Audit results: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_5b_isfahan_audit_v1
+No model fitted; original AD/FTD reports and EEG unchanged.

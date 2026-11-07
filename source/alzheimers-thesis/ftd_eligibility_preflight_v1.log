@@ -1,0 +1,54 @@
+===== FTD ELIGIBILITY PREFLIGHT =====
+Original dataset: 36 AD, 23 FTD, 29 HC
+Existing selected controls: 23
+Existing selected AD: 23
+
+===== EXISTING MANIFEST STATUS COUNTS =====
+A {'CANDIDATE': 23, 'NO_UNINTERRUPTED_WINDOW': 11, 'REVIEW': 2}
+C {'CANDIDATE': 23, 'NO_UNINTERRUPTED_WINDOW': 5, 'REVIEW': 1}
+F {'CANDIDATE': 18, 'NO_UNINTERRUPTED_WINDOW': 5}
+
+===== FTD RECORDING METADATA =====
+sub-066: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=549.760; annotations=1; start=120; end=420; multi200=0.67
+sub-067: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=643.100; annotations=-; start=190; end=490; multi200=16.67
+sub-068: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=573.100; annotations=1; start=272; end=572; multi200=2.67
+sub-069: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=636.100; annotations=1; start=10; end=310; multi200=3.33
+sub-070: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=479.100; annotations=-; start=60; end=360; multi200=0.0
+sub-071: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=618.900; annotations=3; start=290; end=590; multi200=2.67
+sub-072: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=657.420; annotations=3; start=290; end=590; multi200=3.33
+sub-073: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=854.580; annotations=2; start=90; end=390; multi200=0.0
+sub-074: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=1014.500; annotations=9; start=680; end=980; multi200=4.67
+sub-075: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=748.180; annotations=2; start=0; end=300; multi200=5.33
+sub-076: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=818.800; annotations=-; start=380; end=680; multi200=2.67
+sub-077: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=699.140; annotations=4; start=70; end=370; multi200=1.33
+sub-078: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=870.900; annotations=3; start=250; end=550; multi200=6.67
+sub-079: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=816.680; annotations=5; start=120; end=420; multi200=5.33
+sub-080: manifest=NO_UNINTERRUPTED_WINDOW; EEG=HEADER_COMPATIBLE; seconds=915.140; annotations=11; start=-; end=-; multi200=-
+sub-081: manifest=NO_UNINTERRUPTED_WINDOW; EEG=HEADER_COMPATIBLE; seconds=824.480; annotations=4; start=-; end=-; multi200=-
+sub-082: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=777.600; annotations=-; start=110; end=410; multi200=1.33
+sub-083: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=913.200; annotations=-; start=610; end=910; multi200=1.33
+sub-084: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=652.100; annotations=-; start=350; end=650; multi200=0.0
+sub-085: manifest=NO_UNINTERRUPTED_WINDOW; EEG=HEADER_COMPATIBLE; seconds=560.060; annotations=4; start=-; end=-; multi200=-
+sub-086: manifest=NO_UNINTERRUPTED_WINDOW; EEG=HEADER_COMPATIBLE; seconds=578.800; annotations=53; start=-; end=-; multi200=-
+sub-087: manifest=CANDIDATE; EEG=HEADER_COMPATIBLE; seconds=602.760; annotations=3; start=260; end=560; multi200=2.67
+sub-088: manifest=NO_UNINTERRUPTED_WINDOW; EEG=HEADER_COMPATIBLE; seconds=784.700; annotations=6; start=-; end=-; multi200=-
+
+===== ORIGINAL WINDOW-SELECTION CODE =====
+audit_subject_stability.py matching lines: 1
+  L122: m.get("multi200_pct")
+thesis_final_audit.py matching lines: 2
+  L306: "multi200_pct":
+  L307: row.get("multi200_pct", "")
+freeze_publication_evidence_v1.py matching lines: 2
+  L236: "multi200_pct", "any300_pct",
+  L237: "flat_pct", "note"
+
+===== FTD PREFLIGHT SUMMARY =====
+FTD subjects in manifest: 23
+HEADER_COMPATIBLE: 23
+FTD subjects with manifest start/end: 18
+Most common annotation labels: [('boundary', 115)]
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/ftd_extension_v1/ftd_recording_preflight.csv
+No FTD participants selected yet. No models trained. Existing AD results unchanged.
+
+===== FTD PREFLIGHT COMPLETE =====

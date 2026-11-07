@@ -1,0 +1,53 @@
+===== MILESTONE 5D: VERIFIED LABELS AND FIXED-FIVE-MINUTE QC =====
+EEG_1: EXACT label mapping passed: MCI=11, NORMAL=16; EDF IDs 1..27; workbook SHA256=bc291f1fe316b2...
+EEG_2: EXACT label mapping passed: MCI=18, NORMAL=16; EDF IDs 1..34; workbook SHA256=4638bacaa397af...
+
+===== CROSS-RELEASE LABEL/IDENTITY STATUS =====
+Overlapping numeric filenames: 27 ; different diagnosis for same numeric filename: 18
+The two archives have release-local IDs. Filename collisions are not a clinical participant linkage.
+Cross-release individual identities remain unverified; do not call all 61 independent people based on spreadsheets alone.
+  QC 1/61 EEG_1-001 NORMAL: SCALE_WARNING; filtered clean per minute=0|0|0|0|0; raw median PTP=83638818.9517uV; filtered median PTP=56018128.3871uV
+  QC 2/61 EEG_1-002 MCI: SCALE_WARNING; filtered clean per minute=0|0|0|0|0; raw median PTP=35572823.682uV; filtered median PTP=19083086.8806uV
+  QC 3/61 EEG_1-003 MCI: SCALE_WARNING; filtered clean per minute=0|0|0|0|0; raw median PTP=123275501.6403uV; filtered median PTP=65258817.9096uV
+  QC 10/61 EEG_1-010 NORMAL: SCALE_WARNING; filtered clean per minute=0|0|0|0|0; raw median PTP=40306324.8646uV; filtered median PTP=29282840.9328uV
+  QC 20/61 EEG_1-020 MCI: SCALE_WARNING; filtered clean per minute=0|0|0|0|0; raw median PTP=93003585.8701uV; filtered median PTP=55202998.5224uV
+  QC 30/61 EEG_2-003 NORMAL: SCALE_WARNING; filtered clean per minute=0|0|0|0|0; raw median PTP=206730296.788uV; filtered median PTP=158900549.7293uV
+  QC 40/61 EEG_2-013 MCI: SCALE_WARNING; filtered clean per minute=0|0|0|0|0; raw median PTP=70777599.7559uV; filtered median PTP=50455550.1153uV
+  QC 50/61 EEG_2-023 MCI: SCALE_WARNING; filtered clean per minute=0|0|0|0|0; raw median PTP=99551766.2318uV; filtered median PTP=65406817.5758uV
+  QC 60/61 EEG_2-033 MCI: SCALE_WARNING; filtered clean per minute=0|0|0|0|0; raw median PTP=84512932.0211uV; filtered median PTP=60280850.7846uV
+  QC 61/61 EEG_2-034 MCI: SCALE_WARNING; filtered clean per minute=0|0|0|0|0; raw median PTP=102056534.6761uV; filtered median PTP=72522948.479uV
+
+===== FIXED FIRST-FIVE-MINUTE QUALITY BY RELEASE AND DIAGNOSIS =====
+EEG_1 MCI: n=11; {'SCALE_WARNING': 11}
+EEG_1 NORMAL: n=16; {'SCALE_WARNING': 16}
+EEG_2 MCI: n=18; {'SCALE_WARNING': 18}
+EEG_2 NORMAL: n=16; {'SCALE_WARNING': 16}
+
+===== QUALITY ISSUES / DIAGNOSTICS =====
+SCALE_WARNING: 61/61
+  EEG_1-001 NORMAL: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-002 MCI: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-003 MCI: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-004 NORMAL: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-005 NORMAL: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-006 MCI: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-007 MCI: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-008 NORMAL: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-009 MCI: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-010 NORMAL: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-011 MCI: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-012 NORMAL: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-013 NORMAL: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-014 MCI: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-015 MCI: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-016 NORMAL: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-017 NORMAL: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-018 NORMAL: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-019 NORMAL: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  EEG_1-020 MCI: SCALE_WARNING; clean=0|0|0|0|0; Implausible median amplitude; inspect EDF physical units before modeling
+  ... 41 additional issues are in CSV
+
+===== MILESTONE 5D COMPLETE =====
+Verified label manifest: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_5d_isfahan_labels_and_qc_v1/release_aware_verified_subject_manifest.csv
+Quality audit: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_5d_isfahan_labels_and_qc_v1/first_five_minute_quality.csv
+No models trained; no previous EEG or thesis results modified.

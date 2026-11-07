@@ -1,0 +1,12 @@
+{
+  "disk_free_gib": 937.093,
+  "eyes_closed_manifest_sha256": "b7ffd198fa49f3d3847e6d6a2100e064fcc344cc86f5d9909d43e73acdfbeac6",
+  "eyes_closed_metadata_sha256": "bd17cf02ec9733c9029d4a6d977b2918309b3c667ff9ceb1b5dce6e3cebccbc1",
+  "eyes_open_metadata_origin": "NEMAR v1.0.0",
+  "eyes_open_metadata_sha256": "e51065da0721dca0999da5d1412abd71c48c9dbd4ec68d219976194a283efc4f",
+  "local_derivative_subjects": 0,
+  "nemar_manifest_sha256": "fda585ee90465c806f672ed912427b5f53895462a622ccc1a1413530f43ef020",
+  "next_protocol": "Eyes-closed outer-training participant models must not see any eyes-open or eyes-closed samples from held-out subject; test quality-eligible eyes-open 60s, without label-based selection",
+  "pinned_nemar_release": "https://data.nemar.org/on006036/v1.0.0",
+  "selected_unique_subjects": 64
+}

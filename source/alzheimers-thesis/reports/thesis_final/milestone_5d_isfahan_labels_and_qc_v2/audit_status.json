@@ -1,0 +1,14 @@
+{
+  "baseline_AD_FTD_results_modified": false,
+  "models_trained": false,
+  "n_recordings": 61,
+  "quality_counts": {
+    "ELIGIBLE_FIXED_300S": 49,
+    "INSUFFICIENT_CLEAN_EPOCHS": 12
+  },
+  "release_unique_ids_not_proven_globally": true,
+  "verified_recording_labels": {
+    "MCI": 29,
+    "NORMAL": 32
+  }
+}

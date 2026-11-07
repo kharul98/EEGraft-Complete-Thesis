@@ -1,0 +1,19 @@
+===== MILESTONE 5E: EDF UNIT/CALIBRATION DIAGNOSIS =====
+Original clinical labels retained; no EEG units corrected; no models trained.
+Traceback (most recent call last):
+  File "/home/user4/alzheimers-thesis/m5e_isfahan_unit_diagnosis_v1.py", line 61, in edf_signal_header
+    n = int(
+        common[252:256].decode('ascii').strip()
+    )
+ValueError: invalid literal for int() with base 10: '19\x00'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/user4/alzheimers-thesis/m5e_isfahan_unit_diagnosis_v1.py", line 223, in <module>
+    headers_list = edf_signal_header(path)
+  File "/home/user4/alzheimers-thesis/m5e_isfahan_unit_diagnosis_v1.py", line 70, in edf_signal_header
+    raise RuntimeError(
+        f'Unparseable EDF header: {path}'
+    ) from exc
+RuntimeError: Unparseable EDF header: /home/user4/alzheimers-thesis/data/external/isfahan_mci_v1/EEG_1/1.edf

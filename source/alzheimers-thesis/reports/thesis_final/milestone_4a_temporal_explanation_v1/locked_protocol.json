@@ -1,0 +1,30 @@
+{
+  "bootstrap": "3000 stratified participant-cluster resamples preserving repeats",
+  "cosine_norm_threshold": 0.05,
+  "explanation": "Signed SVM decision-function change when one feature group is replaced by its training reference",
+  "groups": {
+    "beta": [
+      3
+    ],
+    "delta": [
+      0
+    ],
+    "gamma": [
+      4
+    ],
+    "theta_alpha_family": [
+      1,
+      2,
+      5
+    ]
+  },
+  "limitations": "Nonadditive correlated features; replacements may be off-manifold; not SHAP or causal attribution",
+  "model": "Original repeated nested subject-CV RBF-SVM, trained on first 60s",
+  "reference": "Actual outer-training participant nearest training feature medians",
+  "status": "Exploratory local model-sensitivity audit, original diagnostic cohorts",
+  "temporal_analysis": "Compare held-out blocks 2-5 with held-out block 1",
+  "top_effect_threshold": 0.05,
+  "unit": "Participant, preserving all five correlated CV repeats",
+  "validation": "All saved held-out SVM scores must reproduce to 1e-7",
+  "version": "m4a_v1"
+}

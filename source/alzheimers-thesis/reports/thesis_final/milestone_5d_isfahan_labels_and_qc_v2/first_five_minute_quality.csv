@@ -1,0 +1,62 @@
+subject_id,release,diagnosis,status,quality_window_start_s,quality_window_end_s,sampling_rate_hz,recording_duration_min,eeg_channels,n_boundaries_first_300s,clean_epochs_total,clean_epochs_each_minute,raw_clean_epochs_each_minute,median_filtered_epoch_ptp_uV,median_filtered_epoch_std_uV,median_raw_epoch_ptp_uV,reason
+EEG_1-001,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.317,19,0,145,28|30|28|29|30,27|30|21|26|30,56.0181,10.5097,83.6388,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-002,EEG_1,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,31.2,19,0,150,30|30|30|30|30,30|30|30|30|30,19.0831,3.8211,35.5728,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-003,EEG_1,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,31.867,19,0,99,15|23|21|20|20,5|12|16|17|14,65.2588,13.1469,123.2755,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-004,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.983,19,0,150,30|30|30|30|30,30|30|30|30|30,32.6345,5.938,54.4097,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-005,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,31.017,19,0,138,19|30|30|29|30,16|30|29|27|28,56.8631,10.5759,95.677,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-006,EEG_1,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,31.067,19,0,147,29|30|28|30|30,29|30|28|30|30,29.2819,5.5349,44.3088,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-007,EEG_1,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,31.033,19,0,150,30|30|30|30|30,30|30|30|30|30,31.2099,6.012,61.9087,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-008,EEG_1,NORMAL,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,31.383,19,0,119,4|27|28|30|30,0|2|10|12|10,43.2365,7.9071,78.0005,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_1-009,EEG_1,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,35.067,19,0,146,28|30|28|30|30,28|30|28|30|30,35.2091,6.4597,60.7943,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-010,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.05,19,0,150,30|30|30|30|30,30|30|30|30|30,29.2828,5.1382,40.3063,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-011,EEG_1,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,31.033,19,0,150,30|30|30|30|30,30|30|30|30|30,31.3261,6.0337,50.9235,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-012,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,33.033,19,0,134,21|27|28|28|30,21|25|26|25|30,69.8628,14.2958,91.3116,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-013,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,31.0,19,0,144,26|30|29|29|30,24|30|28|28|30,62.6261,12.4625,88.0094,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-014,EEG_1,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,30.217,19,0,150,30|30|30|30|30,30|30|30|30|30,32.392,5.9731,55.4167,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-015,EEG_1,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,31.15,19,0,117,16|23|23|27|28,7|16|17|23|25,45.422,8.49,88.8119,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-016,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,35.05,19,0,150,30|30|30|30|30,30|27|30|30|30,35.4285,6.3144,55.1151,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-017,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,32.05,19,0,140,30|27|23|30|30,27|25|21|26|27,55.7625,11.2027,102.5473,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-018,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,31.033,19,0,149,29|30|30|30|30,29|29|29|29|29,46.9993,8.5652,78.5731,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-019,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.317,19,0,140,21|29|30|30|30,0|0|0|0|0,48.5955,8.7753,92.7378,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-020,EEG_1,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,35.083,19,0,148,28|30|30|30|30,24|26|27|25|25,55.203,10.6817,93.0036,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-021,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.1,19,0,149,29|30|30|30|30,29|30|30|30|30,31.8487,5.9534,55.8052,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-022,EEG_1,NORMAL,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,30.1,19,0,19,5|3|1|5|5,24|29|30|30|28,38.2785,7.2616,58.1566,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_1-023,EEG_1,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,31.1,19,0,150,30|30|30|30|30,30|30|30|29|30,32.6201,5.864,54.425,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-024,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.183,19,0,138,28|26|30|25|29,20|17|22|23|24,72.5391,14.9489,119.1554,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-025,EEG_1,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,31.333,19,0,145,27|29|29|30|30,27|27|29|30|30,34.0806,6.4878,52.3037,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-026,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.217,19,0,150,30|30|30|30|30,30|30|30|30|30,32.58,5.8985,57.1701,All five 60s blocks passed fixed filter and artifact screen
+EEG_1-027,EEG_1,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,32.017,19,0,146,30|27|29|30|30,26|21|27|29|30,29.9659,5.4273,56.5566,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-001,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.55,19,0,138,26|25|29|30|28,18|23|29|30|28,86.3967,19.2088,115.342,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-002,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.117,19,0,141,27|28|30|30|26,27|28|29|29|25,64.8802,14.9352,85.7653,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-003,EEG_2,NORMAL,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,30.167,19,0,70,6|14|24|10|16,2|8|18|3|7,158.9005,40.9802,206.7303,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_2-004,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.117,19,0,147,29|30|30|28|30,29|30|30|28|30,54.6326,11.8179,68.7738,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-005,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,30.283,19,0,143,28|29|30|28|28,24|28|28|28|28,68.2463,15.478,84.7583,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-006,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,32.45,19,0,133,23|30|30|25|25,23|30|30|22|24,60.3994,15.4439,75.0817,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-007,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,34.817,19,0,148,28|30|30|30|30,28|30|30|30|30,73.2337,17.4604,80.8836,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-008,EEG_2,MCI,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,29.983,19,0,24,1|2|3|4|14,1|0|4|3|12,317.4597,69.1306,376.5025,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_2-009,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.033,19,0,148,30|28|30|30|30,30|28|30|30|30,67.6262,15.4663,81.8906,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-010,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.383,19,0,144,28|28|30|28|30,27|28|30|28|28,85.5913,16.0081,117.8366,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-011,EEG_2,NORMAL,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,30.483,19,0,91,14|17|16|20|24,13|16|15|19|24,121.4666,28.0879,136.3156,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_2-012,EEG_2,MCI,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,30.15,19,0,44,0|0|5|15|24,0|0|0|0|0,140.907,31.2874,241.5517,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_2-013,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,30.417,19,0,139,30|27|30|30|22,30|27|30|30|22,50.4556,10.8129,70.7776,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-014,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.217,19,0,133,25|27|29|25|27,24|27|29|24|26,87.3114,22.6629,103.6156,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-015,EEG_2,NORMAL,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,31.017,19,0,21,0|4|2|7|8,1|4|2|6|7,193.1867,43.4983,207.7271,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_2-016,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,37.867,19,0,116,17|20|24|28|27,0|0|0|0|0,102.3343,21.9205,136.6377,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-017,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.167,19,0,146,28|28|30|30|30,25|28|30|30|30,68.6727,14.975,89.4407,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-018,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,29.4,19,0,142,24|30|29|29|30,22|30|28|28|30,68.2918,15.0472,89.4407,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-019,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,30.083,19,0,135,19|30|29|27|30,2|14|9|18|16,105.2155,21.4432,142.2504,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-020,EEG_2,MCI,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,30.867,19,0,10,0|0|0|2|8,0|0|0|0|0,416.764,82.5838,664.3975,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_2-021,EEG_2,MCI,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,32.283,19,0,0,0|0|0|0|0,0|0|0|0|0,149.3544,40.6234,174.0763,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_2-022,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,30.233,19,0,133,25|28|28|23|29,23|26|25|23|29,82.9047,19.5685,97.9927,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-023,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,31.7,19,0,147,28|30|30|29|30,21|30|30|29|30,65.4068,16.8702,99.5518,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-024,EEG_2,MCI,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,30.767,19,0,106,5|26|30|20|25,0|0|0|0|0,87.672,18.3962,137.3124,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_2-025,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.8,19,0,142,30|30|30|30|22,29|30|30|30|22,58.888,14.6924,72.2753,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-026,EEG_2,NORMAL,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,30.217,19,0,79,17|7|18|20|17,17|6|16|19|14,112.6838,30.1474,139.0607,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_2-027,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,31.7,19,0,142,26|26|30|30|30,26|27|30|30|30,58.9912,13.2881,72.9989,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-028,EEG_2,MCI,INSUFFICIENT_CLEAN_EPOCHS,0,300,256.0,30.467,19,0,57,0|3|8|19|27,0|0|0|0|13,132.1444,39.6585,177.8948,At least one first-five-minute block below 15 of 30 clean epochs
+EEG_2-029,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,30.35,19,0,147,27|30|30|30|30,26|29|29|29|29,61.1484,13.9042,92.0017,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-030,EEG_2,NORMAL,ELIGIBLE_FIXED_300S,0,300,256.0,27.333,19,0,146,27|30|30|29|30,27|30|30|29|30,75.2944,17.8259,91.8688,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-031,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,30.433,19,0,149,29|30|30|30|30,28|30|30|26|29,83.0757,17.8955,114.2277,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-032,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,30.167,19,0,124,16|24|29|27|28,0|1|2|4|8,112.4598,25.0533,190.6793,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-033,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,30.05,19,0,143,26|28|29|30|30,25|28|29|30|30,60.2809,15.2574,84.5129,All five 60s blocks passed fixed filter and artifact screen
+EEG_2-034,EEG_2,MCI,ELIGIBLE_FIXED_300S,0,300,256.0,30.8,19,0,135,24|27|26|28|30,14|20|18|19|25,72.5229,16.8991,102.0565,All five 60s blocks passed fixed filter and artifact screen

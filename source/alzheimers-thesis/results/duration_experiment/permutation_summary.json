@@ -1,0 +1,10 @@
+{
+  "condition": "AD_vs_CN_300s_center",
+  "observed_balanced_accuracy": 0.7993295019157088,
+  "null_mean": 0.4981992337164753,
+  "null_std": 0.07528237202482929,
+  "null_min": 0.3218390804597701,
+  "null_max": 0.6853448275862069,
+  "empirical_p": 0.009900990099009901,
+  "permutations": 100
+}

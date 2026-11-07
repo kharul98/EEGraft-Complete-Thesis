@@ -1,0 +1,53 @@
+===== FILE LOCATION CHECK =====
+Scanning: /mnt/d/user4
+Scanning: /mnt/c/Users/user4/Downloads
+
+===== DRYAD CONTROL FILE =====
+Location: /mnt/c/Users/user4/Downloads/doi_10_5061_dryad_8gtht76pw__v20221027 (1)/controls_c1_new.mat
+Size GiB: 6.673
+HDF5: VALID
+MATLAB group: controls_r
+Fields: ['G', 'age', 'g', 'n', 'sex']
+EEG reference grid: (1, 96)
+Long 19-channel slots: 0
+Distinct long signal arrays: 0
+
+===== BRAINLAT AD / HC AVAILABILITY =====
+
+GROUP: AD
+SET stems: 12
+FDT stems: 2
+Matching stems: 0
+Missing FDT by stem: 12
+  Example missing pair: s6_sub-30011_rs-hep_eeg | SET size MiB: 36.67
+  Example missing pair: s6_sub-30015_rs-hep_eeg | SET size MiB: 41.73
+  Example missing pair: s6_sub-30023_rs-hep_eeg | SET size MiB: 42.8
+  Example missing pair: s6_sub-30012_rs-hep_eeg | SET size MiB: 58.55
+  Example missing pair: s6_sub-30017_rs-hep_eeg | SET size MiB: 64.16
+
+GROUP: HC
+SET stems: 46
+FDT stems: 10
+Matching stems: 10
+Missing FDT by stem: 36
+  Example missing pair: s6_sub-10009_rs_eeg | SET size MiB: 2.21
+  Example missing pair: s6_sub-10004_rs_eeg | SET size MiB: 2.33
+  Example missing pair: s6_sub-100015_rs_eeg | SET size MiB: 2.34
+  Example missing pair: s6_sub-100040_rs_eeg | SET size MiB: 2.35
+  Example missing pair: s6_sub-100030_rs_eeg | SET size MiB: 2.37
+
+GROUP: UNCLASSIFIED
+SET stems: 22
+FDT stems: 19
+Matching stems: 0
+Missing FDT by stem: 22
+  Example missing pair: s6_sub-30009_rs-hep_eeg | SET size MiB: 103.39
+  Example missing pair: s6_sub-30031_rs-hep_eeg | SET size MiB: 105.7
+  Example missing pair: s6_sub-30035_rs-hep_eeg | SET size MiB: 105.98
+  Example missing pair: s6_sub-30022_rs-hep_eeg | SET size MiB: 106.45
+  Example missing pair: s6_sub-30018_rs-hep_eeg | SET size MiB: 108.32
+
+===== DATASET READINESS CHECK COMPLETE =====
+No ZIP archives were extracted.
+No EEG signal arrays were loaded.
+No downloaded data was modified.

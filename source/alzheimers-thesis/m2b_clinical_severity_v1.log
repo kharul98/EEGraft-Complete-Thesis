@@ -1,0 +1,36 @@
+===== MILESTONE 2B: WITHIN-DIAGNOSIS MMSE ASSOCIATIONS =====
+PASS: 87 task-subject rows, 64 unique participants; shared controls and MMSE/age verified.
+
+===== AD_vs_HC: PATIENT-ONLY SEVERITY ASSOCIATIONS =====
+n=23, MMSE median=20.0, MMSE unique=8, age unique=16, age-MMSE rho=+0.499
+primary   disease_probability       Spearman rho=-0.385, perm p=0.0586; age-adjusted rho=-0.346, approx p=0.1046
+primary   class_reversal_rate       Spearman rho=+0.214, perm p=0.3299; age-adjusted rho=+0.252, approx p=0.2509
+secondary temporal_probability_sd   Spearman rho=+0.188, perm p=0.3901; age-adjusted rho=+0.232, approx p=0.2957
+secondary original_label_support    Spearman rho=-0.146, perm p=0.4977; age-adjusted rho=-0.148, approx p=0.5009
+secondary stable_wrong_rate         Spearman rho=+0.555, perm p=0.0048; age-adjusted rho=+0.546, approx p=0.0082
+
+===== FTD_vs_HC: PATIENT-ONLY SEVERITY ASSOCIATIONS =====
+n=18, MMSE median=22.0, MMSE unique=6, age unique=15, age-MMSE rho=+0.264
+primary   disease_probability       Spearman rho=+0.039, perm p=0.8780; age-adjusted rho=+0.065, approx p=0.8058
+primary   class_reversal_rate       Spearman rho=+0.129, perm p=0.6067; age-adjusted rho=+0.060, approx p=0.8270
+secondary temporal_probability_sd   Spearman rho=+0.316, perm p=0.2064; age-adjusted rho=+0.249, approx p=0.3393
+secondary original_label_support    Spearman rho=+0.220, perm p=0.3889; age-adjusted rho=+0.254, approx p=0.3309
+secondary stable_wrong_rate         Spearman rho=-0.296, perm p=0.2643; age-adjusted rho=-0.285, approx p=0.2861
+
+===== MULTIPLICITY-ADJUSTED PRIMARY RESULTS =====
+AD_vs_HC / disease_probability: rho=-0.385, raw permutation p=0.0586, Holm p=0.2344, 95% subject-bootstrap CI [-0.713, +0.108]
+AD_vs_HC / class_reversal_rate: rho=+0.214, raw permutation p=0.3299, Holm p=0.9898, 95% subject-bootstrap CI [-0.188, +0.579]
+FTD_vs_HC / disease_probability: rho=+0.039, raw permutation p=0.8780, Holm p=1.0000, 95% subject-bootstrap CI [-0.492, +0.547]
+FTD_vs_HC / class_reversal_rate: rho=+0.129, raw permutation p=0.6067, Holm p=1.0000, 95% subject-bootstrap CI [-0.386, +0.621]
+
+===== SECONDARY RESULTS AND MULTIPLE TESTING =====
+AD_vs_HC / temporal_probability_sd: rho=+0.188, raw p=0.3901, BH q=0.5573
+AD_vs_HC / original_label_support: rho=-0.146, raw p=0.4977, BH q=0.6221
+AD_vs_HC / stable_wrong_rate: rho=+0.555, raw p=0.0048, BH q=0.0480
+FTD_vs_HC / temporal_probability_sd: rho=+0.316, raw p=0.2064, BH q=0.5573
+FTD_vs_HC / original_label_support: rho=+0.220, raw p=0.3889, BH q=0.5573
+FTD_vs_HC / stable_wrong_rate: rho=-0.296, raw p=0.2643, BH q=0.5573
+
+===== MILESTONE 2B COMPLETE =====
+Results: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_2b_mmse_associations_v1
+No EEG processing or model training performed; no pooled diagnostic-group correlations.

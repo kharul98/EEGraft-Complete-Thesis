@@ -1,0 +1,50 @@
+{
+  "cohort_n": 46,
+  "diagnosis_positive": "A (AD)",
+  "durations_seconds": [
+    60,
+    180,
+    300
+  ],
+  "sampling_rate_hz": 500,
+  "epoch_seconds": 2,
+  "welch_nperseg": 1000,
+  "welch_noverlap": 0,
+  "reference_band_hz": [
+    1,
+    45
+  ],
+  "frequency_bands_hz": {
+    "delta": [
+      1,
+      4
+    ],
+    "theta": [
+      4,
+      8
+    ],
+    "alpha": [
+      8,
+      13
+    ],
+    "beta": [
+      13,
+      30
+    ],
+    "gamma": [
+      30,
+      45
+    ]
+  },
+  "band_power": "Sum Welch PSD bins per epoch/channel divided by total 1-45 Hz power",
+  "subject_aggregation": "Median across retained epoch-channel values",
+  "theta_alpha_ratio": "Aggregated theta divided by aggregated alpha",
+  "artifact_rules": "Exclude 2-second epoch if >=3 channels ptp>200uV, any channel ptp>300uV, or any channel std<0.5uV",
+  "minimum_clean_fraction": 0.5,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "repeats": 5,
+  "evaluation_unit": "participant",
+  "primary_metric": "balanced accuracy",
+  "note": "Separate duration protocol; not claimed identical to prior 300-second baseline"
+}

@@ -1,0 +1,34 @@
+===== MILESTONE 3A: CROSS-CONDITION DATASET PREFLIGHT =====
+Eyes-closed source: 88 participants; selected 23 AD, 18 FTD, 23 HC
+
+===== PAIRED PARTICIPANT METADATA =====
+Eyes-open metadata source: NEMAR v1.0.0
+Metadata file: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_3a_cross_condition_preflight_v1/on006036_v1.0.0_participants.tsv
+PASS: all 88 IDs and disease labels match exactly
+Age differences: 0 MMSE differences: 88
+WARNING: Metadata differences require inspection before modeling
+
+===== LOCAL EEG DATA AVAILABILITY =====
+Existing local EO dataset roots: none
+Selected subjects with local derivative .set files: 0/64
+Available disk space: 937.09 GiB
+NEMAR CLI: not installed
+npm: not installed
+datalad: not installed
+
+===== PINNED REMOTE FILE INVENTORY =====
+NEMAR v1.0.0 manifest: readable
+Selected-subject manifest entries: 320
+Selected derivative .set files: 64
+Selected derivative .fdt files: 0
+Selected event sidecars: 64
+
+===== PHOTOSTIMULATION EVENT PREVIEW =====
+Events A sub-001: 534 total; 312 start before 60s; columns=['onset', 'duration', 'sample', 'value']
+Events F sub-066: 695 total; 313 start before 60s; columns=['onset', 'duration', 'sample', 'value']
+Events C sub-037: 532 total; 312 start before 60s; columns=['onset', 'duration', 'sample', 'value']
+
+===== MILESTONE 3A COMPLETE =====
+Output: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_3a_cross_condition_preflight_v1
+No EEG recordings downloaded; no models trained; no old results changed.
+A 60s eyes-open test is feasible in principle; five 60s blocks cannot be assumed.

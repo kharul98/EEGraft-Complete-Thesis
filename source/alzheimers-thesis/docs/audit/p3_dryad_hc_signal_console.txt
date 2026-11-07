@@ -1,0 +1,51 @@
+===== DRYAD CONTROL NESTED-REFERENCE AUDIT =====
+Source: /mnt/c/Users/user4/Downloads/doi_10_5061_dryad_8gtht76pw__v20221027 (1)/controls_c1_new.mat
+Size GiB: 6.673
+Reference grid: (1, 96)
+
+REFERENCE CHAIN 1
+  /#refs#/hd shape: (1, 1)
+  /#refs#/id shape: (1125002, 19)
+
+REFERENCE CHAIN 2
+  /#refs#/jd shape: (1, 1)
+  /#refs#/kd shape: (365202, 19)
+
+REFERENCE CHAIN 3
+  /#refs#/ld shape: (1, 1)
+  /#refs#/md shape: (263602, 19)
+
+===== CONTROL ARRAY ELIGIBILITY =====
+Total slots: 96
+Unique eligible signal arrays: 96
+Eligible duration min/median/max (s): [332.0, np.float64(1145.0), 2725.0]
+
+===== REAL DRYAD CONTROL EEG ANALYSIS =====
+Processed 15/96 unique eligible arrays
+Processed 30/96 unique eligible arrays
+Processed 45/96 unique eligible arrays
+Processed 60/96 unique eligible arrays
+Processed 75/96 unique eligible arrays
+Processed 90/96 unique eligible arrays
+
+===== DRYAD CONTROL SIGNAL RESULTS =====
+Analyzed recordings: 96
+Excluded recordings: 0
+
+Median disagreement:
+fixed_end_60_tv     0.058095
+fixed_end_120_tv    0.056185
+fixed_end_180_tv    0.061637
+
+===== PRIMARY CONTROL EFFECT =====
+successful_unique_recordings : 96
+excluded_recordings : 0
+mean_180_minus_60 : 0.0009372691203502542
+median_180_minus_60 : 0.0005228338833622934
+fraction_negative : 0.5
+assumed_sampling_rate_hz : 500
+participant_independence_verified : False
+recording_condition_verified : False
+same_analysis_function_as_dryad_ad : True
+
+DRYAD CONTROL SIGNAL STAGE COMPLETE

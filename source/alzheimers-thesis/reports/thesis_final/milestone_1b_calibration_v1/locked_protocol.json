@@ -1,0 +1,11 @@
+{
+  "calibration": "fixed C=1 sigmoid logistic regression on 3-fold out-of-fold first-minute training margins",
+  "important": "calibration may change the p>=0.5 decision; raw SVM labels remain unchanged",
+  "limitations": "same dataset reused; small training folds; no external test; conditional estimates",
+  "model_selection": "same train-only 3-fold grid, BACC scoring",
+  "outer_cv": "5 repeats x 5 subject folds, identical to prior SVM study",
+  "primary_calibration_check": "first-minute Brier, NLL, ECE(5), AUC and training-fold prevalence baseline",
+  "status": "post-hoc exploratory, original diagnostic cohorts",
+  "test": "held-out participants only; 5 nonoverlapping 60-second blocks",
+  "version": "milestone_1b_v1"
+}

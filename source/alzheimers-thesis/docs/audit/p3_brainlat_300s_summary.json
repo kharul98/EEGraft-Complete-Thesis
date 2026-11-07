@@ -1,0 +1,93 @@
+{
+  "status": "EXPLORATORY, PREPROCESSED EEG, SELECTION-BIASED HC",
+  "data": "BrainLat downloaded physical SET/FDT files",
+  "endpoint": "Fixed-end 180s minus fixed-end 60s TV versus disjoint 240-300s reference",
+  "primary_windows_seconds": {
+    "fixed_60": [
+      120,
+      180
+    ],
+    "fixed_180": [
+      0,
+      180
+    ],
+    "reference": [
+      240,
+      300
+    ]
+  },
+  "reliability_function": "Exact frozen p3_dryad_ad_signal_stage.analyze",
+  "resampling": "scipy.signal.resample_poly to 500 Hz before frozen analysis",
+  "mapped_channel_labels": {
+    "Fp1": "C29",
+    "Fp2": "C16",
+    "F7": "D7",
+    "F3": "D4",
+    "Fz": "C21",
+    "F4": "C4",
+    "F8": "C7",
+    "T7": "D24",
+    "C3": "D19",
+    "Cz": "A1",
+    "C4": "B22",
+    "T8": "B14",
+    "P7": "A10",
+    "P3": "A18",
+    "Pz": "A19",
+    "P4": "B4",
+    "P8": "B7",
+    "O1": "A16",
+    "O2": "A29"
+  },
+  "max_montage_unit_sphere_distance": 0.16771187388602132,
+  "eligible_readiness_rows": 36,
+  "successful_recordings": 36,
+  "excluded_recordings": 0,
+  "cohorts": {
+    "AD": {
+      "n": 28,
+      "mean_180_minus_60": 0.006756135181584222,
+      "median_180_minus_60": 0.0014500752461809943,
+      "fraction_negative": 0.5,
+      "median_fixed_60_tv": 0.05549694959210085,
+      "median_fixed_120_tv": 0.0525229436756281,
+      "median_fixed_180_tv": 0.05254738583235456
+    },
+    "HC": {
+      "n": 8,
+      "mean_180_minus_60": 7.650582038426935e-05,
+      "median_180_minus_60": -0.0033072157187504815,
+      "fraction_negative": 0.5,
+      "median_fixed_60_tv": 0.06027484754482375,
+      "median_fixed_120_tv": 0.051680245615049546,
+      "median_fixed_180_tv": 0.05315854725209211
+    }
+  },
+  "by_site": {
+    "AD/UNSPECIFIED": {
+      "n": 28,
+      "mean_180_minus_60": 0.006756135181584222,
+      "median_180_minus_60": 0.0014500752461809943,
+      "fraction_negative": 0.5,
+      "median_fixed_60_tv": 0.05549694959210085,
+      "median_fixed_120_tv": 0.0525229436756281,
+      "median_fixed_180_tv": 0.05254738583235456
+    },
+    "HC/UNSPECIFIED": {
+      "n": 8,
+      "mean_180_minus_60": 7.650582038426935e-05,
+      "median_180_minus_60": -0.0033072157187504815,
+      "fraction_negative": 0.5,
+      "median_fixed_60_tv": 0.06027484754482375,
+      "median_fixed_120_tv": 0.051680245615049546,
+      "median_fixed_180_tv": 0.05315854725209211
+    }
+  },
+  "limitations": [
+    "BrainLat EEG has already been offline filtered and artifact corrected.",
+    "19 electrodes are geometrically nearest BioSemi128 sensors, not identical 10-20 electrodes.",
+    "36 HC records had missing FDT; usable controls are heavily selected.",
+    "Folder site labels are provisional and require metadata verification.",
+    "No independent causal online validation or diagnosis claim can be made."
+  ]
+}

@@ -1,0 +1,15 @@
+===== MILESTONE 6D: FIGSHARE FEASIBILITY CLOSEOUT =====
+PASS: Figshare archive checksum and 471-file inventory unchanged.
+Figshare recording proxies: AD=57, MCI=7, CONTROL=102.
+Standard 19-column, nominal >=60s: AD=44; CONTROL=1.
+CONTROL segmenty (22-row format): 100 files; nominal >=60s=82.
+Nonstandard export matrix widths: 10 files.
+No common electrode-map verification or source-compatible control cohort.
+
+===== MILESTONE 6D COMPLETE =====
+Decision: NO-GO for original 19-channel Figshare external AD validation.
+EEG_1 negative-control verified: BACC=0.4078; stable-wrong=0.5920; unstable=0.0560
+EEG_2 negative-control verified: BACC=0.5583; stable-wrong=0.3583; unstable=0.2000
+Frozen outputs: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_6d_figshare_feasibility_decision_v1
+Next phase: final thesis results consolidation and chapter writing.
+No EEG modified, no classifier trained, no earlier milestone overwritten.

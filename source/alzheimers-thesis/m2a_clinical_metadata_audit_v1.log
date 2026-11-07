@@ -1,0 +1,33 @@
+===== MILESTONE 2A: MMSE / CLINICAL METADATA PREFLIGHT =====
+Metadata source: /home/user4/alzheimers-thesis/data/eeg/on004504_v1.0.0/participants.tsv
+Metadata origin: local dataset file
+PASS: All 88 subject IDs and diagnostic labels match the frozen manifest.
+PASS: Selected subjects = 23 AD + 18 FTD + 23 healthy (64 unique).
+Available fields: Gender, Age, Group, MMSE. Per-subject disease duration: NOT in this TSV.
+
+===== SELECTED VS EXCLUDED MMSE / AGE AVAILABILITY =====
+A SELECTED: n=23, MMSE=23/23 (median=20.0, range=4.0-23.0, unique=8); Age=23/23
+A EXCLUDED: n=13, MMSE=13/13 (median=18.0, range=9.0-22.0, unique=6); Age=13/13
+F SELECTED: n=18, MMSE=18/18 (median=22.0, range=18.0-27.0, unique=6); Age=18/18
+F EXCLUDED: n=5, MMSE=5/5 (median=24.0, range=18.0-26.0, unique=4); Age=5/5
+C SELECTED: n=23, MMSE=23/23 (median=30.0, range=30.0-30.0, unique=1); Age=23/23
+C EXCLUDED: n=6, MMSE=6/6 (median=30.0, range=30.0-30.0, unique=1); Age=6/6
+
+===== MILESTONE 1C GAIN INTERVALS (SAVED RESULTS) =====
+AD_vs_HC first_minute_original_label_support 80%: selected BACC=0.8068, gain=+0.0721, conditional gain CI=[+0.0186, +0.1075]
+AD_vs_HC five_minute_label_consensus 70%: selected BACC=0.8026, gain=+0.0678, conditional gain CI=[+0.0184, +0.1243]
+AD_vs_HC stable-only error AUROC=0.5019, conditional CI=[0.2120, 0.8144]
+FTD_vs_HC first_minute_original_label_support 80%: selected BACC=0.7739, gain=+0.0367, conditional gain CI=[-0.0220, +0.0754]
+FTD_vs_HC five_minute_label_consensus 70%: selected BACC=0.8029, gain=+0.0657, conditional gain CI=[+0.0099, +0.1150]
+FTD_vs_HC stable-only error AUROC=0.6239, conditional CI=[0.4141, 0.8412]
+
+===== CLINICAL ASSOCIATION FEASIBILITY =====
+AD_vs_HC patient-only: subjects=23, MMSE available=23, unique MMSE values=8, age available=23
+FTD_vs_HC patient-only: subjects=18, MMSE available=18, unique MMSE values=6, age available=18
+Shared healthy controls: n=23, MMSE unique values=1; do not calculate a within-control correlation when MMSE is constant.
+The 87 task-subject rows represent 64 unique participants because healthy controls are reused.
+No severity correlations or regression models have been fitted yet.
+
+===== MILESTONE 2A COMPLETE =====
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_2a_clinical_metadata_v1
+Original EEG, classifiers, and prior reports unchanged.

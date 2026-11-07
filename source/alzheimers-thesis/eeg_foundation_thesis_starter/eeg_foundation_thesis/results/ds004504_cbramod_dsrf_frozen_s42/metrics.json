@@ -1,0 +1,90 @@
+{
+  "experiment": "ds004504_cbramod_dsrf_frozen_s42",
+  "model": "fusion",
+  "train_mode": "frozen",
+  "trained_with_pretrained_weights": true,
+  "backbone_weights_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "config": {
+    "manifest": "manifests/ds004504_ad_cn_preprocessed.csv",
+    "run_name": "ds004504_cbramod_dsrf_frozen_s42",
+    "model": "fusion",
+    "train_mode": "frozen",
+    "weights": "",
+    "seconds": 4,
+    "high_hz": 40.0,
+    "max_windows_per_subject": 24,
+    "artifact_limit_uv": null,
+    "car": false,
+    "epochs": 15,
+    "patience": 5,
+    "batch_size": 8,
+    "lr": null,
+    "seed": 42,
+    "robustness": false,
+    "cpu": false,
+    "overwrite": false,
+    "validation_only": true
+  },
+  "subjects_per_split": {
+    "train": 39,
+    "val": 13
+  },
+  "windows_per_split": {
+    "train": 936,
+    "val": 312
+  },
+  "validation": {
+    "n_subjects": 13,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 0.9230769230769231,
+    "balanced_accuracy": 0.9285714285714286,
+    "macro_f1": 0.9230769230769231,
+    "majority_rate": 0.5384615384615384,
+    "ece_10_bins": 0.28344602331992813,
+    "multiclass_brier": 0.313667931489217,
+    "confusion_matrix": [
+      [
+        6,
+        1
+      ],
+      [
+        0,
+        6
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 1.0,
+        "recall": 0.8571428571428571,
+        "f1-score": 0.9230769230769231,
+        "support": 7.0
+      },
+      "CN": {
+        "precision": 0.8571428571428571,
+        "recall": 1.0,
+        "f1-score": 0.9230769230769231,
+        "support": 6.0
+      },
+      "accuracy": 0.9230769230769231,
+      "macro avg": {
+        "precision": 0.9285714285714286,
+        "recall": 0.9285714285714286,
+        "f1-score": 0.9230769230769231,
+        "support": 13.0
+      },
+      "weighted avg": {
+        "precision": 0.9340659340659341,
+        "recall": 0.9230769230769231,
+        "f1-score": 0.9230769230769231,
+        "support": 13.0
+      }
+    },
+    "auroc_ovr_macro": 0.880952380952381
+  },
+  "test": null,
+  "test_not_evaluated": true
+}

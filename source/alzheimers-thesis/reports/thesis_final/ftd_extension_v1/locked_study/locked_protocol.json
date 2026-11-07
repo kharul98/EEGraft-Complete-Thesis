@@ -1,0 +1,56 @@
+{
+  "aggregation": "Relative band-bin PSD sums; median over retained epoch-channel cells",
+  "artifact_screen": "Reject a 2-second epoch if >=3 channels ptp>200uV, any channel ptp>300uV, or any channel std<0.5uV",
+  "bands_hz": {
+    "alpha": [
+      8,
+      13
+    ],
+    "beta": [
+      13,
+      30
+    ],
+    "delta": [
+      1,
+      4
+    ],
+    "gamma": [
+      30,
+      45
+    ],
+    "theta": [
+      4,
+      8
+    ]
+  },
+  "cohort": "All frozen CANDIDATE FTD participants and the same selected controls as AD study",
+  "grid": {
+    "C": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "gamma": [
+      "scale",
+      0.01,
+      0.1
+    ]
+  },
+  "inner_cv": "3 subject-stratified folds on outer training only",
+  "limitation": "Previously examined dataset; no external validation; not preregistered",
+  "minimum_usable": "At least 50 percent clean epochs and at least 10 epochs per block",
+  "model": "StandardScaler + class-balanced RBF-SVM",
+  "negative_label": "C (healthy)",
+  "outer_cv": "5 subject-stratified folds x 5 repeats",
+  "positive_label": "F (FTD)",
+  "primary": "First-minute-trained model tested on five held-out minute positions; within-recording class reversals",
+  "reference_band_hz": [
+    1,
+    45
+  ],
+  "secondary": "60/180/300-second nested-CV comparison",
+  "signal": "300-second manifest windows, 500Hz, 19 EEG channels, microvolts",
+  "status": "Post-hoc exploratory secondary study",
+  "uncertainty": "Participant-stratified bootstrap, preserving repetitions and shared controls",
+  "welch": "Hann, nperseg=1000, noverlap=0, constant detrend, density"
+}

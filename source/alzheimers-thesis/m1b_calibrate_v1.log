@@ -1,0 +1,43 @@
+===== MILESTONE 1B: TRAINING-ONLY SVM CALIBRATION =====
+AD_vs_HC: reproduced and calibrated CV repeat 1/5
+AD_vs_HC: reproduced and calibrated CV repeat 2/5
+AD_vs_HC: reproduced and calibrated CV repeat 3/5
+AD_vs_HC: reproduced and calibrated CV repeat 4/5
+AD_vs_HC: reproduced and calibrated CV repeat 5/5
+
+===== AD_vs_HC CALIBRATION RESULTS =====
+minute 1: original BACC=0.7348, calibrated-label BACC=0.7435, Brier=0.1861, prior Brier=0.2513, ECE5=0.1629, NLL=0.5672, AUC=0.7879
+minute 2: original BACC=0.7304, calibrated-label BACC=0.7087, Brier=0.1915, prior Brier=0.2513, ECE5=0.0830, NLL=0.5655, AUC=0.7732
+minute 3: original BACC=0.7609, calibrated-label BACC=0.7522, Brier=0.1653, prior Brier=0.2513, ECE5=0.0966, NLL=0.5004, AUC=0.8420
+minute 4: original BACC=0.7174, calibrated-label BACC=0.7000, Brier=0.1776, prior Brier=0.2513, ECE5=0.1055, NLL=0.5285, AUC=0.8121
+minute 5: original BACC=0.6435, calibrated-label BACC=0.6348, Brier=0.2215, prior Brier=0.2513, ECE5=0.0990, NLL=0.6454, AUC=0.7255
+
+===== AD_vs_HC UNCERTAINTY BY 1A STATE =====
+stable_correct: n_subject_repeats=108, mean first-minute confidence=0.7676, mean first-minute entropy=0.5169, mean five-minute probability SD=0.0638
+stable_wrong: n_subject_repeats=20, mean first-minute confidence=0.7667, mean first-minute entropy=0.5008, mean five-minute probability SD=0.0920
+unstable: n_subject_repeats=102, mean first-minute confidence=0.6332, mean first-minute entropy=0.6255, mean five-minute probability SD=0.1588
+AD_vs_HC first-minute Brier minus training-prior Brier: -0.0652; conditional paired 95% CI [-0.1138, -0.0087]
+FTD_vs_HC: reproduced and calibrated CV repeat 1/5
+FTD_vs_HC: reproduced and calibrated CV repeat 2/5
+FTD_vs_HC: reproduced and calibrated CV repeat 3/5
+FTD_vs_HC: reproduced and calibrated CV repeat 4/5
+FTD_vs_HC: reproduced and calibrated CV repeat 5/5
+
+===== FTD_vs_HC CALIBRATION RESULTS =====
+minute 1: original BACC=0.7372, calibrated-label BACC=0.6932, Brier=0.1917, prior Brier=0.2479, ECE5=0.1178, NLL=0.5645, AUC=0.7937
+minute 2: original BACC=0.7386, calibrated-label BACC=0.6604, Brier=0.2037, prior Brier=0.2479, ECE5=0.1264, NLL=0.5939, AUC=0.7507
+minute 3: original BACC=0.7708, calibrated-label BACC=0.7024, Brier=0.1965, prior Brier=0.2479, ECE5=0.1133, NLL=0.5828, AUC=0.7594
+minute 4: original BACC=0.7070, calibrated-label BACC=0.6976, Brier=0.1974, prior Brier=0.2479, ECE5=0.0810, NLL=0.5766, AUC=0.7623
+minute 5: original BACC=0.6877, calibrated-label BACC=0.6911, Brier=0.2090, prior Brier=0.2479, ECE5=0.0779, NLL=0.6028, AUC=0.7319
+
+===== FTD_vs_HC UNCERTAINTY BY 1A STATE =====
+stable_correct: n_subject_repeats=109, mean first-minute confidence=0.7148, mean first-minute entropy=0.5559, mean five-minute probability SD=0.0641
+stable_wrong: n_subject_repeats=27, mean first-minute confidence=0.6678, mean first-minute entropy=0.6037, mean five-minute probability SD=0.0818
+unstable: n_subject_repeats=69, mean first-minute confidence=0.6080, mean first-minute entropy=0.6513, mean five-minute probability SD=0.1283
+FTD_vs_HC first-minute Brier minus training-prior Brier: -0.0563; conditional paired 95% CI [-0.0951, -0.0090]
+
+===== MILESTONE 1B COMPLETE =====
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_1b_calibration_v1
+All historical hard predictions and SVM margins reproduced; none modified.
+Sigmoid calibration trained without held-out participant labels.
+Small-cohort conditional internal validation; no clinical calibration claim.

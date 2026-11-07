@@ -1,0 +1,9 @@
+{
+  "EEG_1_recordings": 27,
+  "EEG_2_recordings": 34,
+  "candidate_class_vectors": 2,
+  "cross_release_unique_subjects_confirmed": false,
+  "diagnosis_mapping_confirmed": false,
+  "next_step": "Confirm diagnostic code meanings and EDF-to-spreadsheet linkage before freezing a subject manifest.",
+  "total_EEG_files": 61
+}

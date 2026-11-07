@@ -1,0 +1,20 @@
+===== PUBLICATION EVIDENCE FREEZE =====
+PASS: 46-subject 300s feature reproduction, max difference=1.77e-10
+PASS: 1,150 predictions for each of three training strategies, matched by subject/fold
+
+===== VERIFIED PUBLICATION NUMBERS =====
+Retrospective cohort: 46 (23 AD, 23 HC)
+Within-recording reversals: 102/230 subject-repeat evaluations = 0.4435
+Conditional reversal-rate 95% CI: [0.3261, 0.5652]
+Participants reversing in at least one repeat: 27/46
+first_minute_training, test all: BACC=0.7174
+first_minute_training, test 5: BACC=0.6435
+position_matched_training, test all: BACC=0.7148
+position_matched_training, test 5: BACC=0.7000
+five_block_training, test all: BACC=0.7209
+five_block_training, test 5: BACC=0.7043
+Primary overall augmented advantage: +0.0035, conditional 95% CI [-0.0348, +0.0392]
+
+===== PUBLICATION EVIDENCE FREEZE COMPLETE =====
+Output directory: /home/user4/alzheimers-thesis/reports/thesis_final/publication_evidence_v1
+Original data, training code and previous reports unchanged.

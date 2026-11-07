@@ -1,0 +1,104 @@
+===== FOLDER TREE =====
+
+ROOT: /mnt/c/Users/user4/Downloads
+  FOLDER: 1_AD
+  FOLDER: 5_HC
+  FOLDER: doi_10_5061_dryad_8gtht76pw__v20221027
+  FOLDER: doi_10_5061_dryad_8gtht76pw__v20221027 (1)
+
+ROOT: /mnt/d/user4
+
+===== FILE COUNTS BY EXTRACTED FOLDER =====
+   2 .fdt  | 1_AD | /mnt/c/Users/user4/Downloads
+  12 .set  | 1_AD | /mnt/c/Users/user4/Downloads
+  10 .fdt  | 5_HC | /mnt/c/Users/user4/Downloads
+  46 .set  | 5_HC | /mnt/c/Users/user4/Downloads
+   1 .mat  | [root] | /mnt/c/Users/user4/Downloads
+   1 .mat  | doi_10_5061_dryad_8gtht76pw__v20221027 (1) | /mnt/c/Users/user4/Downloads
+  19 .fdt  | [root] | /mnt/d/user4
+  22 .set  | [root] | /mnt/d/user4
+
+===== NESTED ZIP CONTENTS =====
+
+===== BRAINLAT BY FOLDER AND COHORT =====
+
+GROUP: AD
+SET files on disk: 34
+FDT files on disk: 2
+SET names in ZIP: 0
+FDT names in ZIP: 0
+Unique SET names: 34
+Unique FDT names: 2
+Matching names: 0
+No same-stem FDT: 34
+  Small SET: s6_sub-30011_rs-HEP_eeg.set | MiB: 36.67 | folder: /mnt/c/Users/user4/Downloads/1_AD
+  Small SET: s6_sub-30015_rs-HEP_eeg.set | MiB: 41.73 | folder: /mnt/c/Users/user4/Downloads/1_AD
+  Large SET: s6_sub-30006_rs-HEP_eeg.set | MiB: 158.21 | folder: /mnt/d/user4
+  Large SET: s6_sub-30027_rs-HEP_eeg.set | MiB: 172.8 | folder: /mnt/d/user4
+
+GROUP: HC
+SET files on disk: 46
+FDT files on disk: 29
+SET names in ZIP: 0
+FDT names in ZIP: 0
+Unique SET names: 46
+Unique FDT names: 29
+Matching names: 29
+No same-stem FDT: 17
+  Small SET: s6_sub-100035_rs_eeg.set | MiB: 1.78 | folder: /mnt/c/Users/user4/Downloads/5_HC
+  Small SET: s6_sub-100020_rs_eeg.set | MiB: 2.02 | folder: /mnt/c/Users/user4/Downloads/5_HC
+  Large SET: s6_sub-100039_rs_eeg.set | MiB: 3.26 | folder: /mnt/c/Users/user4/Downloads/5_HC
+  Large SET: s6_sub-100029_rs_eeg.set | MiB: 3.33 | folder: /mnt/c/Users/user4/Downloads/5_HC
+
+GROUP: UNKNOWN
+SET files on disk: 0
+FDT files on disk: 0
+SET names in ZIP: 0
+FDT names in ZIP: 0
+Unique SET names: 0
+Unique FDT names: 0
+Matching names: 0
+No same-stem FDT: 0
+
+===== BRAINLAT SET FORMAT SAMPLES =====
+
+GROUP: AD | FILE: s6_sub-30011_rs-HEP_eeg.set
+Size MiB: 36.67
+Header: MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Tue Jan 18 16:36:4
+External FDT requirement not yet verified.
+
+GROUP: AD | FILE: s6_sub-30027_rs-HEP_eeg.set
+Size MiB: 172.8
+Header: MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Tue Jan 18 16:37:1
+External FDT requirement not yet verified.
+
+GROUP: HC | FILE: s6_sub-100035_rs_eeg.set
+Size MiB: 1.78
+Header: MATLAB 5.0 MAT-file, Platform: GLNXA64, Created on: Fri Jan 13 19:43:5
+External FDT requirement not yet verified.
+
+GROUP: HC | FILE: s6_sub-100029_rs_eeg.set
+Size MiB: 3.33
+Header: MATLAB 5.0 MAT-file, Platform: GLNXA64, Created on: Fri Jan 13 00:12:1
+External FDT requirement not yet verified.
+
+===== DRYAD CONTROL SIGNAL SHAPES =====
+File: /mnt/c/Users/user4/Downloads/doi_10_5061_dryad_8gtht76pw__v20221027 (1)/controls_c1_new.mat
+Size GiB: 6.673
+Reference grid: (1, 96)
+Example shapes and dtypes:
+  ((1, 1), 'object')
+  ((1, 1), 'object')
+  ((1, 1), 'object')
+  ((1, 1), 'object')
+  ((1, 1), 'object')
+  ((1, 1), 'object')
+  ((1, 1), 'object')
+  ((1, 1), 'object')
+Most common shapes:
+  (1, 1) | count: 96
+19-channel arrays: 0
+
+===== DEEP FOLDER INSPECTION COMPLETE =====
+No large EEG signal arrays loaded.
+No files extracted, moved, or deleted.

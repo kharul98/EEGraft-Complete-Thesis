@@ -1,0 +1,59 @@
+{
+  "model": "eegnet_like",
+  "fold": 2,
+  "outer_development_metrics": {
+    "n_subjects": 10,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 0.8,
+    "balanced_accuracy": 0.7916666666666667,
+    "macro_f1": 0.7916666666666667,
+    "majority_rate": 0.6,
+    "ece_10_bins": 0.25837868489325044,
+    "multiclass_brier": 0.3818640538011828,
+    "confusion_matrix": [
+      [
+        5,
+        1
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "f1-score": 0.8333333333333334,
+        "support": 6.0
+      },
+      "CN": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1-score": 0.75,
+        "support": 4.0
+      },
+      "accuracy": 0.8,
+      "macro avg": {
+        "precision": 0.7916666666666667,
+        "recall": 0.7916666666666667,
+        "f1-score": 0.7916666666666667,
+        "support": 10.0
+      },
+      "weighted avg": {
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1-score": 0.8,
+        "support": 10.0
+      }
+    },
+    "auroc_ovr_macro": 0.7916666666666667
+  },
+  "n_outer_subjects": 10,
+  "original_final_test_evaluated": false,
+  "from_scratch": true
+}

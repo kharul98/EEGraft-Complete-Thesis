@@ -1,0 +1,80 @@
+{
+  "status": "Exploratory age sensitivity",
+  "age_interpretation": "First MATLAB age component, provisionally years",
+  "all_available": {
+    "AD": {
+      "n": 43,
+      "median_age_component": 71.0,
+      "mean_age_component": 71.4093023255814,
+      "mean_duration_effect": -0.011064608715078837,
+      "median_duration_effect": -0.00910213321481,
+      "fraction_improving": 0.627906976744186
+    },
+    "HC": {
+      "n": 96,
+      "median_age_component": 53.5,
+      "mean_age_component": 52.354166666666664,
+      "mean_duration_effect": 0.0009372691203497086,
+      "median_duration_effect": 0.000522833883361,
+      "fraction_improving": 0.5
+    },
+    "AD_minus_HC_mean_effect": -0.012001877835428545
+  },
+  "overlap_range": [
+    55.0,
+    80.0
+  ],
+  "common_age_range": {
+    "AD": {
+      "n": 37,
+      "median_age_component": 70.0,
+      "mean_age_component": 69.25945945945946,
+      "mean_duration_effect": -0.007817407803674322,
+      "median_duration_effect": -0.0063145877888,
+      "fraction_improving": 0.5945945945945946
+    },
+    "HC": {
+      "n": 46,
+      "median_age_component": 65.0,
+      "mean_age_component": 66.67391304347827,
+      "mean_duration_effect": 0.0013151731705302603,
+      "median_duration_effect": -0.000827325525964,
+      "fraction_improving": 0.5217391304347826
+    },
+    "AD_minus_HC_mean_effect": -0.009132580974204583
+  },
+  "nearest_age_matching_without_replacement": {
+    "matched_pairs": 38,
+    "mean_absolute_age_gap": 1.5157894736842106,
+    "max_absolute_age_gap": 5.0,
+    "AD": {
+      "n": 38,
+      "median_age_component": 70.0,
+      "mean_age_component": 69.62105263157895,
+      "mean_duration_effect": -0.008140006695235524,
+      "median_duration_effect": -0.00653356638122,
+      "fraction_improving": 0.6052631578947368
+    },
+    "HC": {
+      "n": 38,
+      "median_age_component": 67.5,
+      "mean_age_component": 68.10526315789474,
+      "mean_duration_effect": -0.0009539185471694211,
+      "median_duration_effect": 0.0007673992576460001,
+      "fraction_improving": 0.5
+    },
+    "AD_minus_HC_mean_effect": -0.007186088148066105,
+    "status": "Exploratory matched sensitivity only"
+  },
+  "matching_caliper_years": 5.0,
+  "participant_identities_verified": false,
+  "eye_condition_verified": false,
+  "notes": [
+    "One AD recording per candidate column.",
+    "Control observation unit is unique recording array.",
+    "Matching uses ages only, not EEG outcomes.",
+    "No p-values or patient-level confidence intervals.",
+    "Age is not the only possible confound.",
+    "Individual age values are not exported."
+  ]
+}

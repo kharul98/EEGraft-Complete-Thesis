@@ -1,0 +1,27 @@
+===== BRAINLAT EEG READINESS AUDIT =====
+Physical SET files found: 80
+Checked 10/80 files
+Checked 20/80 files
+Checked 30/80 files
+Checked 40/80 files
+Checked 50/80 files
+Checked 60/80 files
+Checked 70/80 files
+Checked 80/80 files
+
+===== BRAINLAT READINESS SUMMARY =====
+AD : {'SET_files': 34, 'readable_EEG': 34, 'length_eligible_300s': 28, 'readable_without_same_folder_FDT': 34}
+HC : {'SET_files': 46, 'readable_EEG': 10, 'length_eligible_300s': 8, 'readable_without_same_folder_FDT': 0}
+UNKNOWN : {'SET_files': 0, 'readable_EEG': 0, 'length_eligible_300s': 0, 'readable_without_same_folder_FDT': 0}
+
+===== ERROR CATEGORIES =====
+{'FileNotFoundError': 36}
+Example: FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100010_rs_eeg.fdt not found.
+Example: FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100011_rs_eeg.fdt not found.
+Example: FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100013_rs_eeg.fdt not found.
+Example: FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100014_rs_eeg.fdt not found.
+Example: FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100015_rs_eeg.fdt not found.
+
+Full inventory saved: /home/user4/alzheimers-thesis/results/p3_brainlat_readiness.csv
+No EEG files were modified.
+===== BRAINLAT READINESS COMPLETE =====

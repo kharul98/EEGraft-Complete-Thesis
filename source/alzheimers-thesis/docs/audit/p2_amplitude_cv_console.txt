@@ -1,0 +1,27 @@
+===== P2 MATCHED AMPLITUDE FEATURE CV =====
+Completed AD_vs_CN: 65 participants
+Completed AD_vs_FTD: 59 participants
+
+===== P2 AMPLITUDE METHOD COMPARISON =====
+                   limited_ba  baseline_ba  delta_ba  limited_sensitivity  baseline_sensitivity
+task      seconds                                                                              
+AD_vs_CN  30           0.6232       0.6129    0.0104               0.7407                0.7315
+          60           0.7015       0.6992    0.0022               0.7593                0.7778
+          120          0.7107       0.7257   -0.0150               0.7778                0.7963
+          180          0.6946       0.7096   -0.0150               0.7685                0.7870
+          300          0.7326       0.7372   -0.0046               0.7870                0.7963
+AD_vs_FTD 30           0.5038       0.4734    0.0304               0.6019                0.5556
+          60           0.4563       0.4821   -0.0258               0.5648                0.6019
+          120          0.4471       0.4398    0.0072               0.5463                0.5463
+          180          0.3975       0.4074   -0.0099               0.4907                0.4815
+          300          0.4372       0.4398   -0.0026               0.5556                0.5463
+
+IMPORTANT:
+- Same participants and matched outer folds.
+- Training-only standardization and C selection.
+- The threshold was not selected by CV.
+- Results are exploratory on repeatedly used data.
+- No statistically significant improvement is claimed.
+- This does not establish clinical artifact removal.
+
+P2 AMPLITUDE COMPARISON COMPLETE

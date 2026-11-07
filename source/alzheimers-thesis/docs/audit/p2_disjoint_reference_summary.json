@@ -1,0 +1,68 @@
+{
+  "study_status": "EXPLORATORY within-recording reliability",
+  "participants": 88,
+  "rows": 352,
+  "early_checkpoints_s": [
+    30,
+    60,
+    120,
+    180
+  ],
+  "reference_interval_s": [
+    240,
+    300
+  ],
+  "reference_is_ground_truth": false,
+  "baseline_reproduction_error": 4.996419944447439e-13,
+  "median_tv_by_checkpoint": {
+    "30": 0.03334909521942944,
+    "60": 0.027038226808175365,
+    "120": 0.023537699782940638,
+    "180": 0.021675438323879873
+  },
+  "online_drift_future_error_spearman": {
+    "60": -0.06243175654256631,
+    "120": 0.10903103096051567,
+    "180": 0.13430312422950938
+  },
+  "paired_descriptive_comparisons": {
+    "120_minus_60": {
+      "mean_delta_and_bootstrap_95pct_ci": [
+        -0.002957655151496526,
+        -0.005462020065601386,
+        -0.00019489603826895816
+      ],
+      "unit": "participant",
+      "lower_is_better": true
+    },
+    "180_minus_60": {
+      "mean_delta_and_bootstrap_95pct_ci": [
+        -0.0047315105566635915,
+        -0.007645503579072719,
+        -0.0017906870441415225
+      ],
+      "unit": "participant",
+      "lower_is_better": true
+    },
+    "other_subject_minus_same_subject_at_60": {
+      "mean_delta_and_bootstrap_95pct_ci": [
+        0.033516052667789197,
+        0.022769113638803226,
+        0.04537303826710331
+      ],
+      "unit": "participant",
+      "positive_means_same_subject_is_closer": true
+    }
+  },
+  "median_late_halves_tv": 0.028074759846445408,
+  "early60_median_tv": 0.027038226808175365,
+  "delayed60_median_tv": 0.024168889872767028,
+  "limitations": [
+    "The reference is a later within-session interval, not an independent cohort.",
+    "The later interval is not ground truth.",
+    "Both early and late measurements may contain artifacts.",
+    "Later prefixes are closer in time to the reference.",
+    "The 10-second summaries are available at epoch completion.",
+    "All analyses are exploratory on a previously studied cohort."
+  ]
+}

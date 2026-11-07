@@ -1,0 +1,226 @@
+"""Leakage-conscious CSV EEG adapter. No patient data is bundled with this project.
+
+One CSV row = one time sample; a CSV file is NOT automatically assumed to be a subject.
+Manifest must explicitly name subject IDs, class labels, sample rate and units.
+"""
+from __future__ import annotations
+
+import hashlib
+from dataclasses import dataclass
+from fractions import Fraction
+from pathlib import Path
+from typing import Iterable
+
+import numpy as np
+import pandas as pd
+from scipy.signal import butter, resample_poly, sosfiltfilt
+from sklearn.model_selection import train_test_split
+from torch.utils.data import Dataset
+import torch
+
+# Anatomical order, matching standard 19-channel international 10-20 naming.
+CHANNELS = ["Fp1", "Fp2", "F7", "F3", "Fz", "F4", "F8", "T3", "C3", "Cz",
+            "C4", "T4", "T5", "P3", "Pz", "P4", "T6", "O1", "O2"]
+ALIAS = {"t7": "t3", "t8": "t4", "p7": "t5", "p8": "t6"}
+UNITS = {"uv": 1.0, "microvolt": 1.0, "mv": 1000.0, "v": 1e6}
+SPLITS = {"train", "val", "test"}
+
+
+def _norm_name(name: str) -> str:
+    name = name.strip().lower().replace(" ", "").replace("-ref", "")
+    return ALIAS.get(name, name)
+
+
+def load_manifest(path: str | Path) -> pd.DataFrame:
+    manifest_path = Path(path).resolve()
+    df = pd.read_csv(manifest_path, dtype={"subject_id": str, "label": str, "unit": str})
+    required = {"path", "subject_id", "label", "fs_hz", "unit"}
+    if not required.issubset(df.columns):
+        raise ValueError(f"Manifest missing columns: {sorted(required - set(df.columns))}")
+    if df[list(required)].isna().any().any():
+        raise ValueError("Missing manifest fields; explicit patient IDs/sampling rates/units required")
+    df["subject_id"] = df["subject_id"].astype(str).str.strip()
+    df["label"] = df["label"].astype(str).str.strip()
+    df["fs_hz"] = df["fs_hz"].astype(float)
+    if not np.isfinite(df.fs_hz).all() or (df.fs_hz < 80).any():
+        raise ValueError("fs_hz must be numeric and >=80 Hz; low rates need a separate model input policy")
+    if not df["unit"].str.lower().isin(UNITS).all():
+        raise ValueError(f"Units must be one of {list(UNITS)}")
+    if (df.subject_id == "").any() or (df.label == "").any():
+        raise ValueError("Empty subject_id / label")
+    df["path"] = df["path"].map(lambda p: str((manifest_path.parent / str(p)).resolve()))
+    missing = [p for p in df.path if not Path(p).is_file()]
+    if missing:
+        raise FileNotFoundError(f"Missing raw EEG file: {missing[0]}")
+    if df.path.duplicated().any():
+        raise ValueError("Duplicate file paths in manifest")
+    if (df.groupby("subject_id").label.nunique() > 1).any():
+        raise ValueError("The same subject has different labels; fix manifest")
+    # Bitwise duplicates masquerading as different subject IDs are another leakage trap.
+    digests = df.path.map(lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest())
+    possible_leaks = pd.DataFrame({"digest": digests, "subject": df.subject_id}).groupby("digest").subject.nunique()
+    if (possible_leaks > 1).any():
+        raise ValueError("Identical recordings belong to different subject IDs")
+    if "split" in df.columns and df.split.notna().any():
+        if df.split.isna().any() or not df.split.isin(SPLITS).all():
+            raise ValueError("Existing splits must be fully specified as train/val/test")
+        if (df.groupby("subject_id").split.nunique() > 1).any():
+            raise ValueError("Subject crosses different splits")
+    return df
+
+
+def assign_splits(df: pd.DataFrame, *, seed: int = 42,
+                  val_fraction: float = 0.2, test_fraction: float = 0.2) -> pd.DataFrame:
+    df = df.copy()
+    if "split" in df.columns and df.split.notna().all():
+        # Even externally supplied splits must contain every declared class, or
+        # patient-level balanced accuracy / macro metrics become misleading.
+        for split in ("train", "val", "test"):
+            if set(df.loc[df.split == split, "label"]) != set(df.label):
+                raise ValueError(f"Existing {split} split must include every class")
+        return df
+    subjects = df[["subject_id", "label"]].drop_duplicates("subject_id").reset_index(drop=True)
+    if (subjects.label.value_counts() < 3).any():
+        raise ValueError("At least three distinct subjects per class are needed for train/val/test")
+    # Subject-level stratification, never window-level/random-row splitting.
+    try:
+        ids_trainval, ids_test = train_test_split(
+            subjects.subject_id.to_numpy(), test_size=test_fraction, random_state=seed,
+            stratify=subjects.label.to_numpy())
+        trainval = subjects[subjects.subject_id.isin(ids_trainval)]
+        ids_train, ids_val = train_test_split(
+            trainval.subject_id.to_numpy(), test_size=val_fraction / (1 - test_fraction),
+            random_state=seed + 1, stratify=trainval.label.to_numpy())
+    except ValueError as exc:
+        raise ValueError("Insufficient distinct patients per class for leakage-free stratified splits. "
+                         "Use provided externally validated split with split column or collect subjects.") from exc
+    mapping = {**{k: "train" for k in ids_train}, **{k: "val" for k in ids_val},
+               **{k: "test" for k in ids_test}}
+    df["split"] = df.subject_id.map(mapping)
+    assert df.groupby("subject_id").split.nunique().eq(1).all()
+    for s in ("train", "val", "test"):
+        if set(df.loc[df.split == s, "label"]) != set(df.label):
+            raise ValueError(f"Class absent in {s}; need more subjects per class")
+    return df
+
+
+def read_raw_csv(row: pd.Series, *, low_hz=0.3, high_hz=40.0,
+                 apply_car=False) -> np.ndarray:
+    """Output channel-first [19,T] at 200 Hz, scaled to 100 microvolt units.
+
+    Scaling x(uV)/100 follows the CBraMod upstream training convention.
+    NOTE: source referencing/montage should be verified before choosing CAR.
+    """
+    raw = pd.read_csv(row["path"])
+    names = {}
+    for name in raw.columns:
+        key = _norm_name(str(name))
+        if key in names:
+            raise ValueError(f"Ambiguous EEG column {key} in {row['path']}")
+        names[key] = name
+    missing = [n for n in CHANNELS if _norm_name(n) not in names]
+    if missing:
+        raise ValueError(f"Missing 19-channel electrodes {missing} in {row['path']}")
+    ordered = [names[_norm_name(n)] for n in CHANNELS]
+    signal = raw[ordered].apply(pd.to_numeric, errors="coerce").to_numpy(dtype=np.float64).T
+    if not np.isfinite(signal).all():
+        raise ValueError(f"Nonfinite EEG samples in {row['path']}; do not silently impute")
+    fs = float(row["fs_hz"])
+    if signal.shape[1] < 200:
+        raise ValueError(f"Too short recording {row['path']}")
+    microvolts = signal * UNITS[str(row["unit"]).lower()]
+    # Signal-level bandpass prior to resampling. 50/60 Hz mains noise falls above the 40Hz lowpass.
+    high = min(high_hz, fs / 2 * 0.9)
+    if high <= low_hz:
+        raise ValueError("Invalid bandpass frequencies")
+    sos = butter(4, (low_hz, high), btype="bandpass", fs=fs, output="sos")
+    microvolts = sosfiltfilt(sos, microvolts, axis=-1)
+    if apply_car:
+        microvolts = microvolts - microvolts.mean(axis=0, keepdims=True)
+    frac = Fraction(200 / fs).limit_denominator(10000)
+    if abs(frac.numerator / frac.denominator - (200 / fs)) > 1e-6:
+        raise ValueError("Unrepresentable sampling-rate ratio; resampling could distort signal")
+    eeg_200 = resample_poly(microvolts, frac.numerator, frac.denominator, axis=-1)
+    return (eeg_200 / 100.0).astype(np.float32)
+
+
+@dataclass
+class WindowStore:
+    x: np.ndarray
+    y: np.ndarray
+    subject_ids: np.ndarray
+    file_ids: np.ndarray
+    classes: list[str]
+    split: str
+
+    def __len__(self):
+        return len(self.y)
+
+
+class TensorWindows(Dataset):
+    def __init__(self, store: WindowStore):
+        self.store = store
+
+    def __len__(self):
+        return len(self.store)
+
+    def __getitem__(self, i):
+        return torch.from_numpy(self.store.x[i].copy()), int(self.store.y[i]), str(self.store.subject_ids[i])
+
+
+def build_windows(df: pd.DataFrame, split: str, *, classes: list[str],
+                  seconds: int = 4, max_per_subject: int = 100,
+                  apply_car=False, low_hz=0.3, high_hz=40,
+                  artifact_limit_uv: float | None = None) -> WindowStore:
+    """Non-overlapping windows; optional per-subject cap prevents long-recording dominance.
+
+    artifact_limit_uv excludes windows with > limit absolute uV BEFORE normalized to uV/100.
+    If enabled, exclusion rates must be reported by class (potential selection bias).
+    """
+    if seconds < 1 or not isinstance(seconds, int):
+        raise ValueError("Window length in whole seconds required")
+    label_to_int = {c: i for i, c in enumerate(classes)}
+    blocks = []
+    ys = []
+    ids = []
+    files = []
+    per_subject = {}
+    for _, row in df[df.split == split].iterrows():
+        if Path(str(row.path)).suffix.lower() == ".set":
+            from src.eeglab_adapter import read_raw_set
+            eeg = read_raw_set(
+                row, apply_car=apply_car,
+                low_hz=low_hz, high_hz=high_hz
+            )
+        else:
+            eeg = read_raw_csv(
+                row, apply_car=apply_car,
+                low_hz=low_hz, high_hz=high_hz
+            )
+        chunk = seconds * 200
+        n = eeg.shape[1] // chunk
+        # Uniformly spaced, non-overlapping windows.
+        selected = np.unique(
+            np.linspace(
+                0, n - 1,
+                num=min(n, max_per_subject),
+                dtype=int
+            )
+        )
+        for j in selected:
+            x = eeg[:, j * chunk:(j + 1) * chunk]
+            if artifact_limit_uv is not None and np.abs(x).max() * 100 > artifact_limit_uv:
+                continue
+            key = str(row.subject_id)
+            if per_subject.get(key, 0) >= max_per_subject:
+                continue
+            per_subject[key] = per_subject.get(key, 0) + 1
+            blocks.append(x.reshape(len(CHANNELS), seconds, 200))
+            ys.append(label_to_int[str(row.label)])
+            ids.append(key)
+            files.append(str(row.path))
+    if not blocks:
+        raise ValueError(f"No full {seconds}-second windows in split={split}. "
+                         "Check recording lengths / sampling rates / artifact threshold.")
+    return WindowStore(np.stack(blocks), np.asarray(ys, dtype=np.int64),
+                       np.asarray(ids), np.asarray(files), classes, split)

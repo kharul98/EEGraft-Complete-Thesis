@@ -1,0 +1,8 @@
+{
+  "data/eeg/on004504_v1.0.0/participants.tsv": "bd17cf02ec9733c9029d4a6d977b2918309b3c667ff9ceb1b5dce6e3cebccbc1",
+  "reports/openneuro_5min_manifest_v2.csv": "b7ffd198fa49f3d3847e6d6a2100e064fcc344cc86f5d9909d43e73acdfbeac6",
+  "reports/thesis_final/duration_locked_v1/duration_features.csv": "40192cd180a1c8fc58a74bc2f902f8998d0b60f39c7e405e40a7f7cc1a9278ec",
+  "reports/thesis_final/ftd_extension_v1/locked_study/duration_features.csv": "ff6bd4780ade980589c893beeea868620a6098c8ba97e0747f335f3324b07fde",
+  "reports/thesis_final/milestone_1b_calibration_v1/calibrated_held_out_block_predictions.csv": "2b56b85fd66f20eed72e89bed55f6d5a8648b415422612864f5988dbec8b0ac9",
+  "reports/thesis_final/milestone_3c_boundary_feasibility_v1/duration_continuity_and_30s_qc.csv": "03b5c243a9c7dce5fd838e4ffb935875514862cf6cf0985c39d66753b30b8173"
+}

@@ -1,0 +1,227 @@
+"""Train/freeze/finetune CBraMod + our decoder on leakage-free subject splits."""
+from __future__ import annotations
+
+import argparse
+import json
+import random
+import sys
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import torch
+from torch.utils.data import DataLoader, WeightedRandomSampler
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from src.data import CHANNELS, TensorWindows, assign_splits, build_windows, load_manifest
+from src.metrics import aggregate_subjects, stratified_bootstrap_ci, summarize_subject_metrics
+from src.model import EEGNetLike, FoundationClassifier, sha256_file
+
+
+def seed_everything(seed: int):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
+
+def infer_probabilities(model, store, device, batch_size=16, noise_ratio=0.0, drop_channels=0):
+    model.eval()
+    ds = TensorWindows(store)
+    loader = DataLoader(ds, batch_size=batch_size, shuffle=False, num_workers=0)
+    probs, targets, ids = [], [], []
+    rng = np.random.default_rng(1234567)
+    with torch.no_grad():
+        for x, y, subj in loader:
+            if noise_ratio:
+                noise = rng.normal(size=tuple(x.shape)).astype(np.float32)
+                std = x.numpy().std(axis=(1, 2, 3), keepdims=True)
+                x = x + torch.from_numpy(noise * std * noise_ratio)
+            if drop_channels:
+                # Channel blanking, deterministic; a sensitivity test, not a simulation of missing channels.
+                for b in range(len(x)):
+                    choices = rng.choice(x.shape[1], size=drop_channels, replace=False)
+                    x[b, choices] = 0.0
+            pred = model(x.to(device)).softmax(dim=1).cpu().numpy()
+            probs.append(pred)
+            targets.extend(y.numpy().tolist())
+            ids.extend(subj)
+    return np.asarray(targets), np.concatenate(probs, axis=0), np.asarray(ids)
+
+
+def get_metrics(model, store, device, classes, batch_size=16):
+    y, prob, ids = infer_probabilities(model, store, device, batch_size)
+    sub_ids, sub_y, sub_prob = aggregate_subjects(y, prob, ids)
+    metrics = summarize_subject_metrics(sub_y, sub_prob, classes)
+    return metrics, (sub_ids, sub_y, sub_prob)
+
+
+def train_epoch(model, loader, optimizer, device):
+    model.train()
+    running, seen = 0.0, 0
+    for x, y, _ in loader:
+        x, y = x.to(device), y.to(device)
+        optimizer.zero_grad(set_to_none=True)
+        logits = model(x)
+        loss = torch.nn.functional.cross_entropy(logits, y)
+        loss.backward()
+        torch.nn.utils.clip_grad_norm_((p for p in model.parameters() if p.requires_grad), 1.0)
+        optimizer.step()
+        running += float(loss.detach().cpu()) * len(y)
+        seen += len(y)
+    return running / max(seen, 1)
+
+
+def main(args):
+    seed_everything(args.seed)
+    device = torch.device("cuda" if torch.cuda.is_available() and not args.cpu else "cpu")
+    df = assign_splits(load_manifest(args.manifest), seed=args.seed)
+    classes = sorted(df.label.unique().tolist())
+    if len(classes) not in (2, 3):
+        raise ValueError("Configured for binary or three-class disease group comparisons")
+    # Check pretrained artifact BEFORE creating any experiment outputs or loading raw recordings.
+    weights = Path(args.weights) if args.weights else ROOT / "checkpoints" / "cbramod_official.pth"
+    if args.model != "eegnet_like" and args.train_mode != "scratch" and not weights.is_file():
+        raise FileNotFoundError("PRETRAINED WEIGHTS REQUIRED: run python scripts/fetch_weights.py")
+    workdir = ROOT / "results" / args.run_name
+    if workdir.exists() and any(workdir.iterdir()) and not args.overwrite:
+        raise FileExistsError(f"Run output exists: {workdir}. Use --overwrite explicitly")
+    workdir.mkdir(parents=True, exist_ok=True)
+    df.to_csv(workdir / "subject_splits.csv", index=False)
+    stores = {s: build_windows(df, s, classes=classes, seconds=args.seconds,
+                                max_per_subject=args.max_windows_per_subject,
+                                apply_car=args.car, high_hz=args.high_hz,
+                                artifact_limit_uv=args.artifact_limit_uv)
+              for s in ("train", "val", "test")}
+    unique_subjects = {s: len(np.unique(stores[s].subject_ids)) for s in stores}
+    print("Device:", device, "Classes:", classes, "subjects:", unique_subjects)
+    print("Window counts:", {s: len(stores[s]) for s in stores})
+
+    if args.model == "eegnet_like":
+        model = EEGNetLike(len(CHANNELS), len(classes))
+        used_ckpt = None
+    else:
+        if args.train_mode == "scratch":
+            if args.model not in ("fusion", "linear"):
+                print("Scratch encoder is a control: no pretrained weights loaded")
+            used_ckpt = None
+        else:
+            used_ckpt = str(weights)
+        model = FoundationClassifier(
+            len(classes), used_ckpt, decoder=args.model,
+            freeze_encoder=(args.train_mode == "frozen"),
+            unfreeze_last_n=2 if args.train_mode == "last2" else 0)
+    model.to(device)
+    if args.train_mode != "frozen" and args.model != "eegnet_like":
+        print("Encoder adaptation mode:", args.train_mode)
+    print("Learnable params:", sum(p.numel() for p in model.parameters() if p.requires_grad))
+
+    # Every SUBJECT contributes equally; majority-class/long recordings don't dominate.
+    subj_counts = pd.Series(stores["train"].subject_ids).value_counts()
+    subj_class = pd.Series(dict(zip(stores["train"].subject_ids, stores["train"].y)))
+    class_subject_counts = subj_class.value_counts()
+    sampler_weights = [1.0 / (subj_counts[id_] * class_subject_counts[int(y)])
+                       for id_, y in zip(stores["train"].subject_ids, stores["train"].y)]
+    sampler = WeightedRandomSampler(
+        torch.tensor(sampler_weights, dtype=torch.double), num_samples=len(sampler_weights),
+        replacement=True, generator=torch.Generator().manual_seed(args.seed))
+    train_loader = DataLoader(TensorWindows(stores["train"]), batch_size=args.batch_size,
+                              sampler=sampler, num_workers=0)
+    lr = args.lr or (1e-4 if args.train_mode in ("last2", "full") else 1e-3)
+    opt = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=lr,
+                             weight_decay=0.01)
+    best_val, stale, history = -1.0, 0, []
+    for epoch in range(1, args.epochs + 1):
+        train_loss = train_epoch(model, train_loader, opt, device)
+        val_metrics, _ = get_metrics(model, stores["val"], device, classes, args.batch_size)
+        score = val_metrics["balanced_accuracy"]
+        history.append({"epoch": epoch, "train_loss": train_loss,
+                        "val_balanced_accuracy": score, "val_macro_f1": val_metrics["macro_f1"]})
+        print(f"epoch {epoch:02d} train_loss={train_loss:.4f} "
+              f"val_BAcc={score:.3f} val_macroF1={val_metrics['macro_f1']:.3f}")
+        if score > best_val + 1e-8:
+            best_val, stale = score, 0
+            torch.save({"model_state": model.state_dict(), "classes": classes,
+                        "model_name": args.model, "train_mode": args.train_mode,
+                        "seconds": args.seconds, "car": args.car, "high_hz": args.high_hz,
+                        "checkpoint_sha256": sha256_file(used_ckpt) if used_ckpt else None,
+                        "manifest": str(Path(args.manifest).resolve())},
+                       workdir / "best.pt")
+        else:
+            stale += 1
+            if stale >= args.patience:
+                print("Early stop using VALIDATION subjects only")
+                break
+    pd.DataFrame(history).to_csv(workdir / "history.csv", index=False)
+    state = torch.load(workdir / "best.pt", map_location="cpu", weights_only=True)
+    model.load_state_dict(state["model_state"], strict=True)
+    model.to(device)
+    val, _ = get_metrics(model, stores["val"], device, classes, args.batch_size)
+    test, (ids, ys, prob) = get_metrics(model, stores["test"], device, classes, args.batch_size)
+    test["balanced_accuracy_95ci_subject_bootstrap"] = stratified_bootstrap_ci(
+        ys, prob, classes, seed=args.seed, n=300)
+    pred_df = pd.DataFrame({"subject_id": ids, "true_label": [classes[i] for i in ys],
+                            "predicted_label": [classes[i] for i in prob.argmax(axis=1)]})
+    for k, name in enumerate(classes):
+        pred_df[f"p_{name}"] = prob[:, k]
+    pred_df.to_csv(workdir / "test_subject_predictions.csv", index=False)
+    report = {"experiment": args.run_name, "trained_with_pretrained_weights": used_ckpt is not None,
+              "backbone_weights_sha256": sha256_file(used_ckpt) if used_ckpt else None,
+              "train_mode": args.train_mode, "model": args.model, "seed": args.seed,
+              "config": vars(args), "subjects_per_split": unique_subjects,
+              "windows_per_split": {s: len(stores[s]) for s in stores},
+              "validation": val, "test": test}
+    if args.robustness:
+        # Reliability is ALWAYS paired with correctness; constant predictions are a control.
+        yN, pN, idN = infer_probabilities(model, stores["test"], device, args.batch_size,
+                                            noise_ratio=0.10)
+        _, yN, pN = aggregate_subjects(yN, pN, idN)
+        noise_metrics = summarize_subject_metrics(yN, pN, classes)
+        yD, pD, idD = infer_probabilities(model, stores["test"], device, args.batch_size,
+                                            drop_channels=1)
+        _, yD, pD = aggregate_subjects(yD, pD, idD)
+        drop_metrics = summarize_subject_metrics(yD, pD, classes)
+        report["stability"] = {
+            "clean_accuracy": test["accuracy"],
+            "noise_10pct_rms": {"accuracy": noise_metrics["accuracy"],
+                                 "balanced_accuracy": noise_metrics["balanced_accuracy"],
+                                 "label_flip_rate": float(np.mean(prob.argmax(1) != pN.argmax(1)))},
+            "one_electrode_zeroed": {"accuracy": drop_metrics["accuracy"],
+                                      "balanced_accuracy": drop_metrics["balanced_accuracy"],
+                                      "label_flip_rate": float(np.mean(prob.argmax(1) != pD.argmax(1)))},
+            "constant_majority_control": {
+                "accuracy": float(np.bincount(ys).max() / len(ys)),
+                "balanced_accuracy": 1.0 / len(classes),
+                "label_flip_rate": 0.0}}
+    (workdir / "metrics.json").write_text(json.dumps(report, indent=2, default=str))
+    print("Saved:", workdir / "metrics.json")
+    print("TEST SUBJECTS:", test["n_subjects"], "BAcc:", test["balanced_accuracy"],
+          "macro-F1:", test["macro_f1"])
+
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--manifest", required=True)
+    ap.add_argument("--run-name", required=True)
+    ap.add_argument("--model", choices=["fusion", "no_skip", "high_only", "low_only",
+                                         "linear", "mlp", "eegnet_like"], default="fusion")
+    ap.add_argument("--train-mode", choices=["frozen", "last2", "full", "scratch"], default="frozen")
+    ap.add_argument("--weights", default="")
+    ap.add_argument("--seconds", type=int, default=4)
+    ap.add_argument("--high-hz", type=float, default=40.)
+    ap.add_argument("--max-windows-per-subject", type=int, default=100)
+    ap.add_argument("--artifact-limit-uv", type=float, default=None)
+    ap.add_argument("--car", action="store_true", help="ONLY if reference policy validated")
+    ap.add_argument("--epochs", type=int, default=30)
+    ap.add_argument("--patience", type=int, default=6)
+    ap.add_argument("--batch-size", type=int, default=16)
+    ap.add_argument("--lr", type=float, default=None)
+    ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--robustness", action="store_true")
+    ap.add_argument("--cpu", action="store_true")
+    ap.add_argument("--overwrite", action="store_true")
+    main(ap.parse_args())

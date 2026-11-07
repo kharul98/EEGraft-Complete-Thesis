@@ -1,0 +1,131 @@
+===== MILESTONE 6B: FIGSHARE MATLAB STRUCTURE AUDIT =====
+PASS: Original M6A ZIP checksum and size verified.
+  Inspected 100/471 MATLAB files
+  Inspected 200/471 MATLAB files
+  Inspected 300/471 MATLAB files
+  Inspected 400/471 MATLAB files
+
+===== DOCUMENTATION WITHIN ARCHIVE =====
+Text file: readme.txt | characters: 1965
+--- README preview (maximum 4000 characters) ---
+attention / 18	memory / 26	fluency / 14	language / 26	visuospatial / 16	sum / 100	sampling rate	AD or MCI or CONTROL
+** MCI is mild cognitive inpairment
+** AD is Alzheimer's disease
+** normal is control
+** dataset contains 7 MCI, 59 AD, 102 controls
+
+18	18	10	25	16	87	256	MCI1
+18	14	12	26	16	86	256	MCI2
+18	23	4	25	15	85	256	MCI3
+18	16	12	26	13	85	256	MCI4
+18	14	12	29	9	82	256	AD1
+17	19	9	22	13	80	256	AD2
+17	15	13	20	15	80	256	AD3
+18	13	7	25	13	76	256	AD4
+14	15	9	24	11	73	256	AD5
+17	18	7	17	12	71	256	AD6
+14	8	10	25	14	71	256	AD7
+14	11	6	26	14	71	256	AD8
+14	13	5	25	11	68	256	AD9
+18	9	4	20	16	67	256	AD10
+17	7	9	23	11	67	256	AD11
+11	8	5	26	15	65	256	AD12
+12	7	8	25	12	64	256	AD13
+13	5	7	23	13	61	256	AD14
+8	10	5	23	12	58	256	AD15
+11	11	0	24	8	54	256	AD16
+13	1	2	20	12	48	256	AD17
+8	7	7	11	12	45	256	AD18
+7	8	1	21	8	45	256	AD19
+9	8	0	19	9	45	256	AD20
+8	6	3	18	7	42	256	AD21
+9	6	2	12	13	42	256	AD22
+8	4	6	14	9	41	256	AD23
+9	3	1	17	10	40	256	AD24
+4	11	0	20	4	39	256	AD25
+10	4	4	9	8	35	256	AD26
+8	7	0	12	8	35	256	AD27
+7	4	0	18	6	35	256	AD28
+5	11	3	5	0	24	256	AD29
+6	1	0	9	8	24	256	AD30
+5	2	1	8	4	20	256	AD31
+5	0	0	14	0	19	256	AD32
+5	0	0	10	3	18	256	AD33
+2	0	0	11	4	17	256	AD34
+18	19	13	26	16	92	128	normal1
+18	18	14	25	16	91	128	normal2
+18	16	12	26	16	88	128	MCI5
+18	15	10	26	16	85	128	MCI6
+17	19	7	25	15	83	128	MCI7
+17	13	7	26	14	77	128	AD35
+16	11	10	25	13	75	128	AD36
+18	12	11	19	14	74	128	AD37
+18	8	7	26	15	74	128	AD38
+17	8	10	23	16	74	128	AD39
+15	11	10	25	12	73	128	AD40
+17	11	6	25	14	73	128	AD41
+17	7	8	23	14	69	128	AD42
+18	12	4	21	13	68	128	AD43
+16	10	7	22	12	67	128	AD44
+14	8	7	22	16	67	128	AD45
+13	11	11	19	10	64	128	AD46
+14	6	6	24	14	64	128	AD47
+15	5	2	20	16	58	128	AD48
+15	3	6	20	13	57	128	AD49
+10	3	4	24	15	56	128	AD50
+17	10	0	17	12	56	128	AD51
+9	10	4	16	10	49	128	AD52
+11	3	1	14	15	44	128	AD53
+7	8	2	17	9	43	128	AD54
+9	4	1	19	9	42	128	AD55
+7	6	0	17	9	39	128	AD56
+5	1	1	14	14	35	128	AD57
+8	4	6	13	2	33	128	AD58
+5	0	1	12	8	26	128	AD59
+						128	*fir.mat
+
+
+--- END README preview ---
+
+===== PARTICIPANT-FOLDER AND FILE COUNTS =====
+AD: MATLAB files=305; explicit participant-like folders=57; files within folders=305; ungrouped root files=0
+  Files-per-folder distribution: {1: 1, 2: 3, 3: 8, 4: 11, 5: 6, 6: 9, 7: 10, 8: 6, 9: 2, 10: 1}
+  Example folders: ['AD1', 'AD10', 'AD11', 'AD12', 'AD13', 'AD14', 'AD15', 'AD16', 'AD17', 'AD18', 'AD19', 'AD2']
+MCI: MATLAB files=56; explicit participant-like folders=7; files within folders=56; ungrouped root files=0
+  Files-per-folder distribution: {4: 2, 6: 1, 7: 1, 9: 2, 17: 1}
+  Example folders: ['MCI1', 'MCI2', 'MCI3', 'MCI4', 'MCI5', 'MCI6', 'MCI7']
+CONTROL: MATLAB files=110; explicit participant-like folders=2; files within folders=10; ungrouped root files=100
+  Files-per-folder distribution: {3: 1, 7: 1}
+  Example folders: ['normal1', 'normal2']
+  Example unresolved root files: ['CONTROL/10057fir.mat', 'CONTROL/10188fir.mat', 'CONTROL/10271fir.mat', 'CONTROL/10600fir.mat', 'CONTROL/1105fir.mat', 'CONTROL/11066fir.mat', 'CONTROL/1134fir.mat', 'CONTROL/11357fir.mat', 'CONTROL/11381fir.mat', 'CONTROL/11467fir.mat', 'CONTROL/12099fir.mat', 'CONTROL/12667fir.mat']
+
+===== MATLAB VARIABLE FORMATS =====
+AD: export (single): 305 files
+CONTROL: export (single): 10 files
+CONTROL: segmenty (single): 100 files
+MCI: export (single): 56 files
+AD / EXPLICIT_SUBFOLDER: representative MAT shapes:
+  AD/AD10/1.mat => export:3633x19:single | status: MAT_HEADER_OK
+  AD/AD10/2.mat => export:2710x19:single | status: MAT_HEADER_OK
+  AD/AD9/9.mat => export:8102x19:single | status: MAT_HEADER_OK
+MCI / EXPLICIT_SUBFOLDER: representative MAT shapes:
+  MCI/MCI1/1.mat => export:1805x19:single | status: MAT_HEADER_OK
+  MCI/MCI1/2.mat => export:4678x19:single | status: MAT_HEADER_OK
+  MCI/MCI7/4.mat => export:7554x19:single | status: MAT_HEADER_OK
+CONTROL / EXPLICIT_SUBFOLDER: representative MAT shapes:
+  CONTROL/normal1/1.mat => export:7064x19:single | status: MAT_HEADER_OK
+  CONTROL/normal1/2.mat => export:6314x19:single | status: MAT_HEADER_OK
+  CONTROL/normal2/3.mat => export:2567x19:single | status: MAT_HEADER_OK
+CONTROL / ROOT_FILE_UNRESOLVED: representative MAT shapes:
+  CONTROL/10057fir.mat => segmenty:22x12288:single | status: MAT_HEADER_OK
+  CONTROL/10188fir.mat => segmenty:22x10240:single | status: MAT_HEADER_OK
+  CONTROL/9963fir.mat => segmenty:22x8448:single | status: MAT_HEADER_OK
+
+===== STRUCTURAL AUDIT STATUS =====
+MAT header statuses: {'MAT_HEADER_OK': 471}
+Sampling rates, channel ordering, chronological continuity and
+independent subject IDs remain UNVERIFIED; no classifier fitted.
+
+===== MILESTONE 6B COMPLETE =====
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_6b_figshare_mat_structure_v1
+No file extraction, signal preprocessing or model training.

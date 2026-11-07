@@ -1,0 +1,55 @@
+===== BLOCK-AUGMENTED SVM TEST =====
+PASS: 46 subjects, all block features, and prior predictions reconciled.
+Completed grouped nested CV repeat 1/5
+Completed grouped nested CV repeat 2/5
+Completed grouped nested CV repeat 3/5
+Completed grouped nested CV repeat 4/5
+Completed grouped nested CV repeat 5/5
+PASS: All 1,150 held-out augmented predictions generated.
+
+===== REPEATED TEMPORAL AUGMENTATION RESULTS =====
+Repeat 1, block 1: baseline BACC=0.7609, augmented BACC=0.7174
+Repeat 1, block 2: baseline BACC=0.7174, augmented BACC=0.7174
+Repeat 1, block 3: baseline BACC=0.7826, augmented BACC=0.7391
+Repeat 1, block 4: baseline BACC=0.6957, augmented BACC=0.7174
+Repeat 1, block 5: baseline BACC=0.6304, augmented BACC=0.7391
+Repeat 2, block 1: baseline BACC=0.7174, augmented BACC=0.7174
+Repeat 2, block 2: baseline BACC=0.7391, augmented BACC=0.7609
+Repeat 2, block 3: baseline BACC=0.7609, augmented BACC=0.7174
+Repeat 2, block 4: baseline BACC=0.7609, augmented BACC=0.7174
+Repeat 2, block 5: baseline BACC=0.6522, augmented BACC=0.7174
+Repeat 3, block 1: baseline BACC=0.7391, augmented BACC=0.6957
+Repeat 3, block 2: baseline BACC=0.7826, augmented BACC=0.6957
+Repeat 3, block 3: baseline BACC=0.7826, augmented BACC=0.7174
+Repeat 3, block 4: baseline BACC=0.7174, augmented BACC=0.7174
+Repeat 3, block 5: baseline BACC=0.6957, augmented BACC=0.6739
+Repeat 4, block 1: baseline BACC=0.7391, augmented BACC=0.8261
+Repeat 4, block 2: baseline BACC=0.7609, augmented BACC=0.7609
+Repeat 4, block 3: baseline BACC=0.7609, augmented BACC=0.6957
+Repeat 4, block 4: baseline BACC=0.7174, augmented BACC=0.6739
+Repeat 4, block 5: baseline BACC=0.6304, augmented BACC=0.7174
+Repeat 5, block 1: baseline BACC=0.7174, augmented BACC=0.7174
+Repeat 5, block 2: baseline BACC=0.6522, augmented BACC=0.6957
+Repeat 5, block 3: baseline BACC=0.7174, augmented BACC=0.7609
+Repeat 5, block 4: baseline BACC=0.6957, augmented BACC=0.7391
+Repeat 5, block 5: baseline BACC=0.6087, augmented BACC=0.6739
+
+===== PRIMARY AND SECONDARY COMPARISON =====
+Mean test-block BACC: baseline=0.7174, augmented=0.7209, difference=+0.0035
+Test minute 1: baseline BACC=0.7348, augmented BACC=0.7348, delta=+0.0000
+Test minute 3: baseline BACC=0.7609, augmented BACC=0.7261, delta=-0.0348
+Test minute 5: baseline BACC=0.6435, augmented BACC=0.7043, delta=+0.0609
+Five-block vote BACC: baseline=0.7391, augmented=0.7478, difference=+0.0087
+Class reversal rate: baseline=0.4435, augmented=0.4043, difference=-0.0391
+
+===== SUBJECT-PAIRED CONDITIONAL 95% CI =====
+primary_all_blocks_BACC: +0.0035, conditional 95% CI [-0.0348, +0.0417]
+first_block_BACC: +0.0000, conditional 95% CI [-0.0652, +0.0739]
+fifth_block_BACC: +0.0609, conditional 95% CI [+0.0217, +0.1130]
+five_block_vote_BACC: +0.0087, conditional 95% CI [-0.0391, +0.0609]
+class_reversal_rate: -0.0391, conditional 95% CI [-0.1174, +0.0305]
+
+===== BLOCK-AUGMENTATION TEST COMPLETE =====
+Saved to: /home/user4/alzheimers-thesis/reports/thesis_final/block_augmented_svm_v1
+Exploratory analysis; no independent external validation.
+Original EEG and historical results unchanged.

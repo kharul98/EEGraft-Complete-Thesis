@@ -1,0 +1,65 @@
+===== MILESTONE 4B: TRAIN-ONLY GROUP ABLATION =====
+AD_vs_HC: nested ablation CV repeat 1/5 verified
+AD_vs_HC: nested ablation CV repeat 2/5 verified
+AD_vs_HC: nested ablation CV repeat 3/5 verified
+AD_vs_HC: nested ablation CV repeat 4/5 verified
+AD_vs_HC: nested ablation CV repeat 5/5 verified
+
+===== AD_vs_HC: FEATURE-GROUP ABLATION =====
+Full six-feature first-minute BACC=0.7348; original hard predictions and margins verified on all five minutes.
+  full_6_features              BACC(1min)=0.7348, unstable=0.4435, stable-wrong=0.0870
+  without_delta                BACC(1min)=0.7435, unstable=0.4478, stable-wrong=0.0739
+    vs full: BACC delta=+0.0087; conditional 95% CI [-0.0304, +0.0522]; paired sign-flip p=0.8421
+  without_theta_alpha_family   BACC(1min)=0.6391, unstable=0.4913, stable-wrong=0.1087
+    vs full: BACC delta=-0.0957; conditional 95% CI [-0.2174, +0.0348]; paired sign-flip p=0.1814
+  without_beta                 BACC(1min)=0.6913, unstable=0.4565, stable-wrong=0.1000
+    vs full: BACC delta=-0.0435; conditional 95% CI [-0.1000, +0.0043]; paired sign-flip p=0.1531
+  without_gamma                BACC(1min)=0.6696, unstable=0.4261, stable-wrong=0.1087
+    vs full: BACC delta=-0.0652; conditional 95% CI [-0.1391, +0.0087]; paired sign-flip p=0.1176
+
+  Minutes 1-5 BACC (same trained model applied to later held-out blocks):
+    full_6_features              0.7348 / 0.7304 / 0.7609 / 0.7174 / 0.6435
+    without_delta                0.7435 / 0.7348 / 0.7565 / 0.7304 / 0.6609
+    without_theta_alpha_family   0.6391 / 0.6652 / 0.7000 / 0.6783 / 0.6435
+    without_beta                 0.6913 / 0.7348 / 0.7348 / 0.7000 / 0.6217
+    without_gamma                0.6696 / 0.7261 / 0.7348 / 0.7000 / 0.7043
+FTD_vs_HC: nested ablation CV repeat 1/5 verified
+FTD_vs_HC: nested ablation CV repeat 2/5 verified
+FTD_vs_HC: nested ablation CV repeat 3/5 verified
+FTD_vs_HC: nested ablation CV repeat 4/5 verified
+FTD_vs_HC: nested ablation CV repeat 5/5 verified
+
+===== FTD_vs_HC: FEATURE-GROUP ABLATION =====
+Full six-feature first-minute BACC=0.7372; original hard predictions and margins verified on all five minutes.
+  full_6_features              BACC(1min)=0.7372, unstable=0.3366, stable-wrong=0.1317
+  without_delta                BACC(1min)=0.7372, unstable=0.3659, stable-wrong=0.1122
+    vs full: BACC delta=+0.0000; conditional 95% CI [-0.0309, +0.0353]; paired sign-flip p=1.0000
+  without_theta_alpha_family   BACC(1min)=0.6321, unstable=0.5122, stable-wrong=0.1317
+    vs full: BACC delta=-0.1051; conditional 95% CI [-0.2329, +0.0135]; paired sign-flip p=0.1143
+  without_beta                 BACC(1min)=0.7145, unstable=0.3610, stable-wrong=0.1317
+    vs full: BACC delta=-0.0227; conditional 95% CI [-0.0870, +0.0391]; paired sign-flip p=0.5273
+  without_gamma                BACC(1min)=0.6123, unstable=0.3512, stable-wrong=0.2000
+    vs full: BACC delta=-0.1249; conditional 95% CI [-0.2213, -0.0408]; paired sign-flip p=0.0086
+
+  Minutes 1-5 BACC (same trained model applied to later held-out blocks):
+    full_6_features              0.7372 / 0.7386 / 0.7708 / 0.7070 / 0.6877
+    without_delta                0.7372 / 0.7466 / 0.7621 / 0.7237 / 0.6976
+    without_theta_alpha_family   0.6321 / 0.5983 / 0.6454 / 0.6599 / 0.6099
+    without_beta                 0.7145 / 0.7171 / 0.7362 / 0.6812 / 0.6754
+    without_gamma                0.6123 / 0.6435 / 0.6899 / 0.6167 / 0.6389
+
+===== MULTIPLICITY-ADJUSTED FIRST-MINUTE COMPARISONS =====
+AD_vs_HC / without_delta: BACC difference=+0.0087, CI [-0.0304, +0.0522], Holm p=1.0000
+AD_vs_HC / without_theta_alpha_family: BACC difference=-0.0957, CI [-0.2174, +0.0348], Holm p=0.8000
+AD_vs_HC / without_beta: BACC difference=-0.0435, CI [-0.1000, +0.0043], Holm p=0.8000
+AD_vs_HC / without_gamma: BACC difference=-0.0652, CI [-0.1391, +0.0087], Holm p=0.8000
+FTD_vs_HC / without_delta: BACC difference=+0.0000, CI [-0.0309, +0.0353], Holm p=1.0000
+FTD_vs_HC / without_theta_alpha_family: BACC difference=-0.1051, CI [-0.2329, +0.0135], Holm p=0.8000
+FTD_vs_HC / without_beta: BACC difference=-0.0227, CI [-0.0870, +0.0391], Holm p=1.0000
+FTD_vs_HC / without_gamma: BACC difference=-0.1249, CI [-0.2213, -0.0408], Holm p=0.0688
+
+===== MILESTONE 4B COMPLETE =====
+Output: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_4b_feature_ablation_v1
+No prior model, EEG feature, or cross-condition eligibility changed.
+Differences are exploratory, conditional on these participants and correlated cross-validation models.
+Feature ablation tests predictive dependence; it does not establish causal biomarkers.

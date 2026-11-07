@@ -1,0 +1,90 @@
+{
+  "experiment": "nestedcv5_f3_eegnet_like_s42",
+  "model": "eegnet_like",
+  "train_mode": "frozen",
+  "trained_with_pretrained_weights": false,
+  "backbone_weights_sha256": null,
+  "config": {
+    "manifest": "/home/user4/alzheimers-thesis/eeg_foundation_thesis_starter/eeg_foundation_thesis/manifests/nested_cv5_dev2026/fold_3.csv",
+    "run_name": "nestedcv5_f3_eegnet_like_s42",
+    "model": "eegnet_like",
+    "train_mode": "frozen",
+    "weights": "",
+    "seconds": 4,
+    "high_hz": 40.0,
+    "max_windows_per_subject": 24,
+    "artifact_limit_uv": null,
+    "car": false,
+    "epochs": 15,
+    "patience": 5,
+    "batch_size": 8,
+    "lr": null,
+    "seed": 42,
+    "robustness": false,
+    "cpu": false,
+    "overwrite": false,
+    "validation_only": true
+  },
+  "subjects_per_split": {
+    "train": 33,
+    "val": 9
+  },
+  "windows_per_split": {
+    "train": 792,
+    "val": 216
+  },
+  "validation": {
+    "n_subjects": 9,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "majority_rate": 0.5555555555555556,
+    "ece_10_bins": 0.4361065889674205,
+    "multiclass_brier": 0.3984251099534823,
+    "confusion_matrix": [
+      [
+        5,
+        0
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 5.0
+      },
+      "CN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 9.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 9.0
+      }
+    },
+    "auroc_ovr_macro": 1.0
+  },
+  "test": null,
+  "test_not_evaluated": true
+}

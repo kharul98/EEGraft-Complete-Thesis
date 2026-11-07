@@ -1,0 +1,36 @@
+===== MILESTONE 3C: BOUNDARY-AWARE DURATION FEASIBILITY =====
+Original 60s eligibility frozen: 40/64; trying one predefined 30s fallback.
+  Continuity/quality audit: 10/64
+  Continuity/quality audit: 20/64
+  Continuity/quality audit: 30/64
+  Continuity/quality audit: 40/64
+  Continuity/quality audit: 50/64
+  Continuity/quality audit: 60/64
+  Continuity/quality audit: 64/64
+
+===== BOUNDARY CONTINUITY DIAGNOSIS =====
+A: median longest uninterrupted span=70.5s; median boundaries=19; potential 60s grid misses=4
+F: median longest uninterrupted span=74.5s; median boundaries=13; potential 60s grid misses=0
+C: median longest uninterrupted span=147.2s; median boundaries=15; potential 60s grid misses=0
+
+===== 30S QUALITY ELIGIBILITY BY GROUP =====
+A: original 60s=12/23; new 30s=19/23; newly eligible=7; 30s statuses={'ELIGIBLE_30S': 19, 'NO_CONTINUOUS_30S_WINDOW': 4}
+F: original 60s=10/18; new 30s=13/18; newly eligible=3; 30s statuses={'ELIGIBLE_30S': 13, 'NO_CONTINUOUS_30S_WINDOW': 5}
+C: original 60s=18/23; new 30s=22/23; newly eligible=4; 30s statuses={'ELIGIBLE_30S': 22, 'NO_CONTINUOUS_30S_WINDOW': 1}
+
+===== REMAINING 30S EXCLUSIONS =====
+Total still ineligible: 10/64
+  sub-021 (A): NO_CONTINUOUS_30S_WINDOW; longest span=21.4s; boundaries=80; best clean=-1
+  sub-024 (A): NO_CONTINUOUS_30S_WINDOW; longest span=19.7s; boundaries=11; best clean=-1
+  sub-029 (A): NO_CONTINUOUS_30S_WINDOW; longest span=19.5s; boundaries=19; best clean=-1
+  sub-034 (A): NO_CONTINUOUS_30S_WINDOW; longest span=12.2s; boundaries=20; best clean=-1
+  sub-065 (C): NO_CONTINUOUS_30S_WINDOW; longest span=22.3s; boundaries=27; best clean=-1
+  sub-079 (F): NO_CONTINUOUS_30S_WINDOW; longest span=28.4s; boundaries=4; best clean=-1
+  sub-082 (F): NO_CONTINUOUS_30S_WINDOW; longest span=17.8s; boundaries=8; best clean=-1
+  sub-083 (F): NO_CONTINUOUS_30S_WINDOW; longest span=18.5s; boundaries=10; best clean=-1
+  sub-084 (F): NO_CONTINUOUS_30S_WINDOW; longest span=24.7s; boundaries=7; best clean=-1
+  sub-087 (F): NO_CONTINUOUS_30S_WINDOW; longest span=19.1s; boundaries=10; best clean=-1
+
+===== MILESTONE 3C COMPLETE =====
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_3c_boundary_feasibility_v1/duration_continuity_and_30s_qc.csv
+No classifier trained. No results or eligibility from Milestone 3B were overwritten.

@@ -1,0 +1,28 @@
+===== REAL DRYAD AD SIGNAL STAGE =====
+Source: /home/user4/alzheimers-thesis/data/dryad_padic/alz_c1_new.mat
+Sampling frequency: 500 Hz (from publication)
+Analysis unit: recording slot, not verified patient
+Processed 10/43 columns
+Processed 20/43 columns
+Processed 30/43 columns
+Processed 40/43 columns
+
+===== DRYAD SIGNAL EXPERIMENT RESULTS =====
+Analyzed recording slots: 49
+Candidate columns: 43
+Excluded long arrays: 0
+
+Median disagreement by duration:
+prefix_60_tv        0.065373
+prefix_120_tv       0.060963
+prefix_180_tv       0.058656
+fixed_end_60_tv     0.063001
+fixed_end_120_tv    0.057519
+fixed_end_180_tv    0.058656
+
+===== PRIMARY EFFECT, DESCRIPTIVE ONLY =====
+First per column: {'n': 43, 'mean': -0.011064608715083215, 'median': -0.009102133214809419, 'fraction_negative': 0.627906976744186}
+Last per column: {'n': 43, 'mean': -0.006656038270997819, 'median': -0.005134152054164832, 'fraction_negative': 0.5581395348837209}
+
+Patient independence and condition continuity unverified.
+DRYAD AD SIGNAL STAGE COMPLETE

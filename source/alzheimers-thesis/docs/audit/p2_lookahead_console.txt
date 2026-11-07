@@ -1,0 +1,15 @@
+===== P2 FILTER LOOKAHEAD STUDY =====
+Processed 22/88
+Processed 44/88
+Processed 66/88
+Processed 88/88
+===== LOOKAHEAD RESULTS =====
+         future_boundary_rms_uv  future_full_prefix_rms_uv  future_spectral_tv
+seconds                                                                       
+30                     7.665098                   1.408262            0.000104
+60                     7.481561                   0.980351            0.000046
+120                    8.341934                   0.770959            0.000017
+180                    6.641351                   0.501872            0.000008
+300                    0.000000                   0.000000            0.000000
+Maximum causal error: 0.0
+P2 LOOKAHEAD STUDY COMPLETE

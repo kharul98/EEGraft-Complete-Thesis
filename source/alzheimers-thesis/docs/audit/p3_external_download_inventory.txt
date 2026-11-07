@@ -1,0 +1,81 @@
+===== WINDOWS STORAGE LOCATIONS =====
+FOUND: /mnt/d/user4
+NOT FOUND: /mnt/d/Users/user4/Downloads
+FOUND: /mnt/c/Users/user4/Downloads
+
+===== DRYAD MATLAB FILES =====
+3.551 GiB | /mnt/c/Users/user4/Downloads/alz_c1_new.mat
+  HDF5: True
+
+===== BRAINLAT FILES OUTSIDE ZIP =====
+Counts: {'.fdt': 19, '.set': 22}
+0.147 GiB | /mnt/d/user4/s6_sub-100010_rs_eeg.fdt
+0.148 GiB | /mnt/d/user4/s6_sub-100011_rs_eeg.fdt
+0.129 GiB | /mnt/d/user4/s6_sub-100014_rs_eeg.fdt
+0.100 GiB | /mnt/d/user4/s6_sub-100015_rs_eeg.fdt
+0.135 GiB | /mnt/d/user4/s6_sub-100016_rs_eeg.fdt
+0.144 GiB | /mnt/d/user4/s6_sub-100017_rs_eeg.fdt
+0.139 GiB | /mnt/d/user4/s6_sub-10001_rs_eeg.fdt
+0.139 GiB | /mnt/d/user4/s6_sub-100021_rs_eeg.fdt
+0.109 GiB | /mnt/d/user4/s6_sub-100022_rs_eeg.fdt
+0.121 GiB | /mnt/d/user4/s6_sub-100024_rs_eeg.fdt
+0.100 GiB | /mnt/d/user4/s6_sub-100026_rs_eeg.fdt
+0.162 GiB | /mnt/d/user4/s6_sub-100029_rs_eeg.fdt
+0.144 GiB | /mnt/d/user4/s6_sub-100034_rs_eeg.fdt
+0.133 GiB | /mnt/d/user4/s6_sub-100037_rs_eeg.fdt
+0.142 GiB | /mnt/d/user4/s6_sub-10003_rs_eeg.fdt
+Additional EEG files: 26
+
+===== BRAINLAT ZIP INVENTORY =====
+ZIP archives found: 4
+
+ARCHIVE: /mnt/c/Users/user4/Downloads/1_AD.zip
+ZIP size: 0.917 GiB
+Total entries: 18
+SET files: 12
+FDT files: 2
+CSV files: 4
+JSON files: 0
+
+ARCHIVE: /mnt/c/Users/user4/Downloads/5_HC.zip
+ZIP size: 0.819 GiB
+Total entries: 59
+SET files: 46
+FDT files: 10
+CSV files: 3
+JSON files: 0
+
+ARCHIVE: /mnt/c/Users/user4/Downloads/doi_10_5061_dryad_8gtht76pw__v20221027 (1).zip
+ZIP size: 6.673 GiB
+Total entries: 1
+SET files: 0
+FDT files: 0
+CSV files: 0
+JSON files: 0
+
+ARCHIVE: /mnt/c/Users/user4/Downloads/doi_10_5061_dryad_8gtht76pw__v20221027.zip
+ZIP size: 0.000 GiB
+Total entries: 1
+SET files: 0
+FDT files: 0
+CSV files: 0
+JSON files: 0
+
+===== COMBINED BRAINLAT INVENTORY =====
+Unique SET filename stems: 80
+Unique FDT filename stems: 31
+Matching filename stems: 31
+SET stems without matching FDT stem: 49
+Examples: ['s6_sub-100013_rs_eeg', 's6_sub-100019_rs_eeg', 's6_sub-100023_rs_eeg', 's6_sub-100025_rs_eeg', 's6_sub-100027_rs_eeg', 's6_sub-100032_rs_eeg', 's6_sub-100036_rs_eeg', 's6_sub-100039_rs_eeg', 's6_sub-100040_rs_eeg', 's6_sub-100041_rs_eeg', 's6_sub-100042_rs_eeg', 's6_sub-100044_rs_eeg', 's6_sub-100045_rs_eeg', 's6_sub-100046_rs_eeg', 's6_sub-10004_rs_eeg']
+
+NOTE: A filename match does not prove files
+are in the correct folder or are valid EEG.
+Some SET files may embed their signal data.
+ZIP data was not extracted or decompressed.
+
+===== DISK SPACE =====
+/mnt/c | free: 780.396 GiB
+/mnt/d | free: 926.041 GiB
+/home/user4 | free: 947.377 GiB
+
+===== INVENTORY COMPLETE =====

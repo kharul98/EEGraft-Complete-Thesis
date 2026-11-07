@@ -1,0 +1,36 @@
+===== TRAINING-ONLY RELIABILITY GATE =====
+Task: AD versus controls
+Outer CV: five folds, one exploratory repeat
+Stopping parameters: training-only
+Classifier probabilities: not calibrated
+Completed fold 1/5; gate=stability_dq0.75_mNone_uqNone
+Completed fold 2/5; gate=stability_dq0.75_mNone_uqNone
+Completed fold 3/5; gate=margin_dq0.75_m0.05_uqNone
+Completed fold 4/5; gate=stability_dq0.5_mNone_uqNone
+Completed fold 5/5; gate=margin_dq0.75_m0.05_uqNone
+Frozen fixed-policy replication error: 4.99711383383783e-13
+
+===== TRAINING-ONLY GATE POLICY RESULTS =====
+                        balanced_accuracy  ad_sensitivity  mean_seconds
+policy                                                                 
+budget_random_60_120               0.7165          0.7778       94.1538
+fixed_120                          0.7337          0.7778      120.0000
+fixed_180                          0.7165          0.7778      180.0000
+fixed_30                           0.6681          0.7500       30.0000
+fixed_300                          0.7131          0.8056      300.0000
+fixed_60                           0.7165          0.7778       60.0000
+stability_only_75                  0.7165          0.7778       77.5385
+training_selected_gate             0.7165          0.7778       79.3846
+
+===== TRAINING GATE SELECTION FREQUENCY =====
+selected_gate
+stability_dq0.75_mNone_uqNone    2
+margin_dq0.75_m0.05_uqNone       2
+stability_dq0.5_mNone_uqNone     1
+
+Unique participants: 65
+Outer CV repeats: 1
+Results: exploratory
+Training thresholds are not clinical guarantees.
+No confirmatory significance or novelty claim.
+P2 TRAINING-ONLY RELIABILITY GATE COMPLETE

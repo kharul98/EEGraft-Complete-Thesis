@@ -1,0 +1,31 @@
+{
+  "cohort": "46 previously selected AD / healthy participants",
+  "grid": {
+    "C": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "gamma": [
+      "scale",
+      0.01,
+      0.1
+    ]
+  },
+  "inner_cv": "Three stratified folds within outer training subjects",
+  "limitations": [
+    "Previously examined cohort",
+    "Full-session preprocessing",
+    "Repeated CV estimates are correlated",
+    "No independent external validation"
+  ],
+  "model": "StandardScaler plus RBF SVC, class_weight=balanced",
+  "outer_cv": "Same five repeated five-fold participant splits as duration_locked_v1",
+  "primary_comparison": "Mean matched-position minus cross-position BACC",
+  "primary_metric": "Participant-level balanced accuracy",
+  "secondary_comparison": "Train block five / test block five minus train block one / test block five",
+  "source_block": "One of five nonoverlapping 60-second intervals from each training participant",
+  "status": "post-hoc exploratory, not independently validated",
+  "target_block": "One of five intervals from each held-out participant",
+  "uncertainty": "Stratified participant bootstrap of held-out predictions keeping all repeated observations together"
+}

@@ -1,0 +1,707 @@
+{
+  "files": [
+    {
+      "bytes": 6017,
+      "label": "4C evidence summary",
+      "path": "reports/thesis_final/milestone_4c_reproducibility_v1/THESIS_EVIDENCE_SUMMARY.md",
+      "sha256": "99156432ac1691a039986bfd27071945f21fc6c002f17306831d1f3865eedff5"
+    },
+    {
+      "bytes": 1514,
+      "columns": [
+        "claim",
+        "status",
+        "qualification",
+        "evidence"
+      ],
+      "examples": [
+        {
+          "claim": "Short-EEG SVMs have measurable internal participant-CV classification performance.",
+          "evidence": "1B, 4B",
+          "qualification": "Not independently externally validated.",
+          "status": "SUPPORTED_INTERNALLY"
+        },
+        {
+          "claim": "Predicted classes can change over five EEG minutes.",
+          "evidence": "1A",
+          "qualification": "Correlated CV repetitions.",
+          "status": "SUPPORTED_DESCRIPTIVELY"
+        }
+      ],
+      "label": "4C claim audit",
+      "n_distinct_subject_ids_when_named": 0,
+      "path": "reports/thesis_final/milestone_4c_reproducibility_v1/claim_audit.csv",
+      "row_count": 12,
+      "sha256": "fad0fa45da626279139adb1bc9d2881837b09c8a77c101d0dd835a7d8534a61c",
+      "watched_unique_values": {
+        "status": [
+          "HYPOTHESIS_GENERATING",
+          "NOT_CONFIRMED",
+          "NOT_SUPPORTED",
+          "NOT_TESTED",
+          "SUPPORTED_CONDITIONALLY",
+          "SUPPORTED_DESCRIPTIVELY",
+          "SUPPORTED_INTERNALLY"
+        ]
+      }
+    },
+    {
+      "bytes": 20141,
+      "columns": [
+        "task",
+        "milestone",
+        "metric",
+        "estimate",
+        "unit",
+        "ci_low",
+        "ci_high",
+        "comparator",
+        "uncorrected_p",
+        "adjusted_p",
+        "interpretation_caveat",
+        "source_csv"
+      ],
+      "examples": [
+        {
+          "adjusted_p": "",
+          "ci_high": "",
+          "ci_low": "",
+          "comparator": "",
+          "estimate": "0.46956521739130436",
+          "interpretation_caveat": "Five correlated CV repetitions.",
+          "metric": "stable_correct_fraction",
+          "milestone": "1A",
+          "source_csv": "reports/thesis_final/milestone_1a_reliability_v1/subject_repeat_states.csv",
+          "task": "AD_vs_HC",
+          "uncorrected_p": "",
+          "unit": "fraction"
+        },
+        {
+          "adjusted_p": "",
+          "ci_high": "",
+          "ci_low": "",
+          "comparator": "",
+          "estimate": "0.08695652173913043",
+          "interpretation_caveat": "Five correlated CV repetitions.",
+          "metric": "stable_wrong_fraction",
+          "milestone": "1A",
+          "source_csv": "reports/thesis_final/milestone_1a_reliability_v1/subject_repeat_states.csv",
+          "task": "AD_vs_HC",
+          "uncorrected_p": "",
+          "unit": "fraction"
+        }
+      ],
+      "label": "4C evidence master",
+      "n_distinct_subject_ids_when_named": 0,
+      "path": "reports/thesis_final/milestone_4c_reproducibility_v1/evidence_master.csv",
+      "row_count": 81,
+      "sha256": "601c8097a78f3bbfd4638c9b2460dafa4267fa8c2b9be8ff9aaa36645c54e539",
+      "watched_unique_values": {}
+    },
+    {
+      "bytes": 107,
+      "columns": [
+        "participants_with_3plus_blocks",
+        "participants_with_class_changes",
+        "fraction_changed"
+      ],
+      "examples": [
+        {
+          "fraction_changed": "0.5217391304347826",
+          "participants_with_3plus_blocks": "46",
+          "participants_with_class_changes": "24"
+        }
+      ],
+      "label": "AD temporal summary",
+      "n_distinct_subject_ids_when_named": 0,
+      "path": "reports/thesis_final/duration_locked_v1/block_prediction_stability_summary.csv",
+      "row_count": 1,
+      "sha256": "c43c8a812e74b0767b917a6b00337c922d23f4a5436e83314c03a7b36b0e3557",
+      "watched_unique_values": {
+        "participants_with_3plus_blocks": [
+          "46"
+        ],
+        "participants_with_class_changes": [
+          "24"
+        ]
+      }
+    },
+    {
+      "bytes": 77209,
+      "columns": [
+        "repeat",
+        "subject",
+        "group",
+        "model",
+        "duration_sec",
+        "fold",
+        "true_label",
+        "predicted_label",
+        "decision_score"
+      ],
+      "examples": [
+        {
+          "decision_score": "1.3397948315210702",
+          "duration_sec": "60",
+          "fold": "4",
+          "group": "A",
+          "model": "LogisticRegression",
+          "predicted_label": "1",
+          "repeat": "1",
+          "subject": "sub-001",
+          "true_label": "1"
+        },
+        {
+          "decision_score": "-0.7122923044700503",
+          "duration_sec": "60",
+          "fold": "2",
+          "group": "A",
+          "model": "LogisticRegression",
+          "predicted_label": "0",
+          "repeat": "1",
+          "subject": "sub-002",
+          "true_label": "1"
+        }
+      ],
+      "label": "AD held-out predictions",
+      "n_distinct_subject_ids_when_named": 46,
+      "path": "reports/thesis_final/duration_locked_v1/held_out_predictions.csv",
+      "row_count": 1380,
+      "sha256": "2d3f93bb340936e5b03830d2a4dcad7e5659cab85e553732bc196265b2bceb33",
+      "watched_unique_values": {
+        "duration_sec": [
+          "180",
+          "300",
+          "60"
+        ],
+        "fold": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "predicted_label": [
+          "0",
+          "1"
+        ],
+        "repeat": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "true_label": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "bytes": 23882,
+      "columns": [
+        "subject",
+        "group",
+        "duration_sec",
+        "block_number",
+        "clean_epochs",
+        "clean_fraction",
+        "theta_alpha_epoch_log_mad",
+        "delta",
+        "theta",
+        "alpha",
+        "beta",
+        "gamma",
+        "theta_alpha_ratio"
+      ],
+      "examples": [
+        {
+          "alpha": "0.023379770645499356",
+          "beta": "0.0201341912531736",
+          "block_number": "",
+          "clean_epochs": "30",
+          "clean_fraction": "1.0",
+          "delta": "0.8582418130022437",
+          "duration_sec": "60",
+          "gamma": "0.007588704955629619",
+          "group": "A",
+          "subject": "sub-001",
+          "theta": "0.08346159271242995",
+          "theta_alpha_epoch_log_mad": "0.8052874139407845",
+          "theta_alpha_ratio": "3.5698208497394495"
+        },
+        {
+          "alpha": "0.023622049830338936",
+          "beta": "0.022294278711839026",
+          "block_number": "",
+          "clean_epochs": "88",
+          "clean_fraction": "0.9777777777777777",
+          "delta": "0.8398927666326883",
+          "duration_sec": "180",
+          "gamma": "0.008326678689251557",
+          "group": "A",
+          "subject": "sub-001",
+          "theta": "0.09730519659016973",
+          "theta_alpha_epoch_log_mad": "0.5593505532919284",
+          "theta_alpha_ratio": "4.119252871323469"
+        }
+      ],
+      "label": "AD duration features",
+      "n_distinct_subject_ids_when_named": 46,
+      "path": "reports/thesis_final/duration_locked_v1/duration_features.csv",
+      "row_count": 138,
+      "sha256": "40192cd180a1c8fc58a74bc2f902f8998d0b60f39c7e405e40a7f7cc1a9278ec",
+      "watched_unique_values": {
+        "block_number": [
+          ""
+        ],
+        "duration_sec": [
+          "180",
+          "300",
+          "60"
+        ]
+      }
+    },
+    {
+      "bytes": 818,
+      "columns": [
+        "repeat",
+        "class_reversal_n",
+        "class_reversal_rate",
+        "FTD_reversal_rate",
+        "HC_reversal_rate",
+        "first_minute_BACC",
+        "fifth_minute_BACC",
+        "vote3_BACC",
+        "vote5_BACC"
+      ],
+      "examples": [
+        {
+          "FTD_reversal_rate": "0.2777777777777778",
+          "HC_reversal_rate": "0.17391304347826086",
+          "class_reversal_n": "9",
+          "class_reversal_rate": "0.21951219512195122",
+          "fifth_minute_BACC": "0.6932367149758454",
+          "first_minute_BACC": "0.681159420289855",
+          "repeat": "1",
+          "vote3_BACC": "0.7306763285024154",
+          "vote5_BACC": "0.7584541062801933"
+        },
+        {
+          "FTD_reversal_rate": "0.5",
+          "HC_reversal_rate": "0.34782608695652173",
+          "class_reversal_n": "17",
+          "class_reversal_rate": "0.4146341463414634",
+          "fifth_minute_BACC": "0.6594202898550725",
+          "first_minute_BACC": "0.7149758454106281",
+          "repeat": "2",
+          "vote3_BACC": "0.681159420289855",
+          "vote5_BACC": "0.6871980676328502"
+        }
+      ],
+      "label": "FTD temporal summary",
+      "n_distinct_subject_ids_when_named": 0,
+      "path": "reports/thesis_final/ftd_extension_v1/locked_study/temporal_repeat_results.csv",
+      "row_count": 5,
+      "sha256": "80cad303b065b1307dba289b3cd448008f9dede32a414f2e739a58a85e12163b",
+      "watched_unique_values": {
+        "class_reversal_n": [
+          "13",
+          "17",
+          "9"
+        ],
+        "class_reversal_rate": [
+          "0.21951219512195122",
+          "0.3170731707317073",
+          "0.4146341463414634"
+        ],
+        "fifth_minute_BACC": [
+          "0.6594202898550725",
+          "0.6714975845410628",
+          "0.6932367149758454",
+          "0.7210144927536233"
+        ],
+        "first_minute_BACC": [
+          "0.681159420289855",
+          "0.7149758454106281",
+          "0.7270531400966183",
+          "0.7427536231884058",
+          "0.8200483091787439"
+        ],
+        "repeat": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "vote3_BACC": [
+          "0.681159420289855",
+          "0.7306763285024154",
+          "0.7644927536231885",
+          "0.786231884057971",
+          "0.7922705314009661"
+        ],
+        "vote5_BACC": [
+          "0.6871980676328502",
+          "0.7584541062801933",
+          "0.7644927536231885",
+          "0.7705314009661836",
+          "0.7922705314009661"
+        ]
+      }
+    },
+    {
+      "bytes": 349,
+      "columns": [
+        "minute",
+        "mean_BACC",
+        "FTD_sensitivity",
+        "HC_specificity"
+      ],
+      "examples": [
+        {
+          "FTD_sensitivity": "0.8222222222222222",
+          "HC_specificity": "0.6521739130434783",
+          "mean_BACC": "0.7371980676328501",
+          "minute": "1"
+        },
+        {
+          "FTD_sensitivity": "0.7555555555555555",
+          "HC_specificity": "0.7217391304347827",
+          "mean_BACC": "0.7386473429951691",
+          "minute": "2"
+        }
+      ],
+      "label": "FTD minute metrics",
+      "n_distinct_subject_ids_when_named": 0,
+      "path": "reports/thesis_final/ftd_extension_v1/locked_study/minute_wise_metrics.csv",
+      "row_count": 5,
+      "sha256": "b3aaad9d4c375184da34195c3019cbe329d97be45150336849232a536e3f295a",
+      "watched_unique_values": {
+        "mean_BACC": [
+          "0.6876811594202898",
+          "0.7070048309178745",
+          "0.7371980676328501",
+          "0.7386473429951691",
+          "0.7707729468599034"
+        ],
+        "minute": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      }
+    },
+    {
+      "bytes": 26096,
+      "columns": [
+        "repeat",
+        "subject",
+        "group",
+        "true_label",
+        "fold",
+        "duration_sec",
+        "predicted_label",
+        "decision_score"
+      ],
+      "examples": [
+        {
+          "decision_score": "-0.7815891594836367",
+          "duration_sec": "60",
+          "fold": "4",
+          "group": "C",
+          "predicted_label": "0",
+          "repeat": "1",
+          "subject": "sub-037",
+          "true_label": "0"
+        },
+        {
+          "decision_score": "0.4205096924105941",
+          "duration_sec": "60",
+          "fold": "2",
+          "group": "C",
+          "predicted_label": "1",
+          "repeat": "1",
+          "subject": "sub-038",
+          "true_label": "0"
+        }
+      ],
+      "label": "FTD held-out predictions",
+      "n_distinct_subject_ids_when_named": 41,
+      "path": "reports/thesis_final/ftd_extension_v1/locked_study/held_out_duration_predictions.csv",
+      "row_count": 615,
+      "sha256": "ce7b2e347fe03ca99769793a10bad54e38b274e832b740db18d41f734a5c8855",
+      "watched_unique_values": {
+        "duration_sec": [
+          "180",
+          "300",
+          "60"
+        ],
+        "fold": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "predicted_label": [
+          "0",
+          "1"
+        ],
+        "repeat": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "true_label": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "bytes": 18852,
+      "columns": [
+        "subject",
+        "group",
+        "duration_sec",
+        "block_number",
+        "clean_epochs",
+        "clean_fraction",
+        "delta",
+        "theta",
+        "alpha",
+        "beta",
+        "gamma",
+        "theta_alpha_ratio"
+      ],
+      "examples": [
+        {
+          "alpha": "0.0721715410164759",
+          "beta": "0.02144734412951861",
+          "block_number": "",
+          "clean_epochs": "30",
+          "clean_fraction": "1.0",
+          "delta": "0.7971316507941653",
+          "duration_sec": "60",
+          "gamma": "0.00456059904977028",
+          "group": "C",
+          "subject": "sub-037",
+          "theta": "0.08507945360750038",
+          "theta_alpha_ratio": "1.1788504500420431"
+        },
+        {
+          "alpha": "0.08433445632678342",
+          "beta": "0.026065760575259014",
+          "block_number": "",
+          "clean_epochs": "83",
+          "clean_fraction": "0.9222222222222223",
+          "delta": "0.7743933543283334",
+          "duration_sec": "180",
+          "gamma": "0.0054118769790391106",
+          "group": "C",
+          "subject": "sub-037",
+          "theta": "0.09084021742339683",
+          "theta_alpha_ratio": "1.077142384974945"
+        }
+      ],
+      "label": "FTD duration features",
+      "n_distinct_subject_ids_when_named": 41,
+      "path": "reports/thesis_final/ftd_extension_v1/locked_study/duration_features.csv",
+      "row_count": 123,
+      "sha256": "ff6bd4780ade980589c893beeea868620a6098c8ba97e0747f335f3324b07fde",
+      "watched_unique_values": {
+        "block_number": [
+          ""
+        ],
+        "duration_sec": [
+          "180",
+          "300",
+          "60"
+        ]
+      }
+    },
+    {
+      "bytes": 9658,
+      "columns": [
+        "task",
+        "repeat",
+        "minute",
+        "n_subjects",
+        "original_svm_bacc",
+        "calibrated_threshold_bacc",
+        "changed_prediction_fraction",
+        "brier",
+        "training_prior_brier",
+        "nll",
+        "ece_five_equal_width_bins",
+        "auc",
+        "average_probability"
+      ],
+      "examples": [
+        {
+          "auc": "0.7674858223062382",
+          "average_probability": "0.5291986263765837",
+          "brier": "0.1918362042704432",
+          "calibrated_threshold_bacc": "0.7391304347826086",
+          "changed_prediction_fraction": "0.06521739130434782",
+          "ece_five_equal_width_bins": "0.16385037426116938",
+          "minute": "1",
+          "n_subjects": "46",
+          "nll": "0.5835347378742478",
+          "original_svm_bacc": "0.7608695652173914",
+          "repeat": "1",
+          "task": "AD_vs_HC",
+          "training_prior_brier": "0.25131800425572465"
+        },
+        {
+          "auc": "0.7429111531190926",
+          "average_probability": "0.5154138689954724",
+          "brier": "0.20263706802007234",
+          "calibrated_threshold_bacc": "0.6739130434782609",
+          "changed_prediction_fraction": "0.13043478260869565",
+          "ece_five_equal_width_bins": "0.06943808326696002",
+          "minute": "2",
+          "n_subjects": "46",
+          "nll": "0.5940442385344856",
+          "original_svm_bacc": "0.7173913043478262",
+          "repeat": "1",
+          "task": "AD_vs_HC",
+          "training_prior_brier": "0.25131800425572465"
+        }
+      ],
+      "label": "Calibration metrics",
+      "n_distinct_subject_ids_when_named": 0,
+      "path": "reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv",
+      "row_count": 50,
+      "sha256": "7b5e2472eb547e002f4eb68d2def324b0b970cfeee7096cf5f3e1e08608c958e",
+      "watched_unique_values": {
+        "minute": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "repeat": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      }
+    },
+    {
+      "bytes": 273357,
+      "columns": [
+        "task",
+        "repeat",
+        "subject",
+        "group",
+        "true_label",
+        "fold",
+        "minute",
+        "original_svm_label",
+        "original_svm_decision_score",
+        "calibrated_positive_probability",
+        "calibrated_threshold_label",
+        "calibrated_confidence",
+        "calibrated_entropy_nats",
+        "train_fold_prevalence"
+      ],
+      "examples": [
+        {
+          "calibrated_confidence": "0.6980037152042241",
+          "calibrated_entropy_nats": "0.6125462734053563",
+          "calibrated_positive_probability": "0.6980037152042241",
+          "calibrated_threshold_label": "1",
+          "fold": "4",
+          "group": "A",
+          "minute": "1",
+          "original_svm_decision_score": "0.8652719598945082",
+          "original_svm_label": "1",
+          "repeat": "1",
+          "subject": "sub-001",
+          "task": "AD_vs_HC",
+          "train_fold_prevalence": "0.5135135135135135",
+          "true_label": "1"
+        },
+        {
+          "calibrated_confidence": "0.6984296061490078",
+          "calibrated_entropy_nats": "0.6121890274847965",
+          "calibrated_positive_probability": "0.6984296061490078",
+          "calibrated_threshold_label": "1",
+          "fold": "4",
+          "group": "A",
+          "minute": "2",
+          "original_svm_decision_score": "0.8677311013384935",
+          "original_svm_label": "1",
+          "repeat": "1",
+          "subject": "sub-001",
+          "task": "AD_vs_HC",
+          "train_fold_prevalence": "0.5135135135135135",
+          "true_label": "1"
+        }
+      ],
+      "label": "Calibration predictions",
+      "n_distinct_subject_ids_when_named": 64,
+      "path": "reports/thesis_final/milestone_1b_calibration_v1/calibrated_held_out_block_predictions.csv",
+      "row_count": 2175,
+      "sha256": "2b56b85fd66f20eed72e89bed55f6d5a8648b415422612864f5988dbec8b0ac9",
+      "watched_unique_values": {
+        "calibrated_threshold_label": [
+          "0",
+          "1"
+        ],
+        "fold": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "minute": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "original_svm_label": [
+          "0",
+          "1"
+        ],
+        "repeat": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "train_fold_prevalence": [
+          "0.42424242424242425",
+          "0.4375",
+          "0.45454545454545453",
+          "0.4864864864864865",
+          "0.5",
+          "0.5135135135135135"
+        ],
+        "true_label": [
+          "0",
+          "1"
+        ]
+      }
+    }
+  ],
+  "milestone": "7B",
+  "no_models_trained": true,
+  "primary_claim_values_independently_recomputed": false,
+  "purpose": "Original AD/FTD primary source reconciliation preflight"
+}

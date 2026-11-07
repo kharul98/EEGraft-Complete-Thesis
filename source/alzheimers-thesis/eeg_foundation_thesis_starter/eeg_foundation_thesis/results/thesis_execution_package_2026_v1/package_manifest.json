@@ -1,0 +1,14 @@
+{
+  "test_metrics_sha256": "eb5bd4df3b75a2a973d965dee3f8774151aa373566b7424f4870ea73e7072f95",
+  "protocol_sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+  "no_additional_test_inference": true,
+  "files_sha256": {
+    "thesis_results_ready.md": "96c48f7b55c21d939e8278f613813e59d54d6947350115df014c280d03d52b82",
+    "table_2_matched_skip.csv": "8f9a28ed78a77bd69282dccc0c324ae6c0530b89362122c50726ee78d7e2f71a",
+    "figure_2_final_holdout.png": "eb1b24f0f4ab3b7c399720958ed38278a4757ea11b2ebddc5c7db975d67c9bcc",
+    "table_3_repeated_robustness.csv": "ce813baeff13af5029fe382a0b436f375622e3aa4f8ba141f58e2b7ea48fa5cc",
+    "table_4_locked_holdout.csv": "7fd51cc3d3b6a58fcf20922050b10654c50cafd262ba233e3b16db582a61af8f",
+    "table_1_eight_models.csv": "7a4b5f3dbdf4eca7af9aa742cdb4c103d01ff0b35a51da902200ba3a7687fb78",
+    "figure_1_dev_models.png": "6f78a9dc5ff38bc7cdfb67479fc20926e3474a52d8163afcb791db7519d1f290"
+  }
+}

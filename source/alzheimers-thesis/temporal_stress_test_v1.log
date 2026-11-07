@@ -1,0 +1,42 @@
+===== TEMPORAL STRESS TEST =====
+Input directory: /home/user4/alzheimers-thesis/reports/thesis_final/duration_locked_v1
+Locked protocol: /home/user4/alzheimers-thesis/reports/thesis_final/temporal_stress_v1/locked_protocol.json
+VALIDATION PASS: 46 subjects, 5 blocks, matched labels/folds, original 60s predictions reproduced.
+
+===== HELD-OUT SEGMENT POSITION =====
+Block 1 (0-60s): n=46, BACC=0.7609, CI=[0.6304, 0.8696], ACC=0.7609
+Block 2 (60-120s): n=46, BACC=0.7174, CI=[0.5870, 0.8478], ACC=0.7174
+Block 3 (120-180s): n=46, BACC=0.7826, CI=[0.6522, 0.8913], ACC=0.7826
+Block 4 (180-240s): n=46, BACC=0.6957, CI=[0.5652, 0.8261], ACC=0.6957
+Block 5 (240-300s): n=46, BACC=0.6304, CI=[0.4783, 0.7609], ACC=0.6304
+
+===== WITHIN-RECORDING CLASS REVERSALS =====
+Participants changing class: 24/46 (0.522)
+Exact binomial 95% CI: [0.369, 0.671]
+
+===== LOCKED AGGREGATION COMPARISON =====
+First 60s: N=46, BACC=0.7609, ACC=0.7609
+Three-block majority: N=46, BACC=0.7609, ACC=0.7609
+Five-block majority: N=46, BACC=0.7391, ACC=0.7391
+180s retrained SVM: N=46, BACC=0.7826, ACC=0.7826
+300s retrained SVM: N=46, BACC=0.7609, ACC=0.7609
+
+===== PAIRED BALANCED ACCURACY CHANGES =====
+Three-block majority minus first 60s: +0.0000, conditional 95% CI [-0.0870, +0.0870]
+Five-block majority minus first 60s: -0.0217, conditional 95% CI [-0.1087, +0.0652]
+180s retrained SVM minus first 60s: +0.0217, conditional 95% CI [-0.1087, +0.1522]
+300s retrained SVM minus first 60s: +0.0000, conditional 95% CI [-0.1087, +0.1304]
+
+===== AGREEMENT-BASED ABSTENTION =====
+Agreement >= 3/5: retained=46/46, coverage=1.000, BACC=0.7391304347826086, ACC=0.7391304347826086
+Agreement >= 4/5: retained=39/46, coverage=0.848, BACC=0.7710526315789473, ACC=0.7692307692307693
+Agreement >= 5/5: retained=22/46, coverage=0.478, BACC=0.905982905982906, ACC=0.9090909090909091
+
+===== EXPLORATORY QUALITY AND FEATURE ASSOCIATIONS =====
+range_clean_fraction: unstable minus stable=+0.00442, exploratory p=0.8082
+sd_log_theta_alpha_ratio: unstable minus stable=+0.04304, exploratory p=0.0578
+
+===== TEMPORAL STRESS TEST COMPLETE =====
+Outputs: /home/user4/alzheimers-thesis/reports/thesis_final/temporal_stress_v1
+No new model training. Historical reports unchanged.
+Results are exploratory and based on one matched cross-validation repetition.

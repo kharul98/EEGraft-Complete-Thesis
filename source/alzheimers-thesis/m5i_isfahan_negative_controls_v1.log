@@ -1,0 +1,20 @@
+===== MILESTONE 5I: FROZEN NEGATIVE CONTROLS =====
+
+===== EEG_1: CONSTANT-LABEL NEGATIVE CONTROL =====
+Model: BACC=0.4078, accuracy=0.3760, predicted-MCI=0.7760
+Model: stable-wrong=0.5920, unstable=0.0560
+Always-MCI: BACC=0.5000, accuracy=0.4400, stable-wrong=0.5600, unstable=0.0000
+Always-NORMAL: BACC=0.5000, accuracy=0.5600, stable-wrong=0.4400, unstable=0.0000
+NORMAL false-positive rate=0.8571; MCI sensitivity=0.6727
+
+===== EEG_2: CONSTANT-LABEL NEGATIVE CONTROL =====
+Model: BACC=0.5583, accuracy=0.5583, predicted-MCI=0.6250
+Model: stable-wrong=0.3583, unstable=0.2000
+Always-MCI: BACC=0.5000, accuracy=0.5000, stable-wrong=0.5000, unstable=0.0000
+Always-NORMAL: BACC=0.5000, accuracy=0.5000, stable-wrong=0.5000, unstable=0.0000
+NORMAL false-positive rate=0.5667; MCI sensitivity=0.6833
+
+===== MILESTONE 5I COMPLETE =====
+PASS: negative-control metrics cross-checked against M5G and M5H.
+Outputs: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_5i_isfahan_negative_controls_v1
+No retraining, new exclusions, threshold changes, or pooled releases.

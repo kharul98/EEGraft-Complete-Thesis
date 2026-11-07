@@ -1,0 +1,90 @@
+{
+  "experiment": "ds004504_no_skip_frozen_s42",
+  "model": "no_skip",
+  "train_mode": "frozen",
+  "trained_with_pretrained_weights": true,
+  "backbone_weights_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "config": {
+    "manifest": "manifests/ds004504_ad_cn_preprocessed.csv",
+    "run_name": "ds004504_no_skip_frozen_s42",
+    "model": "no_skip",
+    "train_mode": "frozen",
+    "weights": "",
+    "seconds": 4,
+    "high_hz": 40.0,
+    "max_windows_per_subject": 24,
+    "artifact_limit_uv": null,
+    "car": false,
+    "epochs": 15,
+    "patience": 5,
+    "batch_size": 8,
+    "lr": null,
+    "seed": 42,
+    "robustness": false,
+    "cpu": false,
+    "overwrite": false,
+    "validation_only": true
+  },
+  "subjects_per_split": {
+    "train": 39,
+    "val": 13
+  },
+  "windows_per_split": {
+    "train": 936,
+    "val": 312
+  },
+  "validation": {
+    "n_subjects": 13,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 0.7692307692307693,
+    "balanced_accuracy": 0.7857142857142857,
+    "macro_f1": 0.7636363636363637,
+    "majority_rate": 0.6923076923076923,
+    "ece_10_bins": 0.15716300232526972,
+    "multiclass_brier": 0.34485959473124983,
+    "confusion_matrix": [
+      [
+        4,
+        3
+      ],
+      [
+        0,
+        6
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 1.0,
+        "recall": 0.5714285714285714,
+        "f1-score": 0.7272727272727273,
+        "support": 7.0
+      },
+      "CN": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1-score": 0.8,
+        "support": 6.0
+      },
+      "accuracy": 0.7692307692307693,
+      "macro avg": {
+        "precision": 0.8333333333333333,
+        "recall": 0.7857142857142857,
+        "f1-score": 0.7636363636363637,
+        "support": 13.0
+      },
+      "weighted avg": {
+        "precision": 0.8461538461538461,
+        "recall": 0.7692307692307693,
+        "f1-score": 0.7608391608391608,
+        "support": 13.0
+      }
+    },
+    "auroc_ovr_macro": 0.8333333333333333
+  },
+  "test": null,
+  "test_not_evaluated": true
+}

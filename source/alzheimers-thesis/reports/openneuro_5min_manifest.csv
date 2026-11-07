@@ -1,0 +1,89 @@
+subject,group,file,duration_sec,sfreq,eeg_channels,channel_match,annotations,start_sec,end_sec,multi200_pct,any300_pct,flat_pct,status,note
+sub-001,A,data/eeg/on004504_v1.0.0/derivatives/sub-001/eeg/sub-001_task-eyesclosed_eeg.set,599.8,500.0,19,True,0,40,340,2.0,0.0,0.0,CANDIDATE,
+sub-002,A,data/eeg/on004504_v1.0.0/derivatives/sub-002/eeg/sub-002_task-eyesclosed_eeg.set,793.1,500.0,19,True,0,0,300,1.33,0.0,0.0,CANDIDATE,
+sub-003,A,data/eeg/on004504_v1.0.0/derivatives/sub-003/eeg/sub-003_task-eyesclosed_eeg.set,306.1,500.0,19,True,1,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-004,A,data/eeg/on004504_v1.0.0/derivatives/sub-004/eeg/sub-004_task-eyesclosed_eeg.set,706.1,500.0,19,True,1,140,440,3.33,0.0,0.0,CANDIDATE,
+sub-005,A,data/eeg/on004504_v1.0.0/derivatives/sub-005/eeg/sub-005_task-eyesclosed_eeg.set,804.1,500.0,19,True,0,10,310,2.0,2.67,0.0,CANDIDATE,
+sub-006,A,data/eeg/on004504_v1.0.0/derivatives/sub-006/eeg/sub-006_task-eyesclosed_eeg.set,632.4,500.0,19,True,3,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-007,A,data/eeg/on004504_v1.0.0/derivatives/sub-007/eeg/sub-007_task-eyesclosed_eeg.set,766.42,500.0,19,True,2,320,620,1.33,0.0,0.0,CANDIDATE,
+sub-008,A,data/eeg/on004504_v1.0.0/derivatives/sub-008/eeg/sub-008_task-eyesclosed_eeg.set,793.4,500.0,19,True,4,60,360,4.0,0.0,0.0,CANDIDATE,
+sub-009,A,data/eeg/on004504_v1.0.0/derivatives/sub-009/eeg/sub-009_task-eyesclosed_eeg.set,612.6,500.0,19,True,1,300,600,2.0,0.0,0.0,CANDIDATE,
+sub-010,A,data/eeg/on004504_v1.0.0/derivatives/sub-010/eeg/sub-010_task-eyesclosed_eeg.set,1281.72,500.0,19,True,7,520,820,0.0,0.0,0.0,CANDIDATE,
+sub-011,A,data/eeg/on004504_v1.0.0/derivatives/sub-011/eeg/sub-011_task-eyesclosed_eeg.set,769.92,500.0,19,True,1,30,330,7.33,6.67,0.0,CANDIDATE,
+sub-012,A,data/eeg/on004504_v1.0.0/derivatives/sub-012/eeg/sub-012_task-eyesclosed_eeg.set,883.52,500.0,19,True,9,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-013,A,data/eeg/on004504_v1.0.0/derivatives/sub-013/eeg/sub-013_task-eyesclosed_eeg.set,838.1,500.0,19,True,2,220,520,4.0,0.0,0.0,CANDIDATE,
+sub-014,A,data/eeg/on004504_v1.0.0/derivatives/sub-014/eeg/sub-014_task-eyesclosed_eeg.set,934.44,500.0,19,True,6,480,780,6.67,4.67,0.0,CANDIDATE,
+sub-015,A,data/eeg/on004504_v1.0.0/derivatives/sub-015/eeg/sub-015_task-eyesclosed_eeg.set,901.38,500.0,19,True,6,0,300,2.67,0.67,0.0,CANDIDATE,
+sub-016,A,data/eeg/on004504_v1.0.0/derivatives/sub-016/eeg/sub-016_task-eyesclosed_eeg.set,972.36,500.0,19,True,9,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-017,A,data/eeg/on004504_v1.0.0/derivatives/sub-017/eeg/sub-017_task-eyesclosed_eeg.set,843.4,500.0,19,True,2,70,370,6.67,0.0,0.0,CANDIDATE,
+sub-018,A,data/eeg/on004504_v1.0.0/derivatives/sub-018/eeg/sub-018_task-eyesclosed_eeg.set,845.1,500.0,19,True,2,60,360,11.33,0.67,0.0,CANDIDATE,
+sub-019,A,data/eeg/on004504_v1.0.0/derivatives/sub-019/eeg/sub-019_task-eyesclosed_eeg.set,918.62,500.0,19,True,1,510,810,3.33,0.0,0.0,CANDIDATE,
+sub-020,A,data/eeg/on004504_v1.0.0/derivatives/sub-020/eeg/sub-020_task-eyesclosed_eeg.set,869.3,500.0,19,True,0,380,680,6.67,0.67,0.0,CANDIDATE,
+sub-021,A,data/eeg/on004504_v1.0.0/derivatives/sub-021/eeg/sub-021_task-eyesclosed_eeg.set,920.28,500.0,19,True,2,260,560,3.33,0.0,0.0,CANDIDATE,
+sub-022,A,data/eeg/on004504_v1.0.0/derivatives/sub-022/eeg/sub-022_task-eyesclosed_eeg.set,821.92,500.0,19,True,1,410,710,5.33,3.33,0.0,CANDIDATE,
+sub-023,A,data/eeg/on004504_v1.0.0/derivatives/sub-023/eeg/sub-023_task-eyesclosed_eeg.set,834.74,500.0,19,True,18,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-024,A,data/eeg/on004504_v1.0.0/derivatives/sub-024/eeg/sub-024_task-eyesclosed_eeg.set,759.8,500.0,19,True,6,330,630,3.33,0.0,0.0,CANDIDATE,
+sub-025,A,data/eeg/on004504_v1.0.0/derivatives/sub-025/eeg/sub-025_task-eyesclosed_eeg.set,684.36,500.0,19,True,12,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-026,A,data/eeg/on004504_v1.0.0/derivatives/sub-026/eeg/sub-026_task-eyesclosed_eeg.set,898.64,500.0,19,True,14,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-027,A,data/eeg/on004504_v1.0.0/derivatives/sub-027/eeg/sub-027_task-eyesclosed_eeg.set,826.2,500.0,19,True,3,300,600,20.67,1.33,0.0,REVIEW,
+sub-028,A,data/eeg/on004504_v1.0.0/derivatives/sub-028/eeg/sub-028_task-eyesclosed_eeg.set,818.14,500.0,19,True,7,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-029,A,data/eeg/on004504_v1.0.0/derivatives/sub-029/eeg/sub-029_task-eyesclosed_eeg.set,736.68,500.0,19,True,3,220,520,2.67,0.0,0.0,CANDIDATE,
+sub-030,A,data/eeg/on004504_v1.0.0/derivatives/sub-030/eeg/sub-030_task-eyesclosed_eeg.set,554.08,500.0,19,True,2,30,330,50.0,7.33,0.0,REVIEW,
+sub-031,A,data/eeg/on004504_v1.0.0/derivatives/sub-031/eeg/sub-031_task-eyesclosed_eeg.set,1150.76,500.0,19,True,4,320,620,3.33,0.0,0.0,CANDIDATE,
+sub-032,A,data/eeg/on004504_v1.0.0/derivatives/sub-032/eeg/sub-032_task-eyesclosed_eeg.set,797.78,500.0,19,True,34,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-033,A,data/eeg/on004504_v1.0.0/derivatives/sub-033/eeg/sub-033_task-eyesclosed_eeg.set,705.42,500.0,19,True,1,40,340,2.67,0.0,0.0,CANDIDATE,
+sub-034,A,data/eeg/on004504_v1.0.0/derivatives/sub-034/eeg/sub-034_task-eyesclosed_eeg.set,969.9,500.0,19,True,1,130,430,0.67,0.0,0.0,CANDIDATE,
+sub-035,A,data/eeg/on004504_v1.0.0/derivatives/sub-035/eeg/sub-035_task-eyesclosed_eeg.set,741.04,500.0,19,True,13,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-036,A,data/eeg/on004504_v1.0.0/derivatives/sub-036/eeg/sub-036_task-eyesclosed_eeg.set,841.36,500.0,19,True,8,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-037,C,data/eeg/on004504_v1.0.0/derivatives/sub-037/eeg/sub-037_task-eyesclosed_eeg.set,777.1,500.0,19,True,0,460,760,6.67,1.33,0.0,CANDIDATE,
+sub-038,C,data/eeg/on004504_v1.0.0/derivatives/sub-038/eeg/sub-038_task-eyesclosed_eeg.set,891.4,500.0,19,True,1,470,770,1.33,0.0,0.0,CANDIDATE,
+sub-039,C,data/eeg/on004504_v1.0.0/derivatives/sub-039/eeg/sub-039_task-eyesclosed_eeg.set,850.08,500.0,19,True,6,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-040,C,data/eeg/on004504_v1.0.0/derivatives/sub-040/eeg/sub-040_task-eyesclosed_eeg.set,965.74,500.0,19,True,33,340,640,5.33,0.67,0.0,CANDIDATE,
+sub-041,C,data/eeg/on004504_v1.0.0/derivatives/sub-041/eeg/sub-041_task-eyesclosed_eeg.set,886.1,500.0,19,True,1,520,820,3.33,0.0,0.0,CANDIDATE,
+sub-042,C,data/eeg/on004504_v1.0.0/derivatives/sub-042/eeg/sub-042_task-eyesclosed_eeg.set,963.02,500.0,19,True,8,0,300,2.67,0.67,0.0,CANDIDATE,
+sub-043,C,data/eeg/on004504_v1.0.0/derivatives/sub-043/eeg/sub-043_task-eyesclosed_eeg.set,829.1,500.0,19,True,0,400,700,0.67,0.0,0.0,CANDIDATE,
+sub-044,C,data/eeg/on004504_v1.0.0/derivatives/sub-044/eeg/sub-044_task-eyesclosed_eeg.set,881.6,500.0,19,True,0,450,750,3.33,0.0,0.0,CANDIDATE,
+sub-045,C,data/eeg/on004504_v1.0.0/derivatives/sub-045/eeg/sub-045_task-eyesclosed_eeg.set,851.64,500.0,19,True,8,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-046,C,data/eeg/on004504_v1.0.0/derivatives/sub-046/eeg/sub-046_task-eyesclosed_eeg.set,753.04,500.0,19,True,4,0,300,4.67,0.0,0.0,CANDIDATE,
+sub-047,C,data/eeg/on004504_v1.0.0/derivatives/sub-047/eeg/sub-047_task-eyesclosed_eeg.set,807.0,500.0,19,True,1,0,300,1.33,0.0,0.0,CANDIDATE,
+sub-048,C,data/eeg/on004504_v1.0.0/derivatives/sub-048/eeg/sub-048_task-eyesclosed_eeg.set,989.88,500.0,19,True,14,480,780,10.67,4.67,0.0,CANDIDATE,
+sub-049,C,data/eeg/on004504_v1.0.0/derivatives/sub-049/eeg/sub-049_task-eyesclosed_eeg.set,780.2,500.0,19,True,4,440,740,4.0,0.0,0.0,CANDIDATE,
+sub-050,C,data/eeg/on004504_v1.0.0/derivatives/sub-050/eeg/sub-050_task-eyesclosed_eeg.set,817.64,500.0,19,True,6,260,560,9.33,2.67,0.0,CANDIDATE,
+sub-051,C,data/eeg/on004504_v1.0.0/derivatives/sub-051/eeg/sub-051_task-eyesclosed_eeg.set,753.34,500.0,19,True,19,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-052,C,data/eeg/on004504_v1.0.0/derivatives/sub-052/eeg/sub-052_task-eyesclosed_eeg.set,760.1,500.0,19,True,1,210,510,3.33,0.0,0.0,CANDIDATE,
+sub-053,C,data/eeg/on004504_v1.0.0/derivatives/sub-053/eeg/sub-053_task-eyesclosed_eeg.set,780.52,500.0,19,True,13,20,320,3.33,0.0,0.0,CANDIDATE,
+sub-054,C,data/eeg/on004504_v1.0.0/derivatives/sub-054/eeg/sub-054_task-eyesclosed_eeg.set,837.62,500.0,19,True,4,380,680,3.33,0.0,0.0,CANDIDATE,
+sub-055,C,data/eeg/on004504_v1.0.0/derivatives/sub-055/eeg/sub-055_task-eyesclosed_eeg.set,814.6,500.0,19,True,6,340,640,5.33,0.0,0.0,CANDIDATE,
+sub-056,C,data/eeg/on004504_v1.0.0/derivatives/sub-056/eeg/sub-056_task-eyesclosed_eeg.set,791.32,500.0,19,True,56,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-057,C,data/eeg/on004504_v1.0.0/derivatives/sub-057/eeg/sub-057_task-eyesclosed_eeg.set,796.5,500.0,19,True,0,496,796,2.0,0.0,0.0,CANDIDATE,
+sub-058,C,data/eeg/on004504_v1.0.0/derivatives/sub-058/eeg/sub-058_task-eyesclosed_eeg.set,756.78,500.0,19,True,5,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-059,C,data/eeg/on004504_v1.0.0/derivatives/sub-059/eeg/sub-059_task-eyesclosed_eeg.set,787.12,500.0,19,True,2,0,300,0.0,0.0,0.0,CANDIDATE,
+sub-060,C,data/eeg/on004504_v1.0.0/derivatives/sub-060/eeg/sub-060_task-eyesclosed_eeg.set,748.48,500.0,19,True,2,300,600,2.67,0.67,0.0,CANDIDATE,
+sub-061,C,data/eeg/on004504_v1.0.0/derivatives/sub-061/eeg/sub-061_task-eyesclosed_eeg.set,803.28,500.0,19,True,3,30,330,7.33,2.0,0.0,CANDIDATE,
+sub-062,C,data/eeg/on004504_v1.0.0/derivatives/sub-062/eeg/sub-062_task-eyesclosed_eeg.set,898.7,500.0,19,True,10,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-063,C,data/eeg/on004504_v1.0.0/derivatives/sub-063/eeg/sub-063_task-eyesclosed_eeg.set,804.94,500.0,19,True,3,10,310,1.33,0.0,0.0,CANDIDATE,
+sub-064,C,data/eeg/on004504_v1.0.0/derivatives/sub-064/eeg/sub-064_task-eyesclosed_eeg.set,848.1,500.0,19,True,1,10,310,24.0,2.67,0.0,REVIEW,
+sub-065,C,data/eeg/on004504_v1.0.0/derivatives/sub-065/eeg/sub-065_task-eyesclosed_eeg.set,884.1,500.0,19,True,0,400,700,0.0,0.0,0.0,CANDIDATE,
+sub-066,F,data/eeg/on004504_v1.0.0/derivatives/sub-066/eeg/sub-066_task-eyesclosed_eeg.set,549.76,500.0,19,True,1,120,420,0.67,0.67,0.0,CANDIDATE,
+sub-067,F,data/eeg/on004504_v1.0.0/derivatives/sub-067/eeg/sub-067_task-eyesclosed_eeg.set,643.1,500.0,19,True,0,190,490,16.67,6.0,0.0,CANDIDATE,
+sub-068,F,data/eeg/on004504_v1.0.0/derivatives/sub-068/eeg/sub-068_task-eyesclosed_eeg.set,573.1,500.0,19,True,1,272,572,2.67,1.33,0.0,CANDIDATE,
+sub-069,F,data/eeg/on004504_v1.0.0/derivatives/sub-069/eeg/sub-069_task-eyesclosed_eeg.set,636.1,500.0,19,True,1,10,310,3.33,0.0,0.0,CANDIDATE,
+sub-070,F,data/eeg/on004504_v1.0.0/derivatives/sub-070/eeg/sub-070_task-eyesclosed_eeg.set,479.1,500.0,19,True,0,60,360,0.0,0.0,0.0,CANDIDATE,
+sub-071,F,data/eeg/on004504_v1.0.0/derivatives/sub-071/eeg/sub-071_task-eyesclosed_eeg.set,618.9,500.0,19,True,3,290,590,2.67,0.0,0.0,CANDIDATE,
+sub-072,F,data/eeg/on004504_v1.0.0/derivatives/sub-072/eeg/sub-072_task-eyesclosed_eeg.set,657.42,500.0,19,True,3,290,590,3.33,0.0,0.0,CANDIDATE,
+sub-073,F,data/eeg/on004504_v1.0.0/derivatives/sub-073/eeg/sub-073_task-eyesclosed_eeg.set,854.58,500.0,19,True,2,90,390,0.0,0.0,0.0,CANDIDATE,
+sub-074,F,data/eeg/on004504_v1.0.0/derivatives/sub-074/eeg/sub-074_task-eyesclosed_eeg.set,1014.5,500.0,19,True,9,680,980,4.67,0.0,0.0,CANDIDATE,
+sub-075,F,data/eeg/on004504_v1.0.0/derivatives/sub-075/eeg/sub-075_task-eyesclosed_eeg.set,748.18,500.0,19,True,2,0,300,5.33,3.33,0.0,CANDIDATE,
+sub-076,F,data/eeg/on004504_v1.0.0/derivatives/sub-076/eeg/sub-076_task-eyesclosed_eeg.set,818.8,500.0,19,True,0,380,680,2.67,0.0,0.0,CANDIDATE,
+sub-077,F,data/eeg/on004504_v1.0.0/derivatives/sub-077/eeg/sub-077_task-eyesclosed_eeg.set,699.14,500.0,19,True,4,70,370,1.33,0.0,0.0,CANDIDATE,
+sub-078,F,data/eeg/on004504_v1.0.0/derivatives/sub-078/eeg/sub-078_task-eyesclosed_eeg.set,870.9,500.0,19,True,3,250,550,6.67,0.0,0.0,CANDIDATE,
+sub-079,F,data/eeg/on004504_v1.0.0/derivatives/sub-079/eeg/sub-079_task-eyesclosed_eeg.set,816.68,500.0,19,True,5,120,420,5.33,2.0,0.0,CANDIDATE,
+sub-080,F,data/eeg/on004504_v1.0.0/derivatives/sub-080/eeg/sub-080_task-eyesclosed_eeg.set,915.14,500.0,19,True,11,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-081,F,data/eeg/on004504_v1.0.0/derivatives/sub-081/eeg/sub-081_task-eyesclosed_eeg.set,824.48,500.0,19,True,4,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-082,F,data/eeg/on004504_v1.0.0/derivatives/sub-082/eeg/sub-082_task-eyesclosed_eeg.set,777.6,500.0,19,True,0,110,410,1.33,0.67,0.0,CANDIDATE,
+sub-083,F,data/eeg/on004504_v1.0.0/derivatives/sub-083/eeg/sub-083_task-eyesclosed_eeg.set,913.2,500.0,19,True,0,610,910,1.33,0.0,0.0,CANDIDATE,
+sub-084,F,data/eeg/on004504_v1.0.0/derivatives/sub-084/eeg/sub-084_task-eyesclosed_eeg.set,652.1,500.0,19,True,0,350,650,0.0,0.0,0.0,CANDIDATE,
+sub-085,F,data/eeg/on004504_v1.0.0/derivatives/sub-085/eeg/sub-085_task-eyesclosed_eeg.set,560.06,500.0,19,True,4,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-086,F,data/eeg/on004504_v1.0.0/derivatives/sub-086/eeg/sub-086_task-eyesclosed_eeg.set,578.8,500.0,19,True,53,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate
+sub-087,F,data/eeg/on004504_v1.0.0/derivatives/sub-087/eeg/sub-087_task-eyesclosed_eeg.set,602.76,500.0,19,True,3,260,560,2.67,0.0,0.0,CANDIDATE,
+sub-088,F,data/eeg/on004504_v1.0.0/derivatives/sub-088/eeg/sub-088_task-eyesclosed_eeg.set,784.7,500.0,19,True,6,,,,,,NO_UNINTERRUPTED_WINDOW,No annotation-free 300s candidate

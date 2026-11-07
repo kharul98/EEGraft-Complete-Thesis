@@ -1,0 +1,13 @@
+claim,status,qualification,evidence
+Short-EEG SVMs have measurable internal participant-CV classification performance.,SUPPORTED_INTERNALLY,Not independently externally validated.,"1B, 4B"
+Predicted classes can change over five EEG minutes.,SUPPORTED_DESCRIPTIVELY,Correlated CV repetitions.,1A
+Stable predictions can be wrong.,SUPPORTED_DESCRIPTIVELY,Stability does not establish clinical correctness.,"1A, 1B"
+Calibration gives probabilistic information.,SUPPORTED_INTERNALLY,Better Brier than prevalence baseline; not necessarily the best calibration method.,1B
+Uncertainty-based abstention is deployable.,NOT_SUPPORTED,Retrospective cohort-relative rankings are not prospective thresholds.,1C
+MMSE reliably predicts classifier instability.,NOT_CONFIRMED,Primary Holm-adjusted associations are uncertain.,2B
+AD MMSE correlates with stable-wrong frequency.,HYPOTHESIS_GENERATING,"Secondary n=23 analysis, BH q near 0.05.",2B
+Predictions vary between EC and EO/photic recordings.,SUPPORTED_DESCRIPTIVELY,Within-participant condition transfer.,"3D, 3E"
+Cross-condition BACC reliably declines.,NOT_CONFIRMED,Paired BACC intervals include zero.,3D
+Local explanation drift differs by stability state.,SUPPORTED_CONDITIONALLY,Post-hoc local perturbation analysis.,4A
+A frequency-band group is proven necessary.,NOT_CONFIRMED,No ablation survives Holm correction.,4B
+The classifier predicts future Alzheimer onset.,NOT_TESTED,No longitudinal conversion labels or prospective screening cohort.,Study design

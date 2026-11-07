@@ -1,0 +1,24 @@
+===== RAW SAMPLE DOWNLOAD =====
+Path: data/eeg/on004504_v1.0.0/sub-001/eeg/sub-001_task-eyesclosed_eeg.set
+Expected bytes: 24022128
+Source: https://data.nemar.org/on004504/v1.0.0/sub-001/eeg/sub-001_task-eyesclosed_eeg.set
+Downloaded bytes: 24022128
+RAW FILE CHECKSUM: PASS
+
+===== RAW EEG INSPECTION =====
+Sampling rate: 500.0
+Channels: 19
+Channel names: ['Fp1', 'Fp2', 'F3', 'F4', 'C3', 'C4', 'P3', 'P4', 'O1', 'O2', 'F7', 'F8', 'T3', 'T4', 'T5', 'T6', 'Fz', 'Cz', 'Pz']
+Samples: 299900
+Duration seconds: 599.8
+Annotations: 0
+First 5s finite: True
+
+===== DERIVATIVE COMPARISON =====
+Matching derivative files: 1
+Derivative sampling rate: 500.0
+Derivative channels: 19
+Derivative duration seconds: 599.8
+Channel layout identical: True
+
+===== RAW SAMPLE AUDIT COMPLETE =====

@@ -1,0 +1,54 @@
+===== CROSS-DIAGNOSTIC REPLICATION AUDIT =====
+PASS: 46 AD/HC and 41 FTD/HC participants; all five CV repetitions and all prediction positions reconciled.
+PASS: Same 23 healthy-control IDs appear in both tasks.
+
+===== CROSS-DIAGNOSTIC REVERSAL ANALYSIS =====
+AD_patient_reversal: +0.4000, conditional 95% CI [+0.2346, +0.5739]
+AD_HC_reversal: +0.4870, conditional 95% CI [+0.3130, +0.6609]
+FTD_patient_reversal: +0.3778, conditional 95% CI [+0.2111, +0.5667]
+FTD_HC_reversal: +0.3043, conditional 95% CI [+0.1478, +0.4696]
+AD_class_balanced_reversal: +0.4435, conditional 95% CI [+0.3261, +0.5696]
+FTD_class_balanced_reversal: +0.3411, conditional 95% CI [+0.2266, +0.4594]
+FTD_minus_AD_reversal: -0.1024, conditional 95% CI [-0.2440, +0.0428]
+shared_HC_reversal_difference: -0.1826, conditional 95% CI [-0.3217, -0.0435]
+
+===== WITHIN-TASK DURATION COMPARISONS =====
+AD_180_minus_60: +0.0783, conditional 95% CI [-0.0043, +0.1652]
+AD_300_minus_60: +0.0304, conditional 95% CI [-0.0652, +0.1304]
+FTD_180_minus_60: +0.0324, conditional 95% CI [-0.0377, +0.1111]
+FTD_300_minus_60: +0.0367, conditional 95% CI [-0.0382, +0.1140]
+
+===== RECORDING-POSITION COMPARISONS =====
+AD_minute5_minus_minute1: -0.0913, conditional 95% CI [-0.1957, +0.0130]
+FTD_minute5_minus_minute1: -0.0495, conditional 95% CI [-0.1546, +0.0457]
+FTD_minus_AD_minute1_BACC: +0.0024, conditional 95% CI [-0.1128, +0.1234]
+FTD_minus_AD_minute5_BACC: +0.0442, conditional 95% CI [-0.0865, +0.1783]
+
+===== SHARED-CONTROL SUBJECT AUDIT =====
+sub-037: AD-model flip repetitions=0/5; FTD-model flip repetitions=0/5
+sub-038: AD-model flip repetitions=4/5; FTD-model flip repetitions=4/5
+sub-040: AD-model flip repetitions=0/5; FTD-model flip repetitions=0/5
+sub-041: AD-model flip repetitions=5/5; FTD-model flip repetitions=3/5
+sub-042: AD-model flip repetitions=0/5; FTD-model flip repetitions=0/5
+sub-043: AD-model flip repetitions=3/5; FTD-model flip repetitions=0/5
+sub-044: AD-model flip repetitions=0/5; FTD-model flip repetitions=0/5
+sub-045: AD-model flip repetitions=5/5; FTD-model flip repetitions=5/5
+sub-046: AD-model flip repetitions=0/5; FTD-model flip repetitions=3/5
+sub-047: AD-model flip repetitions=4/5; FTD-model flip repetitions=0/5
+sub-048: AD-model flip repetitions=0/5; FTD-model flip repetitions=0/5
+sub-049: AD-model flip repetitions=4/5; FTD-model flip repetitions=0/5
+sub-050: AD-model flip repetitions=5/5; FTD-model flip repetitions=5/5
+sub-052: AD-model flip repetitions=5/5; FTD-model flip repetitions=5/5
+sub-053: AD-model flip repetitions=4/5; FTD-model flip repetitions=0/5
+sub-054: AD-model flip repetitions=0/5; FTD-model flip repetitions=0/5
+sub-055: AD-model flip repetitions=0/5; FTD-model flip repetitions=0/5
+sub-057: AD-model flip repetitions=2/5; FTD-model flip repetitions=1/5
+sub-059: AD-model flip repetitions=0/5; FTD-model flip repetitions=0/5
+sub-060: AD-model flip repetitions=4/5; FTD-model flip repetitions=1/5
+sub-061: AD-model flip repetitions=1/5; FTD-model flip repetitions=0/5
+sub-063: AD-model flip repetitions=5/5; FTD-model flip repetitions=4/5
+sub-065: AD-model flip repetitions=5/5; FTD-model flip repetitions=4/5
+
+===== CROSS-DIAGNOSTIC AUDIT COMPLETE =====
+Saved to: /home/user4/alzheimers-thesis/reports/thesis_final/cross_diagnostic_replication_v1
+Historical data and model predictions unchanged.

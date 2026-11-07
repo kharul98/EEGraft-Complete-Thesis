@@ -1,0 +1,65 @@
+{
+  "critical_design_rules": [
+    "Never treat EEG epochs as independent participants",
+    "Check uniqueness across Isfahan archives",
+    "Use participant-disjoint nested cross-validation",
+    "Do not use MCI as an AD diagnosis",
+    "Fit all scaling and calibration on training subjects",
+    "Freeze test eligibility before reading predictions",
+    "Do not report zero-shot AD validation on MCI",
+    "Audit control recording format before Figshare transfer"
+  ],
+  "environment": {
+    "edf_reader_available": true,
+    "existing_external_paths": [],
+    "free_disk_gib": 936.258,
+    "gdown_available": false,
+    "mne_version": "1.13.2"
+  },
+  "figshare": {
+    "api_reachable": true,
+    "api_url": "https://api.figshare.com/v2/articles/5450293",
+    "article_id": 5450293,
+    "article_title": "dataset.zip",
+    "files": [
+      {
+        "download_url": "https://ndownloader.figshare.com/files/9423433",
+        "id": 9423433,
+        "name": "dataset.zip",
+        "size_bytes": 305894766
+      }
+    ],
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "raw_EEG_compatibility_verified": false
+  },
+  "isfahan": {
+    "actual_EEG_files_verified": false,
+    "format": "EDF reported; not yet locally verified",
+    "official_page": "https://misp.mui.ac.ir/en/eeg-data-0",
+    "page_reachable": true,
+    "possible_subject_counts": {
+      "MCI": 29,
+      "healthy": 32,
+      "total": 61
+    },
+    "public_drive_links": {
+      "EEG_1.zip": {
+        "file_id": "1hG5v_COjPNzejRaL9XJAFERee9i2_V04",
+        "found_on_current_page": true,
+        "url": "https://drive.google.com/file/d/1hG5v_COjPNzejRaL9XJAFERee9i2_V04/view"
+      },
+      "EEG_2.zip": {
+        "file_id": "1gS7b9C1XuDp7c-yGgbDzZePIJxI9eRwF",
+        "found_on_current_page": true,
+        "url": "https://drive.google.com/file/d/1gS7b9C1XuDp7c-yGgbDzZePIJxI9eRwF/view"
+      }
+    },
+    "unique_subjects_verified": false
+  },
+  "milestone": "5A_external_dataset_preflight",
+  "original_thesis_complete": true,
+  "recommended_next_dataset": "Isfahan University MCI/healthy"
+}

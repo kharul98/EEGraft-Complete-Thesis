@@ -1,0 +1,30 @@
+{
+  "files_found": 80,
+  "cohorts": {
+    "AD": {
+      "SET_files": 34,
+      "readable_EEG": 34,
+      "length_eligible_300s": 28,
+      "readable_without_same_folder_FDT": 34
+    },
+    "HC": {
+      "SET_files": 46,
+      "readable_EEG": 10,
+      "length_eligible_300s": 8,
+      "readable_without_same_folder_FDT": 0
+    },
+    "UNKNOWN": {
+      "SET_files": 0,
+      "readable_EEG": 0,
+      "length_eligible_300s": 0,
+      "readable_without_same_folder_FDT": 0
+    }
+  },
+  "limitations": [
+    "Filenames and folders provide provisional cohort labels.",
+    "Readability does not establish preprocessing equivalence.",
+    "Only first-second signal samples were checked.",
+    "Length does not establish resting-condition continuity.",
+    "Recordings inside unextracted ZIP archives are not scanned."
+  ]
+}

@@ -1,0 +1,23 @@
+===== FIGSHARE ARCHIVE METADATA =====
+DOI: 10.6084/m9.figshare.5450293.v1
+Expected bytes: 305894766
+Checksum available: True
+Archive size: PASS
+Archive checksum: PASS
+Checking archive CRC integrity...
+
+===== FIGSHARE DATASET STRUCTURE =====
+Archive CRC: PASS
+Files: 472
+MATLAB files: 471
+Group path counts: {'AD': 305, 'CONTROL': 110, 'MCI': 56, 'OTHER': 1}
+File extensions: {'.mat': 471, '.txt': 1}
+
+===== MATLAB STRUCTURE SAMPLES =====
+AD {"status": "INSPECTED", "variables": [{"variable": "export", "shape": [3633, 19], "matlab_type": "single"}]}
+MCI {"status": "INSPECTED", "variables": [{"variable": "export", "shape": [1805, 19], "matlab_type": "single"}]}
+CONTROL {"status": "INSPECTED", "variables": [{"variable": "segmenty", "shape": [22, 12288], "matlab_type": "single"}]}
+
+CONTINUOUS RECORDING STATUS: UNVERIFIED
+INDEPENDENT VALIDATION STATUS: PENDING
+FIGSHARE ARCHIVE AUDIT COMPLETE

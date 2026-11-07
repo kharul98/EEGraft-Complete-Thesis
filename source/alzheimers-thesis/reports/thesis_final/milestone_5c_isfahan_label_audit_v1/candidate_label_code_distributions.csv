@@ -1,0 +1,3 @@
+release,sheet,orientation,location,n_values,code_counts,diagnosis_mapping_confirmed
+EEG_1,Sheet1,column,B,27,"{""mci"": 11, ""normal"": 16}",False
+EEG_2,Sheet1,column,B,34,"{""mci"": 18, ""normal"": 16}",False

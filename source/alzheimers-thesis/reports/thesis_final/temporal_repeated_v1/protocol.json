@@ -1,0 +1,35 @@
+{
+  "cohort": "46 AD/healthy ds004504 participants",
+  "hyperparameters": {
+    "clf__C": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "clf__gamma": [
+      "scale",
+      0.01,
+      0.1
+    ]
+  },
+  "inner_cv": "3 stratified training-only folds",
+  "limitations": [
+    "exploratory post-hoc study",
+    "same 46 participants reused",
+    "full-session preprocessing",
+    "no independent external validation"
+  ],
+  "main_outcomes": [
+    "subject-level block reversal rate",
+    "balanced accuracy by block",
+    "three- and five-block majority voting",
+    "agreement-based selective classification"
+  ],
+  "outer_cv": "5 subject folds x 5 repeats",
+  "primary_metric": "participant-level balanced accuracy",
+  "status": "exploratory; previously examined cohort",
+  "testing_input": "five nonoverlapping 60-second blocks",
+  "training_input": "first 60 seconds of training subjects",
+  "uncertainty": "stratified subject bootstrap retaining all repeated observations together",
+  "version": "temporal_repeated_v1"
+}

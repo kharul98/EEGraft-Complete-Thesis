@@ -1,0 +1,13 @@
+{
+  "augmented_blocks": "6842f4a014972f5340521c5cc7acca7b11f85de18acefdc34c17f626f0a1fe83",
+  "duration_features": "40192cd180a1c8fc58a74bc2f902f8998d0b60f39c7e405e40a7f7cc1a9278ec",
+  "duration_predictions": "2d3f93bb340936e5b03830d2a4dcad7e5659cab85e553732bc196265b2bceb33",
+  "duration_runs": "4a4e208d7d4063efed5eb7f2ad1087ce23111cc0372f589ce8bdc944d70cf130",
+  "first_minute_blocks": "239dfc52d6caf714bd5832ed780d0f97d4dc75419ef59258c1931b7f5d04ae25",
+  "legacy_features": "6654fabbbfa854ea9063b2fcc63577c7768024c002e7c5c80cdc1d7558c4ad83",
+  "manifest": "b7ffd198fa49f3d3847e6d6a2100e064fcc344cc86f5d9909d43e73acdfbeac6",
+  "position_transfer": "909c6c128b93c48b5ef9dfe9df019a6cb58608f4d1480371d9de41cdbbc4315b",
+  "repeat_level_results": "3cc208751a6e558a077425cc46bc3d4eaca09df4eef985cd19b2533a596242e1",
+  "specificity_contrasts": "3c127558b9cab93b14bc2d53e3b257cd3ef6e24809e245e0fdcb1032ee79c774",
+  "verified_models": "e865a15696a2c5fcb6f3eb34269cc35580c49b213e0e486ed9edaf691f9b59bf"
+}

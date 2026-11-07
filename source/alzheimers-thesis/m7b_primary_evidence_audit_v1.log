@@ -1,0 +1,184 @@
+===== MILESTONE 7B: ORIGINAL AD/FTD SOURCE MAP =====
+PASS: 12 primary evidence files located and SHA256 recorded.
+
+===== ORIGINAL RESULTS: SOURCE SCHEMAS =====
+
+4C claim audit | rows=12 | distinct subject IDs (if available)=0
+  Columns: claim | status | qualification | evidence
+  Example 1: status=SUPPORTED_INTERNALLY
+  Example 2: status=SUPPORTED_DESCRIPTIVELY
+  Distinct status: HYPOTHESIS_GENERATING, NOT_CONFIRMED, NOT_SUPPORTED, NOT_TESTED, SUPPORTED_CONDITIONALLY, SUPPORTED_DESCRIPTIVELY, SUPPORTED_INTERNALLY
+
+4C evidence master | rows=81 | distinct subject IDs (if available)=0
+  Columns: task | milestone | metric | estimate | unit | ci_low | ci_high | comparator | uncorrected_p | adjusted_p | interpretation_caveat | source_csv
+  Example 1: task=AD_vs_HC; milestone=1A; metric=stable_correct_fraction; estimate=0.46956521739130436; unit=fraction; ci_low=; ci_high=; comparator=
+  Example 2: task=AD_vs_HC; milestone=1A; metric=stable_wrong_fraction; estimate=0.08695652173913043; unit=fraction; ci_low=; ci_high=; comparator=
+
+AD temporal summary | rows=1 | distinct subject IDs (if available)=0
+  Columns: participants_with_3plus_blocks | participants_with_class_changes | fraction_changed
+  Example 1: participants_with_3plus_blocks=46; participants_with_class_changes=24
+  Distinct participants_with_3plus_blocks: 46
+  Distinct participants_with_class_changes: 24
+
+AD held-out predictions | rows=1380 | distinct subject IDs (if available)=46
+  Columns: repeat | subject | group | model | duration_sec | fold | true_label | predicted_label | decision_score
+  Example 1: repeat=1; subject=sub-001; duration_sec=60; fold=4; true_label=1; predicted_label=1
+  Example 2: repeat=1; subject=sub-002; duration_sec=60; fold=2; true_label=1; predicted_label=0
+  Distinct repeat: 1, 2, 3, 4, 5
+  Distinct duration_sec: 180, 300, 60
+  Distinct fold: 1, 2, 3, 4, 5
+  Distinct true_label: 0, 1
+  Distinct predicted_label: 0, 1
+
+AD duration features | rows=138 | distinct subject IDs (if available)=46
+  Columns: subject | group | duration_sec | block_number | clean_epochs | clean_fraction | theta_alpha_epoch_log_mad | delta | theta | alpha | beta | gamma | theta_alpha_ratio
+  Example 1: subject=sub-001; duration_sec=60; block_number=
+  Example 2: subject=sub-001; duration_sec=180; block_number=
+  Distinct duration_sec: 180, 300, 60
+  Distinct block_number: 
+
+FTD temporal summary | rows=5 | distinct subject IDs (if available)=0
+  Columns: repeat | class_reversal_n | class_reversal_rate | FTD_reversal_rate | HC_reversal_rate | first_minute_BACC | fifth_minute_BACC | vote3_BACC | vote5_BACC
+  Example 1: repeat=1; class_reversal_n=9; class_reversal_rate=0.21951219512195122; first_minute_BACC=0.681159420289855; fifth_minute_BACC=0.6932367149758454; vote3_BACC=0.7306763285024154; vote5_BACC=0.7584541062801933
+  Example 2: repeat=2; class_reversal_n=17; class_reversal_rate=0.4146341463414634; first_minute_BACC=0.7149758454106281; fifth_minute_BACC=0.6594202898550725; vote3_BACC=0.681159420289855; vote5_BACC=0.6871980676328502
+  Distinct repeat: 1, 2, 3, 4, 5
+  Distinct class_reversal_n: 13, 17, 9
+  Distinct class_reversal_rate: 0.21951219512195122, 0.3170731707317073, 0.4146341463414634
+  Distinct first_minute_BACC: 0.681159420289855, 0.7149758454106281, 0.7270531400966183, 0.7427536231884058, 0.8200483091787439
+  Distinct fifth_minute_BACC: 0.6594202898550725, 0.6714975845410628, 0.6932367149758454, 0.7210144927536233
+  Distinct vote3_BACC: 0.681159420289855, 0.7306763285024154, 0.7644927536231885, 0.786231884057971, 0.7922705314009661
+  Distinct vote5_BACC: 0.6871980676328502, 0.7584541062801933, 0.7644927536231885, 0.7705314009661836, 0.7922705314009661
+
+FTD minute metrics | rows=5 | distinct subject IDs (if available)=0
+  Columns: minute | mean_BACC | FTD_sensitivity | HC_specificity
+  Example 1: minute=1; mean_BACC=0.7371980676328501
+  Example 2: minute=2; mean_BACC=0.7386473429951691
+  Distinct minute: 1, 2, 3, 4, 5
+  Distinct mean_BACC: 0.6876811594202898, 0.7070048309178745, 0.7371980676328501, 0.7386473429951691, 0.7707729468599034
+
+FTD held-out predictions | rows=615 | distinct subject IDs (if available)=41
+  Columns: repeat | subject | group | true_label | fold | duration_sec | predicted_label | decision_score
+  Example 1: repeat=1; subject=sub-037; true_label=0; fold=4; duration_sec=60; predicted_label=0
+  Example 2: repeat=1; subject=sub-038; true_label=0; fold=2; duration_sec=60; predicted_label=1
+  Distinct repeat: 1, 2, 3, 4, 5
+  Distinct true_label: 0, 1
+  Distinct fold: 1, 2, 3, 4, 5
+  Distinct duration_sec: 180, 300, 60
+  Distinct predicted_label: 0, 1
+
+FTD duration features | rows=123 | distinct subject IDs (if available)=41
+  Columns: subject | group | duration_sec | block_number | clean_epochs | clean_fraction | delta | theta | alpha | beta | gamma | theta_alpha_ratio
+  Example 1: subject=sub-037; duration_sec=60; block_number=
+  Example 2: subject=sub-037; duration_sec=180; block_number=
+  Distinct duration_sec: 180, 300, 60
+  Distinct block_number: 
+
+Calibration metrics | rows=50 | distinct subject IDs (if available)=0
+  Columns: task | repeat | minute | n_subjects | original_svm_bacc | calibrated_threshold_bacc | changed_prediction_fraction | brier | training_prior_brier | nll | ece_five_equal_width_bins | auc | average_probability
+  Example 1: repeat=1; minute=1; n_subjects=46; original_svm_bacc=0.7608695652173914; calibrated_threshold_bacc=0.7391304347826086; changed_prediction_fraction=0.06521739130434782
+  Example 2: repeat=1; minute=2; n_subjects=46; original_svm_bacc=0.7173913043478262; calibrated_threshold_bacc=0.6739130434782609; changed_prediction_fraction=0.13043478260869565
+  Distinct repeat: 1, 2, 3, 4, 5
+  Distinct minute: 1, 2, 3, 4, 5
+
+Calibration predictions | rows=2175 | distinct subject IDs (if available)=64
+  Columns: task | repeat | subject | group | true_label | fold | minute | original_svm_label | original_svm_decision_score | calibrated_positive_probability | calibrated_threshold_label | calibrated_confidence | calibrated_entropy_nats | train_fold_prevalence
+  Example 1: repeat=1; subject=sub-001; true_label=1; fold=4; minute=1; original_svm_label=1; calibrated_threshold_label=1; train_fold_prevalence=0.5135135135135135
+  Example 2: repeat=1; subject=sub-001; true_label=1; fold=4; minute=2; original_svm_label=1; calibrated_threshold_label=1; train_fold_prevalence=0.5135135135135135
+  Distinct repeat: 1, 2, 3, 4, 5
+  Distinct true_label: 0, 1
+  Distinct fold: 1, 2, 3, 4, 5
+  Distinct minute: 1, 2, 3, 4, 5
+  Distinct original_svm_label: 0, 1
+  Distinct calibrated_threshold_label: 0, 1
+  Distinct train_fold_prevalence: 0.42424242424242425, 0.4375, 0.45454545454545453, 0.4864864864864865, 0.5, 0.5135135135135135
+
+===== 4C CLAIM AUDIT AND EVIDENCE MASTER EXCERPTS =====
+
+--- 4C claim audit: 12 rows ---
+  Row 1: claim=Short-EEG SVMs have measurable internal participant-CV classification performance. ; status=SUPPORTED_INTERNALLY ; qualification=Not independently externally validated. ; evidence=1B, 4B
+  Row 2: claim=Predicted classes can change over five EEG minutes. ; status=SUPPORTED_DESCRIPTIVELY ; qualification=Correlated CV repetitions. ; evidence=1A
+  Row 3: claim=Stable predictions can be wrong. ; status=SUPPORTED_DESCRIPTIVELY ; qualification=Stability does not establish clinical correctness. ; evidence=1A, 1B
+  Row 4: claim=Calibration gives probabilistic information. ; status=SUPPORTED_INTERNALLY ; qualification=Better Brier than prevalence baseline; not necessarily the best calibration method. ; evidence=1B
+  Row 5: claim=Uncertainty-based abstention is deployable. ; status=NOT_SUPPORTED ; qualification=Retrospective cohort-relative rankings are not prospective thresholds. ; evidence=1C
+  Row 6: claim=MMSE reliably predicts classifier instability. ; status=NOT_CONFIRMED ; qualification=Primary Holm-adjusted associations are uncertain. ; evidence=2B
+  Row 7: claim=AD MMSE correlates with stable-wrong frequency. ; status=HYPOTHESIS_GENERATING ; qualification=Secondary n=23 analysis, BH q near 0.05. ; evidence=2B
+  Row 8: claim=Predictions vary between EC and EO/photic recordings. ; status=SUPPORTED_DESCRIPTIVELY ; qualification=Within-participant condition transfer. ; evidence=3D, 3E
+  Row 9: claim=Cross-condition BACC reliably declines. ; status=NOT_CONFIRMED ; qualification=Paired BACC intervals include zero. ; evidence=3D
+  Row 10: claim=Local explanation drift differs by stability state. ; status=SUPPORTED_CONDITIONALLY ; qualification=Post-hoc local perturbation analysis. ; evidence=4A
+  Row 11: claim=A frequency-band group is proven necessary. ; status=NOT_CONFIRMED ; qualification=No ablation survives Holm correction. ; evidence=4B
+  Row 12: claim=The classifier predicts future Alzheimer onset. ; status=NOT_TESTED ; qualification=No longitudinal conversion labels or prospective screening cohort. ; evidence=Study design
+
+--- 4C evidence master: 81 rows ---
+  Row 1: task=AD_vs_HC ; milestone=1A ; metric=stable_correct_fraction ; estimate=0.46956521739130436 ; unit=fraction ; interpretation_caveat=Five correlated CV repetitions. ; source_csv=reports/thesis_final/milestone_1a_reliability_v1/subject_repeat_states.csv
+  Row 2: task=AD_vs_HC ; milestone=1A ; metric=stable_wrong_fraction ; estimate=0.08695652173913043 ; unit=fraction ; interpretation_caveat=Five correlated CV repetitions. ; source_csv=reports/thesis_final/milestone_1a_reliability_v1/subject_repeat_states.csv
+  Row 3: task=AD_vs_HC ; milestone=1A ; metric=unstable_fraction ; estimate=0.4434782608695652 ; unit=fraction ; interpretation_caveat=Five correlated CV repetitions. ; source_csv=reports/thesis_final/milestone_1a_reliability_v1/subject_repeat_states.csv
+  Row 4: task=FTD_vs_HC ; milestone=1A ; metric=stable_correct_fraction ; estimate=0.5317073170731708 ; unit=fraction ; interpretation_caveat=Five correlated CV repetitions. ; source_csv=reports/thesis_final/milestone_1a_reliability_v1/subject_repeat_states.csv
+  Row 5: task=FTD_vs_HC ; milestone=1A ; metric=stable_wrong_fraction ; estimate=0.13170731707317074 ; unit=fraction ; interpretation_caveat=Five correlated CV repetitions. ; source_csv=reports/thesis_final/milestone_1a_reliability_v1/subject_repeat_states.csv
+  Row 6: task=FTD_vs_HC ; milestone=1A ; metric=unstable_fraction ; estimate=0.33658536585365856 ; unit=fraction ; interpretation_caveat=Five correlated CV repetitions. ; source_csv=reports/thesis_final/milestone_1a_reliability_v1/subject_repeat_states.csv
+  Row 7: task=AD_vs_HC ; milestone=1B ; metric=first_minute_original_svm_bacc ; estimate=0.7347826086956522 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 8: task=AD_vs_HC ; milestone=1B ; metric=first_minute_calibrated_threshold_bacc ; estimate=0.7434782608695654 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 9: task=AD_vs_HC ; milestone=1B ; metric=first_minute_brier ; estimate=0.18610804644530035 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 10: task=AD_vs_HC ; milestone=1B ; metric=first_minute_training_prior_brier ; estimate=0.2513180042557246 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 11: task=AD_vs_HC ; milestone=1B ; metric=first_minute_nll ; estimate=0.5672435764950384 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 12: task=AD_vs_HC ; milestone=1B ; metric=first_minute_ece_five_equal_width_bins ; estimate=0.16292067881603567 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 13: task=AD_vs_HC ; milestone=1B ; metric=first_minute_auc ; estimate=0.7879017013232513 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 14: task=FTD_vs_HC ; milestone=1B ; metric=first_minute_original_svm_bacc ; estimate=0.7371980676328501 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 15: task=FTD_vs_HC ; milestone=1B ; metric=first_minute_calibrated_threshold_bacc ; estimate=0.6932367149758454 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 16: task=FTD_vs_HC ; milestone=1B ; metric=first_minute_brier ; estimate=0.19166295301800979 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 17: task=FTD_vs_HC ; milestone=1B ; metric=first_minute_training_prior_brier ; estimate=0.24794447034088107 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 18: task=FTD_vs_HC ; milestone=1B ; metric=first_minute_nll ; estimate=0.5645037753283535 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 19: task=FTD_vs_HC ; milestone=1B ; metric=first_minute_ece_five_equal_width_bins ; estimate=0.11778482624399678 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 20: task=FTD_vs_HC ; milestone=1B ; metric=first_minute_auc ; estimate=0.7937198067632851 ; unit=fraction ; interpretation_caveat=Five correlated CV repeats; calibration fitted within training folds. ; source_csv=reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  Row 21: task=AD_vs_HC ; milestone=1C ; metric=all_error_detection_AUROC ; estimate=0.6565137258705985 ; unit=fraction ; ci_low=0.5111377131640289 ; ci_high=0.7994710697629224 ; interpretation_caveat=Retrospective error ranking. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/error_detection_auroc.csv
+  Row 22: task=AD_vs_HC ; milestone=1C ; metric=stable_wrong_detection_AUROC ; estimate=0.5018518518518519 ; unit=fraction ; ci_low=0.2120108649520414 ; ci_high=0.8144425444596443 ; interpretation_caveat=Retrospective error ranking. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/error_detection_auroc.csv
+  Row 23: task=AD_vs_HC ; milestone=1C ; metric=one_minute_confidence_80pct_selected_BACC ; estimate=0.8068454999951647 ; unit=fraction ; interpretation_caveat=Retrospective ranking, not a deployable threshold. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/risk_coverage_summary.csv
+  Row 24: task=AD_vs_HC ; milestone=1C ; metric=one_minute_confidence_80pct_BACC_gain ; estimate=0.0720628912995126 ; unit=fraction ; ci_low=0.01861195782536336 ; ci_high=0.10754774555038189 ; comparator=100% retained ; interpretation_caveat=Improvement only among retained participants. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/risk_coverage_summary.csv
+  Row 25: task=AD_vs_HC ; milestone=1C ; metric=five_minute_consensus_70pct_selected_BACC ; estimate=0.8025539624778857 ; unit=fraction ; interpretation_caveat=Retrospective ranking, not a deployable threshold. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/risk_coverage_summary.csv
+  Row 26: task=AD_vs_HC ; milestone=1C ; metric=five_minute_consensus_70pct_BACC_gain ; estimate=0.06777135378223353 ; unit=fraction ; ci_low=0.01837654996294648 ; ci_high=0.12431885828673726 ; comparator=100% retained ; interpretation_caveat=Improvement only among retained participants. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/risk_coverage_summary.csv
+  Row 27: task=FTD_vs_HC ; milestone=1C ; metric=all_error_detection_AUROC ; estimate=0.6663470757430489 ; unit=fraction ; ci_low=0.5221099702999641 ; ci_high=0.7901899159663865 ; interpretation_caveat=Retrospective error ranking. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/error_detection_auroc.csv
+  Row 28: task=FTD_vs_HC ; milestone=1C ; metric=stable_wrong_detection_AUROC ; estimate=0.6238532110091743 ; unit=fraction ; ci_low=0.41409220353442006 ; ci_high=0.8411901402859464 ; interpretation_caveat=Retrospective error ranking. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/error_detection_auroc.csv
+  Row 29: task=FTD_vs_HC ; milestone=1C ; metric=one_minute_confidence_80pct_selected_BACC ; estimate=0.7738689245566612 ; unit=fraction ; interpretation_caveat=Retrospective ranking, not a deployable threshold. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/risk_coverage_summary.csv
+  Row 30: task=FTD_vs_HC ; milestone=1C ; metric=one_minute_confidence_80pct_BACC_gain ; estimate=0.03667085692381111 ; unit=fraction ; ci_low=-0.021962509211448985 ; ci_high=0.07536477674439324 ; comparator=100% retained ; interpretation_caveat=Improvement only among retained participants. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/risk_coverage_summary.csv
+  Row 31: task=FTD_vs_HC ; milestone=1C ; metric=five_minute_consensus_70pct_selected_BACC ; estimate=0.8028917863487649 ; unit=fraction ; interpretation_caveat=Retrospective ranking, not a deployable threshold. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/risk_coverage_summary.csv
+  Row 32: task=FTD_vs_HC ; milestone=1C ; metric=five_minute_consensus_70pct_BACC_gain ; estimate=0.06569371871591478 ; unit=fraction ; ci_low=0.00991696556614234 ; ci_high=0.11496669193187481 ; comparator=100% retained ; interpretation_caveat=Improvement only among retained participants. ; source_csv=reports/thesis_final/milestone_1c_selective_prediction_v1/risk_coverage_summary.csv
+  Row 33: task=AD_vs_HC ; milestone=2B ; metric=MMSE_spearman_disease_probability ; estimate=-0.38545646730981364 ; unit=fraction ; ci_low=-0.7131178560846457 ; ci_high=0.10782650726200255 ; uncorrected_p=0.05858828234353129 ; adjusted_p=0.23435312937412517 ; interpretation_caveat=Four-test Holm-corrected primary analysis. ; source_csv=reports/thesis_final/milestone_2b_mmse_associations_v1/mmse_association_results.csv
+  Row 34: task=AD_vs_HC ; milestone=2B ; metric=MMSE_spearman_class_reversal_rate ; estimate=0.21355896579307015 ; unit=fraction ; ci_low=-0.188107752531409 ; ci_high=0.5792994829745212 ; uncorrected_p=0.32993401319736054 ; adjusted_p=0.9898020395920817 ; interpretation_caveat=Four-test Holm-corrected primary analysis. ; source_csv=reports/thesis_final/milestone_2b_mmse_associations_v1/mmse_association_results.csv
+  Row 35: task=AD_vs_HC ; milestone=2B ; metric=MMSE_spearman_temporal_probability_sd ; estimate=0.18768299193619198 ; unit=fraction ; ci_low=-0.23574147961227931 ; ci_high=0.5626238286706323 ; uncorrected_p=0.39012197560487905 ; adjusted_p=0.5573171080069701 ; interpretation_caveat=Exploratory secondary; BH across ten tests. ; source_csv=reports/thesis_final/milestone_2b_mmse_associations_v1/mmse_association_results.csv
+... further rows omitted. Original CSV retained.
+
+===== 4C HUMAN-READABLE SUMMARY EXCERPTS =====
+  L3: **Objective:** Evaluate whether short-EEG dementia classifiers remain reliable across time and recording conditions, and examine uncertainty, clinical severity and spectral feature sensitivity.
+  L17: | Original first-minute BACC | 73.48% | 73.72% |
+  L18: | Stable and correct | 46.96% | 53.17% |
+  L19: | Stable but wrong | 8.70% | 13.17% |
+  L20: | Predicted class changes | 44.35% | 33.66% |
+  L22: Stable predictions can be wrong. The percentages represent correlated participant-repeat observations.
+  L24: ## 3. Calibrated uncertainty and abstention
+  L31: | Stable-only error-detection AUROC | 0.5019 | 0.6239 |
+  L33: Sigmoid probability calibration used only outer-training participants. Original SVM labels were preserved in selective prediction.
+  L36: - AD, 60s confidence, 80% coverage: BACC gain +7.21 percentage points; conditional 95% CI [+1.86, +10.75] percentage points.
+  L37: - AD, 300s consensus, 70% coverage: BACC gain +6.78 percentage points; conditional 95% CI [+1.84, +12.43] percentage points.
+  L38: - FTD, 60s confidence, 80% coverage: BACC gain +3.67 percentage points; conditional 95% CI [-2.20, +7.54] percentage points.
+  L39: - FTD, 300s consensus, 70% coverage: BACC gain +6.57 percentage points; conditional 95% CI [+0.99, +11.50] percentage points.
+  L46: - None of the four primary within-diagnosis MMSE tests survived Holm correction.
+  L47: - Exploratory secondary AD MMSE versus stable-wrong rate: rho=+0.555, permutation p=0.0048, BH q=0.0480.
+  L50: ## 5. Cross-condition robustness
+  L59: | Cross-condition agreement | 60.98% | 65.71% |
+  L62: - AD paired BACC difference conditional 95% CI: [-22.92, +5.41] percentage points.
+  L63: - FTD paired BACC difference conditional 95% CI: [-21.36, +12.76] percentage points.
+  L72: | Stable-correct | 0.6589 | 0.4296 |
+  L73: | Stable-wrong | 0.9076 | 0.6279 |
+  L74: | Unstable | 0.9442 | 0.5546 |
+  L79: ## 7. Predictive feature-group ablation
+  L88: FTD gamma removal was the largest observed FTD loss: -12.49 percentage points; conditional bootstrap CI [-22.13, -4.08] percentage points; Holm-adjusted p=0.0688.
+  L90: **None of the eight group-ablation effects survived multiple-comparison correction.**
+  L94: Participant-disjoint internal evaluation demonstrates that short-EEG diagnostic predictions may vary across recording time and acquisition conditions. A nontrivial fraction of temporally consistent predictio...
+  L102: - Conditional uncertainty intervals do not capture all dataset-selection and model-development uncertainty.
+  L103: - Eyes-open/photic condition and protocol differences are confounded.
+Matching lines: 28 | showing: 28
+
+===== MILESTONE 7B COMPLETE =====
+Files verified: 12
+Source map: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_7b_primary_source_reconciliation_v1/primary_source_inventory.json
+Original AD/FTD metrics have NOT YET been independently recalculated at this step.
+No existing files changed; no EEG processing or model training.

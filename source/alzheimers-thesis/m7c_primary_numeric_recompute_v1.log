@@ -1,0 +1,20 @@
+===== MILESTONE 7C: PRIMARY AD/FTD NUMERIC RECOMPUTATION =====
+PASS: M7B 12-file SHA256 inventory verified.
+PASS: 2,175 held-out minute predictions; 50 metric records; 81 evidence entries.
+PASS: 46 AD/HC and 41 FTD/HC participants; five minutes per held-out repeat.
+PASS: All 50 original/calibrated BACC, Brier, prior-Brier, NLL and AUROC rows recalculated.
+
+===== INDEPENDENTLY RECOMPUTED MAIN RESULTS =====
+AD_vs_HC: n=46; original BACC=0.734783; calibrated BACC=0.743478; Brier=0.186108; training-prior Brier=0.251318
+  Five-minute states across 230 correlated subject-repeats: stable-correct=46.956522% (108), stable-wrong=8.695652% (20), unstable=44.347826% (102)
+FTD_vs_HC: n=41; original BACC=0.737198; calibrated BACC=0.693237; Brier=0.191663; training-prior Brier=0.247944
+  Five-minute states across 205 correlated subject-repeats: stable-correct=53.170732% (109), stable-wrong=13.170732% (27), unstable=33.658537% (69)
+PASS: All 18 main calibration/stability claims match the 4C evidence master.
+
+===== LEGACY 60-SECOND SOURCE AGREEMENT =====
+Traceback (most recent call last):
+  File "/home/user4/alzheimers-thesis/m7c_primary_numeric_recompute_v1.py", line 962, in <module>
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: AD_vs_HC duration rows 1380 != 690

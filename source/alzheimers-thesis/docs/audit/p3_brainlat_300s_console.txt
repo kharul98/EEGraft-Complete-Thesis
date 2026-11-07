@@ -1,0 +1,30 @@
+===== BRAINLAT REAL EEG: 300-SECOND RELIABILITY =====
+/home/user4/alzheimers-thesis/scripts/p3_brainlat_300s_reliability.py:28: FutureWarning: Montage name 'standard_1020' is deprecated and will be removed in MNE 1.14. Use 'colin27_1020' instead.
+  standard = mne.channels.make_standard_montage('standard_1020').get_positions()['ch_pos']
+Fixed 19-channel BioSemi128 sensor mapping: {'Fp1': 'C29', 'Fp2': 'C16', 'F7': 'D7', 'F3': 'D4', 'Fz': 'C21', 'F4': 'C4', 'F8': 'C7', 'T7': 'D24', 'C3': 'D19', 'Cz': 'A1', 'C4': 'B22', 'T8': 'B14', 'P7': 'A10', 'P3': 'A18', 'Pz': 'A19', 'P4': 'B4', 'P8': 'B7', 'O1': 'A16', 'O2': 'A29'}
+Maximum unit-sphere montage distance: 0.1677
+EEG is already offline-preprocessed; online causal claims are NOT tested.
+Length-eligible records: {'AD': 28, 'HC': 8}
+Processed 5/36 records
+Processed 10/36 records
+Processed 15/36 records
+Processed 20/36 records
+Processed 25/36 records
+Processed 30/36 records
+Processed 35/36 records
+Processed 36/36 records
+
+===== BRAINLAT RELIABILITY RESULTS =====
+Successful: 36 | Excluded: 0
+AD : {'n': 28, 'mean_180_minus_60': 0.006756135181584222, 'median_180_minus_60': 0.0014500752461809943, 'fraction_negative': 0.5, 'median_fixed_60_tv': 0.05549694959210085, 'median_fixed_120_tv': 0.0525229436756281, 'median_fixed_180_tv': 0.05254738583235456}
+HC : {'n': 8, 'mean_180_minus_60': 7.650582038426935e-05, 'median_180_minus_60': -0.0033072157187504815, 'fraction_negative': 0.5, 'median_fixed_60_tv': 0.06027484754482375, 'median_fixed_120_tv': 0.051680245615049546, 'median_fixed_180_tv': 0.05315854725209211}
+
+===== SITE STRATIFICATION =====
+AD/UNSPECIFIED : {'n': 28, 'mean_180_minus_60': 0.006756135181584222, 'median_180_minus_60': 0.0014500752461809943, 'fraction_negative': 0.5, 'median_fixed_60_tv': 0.05549694959210085, 'median_fixed_120_tv': 0.0525229436756281, 'median_fixed_180_tv': 0.05254738583235456}
+HC/UNSPECIFIED : {'n': 8, 'mean_180_minus_60': 7.650582038426935e-05, 'median_180_minus_60': -0.0033072157187504815, 'fraction_negative': 0.5, 'median_fixed_60_tv': 0.06027484754482375, 'median_fixed_120_tv': 0.051680245615049546, 'median_fixed_180_tv': 0.05315854725209211}
+
+===== INPUT FILE PROTOCOL CHECK =====
+AD rs-HEP: 28 rs: 0
+HC rs-HEP: 0 rs: 8
+No p-values, patient-level CIs, or online-causality claims.
+===== BRAINLAT RELIABILITY STAGE COMPLETE =====

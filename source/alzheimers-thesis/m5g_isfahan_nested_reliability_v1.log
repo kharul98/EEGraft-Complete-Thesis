@@ -1,0 +1,31 @@
+===== MILESTONE 5G: SEPARATE-RELEASE NESTED CV =====
+PASS: 49 recordings with five validated minutes; no pooled training.
+EEG_1: nested CV repeat 1/5 verified
+EEG_1: nested CV repeat 2/5 verified
+EEG_1: nested CV repeat 3/5 verified
+EEG_1: nested CV repeat 4/5 verified
+EEG_1: nested CV repeat 5/5 verified
+
+===== EEG_1: HELD-OUT MCI RELIABILITY =====
+Minute BACC: 0.4078 | 0.4240 | 0.4221 | 0.4312 | 0.4260
+First-minute BACC=0.4078, conditional 95% CI [0.3318, 0.4841]
+Fifth-minus-first BACC=+0.0182, conditional 95% CI [-0.0123, +0.0506]
+Five-minute states: stable_correct=0.3520, stable_wrong=0.5920, unstable=0.0560
+EEG_2: nested CV repeat 1/5 verified
+EEG_2: nested CV repeat 2/5 verified
+EEG_2: nested CV repeat 3/5 verified
+EEG_2: nested CV repeat 4/5 verified
+EEG_2: nested CV repeat 5/5 verified
+
+===== EEG_2: HELD-OUT MCI RELIABILITY =====
+Minute BACC: 0.5583 | 0.5167 | 0.5583 | 0.5167 | 0.5167
+First-minute BACC=0.5583, conditional 95% CI [0.4333, 0.6750]
+Fifth-minus-first BACC=-0.0417, conditional 95% CI [-0.1333, +0.0417]
+Five-minute states: stable_correct=0.4417, stable_wrong=0.3583, unstable=0.2000
+
+===== MILESTONE 5G COMPLETE =====
+Nested-CV folds: 50
+Held-out minute predictions: 1225
+Subject-repeat temporal states: 245
+Results: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_5g_isfahan_nested_reliability_v1
+No pooled cross-release model, no original AD/FTD baseline outputs changed.

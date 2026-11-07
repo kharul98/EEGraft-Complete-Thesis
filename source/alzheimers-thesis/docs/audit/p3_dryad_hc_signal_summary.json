@@ -1,0 +1,16 @@
+{
+  "status": "Exploratory control recording-level analysis",
+  "successful_unique_recordings": 96,
+  "excluded_recordings": 0,
+  "mean_180_minus_60": 0.0009372691203502542,
+  "median_180_minus_60": 0.0005228338833622934,
+  "fraction_negative": 0.5,
+  "assumed_sampling_rate_hz": 500,
+  "reference_window_seconds": [
+    240,
+    300
+  ],
+  "participant_independence_verified": false,
+  "recording_condition_verified": false,
+  "same_analysis_function_as_dryad_ad": true
+}

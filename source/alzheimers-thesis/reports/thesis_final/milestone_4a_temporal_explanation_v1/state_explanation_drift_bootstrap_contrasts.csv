@@ -1,0 +1,5 @@
+task,comparison,difference,conditional_95CI_low,conditional_95CI_high,valid_bootstrap_resamples
+AD_vs_HC,unstable_minus_stable_correct,0.28524772343652405,0.08469139368334813,0.4677774082613827,3000
+AD_vs_HC,stable_wrong_minus_stable_correct,0.2486900164704896,-0.21443784889507334,0.8272031376212187,2997
+FTD_vs_HC,unstable_minus_stable_correct,0.1250489982693747,0.036495035313639984,0.2252200029910227,3000
+FTD_vs_HC,stable_wrong_minus_stable_correct,0.19828670115423702,-0.06885999623504997,0.4227715933535112,3000

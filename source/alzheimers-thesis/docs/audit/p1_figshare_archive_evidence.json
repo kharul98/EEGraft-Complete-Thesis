@@ -1,0 +1,65 @@
+{
+  "date_utc": "2026-11-06T18:53:51.364595+00:00",
+  "source_article": "https://api.figshare.com/v2/articles/5450293",
+  "doi": "10.6084/m9.figshare.5450293.v1",
+  "zip_bytes": 305894766,
+  "md5_verified": true,
+  "md5": "3ebb58a06078679379c871edb2b387fc",
+  "crc_verified": true,
+  "archive_file_count": 472,
+  "mat_file_count": 471,
+  "file_extensions": {
+    ".mat": 471,
+    ".txt": 1
+  },
+  "files_by_group_path": {
+    "AD": 305,
+    "CONTROL": 110,
+    "MCI": 56,
+    "OTHER": 1
+  },
+  "sample_matlab_shapes": {
+    "AD": {
+      "status": "INSPECTED",
+      "variables": [
+        {
+          "variable": "export",
+          "shape": [
+            3633,
+            19
+          ],
+          "matlab_type": "single"
+        }
+      ]
+    },
+    "MCI": {
+      "status": "INSPECTED",
+      "variables": [
+        {
+          "variable": "export",
+          "shape": [
+            1805,
+            19
+          ],
+          "matlab_type": "single"
+        }
+      ]
+    },
+    "CONTROL": {
+      "status": "INSPECTED",
+      "variables": [
+        {
+          "variable": "segmenty",
+          "shape": [
+            22,
+            12288
+          ],
+          "matlab_type": "single"
+        }
+      ]
+    }
+  },
+  "chronological_continuity_verified": false,
+  "independent_patient_status": "NOT VERIFIED FROM FILE COUNTS",
+  "validation_status": "PENDING RECORDING STRUCTURE AND DEVICE REVIEW"
+}

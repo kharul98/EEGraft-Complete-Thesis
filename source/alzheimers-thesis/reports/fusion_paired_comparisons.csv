@@ -1,0 +1,4 @@
+comparison,accuracy_difference,accuracy_ci_low,accuracy_ci_high,auc_difference,auc_ci_low,auc_ci_high,candidate_only_correct,reference_only_correct,mcnemar_p_uncorrected
+Fusion minus SVM,-0.02174,-0.13043,0.06522,-0.01512,-0.13422,0.10586,2,3,1.0
+Fusion minus Spectral,-0.02174,-0.13043,0.06522,-0.06238,-0.17202,0.04348,2,3,1.0
+Fusion minus CBraMod,-0.02174,-0.1087,0.04348,-0.00945,-0.06427,0.05482,1,2,1.0

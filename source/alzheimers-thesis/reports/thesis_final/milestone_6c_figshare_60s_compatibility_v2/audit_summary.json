@@ -1,0 +1,17 @@
+{
+  "common_channel_montage_verified": false,
+  "control_root_file_participant_identity_verified": false,
+  "fragment_continuity_verified": false,
+  "m6b_inventory_sha256": "cde5a6a59f2684bd54705293e62657ed3c5e50634013796b65773553bbaba85c",
+  "mat_files": 471,
+  "no_files_extracted": true,
+  "no_models_fitted": true,
+  "nonstandard_or_ambiguous_matrices": 10,
+  "physical_units_verified": false,
+  "proxy_counts": {
+    "AD": 57,
+    "CONTROL": 102,
+    "MCI": 7
+  },
+  "zip_sha256": "180fd998a5260f20b57a95a5b3c7f7c8e86b00dc35db009d1475a1344e94277f"
+}

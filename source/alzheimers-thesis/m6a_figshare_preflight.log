@@ -1,0 +1,48 @@
+===== MILESTONE 6A: FIGSHARE INDEPENDENT-AD ARCHIVE PREFLIGHT =====
+Article: dataset.zip
+Official archive: dataset.zip
+Official size: 305894766 bytes
+Declared license: CC BY 4.0
+No exact-size browser download found. Downloading official ZIP...
+Using archive: /home/user4/alzheimers-thesis/data/external/cejnek_figshare_v1/dataset.zip
+ZIP size matches Figshare metadata: PASS
+
+===== ARCHIVE STRUCTURE =====
+Total files: 472
+Extension counts: {'.mat': 471, '.txt': 1}
+Group/extension path hints:
+  AD .mat 305
+  CONTROL .mat 110
+  MCI .mat 56
+  UNCLASSIFIED .txt 1
+First 25 archive entries:
+  AD/AD10/1.mat
+  AD/AD10/2.mat
+  AD/AD10/3.mat
+  AD/AD10/4.mat
+  AD/AD10/5.mat
+  AD/AD10/6.mat
+  AD/AD10/7.mat
+  AD/AD10/8.mat
+  AD/AD10/9.mat
+  AD/AD11/1.mat
+  AD/AD11/2.mat
+  AD/AD11/3.mat
+  AD/AD11/4.mat
+  AD/AD12/1.mat
+  AD/AD12/2.mat
+  AD/AD12/3.mat
+  AD/AD12/4.mat
+  AD/AD12/5.mat
+  AD/AD12/6.mat
+  AD/AD12/7.mat
+  AD/AD12/8.mat
+  AD/AD13/1.mat
+  AD/AD13/2.mat
+  AD/AD13/3.mat
+  AD/AD14/1.mat
+
+===== MILESTONE 6A COMPLETE =====
+ZIP inventory written to: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_6a_figshare_archive_preflight_v1
+No archive extraction, no EEG processing, no training.
+Subject counts and channel compatibility are NOT yet established.

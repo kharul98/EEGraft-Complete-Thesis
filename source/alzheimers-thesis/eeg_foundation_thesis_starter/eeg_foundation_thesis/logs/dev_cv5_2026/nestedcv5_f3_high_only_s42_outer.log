@@ -1,0 +1,8 @@
+Loaded CBraMod-format state_dict (strict=True), SHA256=0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178
+Evaluating outer DEVELOPMENT fold: 10 patients
+
+========== OUTER DEVELOPMENT RESULTS ==========
+Balanced accuracy: 0.8333
+Macro-F1: 0.8
+Saved: /home/user4/alzheimers-thesis/eeg_foundation_thesis_starter/eeg_foundation_thesis/results/nestedcv5_f3_high_only_s42/outer_dev_metrics.json
+Original final-test patients were excluded.

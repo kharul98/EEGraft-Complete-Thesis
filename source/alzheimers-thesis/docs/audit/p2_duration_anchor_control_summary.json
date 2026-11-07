@@ -1,0 +1,173 @@
+{
+  "status": "EXPLORATORY",
+  "participants": 88,
+  "window_rows": 1056,
+  "reference_interval_s": [
+    240,
+    300
+  ],
+  "reproduction_errors": {
+    "prefix_features": 4.996419944447439e-13,
+    "late_reference": 4.99406072052011e-13,
+    "prefix_tv": 4.453382107527659e-13
+  },
+  "medians": [
+    {
+      "design": "fixed_end_180",
+      "start_s": 0,
+      "end_s": 180,
+      "duration_s": 180,
+      "tv_to_late_240_300": 0.021675438323879873
+    },
+    {
+      "design": "fixed_end_180",
+      "start_s": 60,
+      "end_s": 180,
+      "duration_s": 120,
+      "tv_to_late_240_300": 0.022152519202926563
+    },
+    {
+      "design": "fixed_end_180",
+      "start_s": 120,
+      "end_s": 180,
+      "duration_s": 60,
+      "tv_to_late_240_300": 0.024168889872767028
+    },
+    {
+      "design": "fixed_end_180",
+      "start_s": 150,
+      "end_s": 180,
+      "duration_s": 30,
+      "tv_to_late_240_300": 0.031615217755033
+    },
+    {
+      "design": "placement_60",
+      "start_s": 0,
+      "end_s": 60,
+      "duration_s": 60,
+      "tv_to_late_240_300": 0.027038226808175365
+    },
+    {
+      "design": "placement_60",
+      "start_s": 60,
+      "end_s": 120,
+      "duration_s": 60,
+      "tv_to_late_240_300": 0.025159144970249875
+    },
+    {
+      "design": "placement_60",
+      "start_s": 120,
+      "end_s": 180,
+      "duration_s": 60,
+      "tv_to_late_240_300": 0.024168889872767028
+    },
+    {
+      "design": "placement_60",
+      "start_s": 180,
+      "end_s": 240,
+      "duration_s": 60,
+      "tv_to_late_240_300": 0.024350745007019812
+    },
+    {
+      "design": "prefix",
+      "start_s": 0,
+      "end_s": 30,
+      "duration_s": 30,
+      "tv_to_late_240_300": 0.03334909521942944
+    },
+    {
+      "design": "prefix",
+      "start_s": 0,
+      "end_s": 60,
+      "duration_s": 60,
+      "tv_to_late_240_300": 0.027038226808175365
+    },
+    {
+      "design": "prefix",
+      "start_s": 0,
+      "end_s": 120,
+      "duration_s": 120,
+      "tv_to_late_240_300": 0.023537699782940638
+    },
+    {
+      "design": "prefix",
+      "start_s": 0,
+      "end_s": 180,
+      "duration_s": 180,
+      "tv_to_late_240_300": 0.021675438323879873
+    }
+  ],
+  "contrasts": [
+    {
+      "comparison": "prefix_120_minus_60",
+      "mean_delta": -0.002957655151496526,
+      "ci_low": -0.00554611222342019,
+      "ci_high": -0.00034334904829366324,
+      "fraction_improved": 0.6704545454545454,
+      "n": 88
+    },
+    {
+      "comparison": "prefix_180_minus_60",
+      "mean_delta": -0.0047315105566635915,
+      "ci_low": -0.007765724892619509,
+      "ci_high": -0.0017542666609048655,
+      "fraction_improved": 0.6704545454545454,
+      "n": 88
+    },
+    {
+      "comparison": "fixed_end_120_minus_60",
+      "mean_delta": -0.0028946574951691268,
+      "ci_low": -0.005757305244745574,
+      "ci_high": 1.2126739376780083e-05,
+      "fraction_improved": 0.5681818181818182,
+      "n": 88
+    },
+    {
+      "comparison": "fixed_end_180_minus_60",
+      "mean_delta": -0.003274545297042759,
+      "ci_low": -0.006613049467523903,
+      "ci_high": 0.00012527118021190889,
+      "fraction_improved": 0.6136363636363636,
+      "n": 88
+    },
+    {
+      "comparison": "placement_60_start120_minus_start0",
+      "mean_delta": -0.001456965259620833,
+      "ci_low": -0.006475974597322375,
+      "ci_high": 0.0034247951137989885,
+      "fraction_improved": 0.5568181818181818,
+      "n": 88
+    },
+    {
+      "comparison": "placement_60_start180_minus_start0",
+      "mean_delta": -0.0025653771023186416,
+      "ci_low": -0.007459159369220034,
+      "ci_high": 0.002315131629054476,
+      "fraction_improved": 0.5340909090909091,
+      "n": 88
+    },
+    {
+      "comparison": "duration_effect_difference_120",
+      "mean_delta": 6.299765632739908e-05,
+      "ci_low": -0.0026003295703131597,
+      "ci_high": 0.002702433258771405,
+      "fraction_improved": 0.4772727272727273,
+      "n": 88
+    },
+    {
+      "comparison": "duration_effect_difference_180",
+      "mean_delta": 0.0014569652596208335,
+      "ci_low": -0.0035433562152737534,
+      "ci_high": 0.006606313581137097,
+      "fraction_improved": 0.4431818181818182,
+      "n": 88
+    }
+  ],
+  "limitations": [
+    "Same recording and same participant.",
+    "Late reference is not ground truth.",
+    "Window-placement comparisons retain causal filter state from earlier samples.",
+    "The fixed endpoint controls timing relative to the reference, not all temporal confounding.",
+    "Post-hoc exploratory intervals; no multiplicity correction."
+  ]
+}

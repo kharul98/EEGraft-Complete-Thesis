@@ -1,0 +1,78 @@
+{
+  "protocol": "Fixed-end 180 s minus 60 s normalized spectral TV, disjoint 240-300 s reference",
+  "status": "DESCRIPTIVE FEASIBILITY, NOT A POOLED CAUSAL OR DIAGNOSTIC CLAIM",
+  "table": [
+    {
+      "cohort": "Dryad",
+      "subset": "AD | first per candidate column",
+      "n_candidate_units": 43,
+      "mean_delta": -0.011064608715078837,
+      "median_delta": -0.00910213321481,
+      "fraction_negative": 0.627906976744186,
+      "mean_unit_bootstrap_lo": -0.020233572850089466,
+      "mean_unit_bootstrap_hi": -0.002305834426010322
+    },
+    {
+      "cohort": "Dryad",
+      "subset": "HC | unique recording array",
+      "n_candidate_units": 96,
+      "mean_delta": 0.0009372691203497086,
+      "median_delta": 0.000522833883361,
+      "fraction_negative": 0.5,
+      "mean_unit_bootstrap_lo": -0.006821916598587433,
+      "mean_unit_bootstrap_hi": 0.008409604832107228
+    },
+    {
+      "cohort": "BrainLat",
+      "subset": "AD | all sites",
+      "n_candidate_units": 28,
+      "mean_delta": 0.006756135181580606,
+      "median_delta": 0.001450075246182,
+      "fraction_negative": 0.5,
+      "mean_unit_bootstrap_lo": -0.0012755105242722906,
+      "mean_unit_bootstrap_hi": 0.014982238808790398
+    },
+    {
+      "cohort": "BrainLat",
+      "subset": "AD | Argentina",
+      "n_candidate_units": 10,
+      "mean_delta": 0.0020225063051664003,
+      "median_delta": -0.001971174740873,
+      "fraction_negative": 0.6,
+      "mean_unit_bootstrap_lo": -0.009186517383300515,
+      "mean_unit_bootstrap_hi": 0.013485415009341
+    },
+    {
+      "cohort": "BrainLat",
+      "subset": "AD | Chile",
+      "n_candidate_units": 18,
+      "mean_delta": 0.009385929001810723,
+      "median_delta": 0.007743562797815,
+      "fraction_negative": 0.4444444444444444,
+      "mean_unit_bootstrap_lo": -0.0019550274052246523,
+      "mean_unit_bootstrap_hi": 0.02024263262870549
+    },
+    {
+      "cohort": "BrainLat",
+      "subset": "HC | Argentina",
+      "n_candidate_units": 8,
+      "mean_delta": 7.65058203854997e-05,
+      "median_delta": -0.003307215718748,
+      "fraction_negative": 0.5,
+      "mean_unit_bootstrap_lo": -0.011600534062102,
+      "mean_unit_bootstrap_hi": 0.0139206626127455
+    }
+  ],
+  "dryad_age_matched_AD_minus_HC_difference": -0.007186088148066105,
+  "limitations": [
+    "Dryad AD MATLAB columns and HC recording slots are not confirmed independent patients.",
+    "BrainLat AD uses rs-HEP and HC uses rs; file variants confound group comparison.",
+    "All eligible BrainLat HC files are Argentina-site; no Chile HC comparator.",
+    "BrainLat HC missing FDT creates severe complete-case selection.",
+    "BrainLat EEG was already offline-preprocessed, and sensors are spatially approximated.",
+    "Bootstrap interval is conditional on candidate units; not a validated patient-level CI.",
+    "BrainLat all-sites AD overlaps its site rows; do not treat rows as independent cohorts.",
+    "AHEPA not recomputed here; verify metric and per-diagnosis source before synthesis.",
+    "No between-dataset pooling, p-values, or significance assertions."
+  ]
+}

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/user4/alzheimers-thesis/scripts/p3_brainlat_synapse.py", line 154, in <module>
+    main()
+    ~~~~^^
+  File "/home/user4/alzheimers-thesis/scripts/p3_brainlat_synapse.py", line 143, in main
+    syn.login()
+    ~~~~~~~~~^^
+  File "/home/user4/alzheimers-thesis/.venv/lib/python3.14/site-packages/synapseclient/client.py", line 1000, in login
+    raise SynapseNoCredentialsError(
+    ...<3 lines>...
+    )
+synapseclient.core.exceptions.SynapseNoCredentialsError: No valid authentication credentials provided.
+Tried profile: 'default', email: 'N/A'.
+Check your `.synapseConfig` or ensure the provided auth token is valid.

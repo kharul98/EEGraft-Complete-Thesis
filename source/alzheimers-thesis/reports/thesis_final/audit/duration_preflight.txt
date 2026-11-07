@@ -1,0 +1,184 @@
+===== DURATION PREFLIGHT =====
+
+===== BASELINE FEATURE DEFINITIONS =====
+Rows: 46
+Columns: ['subject', 'group', 'clean_epochs', 'delta', 'theta', 'alpha', 'beta', 'gamma', 'theta_alpha_ratio']
+delta median= 0.820362 min= 0.731053 max= 0.871113
+theta median= 0.087534 min= 0.067841 max= 0.121675
+alpha median= 0.039311 min= 0.022176 max= 0.085476
+beta median= 0.02896 min= 0.018507 max= 0.057178
+gamma median= 0.006742 min= 0.004702 max= 0.016538
+theta_alpha_ratio median= 2.281236 min= 1.037487 max= 4.183741
+
+First three feature rows:
+{'subject': 'sub-001', 'group': 'A', 'delta': '0.8392507479719636', 'theta': '0.09875144757723973', 'alpha': '0.023603623475395904', 'beta': '0.02258879115475305', 'gamma': '0.0075473054794550345', 'theta_alpha_ratio': '4.183741012306571'}
+{'subject': 'sub-002', 'group': 'A', 'delta': '0.8040954180348684', 'theta': '0.08755630780298618', 'alpha': '0.04648980192592278', 'beta': '0.029283733597734275', 'gamma': '0.006929196673991252', 'theta_alpha_ratio': '1.8833443932631881'}
+{'subject': 'sub-004', 'group': 'A', 'delta': '0.8497959935864207', 'theta': '0.08320444336195876', 'alpha': '0.02512339444480787', 'beta': '0.02411824559621883', 'gamma': '0.010104643373011384', 'theta_alpha_ratio': '3.3118312711060582'}
+
+Sum of five relative bands: median= 0.984379 range= (0.968063, 0.99533)
+
+===== PARTICIPANTS REQUIRING REVIEW =====
+Manifest columns: ['subject', 'group', 'file', 'duration_sec', 'sfreq', 'eeg_channels', 'channel_match', 'annotations', 'start_sec', 'end_sec', 'multi200_pct', 'any300_pct', 'flat_pct', 'status', 'note']
+Review participants: 3
+{'subject': 'sub-027', 'group': 'A', 'duration_sec': '826.2', 'sfreq': '500.0', 'eeg_channels': '19', 'channel_match': 'True', 'annotations': '3', 'start_sec': '300', 'end_sec': '600', 'multi200_pct': '20.67', 'any300_pct': '1.33', 'flat_pct': '0.0', 'status': 'REVIEW'}
+{'subject': 'sub-030', 'group': 'A', 'duration_sec': '554.08', 'sfreq': '500.0', 'eeg_channels': '19', 'channel_match': 'True', 'annotations': '2', 'start_sec': '30', 'end_sec': '330', 'multi200_pct': '50.0', 'any300_pct': '7.33', 'flat_pct': '0.0', 'status': 'REVIEW'}
+{'subject': 'sub-064', 'group': 'C', 'duration_sec': '848.1', 'sfreq': '500.0', 'eeg_channels': '19', 'channel_match': 'True', 'annotations': '1', 'start_sec': '10', 'end_sec': '310', 'multi200_pct': '24.0', 'any300_pct': '2.67', 'flat_pct': '0.0', 'status': 'REVIEW'}
+
+===== SEARCHING ORIGINAL PYTHON SCRIPTS =====
+Candidate scripts: 11
+
+--- SCRIPT: spectral_explainability_cv.py score: 17 ---
+0049:     "alpha",
+0050:     "beta",
+0051:     "gamma",
+0052:     "theta_alpha_ratio"
+0053: ]
+0054: 
+0055: GROUPS = {
+0056:     name: [i]
+0057:     for i, name in enumerate(FEATURES)
+0058: }
+0097:     by_id = {
+0098:         r["subject"]: r
+0099:         for r in read(
+0100:             R / "baseline_features_v2.csv"
+0101:         )
+0102:     }
+0103: 
+0104:     ids = [
+0105:         r["subject"]
+0106:         for r in manifest
+
+--- SCRIPT: eeg_hybrid_ablation_cv.py score: 15 ---
+0039:     "alpha",
+0040:     "beta",
+0041:     "gamma",
+0042:     "theta_alpha_ratio"
+0043: )
+0044: 
+0045: 
+0046: def read_csv(path):
+0047:     if not path.exists():
+0048:         raise FileNotFoundError(path)
+0153:     ])
+0154: 
+0155:     spectral = index_rows(
+0156:         read_csv(R / "baseline_features_v2.csv"),
+0157:         "spectral"
+0158:     )
+0159: 
+0160:     baseline = index_rows(
+0161:         read_csv(R / "baseline_predictions_v2.csv"),
+0162:         "baseline"
+
+--- SCRIPT: robustness_repeated_cv.py score: 15 ---
+0060:     "alpha",
+0061:     "beta",
+0062:     "gamma",
+0063:     "theta_alpha_ratio"
+0064: ]
+0065: 
+0066: 
+0067: # =====================================
+0068: # FILE UTILITIES
+0069: # =====================================
+0179:     ]
+0180: 
+0181:     feature_rows = read_csv(
+0182:         REPORTS / "baseline_features_v2.csv"
+0183:     )
+0184: 
+0185:     groups = Counter(
+0186:         r["group"] for r in manifest
+0187:     )
+0188: 
+
+--- SCRIPT: scripts/extract_duration_features.py score: 5 ---
+0140:     segment: np.ndarray,
+0141:     ch_names: list[str],
+0142:     sfreq: float,
+0143:     bands: dict[str, list[float]],
+0144:     welch_seconds: float,
+0145:     overlap_fraction: float,
+0146: ) -> dict[str, float]:
+0147: 
+0148:     nperseg = int(
+0149:         round(welch_seconds * sfreq)
+0150:     )
+0151: 
+0152:     noverlap = int(
+0153:         round(nperseg * overlap_fraction)
+0154:     )
+0155: 
+0156:     freqs, psd = welch(
+0157:         segment,
+0158:         fs=sfreq,
+0159:         window="hann",
+0160:         nperseg=nperseg,
+0161:         noverlap=noverlap,
+0162:         detrend="constant",
+0163:         scaling="density",
+0164:         axis=1,
+0165:     )
+0166: 
+0179: 
+0180:     relative = {}
+0181: 
+0182:     for band_name, (low, high) in bands.items():
+0183:         power = integrate_band(
+0184:             psd,
+0185:             freqs,
+0186:             float(low),
+0187:             float(high),
+0188:         )
+0311:                 segment=segment,
+0312:                 ch_names=raw.ch_names,
+0313:                 sfreq=sfreq,
+0314:                 bands=config["bands"],
+0315:                 welch_seconds=float(
+0316:                     config[
+0317:                         "welch_window_seconds"
+0318:                     ]
+0319:                 ),
+0320:                 overlap_fraction=float(
+
+--- SCRIPT: scripts/p1_incremental_eeg_pipeline.py score: 5 ---
+0014: FS = 500
+0015: CHUNK = 10 * FS
+0016: 
+0017: BANDS = {
+0018:     "delta": (1, 4),
+0019:     "theta": (4, 8),
+0020:     "alpha": (8, 13),
+0021:     "beta": (13, 30),
+0022:     "gamma": (30, 40)
+0023: }
+0104: 
+0105:             prefix = streamed[:, :stop]
+0106: 
+0107:             frequencies, psd = welch(
+0108:                 prefix,
+0109:                 fs=FS,
+0110:                 nperseg=4 * FS,
+0111:                 noverlap=2 * FS,
+0112:                 axis=-1
+0113:             )
+0114: 
+0115:             full_band = (
+0116:                 (frequencies >= 1)
+0136:                     )
+0137:             }
+0138: 
+0139:             for name, (low, high) in BANDS.items():
+0140:                 band = (
+0141:                     (frequencies >= low)
+0142:                     & (frequencies <= high)
+0143:                 )
+0144: 
+0145:                 power = np.trapezoid(
+
+===== DURATION OUTPUT STATUS =====
+duration_features_60_180_300.csv NOT CREATED
+duration_nested_cv_runs.csv NOT CREATED
+duration_nested_cv_predictions.csv NOT CREATED
+duration_theta_alpha_interaction.csv NOT CREATED

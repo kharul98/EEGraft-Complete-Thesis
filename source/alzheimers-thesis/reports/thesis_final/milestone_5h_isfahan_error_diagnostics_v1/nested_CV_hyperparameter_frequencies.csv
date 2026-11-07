@@ -1,0 +1,14 @@
+release,C,gamma,n_outer_folds_selected
+EEG_1,0.1,0.01,4
+EEG_1,0.1,0.1,1
+EEG_1,0.1,scale,2
+EEG_1,1,0.01,15
+EEG_1,10,0.01,1
+EEG_1,10,0.1,1
+EEG_1,10,scale,1
+EEG_2,0.1,0.01,3
+EEG_2,0.1,scale,10
+EEG_2,1,0.01,1
+EEG_2,10,0.01,4
+EEG_2,10,0.1,5
+EEG_2,10,scale,2

@@ -1,0 +1,9 @@
+===== MILESTONE 6C: FIGSHARE 60s COMPATIBILITY =====
+PASS: M6A archive checksum and M6B 471-file inventory verified.
+README subject sampling rates: {256: 38, 128: 30}
+Traceback (most recent call last):
+  File "/home/user4/alzheimers-thesis/m6c_figshare_60s_feasibility_v1.py", line 234, in <module>
+    raise RuntimeError(
+        'Unexpected export structure: ' + member
+    )
+RuntimeError: Unexpected export structure: AD/AD17/2.mat

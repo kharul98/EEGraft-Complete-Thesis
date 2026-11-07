@@ -1,0 +1,23 @@
+===== STABILITY-VERSUS-CORRECTNESS AUDIT =====
+PASS: All five blocks and five repeats reconciled in both tasks.
+PASS: Same 23 healthy participants in AD/HC and FTD/HC.
+
+===== STABILITY AND CORRECTNESS BY GROUP =====
+AD_vs_HC / A: stable-correct=0.5217, stable-wrong=0.0783, unstable=0.4000, block accuracy=0.7461, positive prediction fraction=0.7461
+AD_vs_HC / C: stable-correct=0.4174, stable-wrong=0.0957, unstable=0.4870, block accuracy=0.6887, positive prediction fraction=0.3113
+FTD_vs_HC / F: stable-correct=0.5667, stable-wrong=0.0556, unstable=0.3778, block accuracy=0.7800, positive prediction fraction=0.7800
+FTD_vs_HC / C: stable-correct=0.5043, stable-wrong=0.1913, unstable=0.3043, block accuracy=0.6765, positive prediction fraction=0.3235
+
+===== PAIRED SHARED-CONTROL DIFFERENCES =====
+stable_correct: AD=0.4174, FTD=0.5043, FTD-AD=+0.0870, conditional 95% CI [-0.0348, +0.2174]
+stable_wrong: AD=0.0957, FTD=0.1913, FTD-AD=+0.0957, conditional 95% CI [+0.0174, +0.2000]
+unstable: AD=0.4870, FTD=0.3043, FTD-AD=-0.1826, conditional 95% CI [-0.3217, -0.0522]
+
+===== FINAL RELIABILITY CHECK =====
+AD/HC shared-control reversal rate: 0.4870
+FTD/HC shared-control reversal rate: 0.3043
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/stability_correctness_audit_v1
+Interpretation reminder: a prediction can be stable but wrong.
+All results are exploratory and conditional on fitted CV models.
+
+===== STABILITY-CORRECTNESS AUDIT COMPLETE =====

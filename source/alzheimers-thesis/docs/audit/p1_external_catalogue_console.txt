@@ -1,0 +1,15 @@
+===== EXTERNAL DATASET METADATA =====
+
+Cejnek_Figshare HTTP: 200 retrievable: True
+Title: dataset.zip
+Listed files: 1
+First five: ['dataset.zip']
+
+ADFSU_OSF_node HTTP: 200 retrievable: True
+Title: Data for 'Accounting for the complex hierarchical topology of EEG phase-based functional connectivity in network binarisation'
+
+ADFSU_OSF_files HTTP: 200 retrievable: True
+
+BrainLat_Synapse HTTP: 200 retrievable: True
+
+EXTERNAL COHORT STATUS: NONE YET APPROVED

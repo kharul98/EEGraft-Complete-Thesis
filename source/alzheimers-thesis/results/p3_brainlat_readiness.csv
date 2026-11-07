@@ -1,0 +1,81 @@
+cohort_candidate,source_path,size_mb,same_folder_fdt,readable,sampling_rate,channels,duration_s,eligible_300s_length_only,error
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30001_rs-HEP_eeg.set,80.05,False,True,512.0,128.0,312.443,True,
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30002_rs-HEP_eeg.set,82.81,False,True,512.0,128.0,323.309,True,
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30004_rs-HEP_eeg.set,73.08,False,True,512.0,128.0,285.006,False,
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30008_rs-HEP_eeg.set,80.53,False,True,512.0,128.0,314.318,True,
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30011_rs-HEP_eeg.set,36.67,False,True,512.0,128.0,141.25,False,
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30012_rs-HEP_eeg.set,58.55,False,True,512.0,128.0,227.766,False,
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30013_rs-HEP_eeg.set,94.83,False,True,512.0,128.0,370.645,True,
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30015_rs-HEP_eeg.set,41.73,False,True,512.0,128.0,161.607,False,
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30017_rs-HEP_eeg.set,64.16,False,True,512.0,128.0,249.846,False,
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30020_rs-HEP_eeg.set,88.42,False,True,512.0,128.0,345.414,True,
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30021_rs-HEP_eeg.set,92.59,False,True,512.0,128.0,361.842,True,
+AD,/mnt/c/Users/user4/Downloads/1_AD/s6_sub-30023_rs-HEP_eeg.set,42.8,False,True,512.0,128.0,165.744,False,
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100010_rs_eeg.set,3.09,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100010_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100011_rs_eeg.set,3.1,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100011_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100012_rs_eeg.set,2.09,True,True,512.0,128.0,345.59,True,
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100013_rs_eeg.set,3.04,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100013_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100014_rs_eeg.set,2.8,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100014_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100015_rs_eeg.set,2.34,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100015_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100016_rs_eeg.set,2.9,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100016_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100017_rs_eeg.set,3.05,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100017_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100018_rs_eeg.set,2.16,True,True,512.0,128.0,362.248,True,
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100019_rs_eeg.set,2.88,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100019_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-10001_rs_eeg.set,2.96,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-10001_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100020_rs_eeg.set,2.02,True,True,512.0,128.0,328.594,True,
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100021_rs_eeg.set,2.97,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100021_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100022_rs_eeg.set,2.72,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100022_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100023_rs_eeg.set,3.08,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100023_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100024_rs_eeg.set,2.68,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100024_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100025_rs_eeg.set,3.07,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100025_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100026_rs_eeg.set,2.57,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100026_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100027_rs_eeg.set,2.92,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100027_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100028_rs_eeg.set,2.02,True,True,512.0,128.0,288.363,False,
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100029_rs_eeg.set,3.33,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100029_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-10002_rs_eeg.set,2.16,True,True,512.0,128.0,364.424,True,
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100030_rs_eeg.set,2.37,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100030_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100031_rs_eeg.set,2.14,True,True,512.0,128.0,358.156,True,
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100032_rs_eeg.set,3.11,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100032_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100033_rs_eeg.set,2.14,True,True,512.0,128.0,358.734,True,
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100034_rs_eeg.set,3.04,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100034_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100035_rs_eeg.set,1.78,True,True,512.0,128.0,268.086,False,
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100036_rs_eeg.set,2.9,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100036_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100037_rs_eeg.set,2.87,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100037_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100038_rs_eeg.set,2.09,True,True,512.0,128.0,345.98,True,
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100039_rs_eeg.set,3.26,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100039_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-10003_rs_eeg.set,3.01,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-10003_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100040_rs_eeg.set,2.35,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100040_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100041_rs_eeg.set,2.9,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100041_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100042_rs_eeg.set,3.2,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100042_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100043_rs_eeg.set,3.05,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100043_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100044_rs_eeg.set,2.74,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100044_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100045_rs_eeg.set,3.1,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100045_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-100046_rs_eeg.set,3.1,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-100046_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-10004_rs_eeg.set,2.33,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-10004_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-10005_rs_eeg.set,3.01,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-10005_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-10006_rs_eeg.set,2.45,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-10006_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-10007_rs_eeg.set,2.13,True,True,512.0,128.0,357.451,True,
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-10008_rs_eeg.set,3.08,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-10008_rs_eeg.fdt not found.
+HC,/mnt/c/Users/user4/Downloads/5_HC/s6_sub-10009_rs_eeg.set,2.21,False,False,,,,False,FileNotFoundError: File /mnt/c/Users/user4/Downloads/5_HC/s6_sub-10009_rs_eeg.fdt not found.
+AD,/mnt/d/user4/s6_sub-30003_rs-HEP_eeg.set,112.02,False,True,512.0,128.0,438.393,True,
+AD,/mnt/d/user4/s6_sub-30005_rs-HEP_eeg.set,148.37,False,True,512.0,128.0,581.512,True,
+AD,/mnt/d/user4/s6_sub-30006_rs-HEP_eeg.set,158.21,False,True,512.0,128.0,620.266,True,
+AD,/mnt/d/user4/s6_sub-30007_rs-HEP_eeg.set,129.05,False,True,512.0,128.0,505.449,True,
+AD,/mnt/d/user4/s6_sub-30009_rs-HEP_eeg.set,103.39,False,True,512.0,128.0,404.361,True,
+AD,/mnt/d/user4/s6_sub-30010_rs-HEP_eeg.set,120.77,False,True,512.0,128.0,472.809,True,
+AD,/mnt/d/user4/s6_sub-30014_rs-HEP_eeg.set,139.14,False,True,512.0,128.0,545.166,True,
+AD,/mnt/d/user4/s6_sub-30016_rs-HEP_eeg.set,123.24,False,True,512.0,128.0,481.521,True,
+AD,/mnt/d/user4/s6_sub-30018_rs-HEP_eeg.set,108.32,False,True,512.0,128.0,423.793,True,
+AD,/mnt/d/user4/s6_sub-30019_rs-HEP_eeg.set,134.74,False,True,512.0,128.0,527.822,True,
+AD,/mnt/d/user4/s6_sub-30022_rs-HEP_eeg.set,106.45,False,True,512.0,128.0,416.428,True,
+AD,/mnt/d/user4/s6_sub-30024_rs-HEP_eeg.set,144.94,False,True,512.0,128.0,568.016,True,
+AD,/mnt/d/user4/s6_sub-30025_rs-HEP_eeg.set,154.94,False,True,512.0,128.0,607.398,True,
+AD,/mnt/d/user4/s6_sub-30027_rs-HEP_eeg.set,172.8,False,True,512.0,128.0,677.742,True,
+AD,/mnt/d/user4/s6_sub-30028_rs-HEP_eeg.set,147.76,False,True,512.0,128.0,579.1,True,
+AD,/mnt/d/user4/s6_sub-30029_rs-HEP_eeg.set,116.17,False,True,512.0,128.0,454.711,True,
+AD,/mnt/d/user4/s6_sub-30030_rs-HEP_eeg.set,127.27,False,True,512.0,128.0,498.439,True,
+AD,/mnt/d/user4/s6_sub-30031_rs-HEP_eeg.set,105.7,False,True,512.0,128.0,412.602,True,
+AD,/mnt/d/user4/s6_sub-30032_rs-HEP_eeg.set,142.98,False,True,512.0,128.0,560.277,True,
+AD,/mnt/d/user4/s6_sub-30033_rs-HEP_eeg.set,127.39,False,True,512.0,128.0,498.896,True,
+AD,/mnt/d/user4/s6_sub-30034_rs-HEP_eeg.set,148.04,False,True,512.0,128.0,580.215,True,
+AD,/mnt/d/user4/s6_sub-30035_rs-HEP_eeg.set,105.98,False,True,512.0,128.0,414.57,True,

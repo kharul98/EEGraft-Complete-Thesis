@@ -1,0 +1,64 @@
+{
+  "fold": 4,
+  "fusion_rule": "residual",
+  "manifest_sha256": "02d05a46346214ba9eafaf2eeeaf5d1e6ffe66c4e84e44267edfd01aa6adafcf",
+  "weights_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "best_epoch": 4,
+  "inner_best_balanced_accuracy": 0.9,
+  "outer_development_metrics": {
+    "n_subjects": 10,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 0.7,
+    "balanced_accuracy": 0.7,
+    "macro_f1": 0.696969696969697,
+    "majority_rate": 0.6,
+    "ece_10_bins": 0.15559274645311236,
+    "multiclass_brier": 0.38983670068155074,
+    "confusion_matrix": [
+      [
+        3,
+        2
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 0.75,
+        "recall": 0.6,
+        "f1-score": 0.6666666666666666,
+        "support": 5.0
+      },
+      "CN": {
+        "precision": 0.6666666666666666,
+        "recall": 0.8,
+        "f1-score": 0.7272727272727273,
+        "support": 5.0
+      },
+      "accuracy": 0.7,
+      "macro avg": {
+        "precision": 0.7083333333333333,
+        "recall": 0.7,
+        "f1-score": 0.696969696969697,
+        "support": 10.0
+      },
+      "weighted avg": {
+        "precision": 0.7083333333333333,
+        "recall": 0.7,
+        "f1-score": 0.696969696969697,
+        "support": 10.0
+      }
+    },
+    "auroc_ovr_macro": 0.8
+  },
+  "n_outer_subjects": 10,
+  "original_final_test_evaluated": false,
+  "seed": 42,
+  "comparison": "Parameter-matched residual versus gated blend"
+}

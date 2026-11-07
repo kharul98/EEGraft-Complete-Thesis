@@ -1,0 +1,130 @@
+slot_row,slot_column,hdf5_signal_path,signal_shape,dtype,channels_inferred,samples_inferred,candidate_300s_at_500hz,filename_fingerprint
+1,1,/#refs#/ld,"(452152, 19)",float64,19.0,452152.0,True,db36168d2330
+1,2,/#refs#/md,"(514502, 19)",float64,19.0,514502.0,True,e8258fe23281
+1,3,/#refs#/nd,"(616652, 19)",float64,19.0,616652.0,True,119a00753cfd
+1,4,/#refs#/od,"(526802, 19)",float64,19.0,526802.0,True,53932084154c
+1,5,/#refs#/pd,"(616802, 19)",float64,19.0,616802.0,True,c217e3572b85
+1,6,/#refs#/qd,"(460702, 19)",float64,19.0,460702.0,True,16c43300e22f
+1,7,/#refs#/rd,"(618502, 19)",float64,19.0,618502.0,True,0aec0e806de5
+1,8,/#refs#/sd,"(549502, 19)",float64,19.0,549502.0,True,bc0d66ded941
+1,9,/#refs#/td,"(515502, 19)",float64,19.0,515502.0,True,918b457675b8
+1,10,/#refs#/ud,"(509002, 19)",float64,19.0,509002.0,True,c653da2914c5
+1,11,/#refs#/vd,"(593502, 19)",float64,19.0,593502.0,True,b931a703097a
+1,12,/#refs#/wd,"(485002, 19)",float64,19.0,485002.0,True,6ee2edb6acab
+1,13,/#refs#/xd,"(666502, 19)",float64,19.0,666502.0,True,6e330833bb0c
+1,14,/#refs#/yd,"(586502, 19)",float64,19.0,586502.0,True,a395e37a02b1
+1,15,/#refs#/zd,"(646502, 19)",float64,19.0,646502.0,True,cd3fcfb8bc02
+1,16,/#refs#/Ad,"(611402, 19)",float64,19.0,611402.0,True,6b748cfaffe3
+1,17,/#refs#/Bd,"(482002, 19)",float64,19.0,482002.0,True,6df3de7fb21b
+1,18,/#refs#/Cd,"(750002, 19)",float64,19.0,750002.0,True,60eede0ceb97
+1,19,/#refs#/Dd,"(667002, 19)",float64,19.0,667002.0,True,ad71fc45b5b4
+1,20,/#refs#/Ed,"(629502, 19)",float64,19.0,629502.0,True,9f12c424e4ce
+1,21,/#refs#/Fd,"(603502, 19)",float64,19.0,603502.0,True,15fdeed323cd
+1,22,/#refs#/Gd,"(490502, 19)",float64,19.0,490502.0,True,3f9b8bf4d664
+1,23,/#refs#/Hd,"(489002, 19)",float64,19.0,489002.0,True,6684870175ac
+1,24,/#refs#/Id,"(456402, 19)",float64,19.0,456402.0,True,675bc72446a7
+1,25,/#refs#/Jd,"(468002, 19)",float64,19.0,468002.0,True,e180b960e77a
+1,26,/#refs#/Kd,"(471502, 19)",float64,19.0,471502.0,True,ed21ab3c9e2b
+1,27,/#refs#/Ld,"(510202, 19)",float64,19.0,510202.0,True,128bf98f2107
+1,28,/#refs#/Md,"(525002, 19)",float64,19.0,525002.0,True,b4cdbf0baf53
+1,29,/#refs#/Nd,"(561502, 19)",float64,19.0,561502.0,True,8158e7289793
+1,30,/#refs#/Od,"(627502, 19)",float64,19.0,627502.0,True,99b9b08b6235
+1,31,/#refs#/Pd,"(458502, 19)",float64,19.0,458502.0,True,5af5d3eac1fd
+1,32,/#refs#/Qd,"(640502, 19)",float64,19.0,640502.0,True,f73afd8a7ead
+1,33,/#refs#/Rd,"(604502, 19)",float64,19.0,604502.0,True,29cc0e672a57
+1,34,/#refs#/Sd,"(619002, 19)",float64,19.0,619002.0,True,5cc0834317d7
+1,35,/#refs#/Td,"(667502, 19)",float64,19.0,667502.0,True,8641475351a0
+1,36,/#refs#/Ud,"(663002, 19)",float64,19.0,663002.0,True,2f33bf843185
+1,37,/#refs#/Vd,"(674502, 19)",float64,19.0,674502.0,True,40c44373d394
+1,38,/#refs#/Wd,"(642002, 19)",float64,19.0,642002.0,True,8b22fbec6b48
+1,39,/#refs#/Xd,"(554502, 19)",float64,19.0,554502.0,True,9a2101e57508
+1,40,/#refs#/Yd,"(673002, 19)",float64,19.0,673002.0,True,8883e0999fa3
+1,41,/#refs#/Zd,"(627002, 19)",float64,19.0,627002.0,True,54a7ca84c523
+1,42,/#refs#/1d,"(680502, 19)",float64,19.0,680502.0,True,ef05ff49b797
+1,43,/#refs#/2d,"(506202, 19)",float64,19.0,506202.0,True,fc0cec710cf4
+2,1,/#refs#/a,"(2,)",uint64,,,False,
+2,2,/#refs#/a,"(2,)",uint64,,,False,
+2,3,/#refs#/a,"(2,)",uint64,,,False,
+2,4,/#refs#/a,"(2,)",uint64,,,False,
+2,5,/#refs#/3d,"(623552, 19)",float64,19.0,623552.0,True,ac6fdb99219f
+2,6,/#refs#/a,"(2,)",uint64,,,False,
+2,7,/#refs#/a,"(2,)",uint64,,,False,
+2,8,/#refs#/a,"(2,)",uint64,,,False,
+2,9,/#refs#/a,"(2,)",uint64,,,False,
+2,10,/#refs#/a,"(2,)",uint64,,,False,
+2,11,/#refs#/a,"(2,)",uint64,,,False,
+2,12,/#refs#/a,"(2,)",uint64,,,False,
+2,13,/#refs#/a,"(2,)",uint64,,,False,
+2,14,/#refs#/a,"(2,)",uint64,,,False,
+2,15,/#refs#/a,"(2,)",uint64,,,False,
+2,16,/#refs#/a,"(2,)",uint64,,,False,
+2,17,/#refs#/a,"(2,)",uint64,,,False,
+2,18,/#refs#/a,"(2,)",uint64,,,False,
+2,19,/#refs#/4d,"(648652, 19)",float64,19.0,648652.0,True,c961ad8afa43
+2,20,/#refs#/a,"(2,)",uint64,,,False,
+2,21,/#refs#/a,"(2,)",uint64,,,False,
+2,22,/#refs#/a,"(2,)",uint64,,,False,
+2,23,/#refs#/a,"(2,)",uint64,,,False,
+2,24,/#refs#/a,"(2,)",uint64,,,False,
+2,25,/#refs#/a,"(2,)",uint64,,,False,
+2,26,/#refs#/a,"(2,)",uint64,,,False,
+2,27,/#refs#/5d,"(1262502, 19)",float64,19.0,1262502.0,True,05034c75e982
+2,28,/#refs#/a,"(2,)",uint64,,,False,
+2,29,/#refs#/a,"(2,)",uint64,,,False,
+2,30,/#refs#/a,"(2,)",uint64,,,False,
+2,31,/#refs#/a,"(2,)",uint64,,,False,
+2,32,/#refs#/a,"(2,)",uint64,,,False,
+2,33,/#refs#/6d,"(607202, 19)",float64,19.0,607202.0,True,600b017fb342
+2,34,/#refs#/a,"(2,)",uint64,,,False,
+2,35,/#refs#/a,"(2,)",uint64,,,False,
+2,36,/#refs#/a,"(2,)",uint64,,,False,
+2,37,/#refs#/a,"(2,)",uint64,,,False,
+2,38,/#refs#/a,"(2,)",uint64,,,False,
+2,39,/#refs#/a,"(2,)",uint64,,,False,
+2,40,/#refs#/a,"(2,)",uint64,,,False,
+2,41,/#refs#/a,"(2,)",uint64,,,False,
+2,42,/#refs#/a,"(2,)",uint64,,,False,
+2,43,/#refs#/a,"(2,)",uint64,,,False,
+3,1,/#refs#/a,"(2,)",uint64,,,False,
+3,2,/#refs#/a,"(2,)",uint64,,,False,
+3,3,/#refs#/a,"(2,)",uint64,,,False,
+3,4,/#refs#/a,"(2,)",uint64,,,False,
+3,5,/#refs#/7d,"(417502, 19)",float64,19.0,417502.0,True,5cad4703d4fb
+3,6,/#refs#/a,"(2,)",uint64,,,False,
+3,7,/#refs#/a,"(2,)",uint64,,,False,
+3,8,/#refs#/a,"(2,)",uint64,,,False,
+3,9,/#refs#/a,"(2,)",uint64,,,False,
+3,10,/#refs#/a,"(2,)",uint64,,,False,
+3,11,/#refs#/a,"(2,)",uint64,,,False,
+3,12,/#refs#/a,"(2,)",uint64,,,False,
+3,13,/#refs#/a,"(2,)",uint64,,,False,
+3,14,/#refs#/a,"(2,)",uint64,,,False,
+3,15,/#refs#/a,"(2,)",uint64,,,False,
+3,16,/#refs#/a,"(2,)",uint64,,,False,
+3,17,/#refs#/a,"(2,)",uint64,,,False,
+3,18,/#refs#/a,"(2,)",uint64,,,False,
+3,19,/#refs#/a,"(2,)",uint64,,,False,
+3,20,/#refs#/a,"(2,)",uint64,,,False,
+3,21,/#refs#/a,"(2,)",uint64,,,False,
+3,22,/#refs#/a,"(2,)",uint64,,,False,
+3,23,/#refs#/a,"(2,)",uint64,,,False,
+3,24,/#refs#/a,"(2,)",uint64,,,False,
+3,25,/#refs#/a,"(2,)",uint64,,,False,
+3,26,/#refs#/a,"(2,)",uint64,,,False,
+3,27,/#refs#/8d,"(260802, 19)",float64,19.0,260802.0,True,7f78e452508f
+3,28,/#refs#/a,"(2,)",uint64,,,False,
+3,29,/#refs#/a,"(2,)",uint64,,,False,
+3,30,/#refs#/a,"(2,)",uint64,,,False,
+3,31,/#refs#/a,"(2,)",uint64,,,False,
+3,32,/#refs#/a,"(2,)",uint64,,,False,
+3,33,/#refs#/a,"(2,)",uint64,,,False,
+3,34,/#refs#/a,"(2,)",uint64,,,False,
+3,35,/#refs#/a,"(2,)",uint64,,,False,
+3,36,/#refs#/a,"(2,)",uint64,,,False,
+3,37,/#refs#/a,"(2,)",uint64,,,False,
+3,38,/#refs#/a,"(2,)",uint64,,,False,
+3,39,/#refs#/a,"(2,)",uint64,,,False,
+3,40,/#refs#/a,"(2,)",uint64,,,False,
+3,41,/#refs#/a,"(2,)",uint64,,,False,
+3,42,/#refs#/a,"(2,)",uint64,,,False,
+3,43,/#refs#/a,"(2,)",uint64,,,False,

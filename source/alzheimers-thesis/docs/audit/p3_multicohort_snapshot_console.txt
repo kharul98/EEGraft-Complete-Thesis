@@ -1,0 +1,23 @@
+===== FROZEN CROSS-DATASET EXPLORATORY SNAPSHOT =====
+  cohort                          subset  n_candidate_units mean_delta median_delta  fraction_negative mean_unit_bootstrap_lo mean_unit_bootstrap_hi
+   Dryad AD | first per candidate column                 43  -0.011065    -0.009102           0.627907              -0.020234              -0.002306
+   Dryad     HC | unique recording array                 96  +0.000937    +0.000523           0.500000              -0.006822              +0.008410
+BrainLat                  AD | all sites                 28  +0.006756    +0.001450           0.500000              -0.001276              +0.014982
+BrainLat                  AD | Argentina                 10  +0.002023    -0.001971           0.600000              -0.009187              +0.013485
+BrainLat                      AD | Chile                 18  +0.009386    +0.007744           0.444444              -0.001955              +0.020243
+BrainLat                  HC | Argentina                  8  +0.000077    -0.003307           0.500000              -0.011601              +0.013921
+
+Dryad matched AD-HC contrast (from existing age sensitivity): -0.007186088148066105
+Intervals are candidate-unit bootstraps ONLY; not validated patient-level confidence intervals.
+No pooled effect. BrainLat AD all-sites row overlaps its site-specific rows.
+
+===== AHEPA ANCHOR RESULT FILE CANDIDATES =====
+results/final_robustness/participant_anchor_variability.csv | fields: task, duration_seconds, participant_id, label, probability_range, probability_sd, same_classification_all_anchors
+results/p2_disjoint_reference_features.csv | fields: participant_id, group, reference_start_s, reference_stop_s, late_halves_tv, delayed_60_tv_to_late, early_60_tv_to_late, late_median_relative_delta, late_median_relative_theta, late_median_relative_alpha, late_median_relative_beta, late_median_relative_gamma
+results/p2_disjoint_reference_reliability.csv | fields: participant_id, group, seconds, tv_to_late_240_300, online_spectral_drift, tv_to_other_subject_late, reference_other_participant
+results/p2_duration_anchor_control.csv | fields: participant_id, group, design, start_s, end_s, duration_s, gap_to_reference_s, tv_to_late_240_300
+results/p2_duration_anchor_control_pairs.csv | fields: comparison, mean_delta, ci_low, ci_high, fraction_improved, n
+results/p3_brainlat_300s_reliability.csv | fields: cohort, site_from_folder, recording_code, source_sfreq_hz, median_raw_channel_rms_uv, delta_180_minus_60, prefix_60_tv, prefix_120_tv, prefix_180_tv, fixed_end_60_tv, fixed_end_120_tv, fixed_end_180_tv, late_halves_30_tv
+
+No EEG arrays were loaded or modified. No figures created.
+===== SNAPSHOT COMPLETE =====

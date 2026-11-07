@@ -1,0 +1,19 @@
+===== MILESTONE 4C: FINAL EVIDENCE AUDIT =====
+PASS: 16 essential milestone tables loaded.
+
+===== FINAL CROSS-FILE CHECKS =====
+AD_vs_HC: baseline BACC=0.7348; stable-wrong=0.0870; EO-EC BACC=-0.0883
+FTD_vs_HC: baseline BACC=0.7372; stable-wrong=0.1317; EO-EC BACC=-0.0423
+PASS: All eight ablation Holm p-values >= 0.05.
+PASS: Original SVM BACC reconciled across Milestones 1B, 1C and 4B.
+PASS: Temporal state counts reconciled across Milestones 1A and 4A.
+PASS: Matched label agreement reconciled across Milestones 3D and 3E.
+
+===== MILESTONE 4C COMPLETE =====
+Evidence report: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_4c_reproducibility_v1/THESIS_EVIDENCE_SUMMARY.md
+Master numerical results: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_4c_reproducibility_v1/evidence_master.csv
+Claim audit: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_4c_reproducibility_v1/claim_audit.csv
+Source checksums: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_4c_reproducibility_v1/sha256_inventory.csv
+Research evidence archive: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_4c_reproducibility_v1/thesis_evidence_packet.zip
+ZIP verified: 114 files, 1.47 MiB
+No model training, no new EEG downloads, no earlier milestone outputs changed.

@@ -1,0 +1,23 @@
+===== AHEPA FIXED-END DIAGNOSIS AUDIT =====
+Source rows: 1056
+Available groups: {'A': 36, 'C': 29, 'F': 23}
+fixed_end_60_tv | source rows: 176 | participants: 88
+fixed_end_180_tv | source rows: 176 | participants: 88
+Previously reported AHEPA mean: -0.003275
+Recomputed AHEPA mean: -0.003275
+
+===== AHEPA DIAGNOSIS-STRATIFIED RESULTS =====
+group  n_participants  mean_delta  median_delta  fraction_improving  bootstrap_mean_lo  bootstrap_mean_hi
+  ALL              88   -0.003275     -0.003121            0.613636          -0.006643           0.000256
+    A              36   -0.005410     -0.003606            0.638889          -0.010239          -0.001164
+    C              29   -0.000585     -0.002734            0.620690          -0.007345           0.007026
+    F              23   -0.003323     -0.003107            0.565217          -0.009500           0.002899
+
+===== AHEPA AD VERSUS CN =====
+AD/CN label pair not found.
+
+Saved summary: /home/user4/alzheimers-thesis/results/p3_ahepa_diagnosis_anchor_summary.csv
+Saved paired measurements: /home/user4/alzheimers-thesis/results/p3_ahepa_diagnosis_anchor_participants.csv
+No EEG arrays loaded.
+No results from earlier studies modified.
+===== AHEPA AUDIT COMPLETE =====

@@ -1,0 +1,39 @@
+{
+  "clean_epoch_rule": "reject if >=3 EEG channels ptp>200uV or any ptp>300uV or any std<0.5uV",
+  "dataset": "two Isfahan MCI/healthy EEG archives",
+  "epoch_seconds": 2,
+  "filter": "4th-order Butterworth zero-phase SOS 0.5-45Hz on full five-minute signal",
+  "identity": "release-local EDF ID matched to States.xlsx Sheet1 column A; diagnosis from column B",
+  "minimum_clean_epochs_per_minute": 15,
+  "montage": [
+    "Fp1",
+    "Fp2",
+    "F7",
+    "F3",
+    "Fz",
+    "F4",
+    "F8",
+    "T3",
+    "C3",
+    "Cz",
+    "C4",
+    "T4",
+    "T5",
+    "P3",
+    "Pz",
+    "P4",
+    "T6",
+    "O1",
+    "O2"
+  ],
+  "note": "No ICA/ASR or other corrections; acquisition/reference may differ from original OpenNeuro derivatives; no classification",
+  "participant_id": "release-aware, not proof of cross-release unique person",
+  "quality_window_seconds": [
+    0,
+    300
+  ],
+  "quality_window_selection": "fixed first five minutes for everyone; no sliding or optimization",
+  "sampling_rate_hz": 256,
+  "unit": "MNE EDF voltage units converted to microvolts",
+  "version": "m5d_isfahan_labels_and_qc_v1"
+}

@@ -1,0 +1,45 @@
+===== MILESTONE 5D: VERIFIED LABELS AND FIXED-FIVE-MINUTE QC =====
+EEG_1: EXACT label mapping passed: MCI=11, NORMAL=16; EDF IDs 1..27; workbook SHA256=bc291f1fe316b2...
+EEG_2: EXACT label mapping passed: MCI=18, NORMAL=16; EDF IDs 1..34; workbook SHA256=4638bacaa397af...
+
+===== CROSS-RELEASE LABEL/IDENTITY STATUS =====
+Overlapping numeric filenames: 27 ; different diagnosis for same numeric filename: 18
+The two archives have release-local IDs. Filename collisions are not a clinical participant linkage.
+Cross-release individual identities remain unverified; do not call all 61 independent people based on spreadsheets alone.
+  QC 1/61 EEG_1-001 NORMAL: ELIGIBLE_FIXED_300S; filtered clean per minute=28|30|28|29|30; raw median PTP=83.6388uV; filtered median PTP=56.0181uV
+  QC 2/61 EEG_1-002 MCI: ELIGIBLE_FIXED_300S; filtered clean per minute=30|30|30|30|30; raw median PTP=35.5728uV; filtered median PTP=19.0831uV
+  QC 3/61 EEG_1-003 MCI: ELIGIBLE_FIXED_300S; filtered clean per minute=15|23|21|20|20; raw median PTP=123.2755uV; filtered median PTP=65.2588uV
+  QC 10/61 EEG_1-010 NORMAL: ELIGIBLE_FIXED_300S; filtered clean per minute=30|30|30|30|30; raw median PTP=40.3063uV; filtered median PTP=29.2828uV
+  QC 20/61 EEG_1-020 MCI: ELIGIBLE_FIXED_300S; filtered clean per minute=28|30|30|30|30; raw median PTP=93.0036uV; filtered median PTP=55.203uV
+  QC 30/61 EEG_2-003 NORMAL: INSUFFICIENT_CLEAN_EPOCHS; filtered clean per minute=6|14|24|10|16; raw median PTP=206.7303uV; filtered median PTP=158.9005uV
+  QC 40/61 EEG_2-013 MCI: ELIGIBLE_FIXED_300S; filtered clean per minute=30|27|30|30|22; raw median PTP=70.7776uV; filtered median PTP=50.4556uV
+  QC 50/61 EEG_2-023 MCI: ELIGIBLE_FIXED_300S; filtered clean per minute=28|30|30|29|30; raw median PTP=99.5518uV; filtered median PTP=65.4068uV
+  QC 60/61 EEG_2-033 MCI: ELIGIBLE_FIXED_300S; filtered clean per minute=26|28|29|30|30; raw median PTP=84.5129uV; filtered median PTP=60.2809uV
+  QC 61/61 EEG_2-034 MCI: ELIGIBLE_FIXED_300S; filtered clean per minute=24|27|26|28|30; raw median PTP=102.0565uV; filtered median PTP=72.5229uV
+
+===== FIXED FIRST-FIVE-MINUTE QUALITY BY RELEASE AND DIAGNOSIS =====
+EEG_1 MCI: n=11; {'ELIGIBLE_FIXED_300S': 11}
+EEG_1 NORMAL: n=16; {'ELIGIBLE_FIXED_300S': 14, 'INSUFFICIENT_CLEAN_EPOCHS': 2}
+EEG_2 MCI: n=18; {'ELIGIBLE_FIXED_300S': 12, 'INSUFFICIENT_CLEAN_EPOCHS': 6}
+EEG_2 NORMAL: n=16; {'ELIGIBLE_FIXED_300S': 12, 'INSUFFICIENT_CLEAN_EPOCHS': 4}
+
+===== QUALITY ISSUES / DIAGNOSTICS =====
+ELIGIBLE_FIXED_300S: 49/61
+INSUFFICIENT_CLEAN_EPOCHS: 12/61
+  EEG_1-008 NORMAL: INSUFFICIENT_CLEAN_EPOCHS; clean=4|27|28|30|30; At least one first-five-minute block below 15 of 30 clean epochs
+  EEG_1-022 NORMAL: INSUFFICIENT_CLEAN_EPOCHS; clean=5|3|1|5|5; At least one first-five-minute block below 15 of 30 clean epochs
+  EEG_2-003 NORMAL: INSUFFICIENT_CLEAN_EPOCHS; clean=6|14|24|10|16; At least one first-five-minute block below 15 of 30 clean epochs
+  EEG_2-008 MCI: INSUFFICIENT_CLEAN_EPOCHS; clean=1|2|3|4|14; At least one first-five-minute block below 15 of 30 clean epochs
+  EEG_2-011 NORMAL: INSUFFICIENT_CLEAN_EPOCHS; clean=14|17|16|20|24; At least one first-five-minute block below 15 of 30 clean epochs
+  EEG_2-012 MCI: INSUFFICIENT_CLEAN_EPOCHS; clean=0|0|5|15|24; At least one first-five-minute block below 15 of 30 clean epochs
+  EEG_2-015 NORMAL: INSUFFICIENT_CLEAN_EPOCHS; clean=0|4|2|7|8; At least one first-five-minute block below 15 of 30 clean epochs
+  EEG_2-020 MCI: INSUFFICIENT_CLEAN_EPOCHS; clean=0|0|0|2|8; At least one first-five-minute block below 15 of 30 clean epochs
+  EEG_2-021 MCI: INSUFFICIENT_CLEAN_EPOCHS; clean=0|0|0|0|0; At least one first-five-minute block below 15 of 30 clean epochs
+  EEG_2-024 MCI: INSUFFICIENT_CLEAN_EPOCHS; clean=5|26|30|20|25; At least one first-five-minute block below 15 of 30 clean epochs
+  EEG_2-026 NORMAL: INSUFFICIENT_CLEAN_EPOCHS; clean=17|7|18|20|17; At least one first-five-minute block below 15 of 30 clean epochs
+  EEG_2-028 MCI: INSUFFICIENT_CLEAN_EPOCHS; clean=0|3|8|19|27; At least one first-five-minute block below 15 of 30 clean epochs
+
+===== MILESTONE 5D COMPLETE =====
+Verified label manifest: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_5d_isfahan_labels_and_qc_v2/release_aware_verified_subject_manifest.csv
+Quality audit: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_5d_isfahan_labels_and_qc_v2/first_five_minute_quality.csv
+No models trained; no previous EEG or thesis results modified.

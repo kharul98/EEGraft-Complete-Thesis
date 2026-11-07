@@ -1,0 +1,23 @@
+{
+  "duration_s": 30,
+  "epoch_s": 2,
+  "limitations": "Same cohort, different recording state and photic stimulus; 10 quality exclusions; exploratory",
+  "min_clean_epochs": 8,
+  "model": "StandardScaler + class-weighted RBF SVM; C=[0.1,1,10]; gamma=[scale,0.01,0.1]",
+  "primary": "paired EO minus EC balanced accuracy on the same EO-quality-eligible held-out participants",
+  "secondary": "EC/EO label agreement, group sensitivity/specificity, paired SVM margin shift",
+  "selection": "same fixed 10s start grid; first clean eligible 30s within frozen EC 300s window",
+  "source": "on004504 v1.0.0, selected 300s EC windows",
+  "spectral_features": [
+    "delta",
+    "theta",
+    "alpha",
+    "beta",
+    "gamma",
+    "theta_alpha_ratio"
+  ],
+  "status": "Post-hoc within-participant recording-condition transfer",
+  "target": "on006036 v1.0.0, earliest boundary-safe 30s photic window selected in milestone 3C",
+  "uncertainty": "stratified participant-cluster bootstrap, repetitions kept together; shared HC not independently resampled for cross-task claims",
+  "validation": "5 repeats x 5 participant-stratified outer folds; 3-fold inner tuning on EC training participants only"
+}

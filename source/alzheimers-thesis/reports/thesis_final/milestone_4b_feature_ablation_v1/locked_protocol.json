@@ -1,0 +1,31 @@
+{
+  "baseline": "all six original EEG relative-band features",
+  "bootstrap": "4000 stratified participant-cluster bootstraps preserving five repeats",
+  "feature_groups": {
+    "beta": [
+      "beta"
+    ],
+    "delta": [
+      "delta"
+    ],
+    "gamma": [
+      "gamma"
+    ],
+    "theta_alpha_family": [
+      "theta",
+      "alpha",
+      "theta_alpha_ratio"
+    ]
+  },
+  "held_out_unit": "participant, not a two-second epoch or a minute",
+  "interpretation": "complementary predictive contribution, not causal biomarker importance",
+  "model": "StandardScaler + balanced RBF SVC, 3-fold train-only nested hyperparameter search",
+  "multiplicity": "Holm adjustment across eight first-minute group-removal contrasts",
+  "outer_folds": "Five repeats of five participant-stratified folds, identical to prior thesis",
+  "permutation": "10000 paired participant-level sign flips; approximate post-hoc inference",
+  "reference_audit": "full-model predictions and raw decision scores must reproduce saved results",
+  "research_status": "post-hoc exploratory leave-one-feature-group-out ablation",
+  "test": "all five held-out 60s blocks; first-minute BACC is main endpoint",
+  "training": "only first-minute training-participant features; no held-out participant samples",
+  "version": "m4b_feature_group_ablation_v1"
+}

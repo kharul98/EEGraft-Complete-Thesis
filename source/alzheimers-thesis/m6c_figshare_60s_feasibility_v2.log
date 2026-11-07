@@ -1,0 +1,43 @@
+===== MILESTONE 6C-v2: NONSTANDARD MATRIX-AWARE AUDIT =====
+PASS: M6A archive SHA256 and 471 MATLAB metadata records verified.
+README sampling-rate entries: {128: 30, 256: 38}
+
+===== NONSTANDARD AND AMBIGUOUS MATRICES =====
+Nonstandard export / ambiguous segmenty files: 10
+Shape/status distributions:
+  21680x17: NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS: 1 file(s)
+  2797x20: NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS: 1 file(s)
+  5046x20: NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS: 2 file(s)
+  5334x18: NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS: 1 file(s)
+  6776x18: NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS: 1 file(s)
+  7006x18: NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS: 1 file(s)
+  7670x18: NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS: 1 file(s)
+  7784x18: NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS: 1 file(s)
+  9976x18: NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS: 1 file(s)
+Example unusual files (up to 30):
+  AD/AD17/2.mat: 21680x17 | NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS
+  AD/AD1/3.mat: 6776x18 | NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS
+  AD/AD21/5.mat: 7006x18 | NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS
+  AD/AD35/1.mat: 5334x18 | NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS
+  AD/AD35/2.mat: 7784x18 | NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS
+  AD/AD35/3.mat: 9976x18 | NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS
+  AD/AD35/6.mat: 7670x18 | NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS
+  AD/AD40/1.mat: 5046x20 | NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS
+  AD/AD46/1.mat: 2797x20 | NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS
+  AD/AD53/1.mat: 5046x20 | NONSTANDARD_EXPORT_WIDTH_INFERRED_SAMPLE_AXIS
+
+===== PER-FILE DURATION AND FORMAT =====
+AD export: files=305, durations resolved=305, median=38.74s; single-file >=60s any format=92, standard 19-column=89
+MCI export: files=56, durations resolved=56, median=42.80s; single-file >=60s any format=13, standard 19-column=13
+CONTROL export: files=10, durations resolved=10, median=48.99s; single-file >=60s any format=3, standard 19-column=3
+CONTROL segmenty: files=100, durations resolved=100, median=70.00s; single-file >=60s any format=82, standard 19-column=0
+
+===== RECORDING-PROXY DURATION FEASIBILITY =====
+AD: 57 participant-folder/file proxies; single-file >=60s any structure=44; single-file >=60s standard 19-column=44; summed fragments >=60s (CONTINUITY UNVERIFIED)=55; proxies with unresolved duration=0
+MCI: 7 participant-folder/file proxies; single-file >=60s any structure=3; single-file >=60s standard 19-column=3; summed fragments >=60s (CONTINUITY UNVERIFIED)=7; proxies with unresolved duration=0
+CONTROL: 102 participant-folder/file proxies; single-file >=60s any structure=83; single-file >=60s standard 19-column=1; summed fragments >=60s (CONTINUITY UNVERIFIED)=83; proxies with unresolved duration=0
+
+===== MILESTONE 6C-v2 COMPLETE =====
+All 471 MATLAB structures accounted for, including unusual shapes.
+No signal concatenation, EEG extraction, classifier training, or prior result changes.
+Results: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_6c_figshare_60s_compatibility_v2

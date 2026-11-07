@@ -1,0 +1,116 @@
+{
+  "model": "svm",
+  "fold": 2,
+  "selected_hyperparameter": 0.1,
+  "selection_rule": "Inner-validation patient BAcc, then macro-F1",
+  "train_n_subjects": 33,
+  "inner_val_n_subjects": 9,
+  "outer_dev_n_subjects": 10,
+  "manifest_sha256": "4290cb90618cdc2cde68a35e8813f4b9c30064636205f648ebe3f0700a659cc6",
+  "features": "Band power and Hjorth EEG features",
+  "inner_validation_metrics": {
+    "n_subjects": 9,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 0.8888888888888888,
+    "balanced_accuracy": 0.875,
+    "macro_f1": 0.8831168831168831,
+    "majority_rate": 0.6666666666666666,
+    "ece_10_bins": 0.1320637315324411,
+    "multiclass_brier": 0.2721964862662926,
+    "confusion_matrix": [
+      [
+        5,
+        0
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1-score": 0.9090909090909091,
+        "support": 5.0
+      },
+      "CN": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1-score": 0.8571428571428571,
+        "support": 4.0
+      },
+      "accuracy": 0.8888888888888888,
+      "macro avg": {
+        "precision": 0.9166666666666667,
+        "recall": 0.875,
+        "f1-score": 0.8831168831168831,
+        "support": 9.0
+      },
+      "weighted avg": {
+        "precision": 0.9074074074074076,
+        "recall": 0.8888888888888888,
+        "f1-score": 0.886002886002886,
+        "support": 9.0
+      }
+    },
+    "auroc_ovr_macro": 0.9
+  },
+  "outer_development_metrics": {
+    "n_subjects": 10,
+    "n_classes": 2,
+    "classes": [
+      "AD",
+      "CN"
+    ],
+    "accuracy": 0.8,
+    "balanced_accuracy": 0.7916666666666667,
+    "macro_f1": 0.7916666666666667,
+    "majority_rate": 0.6,
+    "ece_10_bins": 0.24854621928281662,
+    "multiclass_brier": 0.3416444773844018,
+    "confusion_matrix": [
+      [
+        5,
+        1
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "classification_report": {
+      "AD": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "f1-score": 0.8333333333333334,
+        "support": 6.0
+      },
+      "CN": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1-score": 0.75,
+        "support": 4.0
+      },
+      "accuracy": 0.8,
+      "macro avg": {
+        "precision": 0.7916666666666667,
+        "recall": 0.7916666666666667,
+        "f1-score": 0.7916666666666667,
+        "support": 10.0
+      },
+      "weighted avg": {
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1-score": 0.8,
+        "support": 10.0
+      }
+    },
+    "auroc_ovr_macro": 0.8333333333333334
+  },
+  "original_final_test_evaluated": false
+}

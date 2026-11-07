@@ -1,0 +1,31 @@
+{
+  "archive_sha256": "180fd998a5260f20b57a95a5b3c7f7c8e86b00dc35db009d1475a1344e94277f",
+  "channel_identity_verified": false,
+  "classifier_trained": false,
+  "control_segmenty_files": 100,
+  "control_segmenty_nominal_60s_files_at_tentative_128Hz": 82,
+  "control_segmenty_sampling_rate_per_file_verified": false,
+  "decision": "NO_GO_FOR_ORIGINAL_19_CHANNEL_60S_EXTERNAL_AD_VALIDATION",
+  "external_validation_performed": false,
+  "figshare_mat_files": 471,
+  "figshare_recording_proxies": {
+    "AD": 57,
+    "CONTROL": 102,
+    "MCI": 7
+  },
+  "fragment_continuity_verified": false,
+  "milestone": "6D",
+  "nonstandard_export_files": 10,
+  "previous_results_modified": false,
+  "reason": "Only one CONTROL proxy has a standard 19-column nominal >=60s file. Most controls use an unmapped 22-row segmenty layout.",
+  "source_sha256": {
+    "m5g_summary": "9e3cb8cecb1416bbb4dddf0e522161a3950c3d083a3364ff6978dba5d15a43ea",
+    "m5i_negative_controls": "8731cb4931ffd3fc9b79e537d6f270e475ee36764a06258d241f29a7edefc381",
+    "m6a_metadata": "31839f66dd6a9d760e26940b23ca5777517c3a56e4f2addeacbf914b8f523a21",
+    "m6b_inventory": "cde5a6a59f2684bd54705293e62657ed3c5e50634013796b65773553bbaba85c",
+    "m6c_file_durations": "c36bb7b22986235cb268b69414627b23c3286f9205dd191e7e0263fef11a2308",
+    "m6c_subject_proxies": "16f4207ce061d8f28422a75ead03cc23dc5e02d0704c377f2221c4e7d81e697c"
+  },
+  "standard_19_column_nominal_60s_AD_proxies": 44,
+  "standard_19_column_nominal_60s_CONTROL_proxies": 1
+}

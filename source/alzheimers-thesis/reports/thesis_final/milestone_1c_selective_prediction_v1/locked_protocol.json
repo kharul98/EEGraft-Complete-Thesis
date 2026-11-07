@@ -1,0 +1,34 @@
+{
+  "acquisition_note": "five-minute methods require 300 seconds of EEG",
+  "analysis_status": "post-hoc exploratory, no retraining",
+  "bootstrap_resamples": 1500,
+  "confidence_alignment": "probability supporting the original SVM label, not max probability when decisions disagree",
+  "deployment_note": "retention thresholds are cohort-relative and not training-derived clinical rules",
+  "diagnostic_labels": "original held-out first-minute RBF-SVM labels",
+  "error_target": "original first-minute SVM errors",
+  "interpretation_note": "not independent external validation",
+  "probabilities": "training-only cross-fitted sigmoid calibration",
+  "selection": "rank participants within each held-out CV repeat using certainty; fractional selection at ties",
+  "selection_methods": {
+    "first_minute_original_label_support": {
+      "description": "Calibrated probability supporting the original first-minute SVM decision",
+      "seconds_required": 60
+    },
+    "five_minute_label_consensus": {
+      "description": "Greater agreement among five original SVM predictions",
+      "seconds_required": 300
+    },
+    "five_minute_probability_consistency": {
+      "description": "Lower probability variation across five minutes ranks as more reliable",
+      "seconds_required": 300
+    }
+  },
+  "target_coverage": [
+    1.0,
+    0.9,
+    0.8,
+    0.7
+  ],
+  "uncertainty_note": "repeated CV correlated; bootstrap resamples participants",
+  "version": "milestone_1c_selective_prediction_v1"
+}

@@ -1,0 +1,4 @@
+subject,group,status,start_sec,end_sec,multi200_pct,any300_pct,flat_pct,note
+sub-027,A,REVIEW,300,600,20.67,1.33,0.0,
+sub-030,A,REVIEW,30,330,50.0,7.33,0.0,
+sub-064,C,REVIEW,10,310,24.0,2.67,0.0,

@@ -1,0 +1,38 @@
+===== MILESTONE 7A: FINAL THESIS EVIDENCE CONSOLIDATION =====
+PASS: Isfahan MCI quality, nested CV, and negative-control results agree.
+PASS: Figshare external AD feasibility decision verified.
+
+===== ORIGINAL AD/FTD SOURCE DISCOVERY =====
+reports/thesis_final/milestone_4c_reproducibility_v1 | files: 7
+reports/thesis_final/duration_locked_v1 | files: 11
+reports/thesis_final/ftd_extension_v1 | files: 17
+reports/thesis_final/milestone_1b_calibration_v1 | files: 8
+reports/thesis_final/milestone_3c_boundary_feasibility_v1 | files: 4
+
+Top candidate primary-evidence files:
+  priority=9 reports/thesis_final/duration_locked_v1/block_prediction_stability_summary.csv
+  priority=6 reports/thesis_final/ftd_extension_v1/locked_study/temporal_repeat_results.csv
+  priority=6 reports/thesis_final/milestone_4c_reproducibility_v1/THESIS_EVIDENCE_SUMMARY.md
+  priority=5 reports/thesis_final/milestone_1b_calibration_v1/calibration_metrics_by_repeat_minute.csv
+  priority=4 reports/thesis_final/duration_locked_v1/theta_alpha_five_block_stability.csv
+  priority=3 reports/thesis_final/ftd_extension_v1/locked_study/minute_wise_metrics.csv
+  priority=3 reports/thesis_final/milestone_1b_calibration_v1/calibrated_held_out_block_predictions.csv
+  priority=3 reports/thesis_final/milestone_1b_calibration_v1/calibration_fold_audit.csv
+  priority=3 reports/thesis_final/milestone_4c_reproducibility_v1/claim_audit.csv
+  priority=2 reports/thesis_final/duration_locked_v1/held_out_predictions.csv
+  priority=2 reports/thesis_final/ftd_extension_v1/locked_study/held_out_duration_predictions.csv
+  priority=2 reports/thesis_final/milestone_1b_calibration_v1/input_sha256.json
+  priority=2 reports/thesis_final/milestone_1b_calibration_v1/locked_protocol.json
+  priority=2 reports/thesis_final/milestone_1b_calibration_v1/uncertainty_by_subject_repeat.csv
+  priority=2 reports/thesis_final/milestone_4c_reproducibility_v1/README_REPRODUCIBILITY.md
+  priority=2 reports/thesis_final/milestone_4c_reproducibility_v1/environment.json
+  priority=2 reports/thesis_final/milestone_4c_reproducibility_v1/evidence_master.csv
+  priority=2 reports/thesis_final/milestone_4c_reproducibility_v1/sha256_inventory.csv
+Total indexed candidate files: 30
+
+===== MILESTONE 7A COMPLETE =====
+Primary source candidates indexed: 30
+MCI and Figshare summaries verified.
+Original AD/FTD figures carried forward from the previous audit, pending direct source-file reconciliation.
+Evidence brief: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_7a_thesis_evidence_v1/THESIS_EVIDENCE_BRIEF.md
+No model training or previous results modified.

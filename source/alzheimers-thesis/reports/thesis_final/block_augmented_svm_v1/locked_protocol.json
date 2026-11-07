@@ -1,0 +1,40 @@
+{
+  "classifier": "StandardScaler and RBF-SVC, class_weight balanced",
+  "cohort": "23 AD and 23 HC; ds004504; fixed five-minute selections",
+  "contrast": "Multi-block-trained SVM versus original first-minute-trained SVM",
+  "hyperparameters": {
+    "C": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "gamma": [
+      "scale",
+      0.01,
+      0.1
+    ]
+  },
+  "inner_cv": "Three subject-stratified folds within each outer training split",
+  "inner_selection": "Mean BACC across five block positions on inner-validation participants",
+  "interpretation": "Training uses 300 seconds per participant; single-block inference uses 60 seconds; training-data budgets are not matched",
+  "limitations": [
+    "Previously examined cohort",
+    "No independent external validation",
+    "Preprocessing may use full session",
+    "No new architecture"
+  ],
+  "outer_cv": "Five stratified subject folds, five repeats",
+  "primary_comparison": "Multi-block-trained minus first-minute-trained on identical outer folds",
+  "primary_metric": "Mean participant-level BACC over five target blocks and five correlated CV repeats",
+  "secondary_metrics": [
+    "First-block BACC",
+    "Fifth-block BACC",
+    "Five-block majority-vote BACC",
+    "Within-recording class reversal rate"
+  ],
+  "status": "Exploratory extension after earlier analyses on the same participants",
+  "test_examples": "Each held-out 60-second block evaluated independently",
+  "training_examples": "All five nonoverlapping 60-second blocks per outer-training participant",
+  "training_weight": "Every training participant contributes exactly five block observations",
+  "uncertainty": "Stratified participant bootstrap preserving all repetitions and blocks"
+}
