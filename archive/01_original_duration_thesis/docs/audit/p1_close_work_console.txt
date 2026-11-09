@@ -1,0 +1,77 @@
+===== CLOSEST-WORK LITERATURE SCREEN =====
+Papers: 10
+DOI metadata retrieved: 9
+
+2019 window length
+DOI: 10.3390/brainsci9040081
+Status: UNVERIFIED: HTTP Error 429: Too Many Requests
+Title: 
+Overlap: EEG epoch-length effects in AD
+Implication: Cannot claim first AD EEG duration analysis
+
+2020 recording duration
+DOI: 10.1177/1550059420983624
+Status: RETRIEVED
+Title: Effects of the Duration of a Resting-State EEG Recording in Healthy Aging and Mild Cognitive Impairment
+Overlap: Recording-duration effects in aging and MCI
+Implication: Must distinguish new contribution from duration stability
+
+2021 EEG recommendations
+DOI: 10.1002/alz.12311
+Status: RETRIEVED
+Title: Measures of resting state EEG rhythms for clinical trials in Alzheimer's disease: Recommendations of an expert panel
+Overlap: Standardization and repeatability of resting EEG
+Implication: Must justify acquisition and biomarker protocols
+
+2021 independent cohort
+DOI: 10.1007/s11517-021-02427-6
+Status: RETRIEVED
+Title: Novelty detection-based approach for Alzheimer’s disease and mild cognitive impairment diagnosis from EEG
+Overlap: Adaptive-filter novelty features for AD/MCI
+Implication: Must separate signal novelty detection from adaptive stopping
+
+2023 sequential diagnosis
+DOI: 10.1038/s41598-023-32867-z
+Status: RETRIEVED
+Title: Adaptive data-driven selection of sequences of biological and cognitive markers in pre-clinical diagnosis of dementia
+Overlap: Cost-aware sequential dementia assessment
+Implication: Cannot claim adaptive assessment is wholly new
+
+2025 CNN duration
+DOI: 10.1186/s40708-025-00260-3
+Status: RETRIEVED
+Title: Advancing Alzheimer’s disease detection: a novel convolutional neural network based framework leveraging EEG data and segment length analysis
+Overlap: CNN and EEG segment-length analysis
+Implication: Must establish an advantage beyond duration benchmarking
+
+2026 AD-FTD EEG
+DOI: 10.1186/s12984-026-01897-9
+Status: RETRIEVED
+Title: Multi-dimensional EEG analysis reveals distinct neurophysiological patterns in Alzheimer’s and frontotemporal dementia
+Overlap: Spectral, nonlinear and graph-based AD/FTD analysis
+Implication: Cannot claim first multi-dimensional AD/FTD EEG comparison
+
+2026 cross-dataset model
+DOI: 10.1038/s41598-026-57069-1
+Status: RETRIEVED
+Title: Explainable EEG-based machine learning for early diagnosis of Alzheimer’s disease and frontotemporal dementia
+Overlap: Explainable EEG classification and cross-dataset evaluation
+Implication: External evaluation alone is not novel
+
+2026 graph fusion
+DOI: 10.1177/20552076261495018
+Status: RETRIEVED
+Title: Interpretable dementia-related EEG recognition via neurophysiological Prior–Constrained dynamic graph learning and multi-expert fusion
+Overlap: Prior-constrained dynamic graphs and multi-expert fusion
+Implication: Another graph architecture is insufficient novelty
+
+2026 AHEPA review
+DOI: 10.1007/s11571-026-10464-w
+Status: RETRIEVED
+Title: The AHEPA EEG benchmark: setting the standard for machine learning in dementia diagnosis, a scoping review
+Overlap: Evaluation rigor across the AHEPA benchmark
+Implication: Subject-level validation is mandatory, not novel
+
+Outputs: /home/user4/alzheimers-thesis/docs/literature/p1_close_work_evidence_2026-11-07.csv
+RESEARCH GAP STATUS: PROVISIONAL
+P1 CLOSEST-WORK SCREEN COMPLETE

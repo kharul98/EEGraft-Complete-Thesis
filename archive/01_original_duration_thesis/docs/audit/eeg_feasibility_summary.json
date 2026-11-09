@@ -1,0 +1,23 @@
+{
+  "participant_rows": 88,
+  "unique_participant_ids": 88,
+  "derivative_set_files": 88,
+  "readable_recordings": 88,
+  "read_errors": 0,
+  "unique_recording_subjects": 88,
+  "sampling_frequencies": [
+    500.0
+  ],
+  "channel_counts": [
+    19
+  ],
+  "unique_channel_layouts": 1,
+  "min_duration_seconds": 306.1,
+  "median_duration_seconds": 804.52,
+  "max_duration_seconds": 1281.72,
+  "participant_group_counts": {
+    "A": 36,
+    "C": 29,
+    "F": 23
+  }
+}

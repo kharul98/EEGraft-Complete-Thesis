@@ -1,0 +1,41 @@
+
+======================================
+KEY FEATURE STABILITY VS 300s
+======================================
+anchor  duration_seconds  median    min    max
+center                30  0.8579 0.6569 0.9533
+center                60  0.9262 0.7529 0.9749
+center               120  0.9572 0.8736 0.9924
+center               180  0.9788 0.9156 0.9956
+center               300  1.0000 1.0000 1.0000
+   end                30  0.7664 0.5629 0.8891
+   end                60  0.8821 0.7491 0.9648
+   end               120  0.9416 0.8173 0.9856
+   end               180  0.9735 0.8962 0.9929
+   end               300  1.0000 1.0000 1.0000
+ start                30  0.7867 0.6051 0.9188
+ start                60  0.8719 0.7505 0.9624
+ start               120  0.9385 0.8259 0.9782
+ start               180  0.9631 0.7257 0.9908
+ start               300  1.0000 1.0000 1.0000
+
+======================================
+300s CENTER BIOMARKER EFFECTS
+======================================
+     task                  feature  positive_mean  negative_mean  cliffs_delta  mannwhitney_p
+ AD_vs_CN             global_delta        0.76293        0.73102       0.25096        0.08504
+ AD_vs_CN             global_theta        0.11134        0.09662       0.60728        0.00003
+ AD_vs_CN             global_alpha        0.05326        0.09152      -0.59962        0.00004
+ AD_vs_CN              global_beta        0.03698        0.04623      -0.40996        0.00484
+ AD_vs_CN             global_gamma        0.01457        0.01394       0.06322        0.66800
+ AD_vs_CN     global_slowing_ratio       11.02408        7.14176       0.58812        0.00005
+ AD_vs_CN global_alpha_theta_ratio        0.49639        0.96234      -0.72031        0.00000
+ AD_vs_CN            global_paf_hz        7.65972        9.45690      -0.69444        0.00000
+AD_vs_FTD             global_delta        0.76293        0.75688       0.01691        0.91953
+AD_vs_FTD             global_theta        0.11134        0.10286       0.36957        0.01778
+AD_vs_FTD             global_alpha        0.05326        0.05425      -0.11836        0.45098
+AD_vs_FTD              global_beta        0.03698        0.04466      -0.18599        0.23446
+AD_vs_FTD             global_gamma        0.01457        0.02130      -0.21981        0.15957
+AD_vs_FTD     global_slowing_ratio       11.02408        9.93095       0.18116        0.24692
+AD_vs_FTD global_alpha_theta_ratio        0.49639        0.54603      -0.25845        0.09788
+AD_vs_FTD            global_paf_hz        7.65972        8.29348      -0.28502        0.04602

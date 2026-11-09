@@ -1,0 +1,14 @@
+===== PREFIX PREPROCESSING GATE =====
+Input recording: sub-001_task-eyesclosed_eeg.set
+Channels: 19
+Sampling rate: 500.0
+Prefix duration: 60
+Comparison duration: 120
+
+Causal maximum difference (V): 0.0
+Causal prefix invariant: True
+Zero-phase boundary RMS difference (uV): 3.28696772
+Zero-phase boundary maximum difference (uV): 23.16035848
+
+CAUSAL PREFIX INVARIANCE: PASS
+PREFIX PREPROCESSING GATE COMPLETE

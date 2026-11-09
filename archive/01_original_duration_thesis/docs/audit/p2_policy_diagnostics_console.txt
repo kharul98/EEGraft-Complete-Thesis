@@ -1,0 +1,42 @@
+===== P2 POLICY REALITY CHECK =====
+
+TASK: AD_vs_CN
+combined_quality_confidence_stability    BA=0.683 time=264.3s DOMINATED
+confidence_only                          BA=0.688 time=233.8s DOMINATED
+confidence_quality                       BA=0.702 time=234.9s DOMINATED
+confidence_stability                     BA=0.683 time=252.9s DOMINATED
+fixed_120                                BA=0.615 time=120.0s DOMINATED
+fixed_180                                BA=0.667 time=180.0s DOMINATED
+fixed_30                                 BA=0.704 time=30.0s FRONTIER
+fixed_300                                BA=0.674 time=300.0s DOMINATED
+fixed_60                                 BA=0.727 time=60.0s FRONTIER
+stability_only                           BA=0.742 time=77.8s FRONTIER
+  stability_only, repeat 1: corrected=2, new_errors=0, new_AD_misses=0, recovered_AD=1
+  stability_only, repeat 2: corrected=2, new_errors=1, new_AD_misses=0, recovered_AD=1
+  stability_only, repeat 3: corrected=1, new_errors=1, new_AD_misses=0, recovered_AD=0
+  combined_quality_confidence_stability, repeat 1: corrected=5, new_errors=8, new_AD_misses=4, recovered_AD=3
+  combined_quality_confidence_stability, repeat 2: corrected=6, new_errors=7, new_AD_misses=5, recovered_AD=5
+  combined_quality_confidence_stability, repeat 3: corrected=5, new_errors=9, new_AD_misses=4, recovered_AD=3
+
+TASK: AD_vs_FTD
+combined_quality_confidence_stability    BA=0.401 time=289.5s DOMINATED
+confidence_only                          BA=0.402 time=278.3s DOMINATED
+confidence_quality                       BA=0.392 time=282.2s DOMINATED
+confidence_stability                     BA=0.408 time=287.5s DOMINATED
+fixed_120                                BA=0.374 time=120.0s DOMINATED
+fixed_180                                BA=0.455 time=180.0s DOMINATED
+fixed_30                                 BA=0.495 time=30.0s FRONTIER
+fixed_300                                BA=0.410 time=300.0s DOMINATED
+fixed_60                                 BA=0.473 time=60.0s DOMINATED
+stability_only                           BA=0.478 time=79.3s DOMINATED
+  stability_only, repeat 1: corrected=2, new_errors=1, new_AD_misses=1, recovered_AD=1
+  stability_only, repeat 2: corrected=0, new_errors=1, new_AD_misses=1, recovered_AD=0
+  stability_only, repeat 3: corrected=2, new_errors=2, new_AD_misses=2, recovered_AD=1
+  combined_quality_confidence_stability, repeat 1: corrected=12, new_errors=10, new_AD_misses=7, recovered_AD=8
+  combined_quality_confidence_stability, repeat 2: corrected=9, new_errors=17, new_AD_misses=13, recovered_AD=4
+  combined_quality_confidence_stability, repeat 3: corrected=10, new_errors=20, new_AD_misses=14, recovered_AD=5
+
+PARETO STATUS: DESCRIPTIVE ONLY
+REPEATED CV FOLDS ARE NOT INDEPENDENT SUBJECTS
+NO SIGNIFICANCE OR CLINICAL CLAIM
+P2 POLICY DIAGNOSTICS COMPLETE

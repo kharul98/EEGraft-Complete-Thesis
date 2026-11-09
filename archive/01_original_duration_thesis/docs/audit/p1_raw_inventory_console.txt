@@ -1,0 +1,15 @@
+Read 22/88 raw EEG headers
+Read 44/88 raw EEG headers
+Read 66/88 raw EEG headers
+Read 88/88 raw EEG headers
+
+===== FULL RAW EEG INVENTORY =====
+Recordings: 88
+Group counts: {'A': 36, 'C': 29, 'F': 23}
+Read errors: 0
+Sampling rates: [500.0]
+Channel counts: [19]
+Minimum duration: 307.1
+Eligible for 300 seconds: 88
+Finite first two seconds: 88
+ALL 88 RAW EEG HEADERS VERIFIED

@@ -1,0 +1,40 @@
+{
+  "status": "Exploratory recording-slot feasibility",
+  "source_filename": "alz_c1_new.mat",
+  "source_bytes": 3813216803,
+  "reference_time_s": [
+    240,
+    300
+  ],
+  "fixed_60_s": [
+    120,
+    180
+  ],
+  "fixed_180_s": [
+    0,
+    180
+  ],
+  "records_with_successful_300s_analysis": 49,
+  "candidate_columns_analyzed": 43,
+  "excluded_long_array_slots": 0,
+  "primary_first_recording_per_column": {
+    "n": 43,
+    "mean": -0.011064608715083215,
+    "median": -0.009102133214809419,
+    "fraction_negative": 0.627906976744186
+  },
+  "last_recording_per_column_sensitivity": {
+    "n": 43,
+    "mean": -0.006656038270997819,
+    "median": -0.005134152054164832,
+    "fraction_negative": 0.5581395348837209
+  },
+  "no_participant_identity_claim": true,
+  "limitations": [
+    "Array length does not prove uninterrupted eyes-closed EEG.",
+    "Sampling frequency comes from publication.",
+    "MATLAB columns are not verified patient IDs.",
+    "No independent-patient confidence intervals are calculated.",
+    "No diagnosis classification is performed."
+  ]
+}

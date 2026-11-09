@@ -1,0 +1,10 @@
+==================================================
+EEG DATASET FEASIBILITY AUDIT
+==================================================
+Python: 3.14.4
+MNE: 1.13.2
+Data root: /home/user4/alzheimers-thesis/data/eeg/on004504
+Traceback (most recent call last):
+  File "/home/user4/alzheimers-thesis/scripts/audit_eeg_dataset.py", line 38, in <module>
+    raise RuntimeError("participants.tsv was not downloaded.")
+RuntimeError: participants.tsv was not downloaded.

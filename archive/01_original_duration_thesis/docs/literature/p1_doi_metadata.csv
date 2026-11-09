@@ -1,0 +1,10 @@
+screen_label,doi,status,title,year,journal,url,error
+Window length AD 2019,10.3390/brainsci9040081,DOI_METADATA_RETRIEVED,EEG Window Length Evaluation for the Detection of Alzheimer’s Disease over Different Brain Regions,2019,Brain Sciences,https://doi.org/10.3390/brainsci9040081,
+EEG duration MCI,10.1177/1550059420983624,DOI_METADATA_RETRIEVED,Effects of the Duration of a Resting-State EEG Recording in Healthy Aging and Mild Cognitive Impairment,2020,Clinical EEG and Neuroscience,https://doi.org/10.1177/1550059420983624,
+EEG recommendations,10.1002/alz.12311,DOI_METADATA_RETRIEVED,Measures of resting state EEG rhythms for clinical trials in Alzheimer's disease: Recommendations of an expert panel,2021,Alzheimer's &amp; Dementia,https://doi.org/10.1002/alz.12311,
+EEG dataset descriptor,10.3390/data8060095,DOI_METADATA_RETRIEVED,"A Dataset of Scalp EEG Recordings of Alzheimer’s Disease, Frontotemporal Dementia and Healthy Subjects from Routine EEG",2023,Data,https://doi.org/10.3390/data8060095,
+External EEG cohort,10.1007/s11517-021-02427-6,DOI_METADATA_RETRIEVED,Novelty detection-based approach for Alzheimer’s disease and mild cognitive impairment diagnosis from EEG,2021,Medical &amp; Biological Engineering &amp; Computing,https://doi.org/10.1007/s11517-021-02427-6,
+BrainLat data descriptor,10.1038/s41597-023-02806-8,DOI_METADATA_RETRIEVED,"The BrainLat project, a multimodal neuroimaging dataset of neurodegeneration from underrepresented backgrounds",2023,Scientific Data,https://doi.org/10.1038/s41597-023-02806-8,
+External study 2026,10.1038/s41598-026-57069-1,DOI_METADATA_RETRIEVED,Explainable EEG-based machine learning for early diagnosis of Alzheimer’s disease and frontotemporal dementia,2026,Scientific Reports,https://doi.org/10.1038/s41598-026-57069-1,
+EEG dementia study 2026,10.1186/s12984-026-01897-9,DOI_METADATA_RETRIEVED,Multi-dimensional EEG analysis reveals distinct neurophysiological patterns in Alzheimer’s and frontotemporal dementia,2026,Journal of NeuroEngineering and Rehabilitation,https://doi.org/10.1186/s12984-026-01897-9,
+Duration CNN study,10.1186/s40537-025-01107-0,UNVERIFIED,,,,,HTTP Error 404: Not Found

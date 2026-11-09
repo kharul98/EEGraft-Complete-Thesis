@@ -1,0 +1,33 @@
+===== FIGSHARE SUBJECT STRUCTURE =====
+MATLAB files: 471
+
+GROUP: AD
+MAT files: 305
+Distinct parent folders: 57
+First folder counts: [('AD18', 10), ('AD10', 9), ('AD9', 9), ('AD12', 8), ('AD17', 8), ('AD27', 8), ('AD31', 8), ('AD35', 8), ('AD36', 8), ('AD14', 7), ('AD15', 7), ('AD24', 7)]
+SAMPLE: AD/AD1/1.mat [{'name': 'export', 'shape': [7208, 19], 'dtype': 'single'}]
+SAMPLE: AD/AD25/5.mat [{'name': 'export', 'shape': [4700, 19], 'dtype': 'single'}]
+SAMPLE: AD/AD43/5.mat [{'name': 'export', 'shape': [6746, 19], 'dtype': 'single'}]
+SAMPLE: AD/AD9/9.mat [{'name': 'export', 'shape': [8102, 19], 'dtype': 'single'}]
+
+GROUP: MCI
+MAT files: 56
+Distinct parent folders: 7
+First folder counts: [('MCI3', 17), ('MCI1', 9), ('MCI2', 9), ('MCI6', 7), ('MCI4', 6), ('MCI5', 4), ('MCI7', 4)]
+SAMPLE: MCI/MCI1/1.mat [{'name': 'export', 'shape': [1805, 19], 'dtype': 'single'}]
+SAMPLE: MCI/MCI3/1.mat [{'name': 'export', 'shape': [1977, 19], 'dtype': 'single'}]
+SAMPLE: MCI/MCI4/3.mat [{'name': 'export', 'shape': [8707, 19], 'dtype': 'single'}]
+SAMPLE: MCI/MCI7/4.mat [{'name': 'export', 'shape': [7554, 19], 'dtype': 'single'}]
+
+GROUP: CONTROL
+MAT files: 110
+Distinct parent folders: 3
+First folder counts: [('(none)', 100), ('normal1', 7), ('normal2', 3)]
+SAMPLE: CONTROL/10057fir.mat [{'name': 'segmenty', 'shape': [22, 12288], 'dtype': 'single'}]
+SAMPLE: CONTROL/18954fir.mat [{'name': 'segmenty', 'shape': [22, 10240], 'dtype': 'single'}]
+SAMPLE: CONTROL/29389fir.mat [{'name': 'segmenty', 'shape': [22, 9728], 'dtype': 'single'}]
+SAMPLE: CONTROL/normal2/3.mat [{'name': 'export', 'shape': [2567, 19], 'dtype': 'single'}]
+
+IMPORTANT: Folders are NOT verified participant IDs.
+Chronological acquisition order: UNVERIFIED
+FIGSHARE STRUCTURE AUDIT COMPLETE

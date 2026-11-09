@@ -1,0 +1,46 @@
+===== P2 FAIR FEATURE REPRESENTATION CV =====
+Completed AD_vs_CN: 65 participants
+Completed AD_vs_FTD: 59 participants
+Original prediction replication max difference: 4.976574707882264e-13
+
+===== FEATURE REPRESENTATION COMPARISON =====
+OOF prediction rows: 5580
+Metric rows: 90
+                                    balanced_accuracy  sensitivity_ad  roc_auc
+task      representation   seconds                                            
+AD_vs_CN  epoch_mean       30                   0.665           0.731    0.729
+                           60                   0.683           0.769    0.721
+                           120                  0.684           0.759    0.729
+                           180                  0.704           0.787    0.746
+                           300                  0.708           0.796    0.772
+          epoch_median     30                   0.613           0.731    0.684
+                           60                   0.699           0.778    0.714
+                           120                  0.726           0.796    0.774
+                           180                  0.710           0.787    0.763
+                           300                  0.737           0.796    0.787
+          pilot_global_psd 30                   0.704           0.741    0.733
+                           60                   0.727           0.787    0.765
+                           120                  0.615           0.713    0.700
+                           180                  0.667           0.759    0.688
+                           300                  0.674           0.750    0.703
+AD_vs_FTD epoch_mean       30                   0.447           0.546    0.399
+                           60                   0.491           0.620    0.437
+                           120                  0.451           0.583    0.416
+                           180                  0.428           0.537    0.408
+                           300                  0.435           0.565    0.412
+          epoch_median     30                   0.473           0.556    0.456
+                           60                   0.482           0.602    0.401
+                           120                  0.440           0.546    0.417
+                           180                  0.407           0.481    0.377
+                           300                  0.440           0.546    0.426
+          pilot_global_psd 30                   0.495           0.556    0.477
+                           60                   0.473           0.481    0.491
+                           120                  0.374           0.472    0.369
+                           180                  0.455           0.417    0.438
+                           300                  0.410           0.343    0.376
+
+INTERPRETATION: EXPLORATORY
+No final feature method selected.
+Repeated CV estimates are correlated.
+No p-values or clinical claims.
+P2 FEATURE REPRESENTATION CV COMPLETE

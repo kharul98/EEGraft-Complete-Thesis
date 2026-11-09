@@ -1,0 +1,70 @@
+========================================
+DARWIN DATASET FEASIBILITY AUDIT
+========================================
+Dataset fetched successfully.
+Dataset name: DARWIN
+
+----- BASIC STRUCTURE -----
+Feature table shape: (174, 451)
+Target table shape: (174, 1)
+ID table: not separately provided by API
+
+Feature columns:
+['ID', 'air_time1', 'disp_index1', 'gmrt_in_air1', 'gmrt_on_paper1', 'max_x_extension1', 'max_y_extension1', 'mean_acc_in_air1', 'mean_acc_on_paper1', 'mean_gmrt1', 'mean_jerk_in_air1', 'mean_jerk_on_paper1', 'mean_speed_in_air1', 'mean_speed_on_paper1', 'num_of_pendown1', 'paper_time1', 'pressure_mean1', 'pressure_var1', 'total_time1', 'air_time2', 'disp_index2', 'gmrt_in_air2', 'gmrt_on_paper2', 'max_x_extension2', 'max_y_extension2', 'mean_acc_in_air2', 'mean_acc_on_paper2', 'mean_gmrt2', 'mean_jerk_in_air2', 'mean_jerk_on_paper2', 'mean_speed_in_air2', 'mean_speed_on_paper2', 'num_of_pendown2', 'paper_time2', 'pressure_mean2', 'pressure_var2', 'total_time2', 'air_time3', 'disp_index3', 'gmrt_in_air3', 'gmrt_on_paper3', 'max_x_extension3', 'max_y_extension3', 'mean_acc_in_air3', 'mean_acc_on_paper3', 'mean_gmrt3', 'mean_jerk_in_air3', 'mean_jerk_on_paper3', 'mean_speed_in_air3', 'mean_speed_on_paper3', 'num_of_pendown3', 'paper_time3', 'pressure_mean3', 'pressure_var3', 'total_time3', 'air_time4', 'disp_index4', 'gmrt_in_air4', 'gmrt_on_paper4', 'max_x_extension4', 'max_y_extension4', 'mean_acc_in_air4', 'mean_acc_on_paper4', 'mean_gmrt4', 'mean_jerk_in_air4', 'mean_jerk_on_paper4', 'mean_speed_in_air4', 'mean_speed_on_paper4', 'num_of_pendown4', 'paper_time4', 'pressure_mean4', 'pressure_var4', 'total_time4', 'air_time5', 'disp_index5', 'gmrt_in_air5', 'gmrt_on_paper5', 'max_x_extension5', 'max_y_extension5', 'mean_acc_in_air5', 'mean_acc_on_paper5', 'mean_gmrt5', 'mean_jerk_in_air5', 'mean_jerk_on_paper5', 'mean_speed_in_air5', 'mean_speed_on_paper5', 'num_of_pendown5', 'paper_time5', 'pressure_mean5', 'pressure_var5', 'total_time5', 'air_time6', 'disp_index6', 'gmrt_in_air6', 'gmrt_on_paper6', 'max_x_extension6', 'max_y_extension6', 'mean_acc_in_air6', 'mean_acc_on_paper6', 'mean_gmrt6', 'mean_jerk_in_air6', 'mean_jerk_on_paper6', 'mean_speed_in_air6', 'mean_speed_on_paper6', 'num_of_pendown6', 'paper_time6', 'pressure_mean6', 'pressure_var6', 'total_time6', 'air_time7', 'disp_index7', 'gmrt_in_air7', 'gmrt_on_paper7', 'max_x_extension7', 'max_y_extension7', 'mean_acc_in_air7', 'mean_acc_on_paper7', 'mean_gmrt7', 'mean_jerk_in_air7', 'mean_jerk_on_paper7', 'mean_speed_in_air7', 'mean_speed_on_paper7', 'num_of_pendown7', 'paper_time7', 'pressure_mean7', 'pressure_var7', 'total_time7', 'air_time8', 'disp_index8', 'gmrt_in_air8', 'gmrt_on_paper8', 'max_x_extension8', 'max_y_extension8', 'mean_acc_in_air8', 'mean_acc_on_paper8', 'mean_gmrt8', 'mean_jerk_in_air8', 'mean_jerk_on_paper8', 'mean_speed_in_air8', 'mean_speed_on_paper8', 'num_of_pendown8', 'paper_time8', 'pressure_mean8', 'pressure_var8', 'total_time8', 'air_time9', 'disp_index9', 'gmrt_in_air9', 'gmrt_on_paper9', 'max_x_extension9', 'max_y_extension9', 'mean_acc_in_air9', 'mean_acc_on_paper9', 'mean_gmrt9', 'mean_jerk_in_air9', 'mean_jerk_on_paper9', 'mean_speed_in_air9', 'mean_speed_on_paper9', 'num_of_pendown9', 'paper_time9', 'pressure_mean9', 'pressure_var9', 'total_time9', 'air_time10', 'disp_index10', 'gmrt_in_air10', 'gmrt_on_paper10', 'max_x_extension10', 'max_y_extension10', 'mean_acc_in_air10', 'mean_acc_on_paper10', 'mean_gmrt10', 'mean_jerk_in_air10', 'mean_jerk_on_paper10', 'mean_speed_in_air10', 'mean_speed_on_paper10', 'num_of_pendown10', 'paper_time10', 'pressure_mean10', 'pressure_var10', 'total_time10', 'air_time11', 'disp_index11', 'gmrt_in_air11', 'gmrt_on_paper11', 'max_x_extension11', 'max_y_extension11', 'mean_acc_in_air11', 'mean_acc_on_paper11', 'mean_gmrt11', 'mean_jerk_in_air11', 'mean_jerk_on_paper11', 'mean_speed_in_air11', 'mean_speed_on_paper11', 'num_of_pendown11', 'paper_time11', 'pressure_mean11', 'pressure_var11', 'total_time11', 'air_time12', 'disp_index12', 'gmrt_in_air12', 'gmrt_on_paper12', 'max_x_extension12', 'max_y_extension12', 'mean_acc_in_air12', 'mean_acc_on_paper12', 'mean_gmrt12', 'mean_jerk_in_air12', 'mean_jerk_on_paper12', 'mean_speed_in_air12', 'mean_speed_on_paper12', 'num_of_pendown12', 'paper_time12', 'pressure_mean12', 'pressure_var12', 'total_time12', 'air_time13', 'disp_index13', 'gmrt_in_air13', 'gmrt_on_paper13', 'max_x_extension13', 'max_y_extension13', 'mean_acc_in_air13', 'mean_acc_on_paper13', 'mean_gmrt13', 'mean_jerk_in_air13', 'mean_jerk_on_paper13', 'mean_speed_in_air13', 'mean_speed_on_paper13', 'num_of_pendown13', 'paper_time13', 'pressure_mean13', 'pressure_var13', 'total_time13', 'air_time14', 'disp_index14', 'gmrt_in_air14', 'gmrt_on_paper14', 'max_x_extension14', 'max_y_extension14', 'mean_acc_in_air14', 'mean_acc_on_paper14', 'mean_gmrt14', 'mean_jerk_in_air14', 'mean_jerk_on_paper14', 'mean_speed_in_air14', 'mean_speed_on_paper14', 'num_of_pendown14', 'paper_time14', 'pressure_mean14', 'pressure_var14', 'total_time14', 'air_time15', 'disp_index15', 'gmrt_in_air15', 'gmrt_on_paper15', 'max_x_extension15', 'max_y_extension15', 'mean_acc_in_air15', 'mean_acc_on_paper15', 'mean_gmrt15', 'mean_jerk_in_air15', 'mean_jerk_on_paper15', 'mean_speed_in_air15', 'mean_speed_on_paper15', 'num_of_pendown15', 'paper_time15', 'pressure_mean15', 'pressure_var15', 'total_time15', 'air_time16', 'disp_index16', 'gmrt_in_air16', 'gmrt_on_paper16', 'max_x_extension16', 'max_y_extension16', 'mean_acc_in_air16', 'mean_acc_on_paper16', 'mean_gmrt16', 'mean_jerk_in_air16', 'mean_jerk_on_paper16', 'mean_speed_in_air16', 'mean_speed_on_paper16', 'num_of_pendown16', 'paper_time16', 'pressure_mean16', 'pressure_var16', 'total_time16', 'air_time17', 'disp_index17', 'gmrt_in_air17', 'gmrt_on_paper17', 'max_x_extension17', 'max_y_extension17', 'mean_acc_in_air17', 'mean_acc_on_paper17', 'mean_gmrt17', 'mean_jerk_in_air17', 'mean_jerk_on_paper17', 'mean_speed_in_air17', 'mean_speed_on_paper17', 'num_of_pendown17', 'paper_time17', 'pressure_mean17', 'pressure_var17', 'total_time17', 'air_time18', 'disp_index18', 'gmrt_in_air18', 'gmrt_on_paper18', 'max_x_extension18', 'max_y_extension18', 'mean_acc_in_air18', 'mean_acc_on_paper18', 'mean_gmrt18', 'mean_jerk_in_air18', 'mean_jerk_on_paper18', 'mean_speed_in_air18', 'mean_speed_on_paper18', 'num_of_pendown18', 'paper_time18', 'pressure_mean18', 'pressure_var18', 'total_time18', 'air_time19', 'disp_index19', 'gmrt_in_air19', 'gmrt_on_paper19', 'max_x_extension19', 'max_y_extension19', 'mean_acc_in_air19', 'mean_acc_on_paper19', 'mean_gmrt19', 'mean_jerk_in_air19', 'mean_jerk_on_paper19', 'mean_speed_in_air19', 'mean_speed_on_paper19', 'num_of_pendown19', 'paper_time19', 'pressure_mean19', 'pressure_var19', 'total_time19', 'air_time20', 'disp_index20', 'gmrt_in_air20', 'gmrt_on_paper20', 'max_x_extension20', 'max_y_extension20', 'mean_acc_in_air20', 'mean_acc_on_paper20', 'mean_gmrt20', 'mean_jerk_in_air20', 'mean_jerk_on_paper20', 'mean_speed_in_air20', 'mean_speed_on_paper20', 'num_of_pendown20', 'paper_time20', 'pressure_mean20', 'pressure_var20', 'total_time20', 'air_time21', 'disp_index21', 'gmrt_in_air21', 'gmrt_on_paper21', 'max_x_extension21', 'max_y_extension21', 'mean_acc_in_air21', 'mean_acc_on_paper21', 'mean_gmrt21', 'mean_jerk_in_air21', 'mean_jerk_on_paper21', 'mean_speed_in_air21', 'mean_speed_on_paper21', 'num_of_pendown21', 'paper_time21', 'pressure_mean21', 'pressure_var21', 'total_time21', 'air_time22', 'disp_index22', 'gmrt_in_air22', 'gmrt_on_paper22', 'max_x_extension22', 'max_y_extension22', 'mean_acc_in_air22', 'mean_acc_on_paper22', 'mean_gmrt22', 'mean_jerk_in_air22', 'mean_jerk_on_paper22', 'mean_speed_in_air22', 'mean_speed_on_paper22', 'num_of_pendown22', 'paper_time22', 'pressure_mean22', 'pressure_var22', 'total_time22', 'air_time23', 'disp_index23', 'gmrt_in_air23', 'gmrt_on_paper23', 'max_x_extension23', 'max_y_extension23', 'mean_acc_in_air23', 'mean_acc_on_paper23', 'mean_gmrt23', 'mean_jerk_in_air23', 'mean_jerk_on_paper23', 'mean_speed_in_air23', 'mean_speed_on_paper23', 'num_of_pendown23', 'paper_time23', 'pressure_mean23', 'pressure_var23', 'total_time23', 'air_time24', 'disp_index24', 'gmrt_in_air24', 'gmrt_on_paper24', 'max_x_extension24', 'max_y_extension24', 'mean_acc_in_air24', 'mean_acc_on_paper24', 'mean_gmrt24', 'mean_jerk_in_air24', 'mean_jerk_on_paper24', 'mean_speed_in_air24', 'mean_speed_on_paper24', 'num_of_pendown24', 'paper_time24', 'pressure_mean24', 'pressure_var24', 'total_time24', 'air_time25', 'disp_index25', 'gmrt_in_air25', 'gmrt_on_paper25', 'max_x_extension25', 'max_y_extension25', 'mean_acc_in_air25', 'mean_acc_on_paper25', 'mean_gmrt25', 'mean_jerk_in_air25', 'mean_jerk_on_paper25', 'mean_speed_in_air25', 'mean_speed_on_paper25', 'num_of_pendown25', 'paper_time25', 'pressure_mean25', 'pressure_var25', 'total_time25']
+
+Target columns:
+['class']
+
+----- TARGET AUDIT -----
+Target name: class
+Number of unique target values: 2
+Target counts:
+class
+P    89
+H    85
+
+----- MISSING VALUES -----
+Missing feature values: 0
+Missing target values: 0
+
+----- DUPLICATION -----
+Exact duplicate feature rows: 0
+Exact duplicate feature+target rows: 0
+Possible ID columns inside feature table: ['ID']
+ID: 174 unique / 174 rows
+
+----- FEATURE TYPES -----
+Numeric feature columns: 450
+Non-numeric feature columns: 1
+Non-numeric names: ['ID']
+
+----- CONSTANT FEATURES -----
+Constant columns count: 0
+Constant columns: []
+
+----- TASK NUMBER DETECTION -----
+Detected task numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+Detected number of tasks: 25
+
+----- TARGET-LIKE FEATURE NAMES -----
+Suspicious predictor names: []
+
+----- SAVED ARTIFACTS -----
+/home/user4/alzheimers-thesis/data/raw/darwin_features.csv
+/home/user4/alzheimers-thesis/data/raw/darwin_target.csv
+/home/user4/alzheimers-thesis/docs/audit/darwin_feasibility_audit.json
+
+Feature SHA256: b15e9fc7a4c4d9055baea67b802c43a9068932235760321c60ebc01b9df0c09a
+Target SHA256: 8e9f80d9db3ac3f629dab6a24da05b5625ed95e74304898ada5c0ecb4be61db7
+
+========================================
+AUDIT SUMMARY
+========================================
+Participants/rows: 174
+Feature columns: 451
+Target counts: {'P': 89, 'H': 85}
+Missing features: 0
+Missing targets: 0
+Duplicate feature rows: 0
+Detected tasks: 25
+========================================

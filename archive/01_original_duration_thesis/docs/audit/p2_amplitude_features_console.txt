@@ -1,0 +1,27 @@
+===== P2 PREFIX AMPLITUDE-LIMITING STUDY =====
+Processed 22/88 participants
+Processed 44/88 participants
+Processed 66/88 participants
+Processed 88/88 participants
+
+===== AMPLITUDE-LIMITING FEATURE RESULTS =====
+Baseline reproduction maximum error: 4.996419944447439e-13
+
+Median amplitude-limited fraction by duration:
+seconds
+30     0.000000
+60     0.000000
+120    0.000000
+180    0.000000
+300    0.000012
+Median absolute theta feature change: 0.0
+Median absolute alpha feature change: 0.0
+
+LIMITATIONS:
+- Fixed exploratory 8-MAD threshold.
+- Not validated artifact detection or removal.
+- May alter genuine neurophysiological signal.
+- Decisions are defined at completed 10-second epochs.
+- No model outcomes were used to choose the threshold.
+
+P2 AMPLITUDE-LIMITING FEATURES COMPLETE

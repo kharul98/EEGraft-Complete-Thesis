@@ -1,0 +1,17 @@
+nemar-py download parameters:
+  dataset           = on004504
+  tag               = latest
+  target_dir        = data/eeg/on004504
+  scope             = ['derivatives']
+  subject           = None
+  task              = None
+  include           = None
+  exclude           = None
+  downloader        = auto
+  jobs              = 8
+  metadata_timeout  = 30.0s
+  no_data           = False
+  data_url          = https://data.nemar.org/
+Error: No files matched the BIDS query: datatype=eeg; scope=derivatives. Available: subjects=[001,002,003,004,005,006,007,008,009,010], tasks=[eyesclosed]
+This is nemar-py 0.3.3.
+Preparing to download on004504 from https://data.nemar.org/
