@@ -5,10 +5,6 @@ __pycache__/
 data/raw/*
 data/interim/*
 data/processed/*
-checkpoints/
-*.pt
-*.pth
-*.ckpt
 .DS_Store
 data/eeg/
 *.part

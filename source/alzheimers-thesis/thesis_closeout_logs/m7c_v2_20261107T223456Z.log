@@ -1,0 +1,28 @@
+===== MILESTONE 7C: PRIMARY AD/FTD NUMERIC RECOMPUTATION =====
+PASS: M7B 12-file SHA256 inventory verified.
+PASS: 2,175 held-out minute predictions; 50 metric records; 81 evidence entries.
+PASS: 46 AD/HC and 41 FTD/HC participants; five minutes per held-out repeat.
+PASS: All 50 original/calibrated BACC, Brier, prior-Brier, NLL and AUROC rows recalculated.
+
+===== INDEPENDENTLY RECOMPUTED MAIN RESULTS =====
+AD_vs_HC: n=46; original BACC=0.734783; calibrated BACC=0.743478; Brier=0.186108; training-prior Brier=0.251318
+  Five-minute states across 230 correlated subject-repeats: stable-correct=46.956522% (108), stable-wrong=8.695652% (20), unstable=44.347826% (102)
+FTD_vs_HC: n=41; original BACC=0.737198; calibrated BACC=0.693237; Brier=0.191663; training-prior Brier=0.247944
+  Five-minute states across 205 correlated subject-repeats: stable-correct=53.170732% (109), stable-wrong=13.170732% (27), unstable=33.658537% (69)
+PASS: All 18 main calibration/stability claims match the 4C evidence master.
+
+===== LEGACY 60-SECOND SOURCE AGREEMENT =====
+AD_vs_HC: 230 matched subject/repeat keys; 0 original-label mismatches.
+FTD_vs_HC: 205 matched subject/repeat keys; 0 original-label mismatches.
+FTD five-minute summary agreement: MATCH
+
+===== ORIGINAL 1A STATE ARTIFACT =====
+Rows=435; columns=['task', 'subject', 'group', 'repeat', 'outer_fold', 'state', 'true_label', 'first_minute_pred', 'correct_minutes', 'positive_votes', 'vote_entropy_bits_not_probability_entropy', 'first_minute_raw_margin_abs', 'mean_raw_margin_abs', 'raw_score_range']
+Primary state fractions above were recalculated from saved 1B original SVM labels.
+They were not copied from the earlier 1A state table.
+
+===== MILESTONE 7C COMPLETE =====
+Saved: /home/user4/alzheimers-thesis/reports/thesis_final/milestone_7c_original_ad_ftd_recomputed_v2
+Original AD/FTD first-minute performance, calibration metrics, and five-minute states recomputed directly from held-out predictions.
+Results checked against the Milestone 4C evidence master.
+No new training, no modified predictions, and no previous files overwritten.

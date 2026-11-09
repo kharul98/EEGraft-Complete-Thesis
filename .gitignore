@@ -1,0 +1,38 @@
+# Credentials
+**/.env
+**/.env.*
+**/*credentials*.json
+**/*secret*.json
+**/id_rsa
+**/id_ed25519
+
+# Python environments and caches
+**/.venv/
+**/venv/
+**/__pycache__/
+**/.pytest_cache/
+**/.ipynb_checkpoints/
+**/*.pyc
+
+# Raw or restricted EEG data
+**/data/
+**/datasets/
+**/raw_data/
+**/raw_eeg/
+**/raw/
+**/*.edf
+**/*.bdf
+**/*.fif
+**/*.set
+**/*.fdt
+**/*.vhdr
+**/*.vmrk
+**/*.eeg
+**/*.cnt
+**/*.mat
+
+# Temporary files
+**/*.part
+**/*.tmp
+**/*.swp
+**/*:Zone.Identifier

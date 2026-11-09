@@ -1,0 +1,7 @@
+Archive environment capture
+Mon Nov  9 17:55:09 UTC 2026
+Linux 6.18.33.2-microsoft-standard-WSL2 x86_64
+Python 3.14.4
+git version 2.53.0
+git-lfs/3.7.1 (GitHub; linux amd64; go 1.25.0)
+NVIDIA GeForce RTX 4080 SUPER, 610.88, 16376 MiB

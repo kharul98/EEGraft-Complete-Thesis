@@ -1,0 +1,16 @@
+{
+  "development_n": 52,
+  "final_DSRF_bacc": 0.7023809523809523,
+  "final_XGBoost_bacc": 0.7738095238095238,
+  "foundation_n": 65,
+  "heldout_n": 13,
+  "m7c_60s_disagreements": 0,
+  "models_retrained": false,
+  "original_AD": 23,
+  "original_CN": 23,
+  "original_FTD": 18,
+  "original_n": 64,
+  "overlap_original64_with_later65": 46,
+  "test_reexecuted": false,
+  "union_unique": 83
+}

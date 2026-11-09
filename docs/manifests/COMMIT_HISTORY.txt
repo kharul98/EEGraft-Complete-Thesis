@@ -1,0 +1,41 @@
+e1e700ec02c0acef41f7988ff914fd797193f8f6 | 2026-11-09T23:52:44+06:00 | Archive original EEG duration thesis and development history
+d4b51bb5e04c793389f25ef18d8c43eff0149f69 | 2026-11-08T04:35:27+06:00 | Complete EEG thesis audit, cohort reconciliation and manuscript
+61231994a6dc27a9eacbc87bc87102c50155eed8 | 2026-11-08T03:51:42+06:00 | Backup complete EEG dementia thesis research through November 2026
+fe398e040fb012243129e4763fc919b25ce44931 | 2026-11-07T11:27:52+06:00 | Record real Dryad AD spectral reliability feasibility
+ee5074499141cd8e51669ebb29b4db7d6608b3be | 2026-11-07T11:26:47+06:00 | Freeze Dryad EEG signal reliability feasibility method
+b25e3b0a1b7251353eac26c4cca6529c0de30c19 | 2026-11-07T11:20:26+06:00 | Record Dryad AD participant-identity feasibility audit
+a04133268df2aa82af8b39d7781cc9a0ab6351aa | 2026-11-07T11:20:16+06:00 | Add Dryad AD recording identity metadata audit
+225c322b82a77421ced77f2dc4eaeebe6a0a93c0 | 2026-11-07T02:54:08+06:00 | Record P2 duration versus anchor control
+e86a66a5ee8fd316c56934298dbf05264c3c336b | 2026-11-07T02:53:42+06:00 | Freeze P2 duration and temporal-anchor control
+2ca0ec2fd05f77e1b2d4d87912d740db9164b07d | 2026-11-07T02:45:22+06:00 | Record P2 disjoint-reference spectral reliability
+1c9615e813f4aff51cd8906fafd24fe4ca6d2f86 | 2026-11-07T02:44:50+06:00 | Freeze P2 disjoint-reference EEG reliability protocol
+6593baecaabc168323640d91a6694cfb02600dd8 | 2026-11-07T02:31:54+06:00 | Record P2 training-only adaptive acquisition pilot
+34fc4fb42f5f4d92a55a103ff1768a68b4a99a66 | 2026-11-07T02:31:44+06:00 | Freeze P2 training-only spectral reliability gate
+4eff9e6f4bf2a11d14ecd0058b968722192a9ba5 | 2026-11-07T02:17:47+06:00 | Preserve completed P2 prefix processing experiments
+d73c40b6fb08c336236deb890916936fb1cc1666 | 2026-11-07T01:55:56+06:00 | Preserve real EEG and P2 statistical figure evidence
+463468adf7c524472f3f72f70f43e16099adcb50 | 2026-11-07T01:55:41+06:00 | Record P2 scientific decision and freeze authentic figure generation
+12ab623a0eaa7a7792ed870c4ee4058611bee7af | 2026-11-07T01:41:37+06:00 | Record P2 paired uncertainty and quality negative controls
+b518331a7164cdff093052637f715ba59eb64aab | 2026-11-07T01:41:27+06:00 | Freeze P2 paired uncertainty and quality confounding checks
+e78a2a1483e48764ba906815d9b063302bd21db6 | 2026-11-07T01:37:35+06:00 | Record P2 policy diagnostics and matched feature benchmarks
+d02574bb40986f7ae70d4974aa894065a8c9fb38 | 2026-11-07T01:35:06+06:00 | Freeze P2 policy diagnostics and fair feature comparison
+d55538ee78dce8fe22984a85033ce49fe52d96b6 | 2026-11-07T01:34:38+06:00 | Preserve verified P2 adaptive pilot results
+076804fe989201a624ff5d46274351dba11d7d69 | 2026-11-07T01:30:32+06:00 | Freeze P2 exploratory causal features and adaptive stopping evaluation
+154c5066f10720d0774a35fc246885b0f270e744 | 2026-11-07T01:22:57+06:00 | Record Figshare structure and causal streaming feasibility
+f6f94153669a515b2eeddea73081011a917f955d | 2026-11-07T00:59:05+06:00 | Freeze Figshare structure and incremental EEG pipeline tests
+15ea2d765e54175b74efc7ed615c9b52f00e817f | 2026-11-07T00:53:55+06:00 | Record P1 raw quality and independent cohort evidence
+c0737ffd64b7b728b3416e53bb9252fc3161c56a | 2026-11-07T00:53:36+06:00 | Freeze P1 raw quality and external archive feasibility audits
+f151a57485b6d16cadb799e72255034f1bf4ee70 | 2026-11-07T00:45:04+06:00 | Record P1 corrected references and novelty boundaries
+6487f4c09d0793f9a987ad8a6bd839e9fbd44a1c | 2026-11-07T00:45:00+06:00 | Freeze exploratory P1 closest-work literature screen
+f8684dbc73a575f805a9712ea4282214e38c949a | 2026-11-07T00:38:54+06:00 | Record exploratory P1 parallel research feasibility evidence
+f63aaeb74bf1d9671ecb1b14fc58ba0b9cc553a6 | 2026-11-07T00:34:41+06:00 | Freeze exploratory P1 parallel feasibility scripts
+4c49f7b95387cd6d7e28bd462c440983ebf1e14c | 2026-11-07T00:23:11+06:00 | Record raw EEG prefix preprocessing feasibility results
+c9bd2407023a510396b4bec9e9307fbe5f639686 | 2026-11-07T00:23:10+06:00 | Freeze exploratory prefix preprocessing feasibility test
+c1938b3ef7c98129e3752b65b771a86bdc0f3043 | 2026-11-07T00:20:54+06:00 | Record first verified raw EEG feasibility result
+1c2ed6b9a2e87bb89ef2d17b36a644f65bed053a | 2026-11-07T00:20:46+06:00 | Add reproducible raw EEG sample feasibility audit
+2e8168609c69e3abe42daf53eb0c8dc13253b7df | 2026-11-06T23:16:00+06:00 | Add final robustness and exploratory spatial analyses
+495585fe402c26bb85f7b6b48666b2a679dfd3e2 | 2026-11-06T23:10:31+06:00 | Generate manuscript tables figures and defense evidence
+9ab1af81ef0fc434334069db3d73aac5bdf9d5af | 2026-11-06T23:05:27+06:00 | Complete and verify primary EEG duration experiment
+570a94512db6d24f129c0edd75d3c1e949862a2c | 2026-11-06T23:03:50+06:00 | Document and freeze recovery of prespecified inference steps
+6f2516782bec7e377ac4b8e9518c55c9f66b18fb | 2026-11-06T22:48:33+06:00 | Initialize reproducible Alzheimer's EEG thesis and verify dataset feasibility
+5701ae79233b6d8c6e83147faab027270b0ef7da | 2026-11-06T22:40:30+06:00 | Freeze EEG recording-duration study protocol
+fb681464098f0ebdff5726f5bb3133afd7e77d14 | 2026-11-06T22:40:30+06:00 | Verify EEG dataset feasibility and record research pivot
