@@ -1,0 +1,556 @@
+{
+  "binary_comparison": "dementia_vs_normal",
+  "evaluation_unit": "recording",
+  "limitations": [
+    "Dementia is not necessarily Alzheimer's disease.",
+    "Source AD scores are not validated clinical probabilities.",
+    "CAUEEG patient identities were not independently verified.",
+    "Calibration scores describe source-score behavior on external labels.",
+    "Within-recording prediction consistency does not establish correctness.",
+    "Validation results are not external test results."
+  ],
+  "models": {
+    "DSRF": {
+      "train": {
+        "ad_tagged_dementia_exploratory": {
+          "ad_tagged": {
+            "fraction_above_fixed_threshold": 0.671957671957672,
+            "mean_source_AD_score": 0.6054909415106746,
+            "median_source_AD_score": 0.6080500662016372,
+            "n_recordings": 189,
+            "q25_source_AD_score": 0.4301866876000228,
+            "q75_source_AD_score": 0.7867867853492498
+          },
+          "note": "AD is an annotation symptom tag, not independently verified patient diagnosis.",
+          "other_dementia": {
+            "fraction_above_fixed_threshold": 0.6666666666666666,
+            "mean_source_AD_score": 0.5764507184236006,
+            "median_source_AD_score": 0.5820110895195587,
+            "n_recordings": 60,
+            "q25_source_AD_score": 0.435644809200312,
+            "q75_source_AD_score": 0.7396674368452901
+          }
+        },
+        "binary_metrics": {
+          "accuracy": 0.6542207792207793,
+          "auroc": 0.7096396485123053,
+          "balanced_accuracy": 0.6568672510204305,
+          "brier_vs_dementia_label": 0.2202748404894701,
+          "confusion_matrix": [
+            [
+              236,
+              131
+            ],
+            [
+              82,
+              167
+            ]
+          ],
+          "confusion_matrix_columns": [
+            "predicted_normal",
+            "predicted_dementia"
+          ],
+          "confusion_matrix_rows": [
+            "normal",
+            "dementia"
+          ],
+          "dementia_f1": 0.6106032906764168,
+          "ece_10_bins": 0.06931278037464478,
+          "macro_f1": 0.6498271927834639,
+          "matthews_correlation": 0.3080869446483316,
+          "n_dementia": 249,
+          "n_normal": 367,
+          "n_recordings": 616,
+          "predicted_dementia_fraction": 0.4837662337662338,
+          "sensitivity_dementia": 0.6706827309236948,
+          "specificity_normal": 0.6430517711171662,
+          "threshold": 0.5
+        },
+        "score_distributions": {
+          "dementia": {
+            "fraction_above_fixed_threshold": 0.6706827309236948,
+            "mean_source_AD_score": 0.5984932973933075,
+            "median_source_AD_score": 0.6009344389118875,
+            "n_recordings": 249,
+            "q25_source_AD_score": 0.4301866876000228,
+            "q75_source_AD_score": 0.7812181237580565
+          },
+          "mci": {
+            "fraction_above_fixed_threshold": 0.5209580838323353,
+            "mean_source_AD_score": 0.510016439857857,
+            "median_source_AD_score": 0.5098136493082468,
+            "n_recordings": 334,
+            "q25_source_AD_score": 0.3485973526840098,
+            "q75_source_AD_score": 0.6750027818585901
+          },
+          "normal": {
+            "fraction_above_fixed_threshold": 0.3569482288828338,
+            "mean_source_AD_score": 0.4260990145676528,
+            "median_source_AD_score": 0.42567332145214704,
+            "n_recordings": 367,
+            "q25_source_AD_score": 0.2569192700429994,
+            "q75_source_AD_score": 0.5788308927343071
+          }
+        },
+        "temporal_stability": {
+          "dementia": {
+            "mean_successive_score_change_mean": 0.31150685543198503,
+            "mean_successive_score_change_median": 0.3373738875531632,
+            "n_recordings": 249,
+            "sampled_window_flip_fraction_mean": 0.3493975903614458,
+            "sampled_window_flip_fraction_median": 0.34782608695652173,
+            "window_disagreement_fraction_mean": 0.2715863453815261,
+            "window_disagreement_fraction_median": 0.2916666666666667,
+            "window_probability_range_mean": 0.9091447844015398,
+            "window_probability_range_median": 0.9744859095662832,
+            "window_probability_sd_mean": 0.3020168110552432,
+            "window_probability_sd_median": 0.3229340447980231
+          },
+          "mci": {
+            "mean_successive_score_change_mean": 0.3440777864905002,
+            "mean_successive_score_change_median": 0.34521788123326946,
+            "n_recordings": 334,
+            "sampled_window_flip_fraction_mean": 0.3863577193439208,
+            "sampled_window_flip_fraction_median": 0.391304347826087,
+            "window_disagreement_fraction_mean": 0.3025199600798403,
+            "window_disagreement_fraction_median": 0.2916666666666667,
+            "window_probability_range_mean": 0.9456068594009991,
+            "window_probability_range_median": 0.9851863000440062,
+            "window_probability_sd_mean": 0.32695600488309673,
+            "window_probability_sd_median": 0.3405227101940245
+          },
+          "normal": {
+            "mean_successive_score_change_mean": 0.34867409441648234,
+            "mean_successive_score_change_median": 0.3591479705342942,
+            "n_recordings": 367,
+            "sampled_window_flip_fraction_mean": 0.3850254709157682,
+            "sampled_window_flip_fraction_median": 0.391304347826087,
+            "window_disagreement_fraction_mean": 0.28973660308810173,
+            "window_disagreement_fraction_median": 0.2916666666666667,
+            "window_probability_range_mean": 0.9471100777817059,
+            "window_probability_range_median": 0.9874855480156839,
+            "window_probability_sd_mean": 0.3268381307029262,
+            "window_probability_sd_median": 0.34593337579748784
+          }
+        }
+      },
+      "validation": {
+        "ad_tagged_dementia_exploratory": {
+          "ad_tagged": {
+            "fraction_above_fixed_threshold": 0.8,
+            "mean_source_AD_score": 0.6583222279363932,
+            "median_source_AD_score": 0.7288993736729026,
+            "n_recordings": 10,
+            "q25_source_AD_score": 0.5265776816874373,
+            "q75_source_AD_score": 0.7767673462609915
+          },
+          "note": "AD is an annotation symptom tag, not independently verified patient diagnosis.",
+          "other_dementia": {
+            "fraction_above_fixed_threshold": 0.9,
+            "mean_source_AD_score": 0.6362814984260089,
+            "median_source_AD_score": 0.6858308194205165,
+            "n_recordings": 10,
+            "q25_source_AD_score": 0.6219449015916325,
+            "q75_source_AD_score": 0.7316148091340438
+          }
+        },
+        "binary_metrics": {
+          "accuracy": 0.7407407407407407,
+          "auroc": 0.7411764705882353,
+          "balanced_accuracy": 0.763235294117647,
+          "brier_vs_dementia_label": 0.22423045610271952,
+          "confusion_matrix": [
+            [
+              23,
+              11
+            ],
+            [
+              3,
+              17
+            ]
+          ],
+          "confusion_matrix_columns": [
+            "predicted_normal",
+            "predicted_dementia"
+          ],
+          "confusion_matrix_rows": [
+            "normal",
+            "dementia"
+          ],
+          "dementia_f1": 0.7083333333333334,
+          "ece_10_bins": 0.1933213568634607,
+          "macro_f1": 0.7375,
+          "matthews_correlation": 0.5088184851280616,
+          "n_dementia": 20,
+          "n_normal": 34,
+          "n_recordings": 54,
+          "predicted_dementia_fraction": 0.5185185185185185,
+          "sensitivity_dementia": 0.85,
+          "specificity_normal": 0.6764705882352942,
+          "threshold": 0.5
+        },
+        "score_distributions": {
+          "dementia": {
+            "fraction_above_fixed_threshold": 0.85,
+            "mean_source_AD_score": 0.647301863181201,
+            "median_source_AD_score": 0.7111337976530194,
+            "n_recordings": 20,
+            "q25_source_AD_score": 0.5643581905969768,
+            "q75_source_AD_score": 0.7580087549285963
+          },
+          "mci": {
+            "fraction_above_fixed_threshold": 0.35714285714285715,
+            "mean_source_AD_score": 0.4054853371307261,
+            "median_source_AD_score": 0.4364772594393192,
+            "n_recordings": 28,
+            "q25_source_AD_score": 0.24018787142646641,
+            "q75_source_AD_score": 0.5403462109679822
+          },
+          "normal": {
+            "fraction_above_fixed_threshold": 0.3235294117647059,
+            "mean_source_AD_score": 0.44692653910687663,
+            "median_source_AD_score": 0.41080828865112073,
+            "n_recordings": 34,
+            "q25_source_AD_score": 0.2521643269210472,
+            "q75_source_AD_score": 0.6051004102822238
+          }
+        },
+        "temporal_stability": {
+          "dementia": {
+            "mean_successive_score_change_mean": 0.33138327477955387,
+            "mean_successive_score_change_median": 0.3425078261643648,
+            "n_recordings": 20,
+            "sampled_window_flip_fraction_mean": 0.36086956521739133,
+            "sampled_window_flip_fraction_median": 0.391304347826087,
+            "window_disagreement_fraction_mean": 0.2604166666666667,
+            "window_disagreement_fraction_median": 0.25,
+            "window_probability_range_mean": 0.9255442074325402,
+            "window_probability_range_median": 0.9655265072360635,
+            "window_probability_sd_mean": 0.30205362322075724,
+            "window_probability_sd_median": 0.3152048067414654
+          },
+          "mci": {
+            "mean_successive_score_change_mean": 0.3304696994508625,
+            "mean_successive_score_change_median": 0.34475749710311543,
+            "n_recordings": 28,
+            "sampled_window_flip_fraction_mean": 0.3447204968944099,
+            "sampled_window_flip_fraction_median": 0.34782608695652173,
+            "window_disagreement_fraction_mean": 0.2723214285714286,
+            "window_disagreement_fraction_median": 0.27083333333333337,
+            "window_probability_range_mean": 0.9295398235060149,
+            "window_probability_range_median": 0.9868961973115802,
+            "window_probability_sd_mean": 0.3026764766253205,
+            "window_probability_sd_median": 0.3208815027521975
+          },
+          "normal": {
+            "mean_successive_score_change_mean": 0.31800289588728115,
+            "mean_successive_score_change_median": 0.35274758639254444,
+            "n_recordings": 34,
+            "sampled_window_flip_fraction_mean": 0.3375959079283887,
+            "sampled_window_flip_fraction_median": 0.34782608695652173,
+            "window_disagreement_fraction_mean": 0.2512254901960785,
+            "window_disagreement_fraction_median": 0.22916666666666669,
+            "window_probability_range_mean": 0.9004588866662422,
+            "window_probability_range_median": 0.9755477947182953,
+            "window_probability_sd_mean": 0.29896110872621695,
+            "window_probability_sd_median": 0.31887179168932006
+          }
+        }
+      }
+    },
+    "XGBoost": {
+      "train": {
+        "ad_tagged_dementia_exploratory": {
+          "ad_tagged": {
+            "fraction_above_fixed_threshold": 0.9523809523809523,
+            "mean_source_AD_score": 0.7050620317590509,
+            "median_source_AD_score": 0.7115836093823115,
+            "n_recordings": 189,
+            "q25_source_AD_score": 0.6661695763468742,
+            "q75_source_AD_score": 0.7532480011383692
+          },
+          "note": "AD is an annotation symptom tag, not independently verified patient diagnosis.",
+          "other_dementia": {
+            "fraction_above_fixed_threshold": 0.95,
+            "mean_source_AD_score": 0.7103421030359135,
+            "median_source_AD_score": 0.7148655913770199,
+            "n_recordings": 60,
+            "q25_source_AD_score": 0.6747961944590012,
+            "q75_source_AD_score": 0.7891729883849621
+          }
+        },
+        "binary_metrics": {
+          "accuracy": 0.44805194805194803,
+          "auroc": 0.6589518838295964,
+          "balanced_accuracy": 0.5290371294442073,
+          "brier_vs_dementia_label": 0.2953364140154613,
+          "confusion_matrix": [
+            [
+              39,
+              328
+            ],
+            [
+              12,
+              237
+            ]
+          ],
+          "confusion_matrix_columns": [
+            "predicted_normal",
+            "predicted_dementia"
+          ],
+          "confusion_matrix_rows": [
+            "normal",
+            "dementia"
+          ],
+          "dementia_f1": 0.5823095823095823,
+          "ece_10_bins": 0.24153400776157907,
+          "macro_f1": 0.3844562265614897,
+          "matthews_correlation": 0.10342060404146994,
+          "n_dementia": 249,
+          "n_normal": 367,
+          "n_recordings": 616,
+          "predicted_dementia_fraction": 0.9172077922077922,
+          "sensitivity_dementia": 0.9518072289156626,
+          "specificity_normal": 0.10626702997275204,
+          "threshold": 0.5
+        },
+        "score_distributions": {
+          "dementia": {
+            "fraction_above_fixed_threshold": 0.9518072289156626,
+            "mean_source_AD_score": 0.706334338090825,
+            "median_source_AD_score": 0.7124629691243172,
+            "n_recordings": 249,
+            "q25_source_AD_score": 0.667866975069046,
+            "q75_source_AD_score": 0.7653683945536613
+          },
+          "mci": {
+            "fraction_above_fixed_threshold": 0.9311377245508982,
+            "mean_source_AD_score": 0.685964600277875,
+            "median_source_AD_score": 0.7007180601358414,
+            "n_recordings": 334,
+            "q25_source_AD_score": 0.6508536692708731,
+            "q75_source_AD_score": 0.751211216673255
+          },
+          "normal": {
+            "fraction_above_fixed_threshold": 0.8937329700272479,
+            "mean_source_AD_score": 0.6447432982336923,
+            "median_source_AD_score": 0.6730913942058881,
+            "n_recordings": 367,
+            "q25_source_AD_score": 0.5961401561896006,
+            "q75_source_AD_score": 0.7227001748979092
+          }
+        },
+        "temporal_stability": {
+          "dementia": {
+            "mean_successive_score_change_mean": 0.116999736584896,
+            "mean_successive_score_change_median": 0.10781390252320663,
+            "n_recordings": 249,
+            "sampled_window_flip_fraction_mean": 0.1107036843024271,
+            "sampled_window_flip_fraction_median": 0.08695652173913043,
+            "window_disagreement_fraction_mean": 0.07948460508701473,
+            "window_disagreement_fraction_median": 0.041666666666666664,
+            "window_probability_range_mean": 0.4308842535478523,
+            "window_probability_range_median": 0.41047829389572144,
+            "window_probability_sd_mean": 0.11048935599987565,
+            "window_probability_sd_median": 0.10507627509107034
+          },
+          "mci": {
+            "mean_successive_score_change_mean": 0.11976433901295193,
+            "mean_successive_score_change_median": 0.10955961761267288,
+            "n_recordings": 334,
+            "sampled_window_flip_fraction_mean": 0.12848216610257746,
+            "sampled_window_flip_fraction_median": 0.08695652173913043,
+            "window_disagreement_fraction_mean": 0.08994510978043911,
+            "window_disagreement_fraction_median": 0.041666666666666664,
+            "window_probability_range_mean": 0.4475188242818067,
+            "window_probability_range_median": 0.41191524267196655,
+            "window_probability_sd_mean": 0.11339553546676058,
+            "window_probability_sd_median": 0.10371787261837961
+          },
+          "normal": {
+            "mean_successive_score_change_mean": 0.1361439475980984,
+            "mean_successive_score_change_median": 0.11926542676013449,
+            "n_recordings": 367,
+            "sampled_window_flip_fraction_mean": 0.18753702167989578,
+            "sampled_window_flip_fraction_median": 0.13043478260869565,
+            "window_disagreement_fraction_mean": 0.13317438692098094,
+            "window_disagreement_fraction_median": 0.08333333333333333,
+            "window_probability_range_mean": 0.47761220048493847,
+            "window_probability_range_median": 0.4509854316711426,
+            "window_probability_sd_mean": 0.12381915069815815,
+            "window_probability_sd_median": 0.11275299612211995
+          }
+        }
+      },
+      "validation": {
+        "ad_tagged_dementia_exploratory": {
+          "ad_tagged": {
+            "fraction_above_fixed_threshold": 1.0,
+            "mean_source_AD_score": 0.7056742802262306,
+            "median_source_AD_score": 0.6777137704193592,
+            "n_recordings": 10,
+            "q25_source_AD_score": 0.6317199425150951,
+            "q75_source_AD_score": 0.816811311369141
+          },
+          "note": "AD is an annotation symptom tag, not independently verified patient diagnosis.",
+          "other_dementia": {
+            "fraction_above_fixed_threshold": 1.0,
+            "mean_source_AD_score": 0.7507848026851813,
+            "median_source_AD_score": 0.7440427951514721,
+            "n_recordings": 10,
+            "q25_source_AD_score": 0.7252642251551151,
+            "q75_source_AD_score": 0.7804667645444473
+          }
+        },
+        "binary_metrics": {
+          "accuracy": 0.48148148148148145,
+          "auroc": 0.6705882352941176,
+          "balanced_accuracy": 0.5882352941176471,
+          "brier_vs_dementia_label": 0.2969140391146976,
+          "confusion_matrix": [
+            [
+              6,
+              28
+            ],
+            [
+              0,
+              20
+            ]
+          ],
+          "confusion_matrix_columns": [
+            "predicted_normal",
+            "predicted_dementia"
+          ],
+          "confusion_matrix_rows": [
+            "normal",
+            "dementia"
+          ],
+          "dementia_f1": 0.5882352941176471,
+          "ece_10_bins": 0.21607796263731555,
+          "macro_f1": 0.4441176470588235,
+          "matthews_correlation": 0.2711630722733202,
+          "n_dementia": 20,
+          "n_normal": 34,
+          "n_recordings": 54,
+          "predicted_dementia_fraction": 0.8888888888888888,
+          "sensitivity_dementia": 1.0,
+          "specificity_normal": 0.17647058823529413,
+          "threshold": 0.5
+        },
+        "score_distributions": {
+          "dementia": {
+            "fraction_above_fixed_threshold": 1.0,
+            "mean_source_AD_score": 0.7282295414557061,
+            "median_source_AD_score": 0.7391859789689381,
+            "n_recordings": 20,
+            "q25_source_AD_score": 0.6456595125297706,
+            "q75_source_AD_score": 0.7984059502681097
+          },
+          "mci": {
+            "fraction_above_fixed_threshold": 0.8571428571428571,
+            "mean_source_AD_score": 0.6431524654229481,
+            "median_source_AD_score": 0.6721207499504089,
+            "n_recordings": 28,
+            "q25_source_AD_score": 0.6087947028378645,
+            "q75_source_AD_score": 0.7148281081269184
+          },
+          "normal": {
+            "fraction_above_fixed_threshold": 0.8235294117647058,
+            "mean_source_AD_score": 0.6324253573137172,
+            "median_source_AD_score": 0.6703274336953957,
+            "n_recordings": 34,
+            "q25_source_AD_score": 0.5591585927953323,
+            "q75_source_AD_score": 0.745867218201359
+          }
+        },
+        "temporal_stability": {
+          "dementia": {
+            "mean_successive_score_change_mean": 0.09379606117372927,
+            "mean_successive_score_change_median": 0.10072823711063551,
+            "n_recordings": 20,
+            "sampled_window_flip_fraction_mean": 0.10217391304347825,
+            "sampled_window_flip_fraction_median": 0.0,
+            "window_disagreement_fraction_mean": 0.07083333333333335,
+            "window_disagreement_fraction_median": 0.0,
+            "window_probability_range_mean": 0.3785219550132751,
+            "window_probability_range_median": 0.3269226551055908,
+            "window_probability_sd_mean": 0.09816401508498135,
+            "window_probability_sd_median": 0.09943794762467117
+          },
+          "mci": {
+            "mean_successive_score_change_mean": 0.13203544322378147,
+            "mean_successive_score_change_median": 0.11713355909223142,
+            "n_recordings": 28,
+            "sampled_window_flip_fraction_mean": 0.20031055900621123,
+            "sampled_window_flip_fraction_median": 0.17391304347826086,
+            "window_disagreement_fraction_mean": 0.12946428571428573,
+            "window_disagreement_fraction_median": 0.08333333333333333,
+            "window_probability_range_mean": 0.46469840833118986,
+            "window_probability_range_median": 0.4425985515117645,
+            "window_probability_sd_mean": 0.11934206486076004,
+            "window_probability_sd_median": 0.11159497779499242
+          },
+          "normal": {
+            "mean_successive_score_change_mean": 0.13022397378521502,
+            "mean_successive_score_change_median": 0.11364300484242647,
+            "n_recordings": 34,
+            "sampled_window_flip_fraction_mean": 0.20076726342711,
+            "sampled_window_flip_fraction_median": 0.17391304347826086,
+            "window_disagreement_fraction_mean": 0.14215686274509806,
+            "window_disagreement_fraction_median": 0.08333333333333333,
+            "window_probability_range_mean": 0.442727267742157,
+            "window_probability_range_median": 0.43271419405937195,
+            "window_probability_sd_mean": 0.11554714052342659,
+            "window_probability_sd_median": 0.09987090088879041
+          }
+        }
+      }
+    }
+  },
+  "original_models_retrained": false,
+  "patient_identity_verified": false,
+  "patient_level_claims_permitted": false,
+  "positive_target_class": "dementia",
+  "provenance": {
+    "dsrf_sha256": "72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3",
+    "inference_script_sha256": "e5b758a26aa0d650a19af20f1601a5e1cc30ddb1cb51f0fc31556f107657dc74",
+    "pretrained_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+    "protocol_sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+    "task_sha256": "279be9996276abf5c3fbedf35b6d9aa4147f250a8a961302c056faaba687b671",
+    "xgboost_sha256": "9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f"
+  },
+  "source_model_classes": [
+    "AD",
+    "CN"
+  ],
+  "status": "DEVELOPMENT_EVALUATION_COMPLETED",
+  "target_classes": [
+    "normal",
+    "mci",
+    "dementia"
+  ],
+  "test_recordings_evaluated": 0,
+  "threshold": 0.5,
+  "validation_uncertainty": {
+    "balanced_accuracy_95ci": {
+      "DSRF": [
+        0.6485294117647059,
+        0.8676470588235294
+      ],
+      "DSRF_minus_XGBoost": [
+        0.05588235294117638,
+        0.27941176470588247
+      ],
+      "XGBoost": [
+        0.5294117647058824,
+        0.6470588235294118
+      ]
+    },
+    "caution": "Recordings are not independently verified as unique patients. Intervals may underestimate uncertainty if patients contributed multiple recordings.",
+    "method": "paired_stratified_recording_bootstrap",
+    "resamples": 2000,
+    "sampling_unit": "recording",
+    "seed": 20261109
+  },
+  "version": "caueeg_transfer_v1"
+}

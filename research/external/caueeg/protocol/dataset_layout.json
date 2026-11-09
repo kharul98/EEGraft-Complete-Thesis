@@ -1,0 +1,8 @@
+{
+  "dataset_root": "/home/user4/research/caueeg/imported_caueeg/caueeg-dataset",
+  "edf_directory": "/home/user4/research/caueeg/imported_caueeg/caueeg-dataset/signal/edf",
+  "annotation": "/home/user4/research/caueeg/imported_caueeg/caueeg-dataset/annotation.json",
+  "split_file": "/home/user4/research/caueeg/imported_caueeg/caueeg-dataset/dementia-no-overlap.json",
+  "edf_recording_count": 1379,
+  "source_archive": "/mnt/c/Users/user4/Downloads/caueeg-dataset.zip"
+}

@@ -1,0 +1,85 @@
+\section{Research Context and Comparison Criteria}
+This review examines four connected questions: what earlier EEG work says about dementia classification; how recording duration and validation affect conclusions; what pretrained EEG encoders and hybrid decoders contribute; and why accuracy needs to be read alongside reliability and uncertainty. The comparison table includes 30 papers selected for those purposes. They span established EEG signal studies, work directly using the public Alzheimer's cohort, foundation-model papers and methods papers needed to justify subject-disjoint evaluation. Recent work on EEG foundation models and evaluation is included where bibliographic identity can be established. Results from different papers are \emph{not} treated as directly comparable benchmarks because they often use different samples, preprocessing choices and validation rules.
+
+\section{EEG Signals and Alzheimer's Classification}
+Early studies associate Alzheimer's disease with changes in spectral activity and dynamical structure in EEG \cite{jeong2004,dauwels2010}. These observations motivate frequency-band features, including delta, theta, alpha, beta and gamma power. They also warn against treating a single measure as a disease-specific signal. Review work highlights substantial variation in how recordings are cleaned, features are computed and patient groups are separated \cite{cassani2018,tzimourta2021review}.
+
+The public dataset used here contains EEG recordings from 36 AD participants, 23 with frontotemporal dementia and 29 cognitively normal controls \cite{miltiadous2023dataset}. Published analyses of this collection include classical feature combinations and convolution-transformer designs \cite{zheng2023,dice2023}. These studies motivate comparison with both spectral baselines and a more flexible representation model. However, their published accuracy values should not be read as head-to-head evidence against our results unless the participants, data partitioning and testing conditions match.
+
+\section{Recording Duration and Participant-Level Validation}
+EEG window duration has already been investigated specifically for Alzheimer's classification. Tzimourta and colleagues evaluated window length and regional differences in 2019 \cite{tzimourta2019}. Our temporal contribution is therefore not the first use of recording length as a variable. It instead asks how prediction correctness and within-recording consistency behave under a stated subject-level evaluation, and how stable but wrong decisions complicate the meaning of ``reliability.''
+
+Short EEG segments from one participant are correlated. If some segments train a model and others test it, the apparent sample size becomes misleading for diagnosing previously unseen people. Nested or held-out model selection is important because choosing parameters on the same examples used for final assessment can bias results \cite{varma2006,varoquaux2018}. The 2026 AHEPA review found substantially different accuracy patterns when studies were grouped by validation rigor \cite{miltiadous2026benchmark}. This supports our choice to keep participants, not windows, as the independent source-cohort evaluation unit. For the CAUEEG transfer, the available independent sampling unit is the recording; patient uniqueness cannot be fully checked.
+
+\section{Pretrained EEG Encoders and Custom Decoders}
+Deep convolutional EEG models can learn short-range features from signals without hand-selecting all features \cite{schirrmeister2017,lawhern2018}. Hybrid convolution-transformer models can combine local and longer-range information \cite{song2023,dice2023}. More recently, BENDR, BIOT, LaBraM and EEGPT have explored reusable representations learned from many biosignal recordings \cite{kostas2021,yang2023biot,jiang2024labram,wang2024eegpt}. CBraMod, published at ICLR 2025, models spatial and temporal EEG dependencies through a criss-cross architecture and provides the pretrained encoder used in this project \cite{wang2025cbramod}.
+
+A pretrained backbone does not determine how best to classify one small downstream cohort. Our DSRF decoder combines high-level pretrained features with low-level temporal convolution features, then uses a learned gate, a residual path and class-attention pooling. The idea is related to broader local/global fusion methods, not established as a completely new category of neural network. The relevant test is how this implementation compares with baselines when participants are separated and the final holdout is not used for repeated model selection.
+
+The literature developed rapidly in 2026. LEAD studied an EEG foundation model specifically for Alzheimer's disease, while EEG-FM-Bench and EEG-FM-Compass stressed systematic benchmarking and adaptation choices \cite{wang2026lead,xiong2026,liu2026compass}. Their existence makes it especially important to frame EEGraft as a targeted decoder and reliability study rather than the first Alzheimer's EEG foundation model.
+
+
+\section{External Dementia Cohorts and Task Shift}
+Kim, Youn and Paik introduced CAUEEG and a related end-to-end classifier, CEEDNet, for Normal, MCI and Dementia categories \cite{kim2023caueeg}. Its clinical diagnostic classes are not equivalent to the NEMAR AD/CN binary labels. The official research repository describes a patient-no-overlap variant of the dementia benchmark because repeated recordings from some people can otherwise cross train and test boundaries \cite{caueegofficial}. This matters: a binary Dementia-versus-Normal transfer of an AD/CN model changes both label definition and the EEG acquisition environment.
+
+Cross-dataset performance has already been studied in EEG foundation-model research, and pretrained encoders have already been applied to Alzheimer's classification \cite{wang2026lead,xiong2026,liu2026compass}. The narrower contribution here is a concrete case study combining a frozen decoder transfer with threshold-sensitive and correctness-aware error analysis. It is not a claim to be the first cross-cohort EEG experiment. Unlike a model trained and tuned directly for CAUEEG, our transferred DSRF and XGBoost models retain their source weights. This distinction also prevents a fair direct numerical ranking against published, target-trained CAUEEG architectures.
+
+\section{Thresholds, Calibration and Reliability}
+A binary decision threshold maps a probability-like score to a class. The model's scores can remain exactly unchanged while its hard decisions and apparent within-recording stability change. Accuracy, balanced accuracy, calibration and consistency therefore describe different properties. A model that always predicts one class can be perfectly stable while reaching only 50\% balanced accuracy in a two-class problem containing both classes. Probability calibration methods such as Platt scaling may change Brier score without making a classifier clinically validated \cite{guo2017calibration}. Any threshold or calibration fit performed after observing an external result must be labeled exploratory, and a locked test must not be reused to choose that rule.
+
+\section{Comparative Literature Table}
+Table~\ref{tab:literature} compares 30 relevant publications in descending order of publication year. Its final column explains what each paper changes about our design, evidence standard or interpretation. A paper's reported result is not presented as a result of this thesis.
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.3pt}\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{@{}>{\RaggedRight\hyphenpenalty=3000\exhyphenpenalty=4500\arraybackslash}p{0.185\textwidth}>{\RaggedRight\hyphenpenalty=3000\exhyphenpenalty=4500\arraybackslash}p{0.305\textwidth}>{\RaggedRight\hyphenpenalty=3000\exhyphenpenalty=4500\arraybackslash}p{0.40\textwidth}@{}}
+\caption{Thirty representative research papers and their relevance to EEGraft.}\label{tab:literature}\\
+\toprule
+\textbf{Paper} & \textbf{Main focus} & \textbf{Relevance and limitation for \mbox{EEGraft}}\\
+\midrule\endfirsthead
+\caption[]{Literature comparison (continued)}\\
+\toprule\textbf{Paper} & \textbf{Main focus} & \textbf{Relevance and limitation for \mbox{EEGraft}}\\\midrule\endhead
+\bottomrule\endfoot
+Masry et al. (2026) \cite{masry2026}& Montage-agnostic federated EEG AD analysis & Emphasizes channel mismatch, privacy and the difference between simulated and true site transfer.\\
+Liu et al. (2026) \cite{liu2026compass}& EEG-FM-Compass review and benchmark & Frames adaptation, model scale and transfer as open evaluation questions.\\
+Xiong et al. (2026) \cite{xiong2026}& EEG-FM-Bench cross-model evaluation & Supports standardized protocols and cautious representation comparisons.\\
+Miltiadous et al. (2026) \cite{miltiadous2026benchmark}& AHEPA study-validity scoping review & Directly reinforces subject-wise splits and warns about inflated epoch-wise accuracy.\\
+Akbar et al. (2026) \cite{akbar2026}& Feature engineering, deep SVM and explanations & Another hybrid dementia method; attribution is model-related, not automatically causal evidence.\\
+Alidadi et al. (2026) \cite{alidadi2026}& Review of past and current AD EEG methods & Highlights persistent generalization, bias and explanation challenges.\\
+Wang et al. (2026), LEAD \cite{wang2026lead}& Alzheimer's-specific EEG foundation model & Makes the foundation-model comparison more current; we did not benchmark LEAD on the locked cohort.\\
+Wang et al. (2025) \cite{wang2025cbramod}& CBraMod criss-cross foundation model & The actual pretrained backbone in EEGraft; it is not our invention.\\
+Jiang et al. (2024) \cite{jiang2024labram}& LaBraM pretrained EEG representation & Alternative to task-specific training; does not establish usefulness on our cohort.\\
+Puri et al. (2024) \cite{puri2024}& Lightweight spatiotemporal CNN (LEADNet) & Shows why smaller networks remain worth comparing with pretrained models.\\
+Wang et al. (2024) \cite{wang2024eegpt}& EEGPT representation alignment & Relevant to robustness of pretrained representations and adapter choice.\\
+Miltiadous et al. (2023), DICE-Net \cite{dice2023}& Convolution-transformer architecture for dementia EEG & Closely related hybrid architecture; outcome values require protocol-aware comparison.\\
+Miltiadous et al. (2023) \cite{miltiadous2023dataset}& Public 88-subject AD/FTD/CN EEG dataset & Defines cohort provenance and available 19-channel resting EEG; not evidence of external generalization.\\
+Song et al. (2023) \cite{song2023}& EEG Conformer local/global representation & Supports combining convolutional and attention mechanisms; not Alzheimer's-specific proof.\\
+Yang et al. (2023) \cite{yang2023biot}& BIOT, biosignal transfer with varying formats & Explains potential of flexible pretraining, but transfer may remain task-dependent.\\
+Zheng et al. (2023) \cite{zheng2023}& Joint spectral, complexity and synchrony features & Supports explicit classical feature baselines and subject-oriented evaluation.\\
+Kostas et al. (2021) \cite{kostas2021}& Self-supervised BENDR EEG encoding & Precedent for transferring pretrained EEG representations to downstream tasks.\\
+Miltiadous et al. (2021) \cite{miltiadous2021}& AD/FTD EEG classification and validation choices & Directly relevant to our disease tasks and validation discipline.\\
+Tzimourta et al. (2021) \cite{tzimourta2021review}& Review of AD EEG learning methods & Grounds traditional baselines and study-design challenges.\\
+Pernet et al. (2019) \cite{pernet2019}& EEG-BIDS data organization & Supports auditable participant identities, channel metadata and recording conditions.\\
+Tzimourta et al. (2019) \cite{tzimourta2019}& EEG window length and regional analysis & Establishes prior work on duration; our claim concerns stability versus correctness, not first study of window length.\\
+Cassani et al. (2018) \cite{cassani2018}& Systematic review of resting-state EEG for AD & Shows variation in algorithms and evidence quality; warns against direct cross-paper accuracy rankings.\\
+Lawhern et al. (2018) \cite{lawhern2018}& Compact EEGNet architecture & Motivates a small neural baseline rather than only comparing complex models.\\
+Varoquaux (2018) \cite{varoquaux2018}& Uncertainty with small neuroimaging samples & Explains why a 13-person holdout cannot establish a small performance difference reliably.\\
+Schirrmeister et al. (2017) \cite{schirrmeister2017}& CNN feature learning from EEG & Basis for learning temporal filters directly from signals.\\
+Chen and Guestrin (2016) \cite{chen2016xgboost}& XGBoost tree boosting & Defines an important classical competitor that later led the locked test.\\
+Dauwels et al. (2010) \cite{dauwels2010}& Review of slowing, complexity and synchrony & Supports multiple signal descriptors and careful artifact handling.\\
+Varma and Simon (2006) \cite{varma2006}& Model-selection bias in cross-validation & Explains why development tuning and final testing must be separated.\\
+Delorme and Makeig (2004) \cite{delorme2004}& EEGLAB signal processing and ICA & Connects public EEG preprocessing provenance with accepted signal-processing tools.\\
+Jeong (2004) \cite{jeong2004}& EEG dynamics in Alzheimer's disease & Motivates spectral and dynamical analysis; descriptive EEG effects are not a stand-alone diagnosis.\\
+\end{longtable}
+\enlargethispage{3\baselineskip}\endgroup
+
+\subsection*{How the most relevant evidence differs}
+Three comparisons must be kept separate when interpreting the surveyed studies. First, reports of disease-group accuracy are not automatically patient-independent: an evaluation that divides windows from the same recording across training and test sets answers a different question from one that reserves entire participants. Second, a frozen pretrained representation with a small supervised head does not test the same architectural hypothesis as a custom gated decoder with its own raw-temporal pathway. Third, cross-sectional AD-versus-control discrimination does not establish future AD risk, temporal label consistency or calibration. These distinctions are more important to this study than a single ranking of published percentages.
+
+The closest architectures make the boundaries of EEGraft's contribution clear. DICE-Net combines convolutional and Transformer processing for Alzheimer's EEG on a related source dataset \cite{dice2023}; EEG Conformer is another established local/global EEG decoder \cite{song2023}. CBraMod supplies pretrained representations with spatial and temporal modeling, and EEGraft uses those published weights rather than creating its own foundation model \cite{wang2025cbramod}. LEAD demonstrates an Alzheimer's-specific foundation-model research direction \cite{wang2026lead}. Consequently, combining convolutions, attention and pretraining is not a claim of novelty by itself.
+
+The specific design investigated here is a frozen CBraMod token pathway joined to a two-kernel raw-temporal branch through sigmoid-gated additive residual fusion and class-specific attention. Its ablations, capacity-matched control, participant-disjoint evaluation and locked source test provide a transparent test of that implementation. The empirical extension connects correctness-aware temporal states, frozen cross-cohort transfer, threshold-dependent decisions, calibration, and age/event audits. The earlier literature covers many of these components individually, and recent benchmark research already evaluates transfer and subject-independent protocols \cite{xiong2026,liu2026compass}. What EEGraft adds is a reproducible configuration and linked evidence about how these measures can disagree on the evaluated cohorts, not a universal first-of-its-kind claim.
+
+\section{Synthesis and Research Gap}
+Three conclusions emerge. First, EEG disease classification has strong historical grounding, but its results depend on sampling, preprocessing and evaluation design. Second, changing window length and model architecture is not new on its own; a defensible contribution requires a precise question and trustworthy comparisons. Third, a more sophisticated representation does not eliminate the need for baselines, locked testing, calibration checks and failure analysis \cite{miltiadous2026benchmark,xiong2026,guo2017calibration}.
+
+EEGraft addresses an evaluation gap rather than proposing another accuracy leaderboard: it builds and ablates a specific dual-path decoder, reports a locked source result even when a classical method wins, and connects frozen external discrimination to threshold-sensitive consistency and stable incorrect decisions. The combined evidence helps future researchers distinguish a model's discriminative ability from a chosen operating rule and from the recording conditions under which that rule is assessed. Chapter 4 defines the separate cohorts and evaluation units that make these distinctions interpretable.\par

@@ -1,0 +1,114 @@
+{
+  "analysis_unit": "recording",
+  "artifact_hashes": {
+    "annotation_json_sha256": "6d53e7ee3d1fdd20483463019bb01c4d893eff72b3cdfe32942239824e382a30",
+    "calibration_lock_sha256": "5541b80975cf7cf3acba41e9c4d17e62fdd640a52df78e86b2d3a62e5fdea32e",
+    "edf_header_audit_sha256": "19b47527ebc9423935f39d180898281a8baec2fa58f18dfb08d3990a1e5b2ee8",
+    "official_split_json_sha256": "df16668be52444ef974b6fdee452ba4004527422968f6b4ffbe0818f1fe1ae73",
+    "recording_manifest_sha256": "dc7b3a92182c732fa1023f32bdda90ac44f760250912f22872040f1dc189d110",
+    "threshold_lock_sha256": "8b715513f370600f0ed4835f4b82c2b66af43ea5305674d5a46378af5f7f2ba7",
+    "training_inference_summary_sha256": "9c1dbadc5c02b8b6638041fc36a1ce83343e81b0652c44fcb0216c56bcb83f55",
+    "validation_comparison_sha256": "cb926ccb2d9e021642cfd36c15f02fa0c29ee8e7e603729a3d9f1bdbb2e430f3"
+  },
+  "dataset": "CAUEEG",
+  "independent_patient_linkage_verified": false,
+  "mci_analysis": {
+    "classification_accuracy_computed": false,
+    "type": "descriptive_only"
+  },
+  "model_hashes": {
+    "dsrf_sha256": "72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3",
+    "inference_script_sha256": "e5b758a26aa0d650a19af20f1601a5e1cc30ddb1cb51f0fc31556f107657dc74",
+    "pretrained_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+    "protocol_sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+    "task_sha256": "279be9996276abf5c3fbedf35b6d9aa4147f250a8a961302c056faaba687b671",
+    "xgboost_sha256": "9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f"
+  },
+  "official_task": "dementia-no-overlap",
+  "patient_level_performance_claims_allowed": false,
+  "primary_binary_test_recordings": 57,
+  "primary_comparison": {
+    "DSRF_threshold": 0.5,
+    "XGBoost_threshold": 0.5,
+    "decision_rule": "source_p_AD >= 0.5",
+    "excluded_from_primary_binary_metrics": "mci",
+    "model_weights": "original_frozen",
+    "models": [
+      "DSRF",
+      "XGBoost"
+    ],
+    "primary_metric": "balanced_accuracy",
+    "secondary_metrics": [
+      "accuracy",
+      "macro_f1",
+      "dementia_sensitivity",
+      "normal_specificity",
+      "auroc",
+      "brier_score",
+      "ece_10_bins",
+      "confusion_matrix"
+    ],
+    "source_classes": [
+      "AD",
+      "CN"
+    ],
+    "target_negative": "normal",
+    "target_positive": "dementia"
+  },
+  "safety": {
+    "no_further_hyperparameter_tuning_after_test": true,
+    "no_patient_level_claims": true,
+    "no_restricted_data_uploads": true,
+    "no_retraining_original_models": true,
+    "no_threshold_selection_using_test": true,
+    "no_variant_selection_using_test": true
+  },
+  "scientific_interpretation": "Exploratory recording-level external transfer assessment of an original AD/CN classifier on broader CAUEEG Dementia and Normal categories. Not an Alzheimer's diagnostic validation.",
+  "secondary_exploratory_variants": {
+    "adaptation_introduced_after_initial_validation_review": true,
+    "calibrated_probability_threshold": 0.5,
+    "calibration_formula": "sigmoid(coefficient * logit(clip(p_AD, 1e-6, 1-1e-6)) + intercept)",
+    "calibration_input": "mean recording-level source AD probability",
+    "platt_calibration_parameters": {
+      "DSRF": {
+        "coefficient": 0.7366837564399823,
+        "intercept": -0.43726844492229006
+      },
+      "XGBoost": {
+        "coefficient": 1.1684913778149255,
+        "intercept": -1.3016271644529345
+      }
+    },
+    "report_all_variants_without_test_selection": true,
+    "training_selected_thresholds": {
+      "DSRF": 0.5,
+      "XGBoost": 0.7
+    }
+  },
+  "secondary_mci_recordings": 33,
+  "temporal_reliability_analysis": {
+    "consistency_not_equivalent_to_correctness": true,
+    "metrics": [
+      "median_window_probability_sd",
+      "sampled_window_label_flip_fraction",
+      "stable_but_wrong_recording_count",
+      "early_middle_late_prediction_agreement"
+    ],
+    "window_seconds": 4,
+    "window_selection": "uniformly spaced nonoverlapping windows",
+    "windows_per_recording": 24
+  },
+  "test_class_counts": {
+    "dementia": 22,
+    "mci": 33,
+    "normal": 35
+  },
+  "test_recordings": 90,
+  "uncertainty": {
+    "method": "paired_stratified_recording_bootstrap",
+    "patient_independence_unverified": true,
+    "resamples": 5000,
+    "seed": 20261109
+  },
+  "version": "caueeg_final_test_plan_v1"
+}

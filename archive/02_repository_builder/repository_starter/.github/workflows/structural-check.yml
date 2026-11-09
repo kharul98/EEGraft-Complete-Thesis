@@ -1,0 +1,14 @@
+name: Verify EEGraft repository structure
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  source-and-thesis-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - name: Check consolidated source and thesis integrity
+        run: python3 tools/verify_repository.py

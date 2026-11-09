@@ -1,0 +1,36 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.ilg
+*.log
+*.lof
+*.lot
+*.nlo
+*.nls
+*.out
+*.run.xml
+*.toc
+*.synctex.gz
+# Private signoffs
+**/signature_*.png
+**/signature_*.jpg
+**/*signed*submission*.pdf
+# Raw source EEG datasets / caches / secrets
+**/data/raw/
+**/*.set
+**/*.fdt
+**/*.edf
+**/*.bdf
+**/.env
+**/.env.*
+!**/.env.example
+**/credentials.json
+**/secrets.json
+__pycache__/
+*.pyc
+.venv/
+venv/

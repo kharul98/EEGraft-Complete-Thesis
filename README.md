@@ -93,3 +93,17 @@ Consult `docs/REPRODUCIBILITY.md` and the actual
 experiment configurations before executing a study.
 
 Model files are managed with Git LFS where applicable.
+
+## Consolidated CAUEEG evidence
+
+The November 9 external EEG investigation is preserved
+under `research/external/caueeg/`.
+
+See `docs/CAUEEG_ARCHIVE.md` for its research sequence,
+and `docs/CONSOLIDATION_SOURCES.md` for source provenance.
+
+The latest Overleaf ZIP and extracted LaTeX source are
+available under `manuscript/overleaf/`.
+
+Additional figure exports, evidence and research tools
+are organized under `evidence/` and `tools/`.

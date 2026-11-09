@@ -1,0 +1,89 @@
+\section{Final Specifications and Requirements}
+EEGraft is a retrospective research implementation, not an existing clinical product. Its intended users at this stage are researchers who want to compare participant-level EEG classifiers and inspect their behavior under controlled input changes. The design requirements therefore concern scientific validity, traceability, safety and resource constraints rather than unverified customer or hospital specifications. No stakeholder interviews or clinical procurement requirements are asserted.
+
+\begin{table}[H]\centering\small
+\caption{Functional, nonfunctional and validation requirements for the research system}\label{tab:req}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{0.27\textwidth}>{\RaggedRight\arraybackslash}X@{}}\toprule
+\textbf{Requirement}&\textbf{Implemented control and evidence boundary}\\\midrule
+Participant-independent evaluation&Keep participants disjoint across fold-level training and evaluation; retain the separately reserved 13-person final group for a one-time assessment.\\
+Reproducible inputs&Use the recorded 19-channel order, 0.3--40 Hz bandpass, 200 Hz model rate, four-second windows and a maximum of 24 windows per subject for Study B.\\
+Auditable model implementation&Retain source code, model configuration, checkpoint hashes, participant manifests, and model-output records where available.\\
+Functional classifier output&Convert window-level class logits to softmax probabilities and average probabilities to make one participant-level AD-versus-control decision.\\
+Comparative validity&Evaluate classical baselines, a smaller neural baseline and decoder ablations under the documented subject-level protocols.\\
+Reliability reporting&Keep discrimination, temporal label changes, probability quality, synthetic corruption and channel sensitivity as distinct outcomes.\\
+Safety and scope&Use retrospective labels for analysis only; do not claim prospective AD-risk prediction, clinical approval or diagnostic suitability.\\
+Resource constraint&Reuse a frozen CBraMod encoder rather than attempting full foundation-model pretraining; run reproducible fixed-size downstream batches.\\
+\bottomrule\end{tabularx}\end{table}
+
+For Study A, the historical subject-disjoint temporal protocol is described separately in Chapter~4; it should not be conflated with Study B's four-second windowed decoder protocol. The applicable engineering principles are data provenance, implementation traceability, explicit classification units, transparent reporting and reproducibility. EEG-BIDS provides a relevant EEG data-organization reference \cite{pernet2019}; clinical device certification is neither claimed nor applicable to this research-only implementation. The choices above were drawn from the documented project, not invented clinical stakeholder specifications.
+
+\section{Societal, Health, Safety, Legal and Cultural Impacts}
+Accessible and noninvasive EEG recordings make dementia-related research worth investigating, but a classification score alone does not prove that the method benefits patients. A false positive could cause anxiety and inappropriate follow-up, while a false negative could provide false reassurance. These risks would be unacceptable grounds for independent patient decisions. This project has not tested a clinical diagnostic workflow, treatment recommendation, screening service or long-term disease-risk prediction.
+
+An EEG model trained on a single public acquisition setting may fail when applied to people with different demographic backgrounds, languages, medical histories, electrode layouts or clinical environments. Reporting balanced accuracy on internal participants does not establish equitable performance across cultural or demographic groups. No demographic subgroup fairness analysis was established by the accessible outputs. Future use would require permitted data access, participant privacy protection, independent clinical evaluation and expert oversight. The dataset's terms govern re-use; publicly available research signals do not imply permission to identify or contact participants.
+
+\section{Environmental Impact and Sustainability}
+The experiments reused already collected EEG recordings and an existing pretrained CBraMod checkpoint. This avoided the additional workload of collecting new recordings or training a foundation encoder from scratch for this project. Freezing the encoder reduces the number of trainable weights and can limit optimization requirements, but preprocessing, inference over multiple windows and repeated development experiments still require processor/GPU time, energy, file storage and data transfer. Model reuse is therefore a practical resource choice, not a measured carbon-saving result.
+
+The supplied records do not provide a complete energy-meter trace, machine power draw, wall-clock GPU-hours for every run, cooling overhead or local electricity tariff. We therefore cannot calculate measured kilowatt-hours or carbon emissions. Feasible sustainability measures for future reproductions include retaining immutable processed manifests, avoiding unnecessary retraining, caching validated intermediate results where scientifically appropriate, and monitoring actual energy if a quantitative environmental comparison is proposed. Such measures have not been assigned invented percentage savings here.
+
+\section{Ethics and Academic Responsibility}
+The original NEMAR/OpenNeuro EEG cohort is publicly released with research documentation \cite{miltiadous2023dataset,miltiadous2026dataset}. The separate CAUEEG dataset is not an unrestricted public download; the official provider requires a research application and ethics-related authorization \cite{caueegofficial}. Consequently, only aggregate CAUEEG outcomes and a metadata-only preview appear in the distributable thesis, pending confirmation of raw-trace redistribution rights. No new recruitment, clinical intervention or new project-specific ethics approval number is claimed.
+
+The work does not intentionally identify participants in its figures or publish CAUEEG individual clinical records. Raw signals are used only as recorded research inputs; they must not be reconstructed or edited to improve a figure. The pretrained encoder and external algorithms are attributed to their developers. We separate exploratory findings from predefined evaluation and retain an unfavorable final result instead of selectively presenting only the best development accuracy. Electrode zeroing reveals model input dependence, not biological causation. AI-assisted editorial support is disclosed in the front matter; responsibility for scientific facts and final approval remains with the human authors.
+
+\section{Engineering Environment, Tools and Design Constraints}
+The implementation used Python for data processing and model evaluation, NumPy and SciPy for numerical signal operations, MNE for EEGLAB \texttt{.set} reading, scikit-learn for classical learning and evaluation, PyTorch for CBraMod and downstream neural modules, and XGBoost for a tree-ensemble comparator. Git and GitHub preserve source history and experiment records; \LaTeX{} and Biber generate the thesis and references. The corresponding scripts and their settings are identified in Appendix~\ref{app:sources}. Library versions should be obtained from a captured environment or requirements file, not guessed from current package versions.
+
+CBraMod is a previously published pretrained EEG encoder \cite{wang2025cbramod}. The project loads a saved pretrained state dictionary strictly and freezes encoder parameters during DSRF training; the new work lies in the downstream decoder, evaluation and controls. Input constraints include a fixed ordered 19-electrode montage, 200 samples per one-second patch, 4-second model windows and compatible source units. These constraints limit use on EEG devices with missing channels, different references or unverified physical-unit metadata. The actual project includes no medical deployment interface.
+
+\begin{table}[htbp]\centering\small
+\caption{Source-verified contemporary tools and reproducibility roles}\label{tab:tools}
+\begin{tabularx}{\textwidth}{@{}p{0.24\textwidth}X@{}}\toprule
+\textbf{Tool or component}&\textbf{Verified purpose and reproducibility check}\\\midrule
+Python; NumPy; SciPy&Read inputs, bandpass filter, polyphase resample and construct windows; check \texttt{src/data.py}.\\
+MNE&Read EEG in EEGLAB format and verify sampling and channel metadata; check \texttt{src/eeglab\_adapter.py}.\\
+PyTorch; pretrained CBraMod&Run a frozen EEG encoder and train gated decoder/ablations; check \texttt{src/model.py} and checkpoint digest.\\
+scikit-learn; XGBoost&Create conventional comparators, participant-disjoint folds and subject-level metrics; check saved baseline scripts and model outputs.\\
+Git/GitHub; JSON/CSV records&Link scripts, subject manifests, selected epochs, predictions, holdout metrics and SHA-256 to experiments.\\
+\LaTeX{}; Biber&Compile editable nine-chapter research report, numbered illustrations and bibliography.\\
+\bottomrule\end{tabularx}\end{table}
+
+\section{Project Management and Research Milestones}
+The research history can be reconstructed in phases, without implying that every later direction was part of a preregistered schedule. An initial phase examined spectral features and subject-wise SVM validation. A second phase analyzed recording time, stable errors and related controls. The later study integrated the pretrained CBraMod encoder, implemented the custom decoder, compared candidate designs with classical and neural models, investigated sensitivity and synthetic perturbation, and evaluated fixed models on the retained 13-person holdout. A subsequent extension transferred the frozen DSRF and XGBoost models to CAUEEG and examined thresholds, calibration, recording events and age differences using recorded development and test summaries. The supplied documents do not substantiate exact original milestone dates, staffing hours or supervisor sign-offs for each transition.
+
+The main dependencies were usable EEG files and metadata, compatible channel and physical-unit handling, pretrained model code/weights, subject manifests, controlled CAUEEG access, computational access, and recorded metrics. Restoring source access and checking manifests are prerequisites for a reproducible rerun; creating publication graphics is not a substitute. Team task allocations, participation evidence and formal P1/P2 assessments must be obtained from student or instructor records rather than inferred from prose in a joint thesis.
+
+\section{Risk Management}
+\begin{table}[H]\centering\small
+\caption{Scientific, engineering and organizational risks with documented or proposed controls}\label{tab:risks}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{0.29\textwidth}>{\RaggedRight\arraybackslash}X@{}}\toprule
+\textbf{Risk}&\textbf{Mitigation and remaining uncertainty}\\\midrule
+Participant leakage&Split subjects before window creation; separately inspect original historical Study A manifests and any duplicated raw source files.\\
+Tiny evaluation set&Report 7 AD and 6 controls in the locked source test and 57 recordings in the binary external test; use paired uncertainty and avoid overgeneralization.\\
+Retrospective model selection&Use development-only choices and preserve the locked holdout; document any unverified earlier exploratory selection.\\
+Different experiment protocols&Study A selected 23 AD and 23 controls whose IDs all appear in Study B's 65-person manifest; retain distinct temporal and decoder validation protocols and never interpret shared IDs as a matched model comparison.\\
+Source or dependency loss&Record repository paths, hashes, requirements and missing weights; distinguish available audit metadata from irretrievable original artifacts.\\
+Synthetic corruption not realistic&Report imposed noise and zero-channel conditions as technical stress tests, not field reliability.\\
+Ethics and clinical misinterpretation&Avoid patient-facing risk predictions, clinical recommendations and causal attribution of masked channels. Do not redistribute restricted CAUEEG raw traces without authorization.\\
+Project and communications evidence&Retain actual time logs, commits, posters and review contributions if they exist; otherwise mark CO13 and historical assessments unverified.\\
+\bottomrule\end{tabularx}\end{table}
+
+\section{Economic and Resource Analysis}
+A computational project has material costs even when no purchase receipt or cloud invoice is provided. Relevant cost categories are compute time, electricity, storage and backup, network transfer, engineering and validation labor, and potential access to GPU hardware. An existing machine, publicly available data and a pretrained checkpoint reduce the need to purchase new hardware, collect EEG or pretrain a foundation model. These are qualitative resource observations; neither zero expense nor measured monetary savings is established here.
+
+When reliable operating records exist, GPU or cloud compute expense can be calculated as
+\begin{equation}
+ C_{\mathrm{compute}}=\sum_{r=1}^{R} t_r\,q_r,
+ \label{eq:compute-cost}
+\end{equation}
+where $t_r$ is metered time for recorded run $r$ and $q_r$ is the applicable cost per time unit. For local electricity, an approximate upper-level formulation is $C_{\mathrm{electricity}}=E_{\mathrm{kWh}}q_{\mathrm{kWh}}$, provided actual energy and tariffs are available. No complete $t_r$, $q_r$, power record or labor ledger was supplied, so no BDT/USD total is reported. Saved final-model metadata record 52 development participants and 1,248 selected training windows for each final model; the DSRF run used five epochs, while the XGBoost model used 247 input features and a depth-two configuration. These are measured workload/configuration records, not timing, energy or monetary measurements. A defensible cost comparison would still require run timestamps or meter logs and a consistent accounting method before numerical claims could be made.
+
+
+\section{External Transfer and Data-Governance Constraints}
+Frozen source model weights are reused for the external task, avoiding a new CAUEEG model-fitting experiment. Training-only threshold choice and Platt scaling are post-hoc development analyses, not retraining of source weights. Their procedural distinction matters for both compute accounting and reproducibility. The CAUEEG aggregate results can be shared in this thesis, but its raw EDF recordings, event files, subject ages and patient linkage information are not packaged here. We do not infer a patient-level effective sample size from the 1,122 recording-level benchmark entries. This restriction also limits what can be independently verified by a reader who has access only to the Overleaf ZIP.
+
+\section{Applicable Standards and Reproducibility Practices}
+EEG-BIDS provides conventions for organizing participant and EEG acquisition metadata \cite{pernet2019}. Transparent model-reporting principles from TRIPOD+AI and, when relevant, diagnostic accuracy guidance inform clear descriptions of participants, reference labels, validation boundaries and uncertainty; this is an internal retrospective machine-learning evaluation, not a prospective clinical accuracy trial. Imaging-specific checklists are not automatically mandatory for scalp EEG. Reporting standards are useful evaluation guidance rather than retrospective proof of compliance.
+
+The available repository provides original software classes, 2026 final protocol, subject manifests, selected epoch records, holdout metrics and selected SHA-256 signatures. The report ZIP does not include the full raw EEG datasets, restricted clinical annotations or trained checkpoint binaries. Study A selected-subject IDs, its repeated held-out prediction states and the principal summary denominators are traceable to the public historical records. Reproducing the original signal-processing runs independently still requires the raw EEG, exact historical software environment and correcting a historical audit script that counted both classifier rows as one, followed by rerunning its incomplete duration-label agreement check. The earlier 1,380-versus-690 row discrepancy was explained by two classifiers being counted together: 690 rows per model, 1,380 total. A corrected downstream duration audit was not rerun. Source-backed transparency is preferable to stating that a successfully compiled thesis has reproduced all experiments.

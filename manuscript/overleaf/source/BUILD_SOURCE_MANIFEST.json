@@ -1,0 +1,10 @@
+{
+  "main": "main.tex",
+  "chapters": 9,
+  "selected_figure_files": 19,
+  "final_bibliography_keys": 36,
+  "literal_signature_images": 5,
+  "single_pdf_pages": 80,
+  "note": "Final corrected source-only archive; original 19 selected scientific assets preserved, with one print-reflow architecture file. Generated auxiliaries excluded.",
+  "correction_round": "2026-11-09 focused citation, bibliography, appendix filename, PDF metadata and print-readability fixes"
+}

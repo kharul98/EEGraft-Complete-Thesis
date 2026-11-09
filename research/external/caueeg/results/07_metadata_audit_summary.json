@@ -1,0 +1,49 @@
+{
+  "dataset": "CAUEEG",
+  "benchmark": "dementia-no-overlap",
+  "annotation_record_count": 1379,
+  "edf_file_count": 1379,
+  "split_entry_count": 1122,
+  "split_class_counts": {
+    "train_split": {
+      "dementia": 249,
+      "mci": 334,
+      "normal": 367
+    },
+    "validation_split": {
+      "dementia": 20,
+      "mci": 28,
+      "normal": 34
+    },
+    "test_split": {
+      "dementia": 22,
+      "mci": 33,
+      "normal": 35
+    }
+  },
+  "overall_split_class_counts": {
+    "dementia": 291,
+    "mci": 395,
+    "normal": 436
+  },
+  "recording_overlap_counts": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "issue_counts": {
+    "invalid_annotation_serials": 0,
+    "duplicate_annotation_serials": 0,
+    "invalid_split_serials": 0,
+    "duplicate_within_split": 0,
+    "cross_split_serial_overlaps": 0,
+    "split_missing_edf": 0,
+    "split_missing_annotation": 0,
+    "unresolved_labels": 0
+  },
+  "patient_id_fields_found": {},
+  "potential_ad_symptom_count_needs_clinical_review": 230,
+  "dementia_is_not_equivalent_to_confirmed_alzheimers": true,
+  "patient_identity_independently_verified": false,
+  "audit_status": "READY_FOR_EDF_QC"
+}

@@ -1,0 +1,1 @@
+Editable source files are supporting authoring materials. The FINAL included figures are the approved exported PDFs/PNGs under images_final/. Do not regenerate or replace without recording a new source-evidence review. The CAUEEG public-safe dataset panel does not include a restricted EDF waveform.

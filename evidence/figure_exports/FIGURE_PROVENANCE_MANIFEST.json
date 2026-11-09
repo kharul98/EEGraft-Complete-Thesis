@@ -1,0 +1,97 @@
+{
+  "status": "TEN_FIGURE_EXPORT_COMPLETED",
+  "scientific_basis": "Archive source aggregates + previously frozen external reports; no raw EEG read",
+  "source_overleaf_archive": "/home/user4/research/eegraft-figure-tools/verified_evidence.zip",
+  "archive_sha256": "bc6552fce0660070ce3b7a9b57db460195cff54f8bbbb69b2621358aafb8f23e",
+  "report_hashes": {
+    "19": "80a7f23d4498cf970629eacd48e6c7d06e274f3ac9fd39ed1ad43652bd3eaeea",
+    "22": "25ed89b7ae6f0e41bedb5d20e37fe76598252f49ddd15323dc7b81cec75972a5",
+    "23": "fa7a11839c17cd71c140babe1dfdda63ec75aabadfdabfc1659e7c54729391f6",
+    "24": "93011bf6144bd856005fbbb72b1df36d2a0f8d8726fad6ebdf03195cab541784",
+    "25": "c31e415343343c6d0a169461b0bfead0a6c918b52cae9334f061c1e26caf17cb",
+    "plan": "94a3c63f0ee0b1de05d3babc8f7dd4cdaebd75db7689150c8d3cb28bdd6c50e1"
+  },
+  "original_plotting_script_sha256": "f46620b2746c9bcde2da566a9b230479dae99838789e67d9380b2a38cf146242",
+  "archived_duration_figure_sha256": "6c3db4aabf0e87c7ef8c7288ccca3e88a0a44e5af828352860f63d4a5a8c6cb9",
+  "limitations": [
+    "Old figures 6.1, 6.3, 6.4, 6.5 are redrawn from verified archived aggregate literals, not raw EEG recomputation.",
+    "Figure 6.2 is preserved as the existing unmodified bitmap; raw plotted duration arrays were not bundled.",
+    "Figures 6.6 and 7.2 rely on reported Code19 terminal aggregate intervals/unanimous counts checked against the frozen report identity.",
+    "Figures 7.1, 7.3, 7.4 use the archived Code23-25 aggregate values.",
+    "External analyses of recording condition and age were exploratory and do not imply causal effects.",
+    "Recording-level confidence intervals cannot assume independently verified participants.",
+    "No new model fitting, test re-selection, event-file reads, EEG reads, or raw test predictions."
+  ],
+  "figures": {
+    "Fig_6_1_Temporal_Reliability": {
+      "png": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_1_Temporal_Reliability.png",
+      "pdf": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_1_Temporal_Reliability.pdf",
+      "method": "Historical Study A; archived source/rebuild_numeric_figures.py SHA-verified; aggregate values only",
+      "png_sha256": "fc6460b98f48bb8000be1d794ea6366b55bab17f387767389ae895f069c7506a",
+      "pdf_sha256": "9fae4f3a77e88eb30a98944cf982e77c65d49ec530fdc177ad8b3b9520b763c2"
+    },
+    "Fig_6_2_Duration": {
+      "png": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_2_Duration_Original_Archived.png",
+      "pdf": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_2_Duration_Archived.pdf",
+      "method": "Preserved original Figure 06 bitmap, pixel-unchanged; underlying duration plotting records not bundled in Overleaf archive; DO NOT describe as fresh recomputation",
+      "png_sha256": "6c3db4aabf0e87c7ef8c7288ccca3e88a0a44e5af828352860f63d4a5a8c6cb9",
+      "pdf_sha256": "c667a4a955366d07fc65fb921178ba844683094273d12a5e0c6910f3315ab49a"
+    },
+    "Fig_6_3_Development_Models": {
+      "png": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_3_Development_Models.png",
+      "pdf": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_3_Development_Models.pdf",
+      "method": "Archived numeric generator SHA-verified; five-fold source development aggregate results",
+      "png_sha256": "b29c64339e016ab3e2ad1eee70e8b1855e42c62c9d4fc85557d065c54c842067",
+      "pdf_sha256": "c60b25ef4562996aa04e553dca278964636a86f6a394d38de4a21d0810529287"
+    },
+    "Fig_6_4_Decoder_Ablations": {
+      "png": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_4_Decoder_Ablations.png",
+      "pdf": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_4_Decoder_Ablations.pdf",
+      "method": "Archived numeric generator SHA-verified; source 52-person development aggregate results",
+      "png_sha256": "6d6790c9460bc2d26edd05ebca843117c4fbb1c6969def577ad4766f329f49ab",
+      "pdf_sha256": "587a0634cd0a6b1a77de831663e995ee14b6e1518054e8387b6b6a6470b34feb"
+    },
+    "Fig_6_5_Source_Locked_Holdout": {
+      "png": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_5_Source_Locked_Holdout.png",
+      "pdf": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_5_Source_Locked_Holdout.pdf",
+      "method": "Archived numeric generator SHA-verified; 13-person source holdout and reported bootstraps",
+      "png_sha256": "b53a815b2288496ab90260a2006be986a37a54e169aa4726e5eb7a18d5a3efb3",
+      "pdf_sha256": "c7406a2f916eaddbcf05783ba628230433555262eed959b33bd8f9a4df338aac"
+    },
+    "Fig_6_6_CAUEEG_External_Test": {
+      "png": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_6_CAUEEG_External_Test.png",
+      "pdf": "/home/user4/research/eegraft-figure-exports-v1/Fig_6_6_CAUEEG_External_Test.pdf",
+      "method": "Code19 frozen original threshold results; CIs and AUROC from user-supplied Code19 aggregate terminal log",
+      "png_sha256": "42a2d9677423d1d914b705e424d31ea0299b7a18c0124a90f4829c6e89196899",
+      "pdf_sha256": "00fe89dc263f81055fbb88c64f153285d06e9b88df02bd69e3866a410d2dcdd3"
+    },
+    "Fig_7_1_Threshold_Dependent_Stability": {
+      "png": "/home/user4/research/eegraft-figure-exports-v1/Fig_7_1_Threshold_Dependent_Stability.png",
+      "pdf": "/home/user4/research/eegraft-figure-exports-v1/Fig_7_1_Threshold_Dependent_Stability.pdf",
+      "method": "Code23 report, train n404/validation n42; unchanged original models",
+      "png_sha256": "0715a438009270347dcbfe2c45c873db7836255efccc6441f8aff76f938ff441",
+      "pdf_sha256": "ce8d8bee9c6360b26f2b0d0b77c3167905535b24899fdc319c1eba4d8f388bd1"
+    },
+    "Fig_7_2_Unanimous_Correct_Wrong": {
+      "png": "/home/user4/research/eegraft-figure-exports-v1/Fig_7_2_Unanimous_Correct_Wrong.png",
+      "pdf": "/home/user4/research/eegraft-figure-exports-v1/Fig_7_2_Unanimous_Correct_Wrong.pdf",
+      "method": "Code19 user-supplied aggregate terminal: DSRF 4 unanimous correct/0 wrong, XGBoost 13/12",
+      "png_sha256": "81e28d48d13ecf8e96db72b1654535a83cd54dcc199d2fa0c6f3c7f6d8310688",
+      "pdf_sha256": "4565f84c71237c6a791be4e08f8af06f0fc71a5cd72d65eb1b10c6ebaf645256"
+    },
+    "Fig_7_3_Eye_Condition_Time_Audit": {
+      "png": "/home/user4/research/eegraft-figure-exports-v1/Fig_7_3_Eye_Condition_Time_Audit.png",
+      "pdf": "/home/user4/research/eegraft-figure-exports-v1/Fig_7_3_Eye_Condition_Time_Audit.pdf",
+      "method": "Code23 fixed-effects cluster CIs and <=60s matched-window sensitivity; observational post-hoc",
+      "png_sha256": "2feaeb4fc1fece8c21a598ecd2b4f97d54d9a3eaa4016d03219044472641a83a",
+      "pdf_sha256": "80e24d687640e9d046fcee9c768a7762ce1961076bfcf4cf64b4c14def7d0bf5"
+    },
+    "Fig_7_4_Age_Confounding_Increment": {
+      "png": "/home/user4/research/eegraft-figure-exports-v1/Fig_7_4_Age_Confounding_Increment.png",
+      "pdf": "/home/user4/research/eegraft-figure-exports-v1/Fig_7_4_Age_Confounding_Increment.pdf",
+      "method": "Code24 age means and Code25 paired validation AUROC increments; post-hoc aggregate only",
+      "png_sha256": "2f7f898bc54ae12dd84cf95442827536216ab7d61df466fe5b947508fc0ca62d",
+      "pdf_sha256": "bfc26e33378095d203e732b4462833bfa93917b75111921eb15313335f4c4ec7"
+    }
+  }
+}

@@ -1,0 +1,360 @@
+{
+  "age_group_overlap": {
+    "train": [
+      {
+        "age_band": "0-49",
+        "dementia_recordings": 0,
+        "normal_recordings": 14
+      },
+      {
+        "age_band": "50-59",
+        "dementia_recordings": 11,
+        "normal_recordings": 88
+      },
+      {
+        "age_band": "60-69",
+        "dementia_recordings": 33,
+        "normal_recordings": 139
+      },
+      {
+        "age_band": "70-79",
+        "dementia_recordings": 101,
+        "normal_recordings": 102
+      },
+      {
+        "age_band": "80-89",
+        "dementia_recordings": 97,
+        "normal_recordings": 24
+      },
+      {
+        "age_band": "90-120",
+        "dementia_recordings": 7,
+        "normal_recordings": 0
+      }
+    ],
+    "validation": [
+      {
+        "age_band": "0-49",
+        "dementia_recordings": 0,
+        "normal_recordings": 1
+      },
+      {
+        "age_band": "50-59",
+        "dementia_recordings": 1,
+        "normal_recordings": 9
+      },
+      {
+        "age_band": "60-69",
+        "dementia_recordings": 2,
+        "normal_recordings": 10
+      },
+      {
+        "age_band": "70-79",
+        "dementia_recordings": 4,
+        "normal_recordings": 11
+      },
+      {
+        "age_band": "80-89",
+        "dementia_recordings": 11,
+        "normal_recordings": 3
+      },
+      {
+        "age_band": "90-120",
+        "dementia_recordings": 2,
+        "normal_recordings": 0
+      }
+    ]
+  },
+  "analysis_type": "post_hoc_exploratory",
+  "dataset": "CAUEEG_dementia_no_overlap",
+  "fixed_settings": {
+    "bootstrap_resamples": 5000,
+    "cv_seed": 20261109,
+    "folds": 5,
+    "logistic_C": 1.0,
+    "spline_degree": 3,
+    "spline_knots": 4
+  },
+  "limitations": [
+    "The audit is exploratory and designed after locked-test evaluation.",
+    "Validation was previously inspected and is not a fresh independent confirmation.",
+    "Flexible age adjustment does not eliminate all demographic confounding.",
+    "Age-plus-score models were trained on CAUEEG and are not the original frozen models.",
+    "Cross-validated training predictions reuse development data across folds.",
+    "Bootstrap intervals condition on fitted predictions and do not include training variability.",
+    "The resampling unit is a recording, not a verified independent patient.",
+    "Small incremental differences do not demonstrate a disease-specific EEG biomarker.",
+    "No further inference or model selection is permitted on the previously evaluated locked test."
+  ],
+  "model_results": {
+    "linear_age": {
+      "age_function": "linear",
+      "eeg_score_included": null,
+      "train_five_fold_oof": {
+        "auroc": 0.8137016731777246,
+        "balanced_accuracy": 0.7344527975662869,
+        "brier_score": 0.17025317187493536,
+        "recordings": 616,
+        "sensitivity": 0.678714859437751,
+        "specificity": 0.7901907356948229
+      },
+      "validation": {
+        "auroc": 0.8397058823529412,
+        "balanced_accuracy": 0.7426470588235294,
+        "brier_score": 0.16594529117931625,
+        "recordings": 54,
+        "sensitivity": 0.75,
+        "specificity": 0.7352941176470589
+      }
+    },
+    "linear_age_DSRF": {
+      "age_function": "linear",
+      "eeg_score_included": "DSRF",
+      "train_five_fold_oof": {
+        "auroc": 0.8593939791865008,
+        "balanced_accuracy": 0.7568967969972533,
+        "brier_score": 0.14892985960454758,
+        "recordings": 616,
+        "sensitivity": 0.6827309236947792,
+        "specificity": 0.8310626702997275
+      },
+      "validation": {
+        "auroc": 0.8514705882352941,
+        "balanced_accuracy": 0.7779411764705882,
+        "brier_score": 0.16127770636061764,
+        "recordings": 54,
+        "sensitivity": 0.85,
+        "specificity": 0.7058823529411765
+      }
+    },
+    "linear_age_XGBoost": {
+      "age_function": "linear",
+      "eeg_score_included": "XGBoost",
+      "train_five_fold_oof": {
+        "auroc": 0.8236105183677489,
+        "balanced_accuracy": 0.7426271844872678,
+        "brier_score": 0.1659757864045312,
+        "recordings": 616,
+        "sensitivity": 0.678714859437751,
+        "specificity": 0.8065395095367848
+      },
+      "validation": {
+        "auroc": 0.8470588235294118,
+        "balanced_accuracy": 0.7823529411764706,
+        "brier_score": 0.15546163521656223,
+        "recordings": 54,
+        "sensitivity": 0.8,
+        "specificity": 0.7647058823529411
+      }
+    },
+    "spline_age": {
+      "age_function": "spline",
+      "eeg_score_included": null,
+      "train_five_fold_oof": {
+        "auroc": 0.8080769946270094,
+        "balanced_accuracy": 0.7342339384787104,
+        "brier_score": 0.1717776360360472,
+        "recordings": 616,
+        "sensitivity": 0.6265060240963856,
+        "specificity": 0.8419618528610354
+      },
+      "validation": {
+        "auroc": 0.8397058823529412,
+        "balanced_accuracy": 0.7426470588235294,
+        "brier_score": 0.16252968370135512,
+        "recordings": 54,
+        "sensitivity": 0.75,
+        "specificity": 0.7352941176470589
+      }
+    },
+    "spline_age_DSRF": {
+      "age_function": "spline",
+      "eeg_score_included": "DSRF",
+      "train_five_fold_oof": {
+        "auroc": 0.8581136535241785,
+        "balanced_accuracy": 0.759047087532692,
+        "brier_score": 0.1499640048691156,
+        "recordings": 616,
+        "sensitivity": 0.6706827309236948,
+        "specificity": 0.8474114441416893
+      },
+      "validation": {
+        "auroc": 0.8573529411764707,
+        "balanced_accuracy": 0.7529411764705882,
+        "brier_score": 0.16034200547465308,
+        "recordings": 54,
+        "sensitivity": 0.8,
+        "specificity": 0.7058823529411765
+      }
+    },
+    "spline_age_XGBoost": {
+      "age_function": "spline",
+      "eeg_score_included": "XGBoost",
+      "train_five_fold_oof": {
+        "auroc": 0.8194412527494173,
+        "balanced_accuracy": 0.7421949377893043,
+        "brier_score": 0.16717836374375522,
+        "recordings": 616,
+        "sensitivity": 0.6506024096385542,
+        "specificity": 0.8337874659400545
+      },
+      "validation": {
+        "auroc": 0.8558823529411764,
+        "balanced_accuracy": 0.7867647058823529,
+        "brier_score": 0.15303821998238581,
+        "recordings": 54,
+        "sensitivity": 0.75,
+        "specificity": 0.8235294117647058
+      }
+    }
+  },
+  "new_external_test_selection_performed": false,
+  "original_models_retrained": false,
+  "paired_incremental_information": {
+    "train_oof": {
+      "linear_DSRF_added_to_age": {
+        "auroc_difference_95ci": [
+          0.025086722913452153,
+          0.06774810413315381
+        ],
+        "auroc_improvement": 0.04569230600877627,
+        "bootstrap_resamples": 5000,
+        "bootstrap_unit": "recording",
+        "brier_improvement_95ci": [
+          0.011431646569319436,
+          0.031308516524194294
+        ],
+        "brier_improvement_positive_is_better": 0.02132331227038777,
+        "patient_independence_verified": false,
+        "training_refit_uncertainty_included": false
+      },
+      "linear_XGBoost_added_to_age": {
+        "auroc_difference_95ci": [
+          -0.0018712451987786844,
+          0.02192489303262099
+        ],
+        "auroc_improvement": 0.009908845190024329,
+        "bootstrap_resamples": 5000,
+        "bootstrap_unit": "recording",
+        "brier_improvement_95ci": [
+          -0.0013429265769593418,
+          0.009953416430801505
+        ],
+        "brier_improvement_positive_is_better": 0.004277385470404149,
+        "patient_independence_verified": false,
+        "training_refit_uncertainty_included": false
+      },
+      "spline_DSRF_added_to_age": {
+        "auroc_difference_95ci": [
+          0.0288015823512031,
+          0.071156971209087
+        ],
+        "auroc_improvement": 0.05003665889716902,
+        "bootstrap_resamples": 5000,
+        "bootstrap_unit": "recording",
+        "brier_improvement_95ci": [
+          0.011954385702234144,
+          0.031832591928242386
+        ],
+        "brier_improvement_positive_is_better": 0.02181363116693162,
+        "patient_independence_verified": false,
+        "training_refit_uncertainty_included": false
+      },
+      "spline_XGBoost_added_to_age": {
+        "auroc_difference_95ci": [
+          -0.0005372990600001705,
+          0.02357221802742298
+        ],
+        "auroc_improvement": 0.011364258122407822,
+        "bootstrap_resamples": 5000,
+        "bootstrap_unit": "recording",
+        "brier_improvement_95ci": [
+          -0.0008607963535154431,
+          0.010006327826976066
+        ],
+        "brier_improvement_positive_is_better": 0.004599272292291989,
+        "patient_independence_verified": false,
+        "training_refit_uncertainty_included": false
+      }
+    },
+    "validation": {
+      "linear_DSRF_added_to_age": {
+        "auroc_difference_95ci": [
+          -0.08602941176470591,
+          0.10810661764705862
+        ],
+        "auroc_improvement": 0.0117647058823529,
+        "bootstrap_resamples": 5000,
+        "bootstrap_unit": "recording",
+        "brier_improvement_95ci": [
+          -0.04571402663181284,
+          0.052021088888102515
+        ],
+        "brier_improvement_positive_is_better": 0.004667584818698552,
+        "patient_independence_verified": false,
+        "training_refit_uncertainty_included": false
+      },
+      "linear_XGBoost_added_to_age": {
+        "auroc_difference_95ci": [
+          -0.041911764705882426,
+          0.05661764705882355
+        ],
+        "auroc_improvement": 0.007352941176470562,
+        "bootstrap_resamples": 5000,
+        "bootstrap_unit": "recording",
+        "brier_improvement_95ci": [
+          -0.011702103480994205,
+          0.03479259939462743
+        ],
+        "brier_improvement_positive_is_better": 0.01048365596275396,
+        "patient_independence_verified": false,
+        "training_refit_uncertainty_included": false
+      },
+      "spline_DSRF_added_to_age": {
+        "auroc_difference_95ci": [
+          -0.0691176470588235,
+          0.10588235294117643
+        ],
+        "auroc_improvement": 0.01764705882352946,
+        "bootstrap_resamples": 5000,
+        "bootstrap_unit": "recording",
+        "brier_improvement_95ci": [
+          -0.047076797537404035,
+          0.04775795052405041
+        ],
+        "brier_improvement_positive_is_better": 0.002187678226702073,
+        "patient_independence_verified": false,
+        "training_refit_uncertainty_included": false
+      },
+      "spline_XGBoost_added_to_age": {
+        "auroc_difference_95ci": [
+          -0.02573529411764697,
+          0.060312499999999734
+        ],
+        "auroc_improvement": 0.016176470588235237,
+        "bootstrap_resamples": 5000,
+        "bootstrap_unit": "recording",
+        "brier_improvement_95ci": [
+          -0.011785900115352228,
+          0.0317183407725436
+        ],
+        "brier_improvement_positive_is_better": 0.009491463718969308,
+        "patient_independence_verified": false,
+        "training_refit_uncertainty_included": false
+      }
+    }
+  },
+  "source_hashes": {
+    "code24_private_csv_sha256": "5e94e43115b08b4ccff36d4590552f4e9d1bcab08ebfe49ecfc600158c4e50f6",
+    "code24_report_sha256": "93011bf6144bd856005fbbb72b1df36d2a0f8d8726fad6ebdf03195cab541784",
+    "development_inference_sha256": "9c1dbadc5c02b8b6638041fc36a1ce83343e81b0652c44fcb0216c56bcb83f55",
+    "final_test_plan_sha256": "94a3c63f0ee0b1de05d3babc8f7dd4cdaebd75db7689150c8d3cb28bdd6c50e1"
+  },
+  "status": "AGE_INCREMENTAL_AUDIT_COMPLETED",
+  "test_eeg_accessed": 0,
+  "test_predictions_accessed": 0,
+  "test_subjects_analyzed": 0,
+  "training_binary_recordings": 616,
+  "unit": "recording",
+  "validation_binary_recordings": 54
+}

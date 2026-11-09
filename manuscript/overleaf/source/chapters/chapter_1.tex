@@ -1,0 +1,44 @@
+\section{Background}
+Dementia describes a group of conditions that affect memory, thinking and daily functioning. Alzheimer's disease (AD) is one cause; frontotemporal dementia (FTD) is another. Electroencephalography (EEG) measures electrical activity from electrodes on the scalp. It is non-invasive and comparatively accessible. Researchers have studied whether patterns such as reduced high-frequency activity and altered connections between EEG signals can help distinguish diagnostic groups \cite{jeong2004,dauwels2010,cassani2018}. An EEG classifier is not, by itself, a clinical diagnosis.
+
+An apparently good classification score also leaves important questions unanswered. Different segments of the same recording may produce different answers. Conversely, repeated predictions may all agree yet be wrong. An external dataset may use different recording conditions, subject characteristics and disease labels. A model's apparent stability can change when its decision threshold changes even though its underlying scores and weights do not. Reliable evaluation must therefore include correctness, time or condition consistency, decision rules, calibration and transfer limitations \cite{varma2006,varoquaux2018,guo2017calibration}.
+
+\section{Problem Statement}
+EEG studies often compare models using one aggregate accuracy measure. When windows from one person are treated as independent observations, apparent certainty can be exaggerated. Even participant-disjoint tests can conceal stable incorrect classifications. A small source-cohort test also cannot establish how a model will behave on a different population. For EEG-based dementia research, the engineering problem is not merely to increase classification accuracy; it is to determine when recorded performance remains meaningful under different temporal choices, score thresholds and cohort characteristics.
+
+We address this through three linked but distinct investigations. Study A examines five-minute prediction consistency for spectral-feature SVMs on the NEMAR source cohort. Study B develops the EEGraft dual-scale residual fusion (DSRF) decoder and compares it against classical and neural alternatives on an AD-versus-control task. Study C applies the already frozen Study B DSRF and XGBoost models to the external CAUEEG dataset, where the target is broader Dementia versus Normal classification. A separate Isfahan MCI investigation provides a negative-control example of high consistency with poor discrimination. These studies use different cohorts, models or evaluation units and are never pooled into one performance estimate.
+
+\section{Research Aim and Questions}
+Our aim is to evaluate how trustworthy EEG dementia-classification results are when model complexity, recording time, classification thresholds and population differences are considered together. The custom decoder is one engineering contribution; testing the limits of its performance and the reliability metrics is an equally important empirical contribution.
+
+\begin{enumerate}[label=\textbf{RQ\arabic*:},leftmargin=2cm]
+\item How do EEG classifications change across recording intervals, and how often are stable predictions incorrect?
+\item How does the custom EEGraft DSRF decoder compare with strong classical baselines on subject-disjoint development data, a locked source holdout and an external dementia benchmark?
+\item How do decision thresholds and calibration change the interpretation of apparent prediction stability and external correctness?
+\item What do recording conditions, age differences, diagnostic-label mismatch and the available uncertainty estimates prevent us from concluding?
+\end{enumerate}
+
+\section{Research Objectives and Approach}
+The project has five objectives. First, retain the historical spectral SVM results with honest counts of participant-repeat predictions and errors. Second, implement a trainable dual-scale gated residual decoder on a frozen pretrained CBraMod backbone. Third, compare that decoder with XGBoost and other baselines while keeping source test participants out of model selection. Fourth, apply the fixed DSRF and XGBoost models to CAUEEG without adapting their weights and assess primary and secondary decision rules separately. Fifth, examine incorrect unanimity, event-associated changes, age confounding, calibration and other reproducibility limits without claiming they establish clinical effectiveness.
+
+\TallThesisFigure[Overall three-study methodology]{fig_01_roadmap.pdf}{Overview of the three separately evaluated studies. Studies A and B use different protocols on the NEMAR source cohort; only frozen Study B models transfer to CAUEEG in Study C. The external binary test contains 57 EEG recordings, not 57 independently verified patients. Model weights are not retrained on CAUEEG. The drawn workflow is schematic.}{fig:methodology}
+
+Figure~\ref{fig:methodology} separates the source temporal investigation from decoder development and the subsequent external transfer. The figure is a roadmap, not evidence that the three datasets were merged or that training on one study's held-out cases was permitted.
+
+\section{What This Thesis Contributes}
+EEGraft offers a specific engineering implementation and a connected series of empirical checks. These contributions are distinct from the invention of an EEG foundation model or a clinical diagnostic system.
+
+\textbf{Custom decoder.} We implemented a trainable dual-scale temporal pathway (kernels 9 and 41), fused its features with frozen CBraMod tokens using a learned gated additive residual, and computed class-specific attention before averaging window probabilities. The architecture is documented, compared against eight development variants and tested with a capacity-matched fusion control. Its value is a reproducible, testable decoder design, not a claim that its individual operations are new.
+
+\textbf{Controlled comparisons.} We retained participant-disjoint development evaluation and a separate 13-person source holdout. Reporting XGBoost's better locked result alongside EEGraft's development performance shows what the design achieved and where a strong classical baseline remained competitive.
+
+\textbf{Correctness-aware reliability evidence.} The five-minute SVM study and independent Isfahan negative control quantify stable incorrect decisions rather than equating consistency with success. The CAUEEG transfer independently shows the same evaluation issue through 24-window unanimous decisions and explicit incorrect counts.
+
+\textbf{Threshold-aware frozen transfer.} Without retraining source models, we evaluated original 0.50 decisions on the broad-Dementia/Normal CAUEEG task, then separated training-selected thresholds and train-fitted calibration as exploratory alternatives. The measured change in XGBoost's eye-condition label changes, from 7.18\% to 33.17\% in eligible training recordings, illustrates why decision rules belong in reliability reporting.
+
+\textbf{Context-aware interpretation.} The age-only baseline and eye-state/time analyses identify competing explanations that future EEG studies should test. Collectively these investigations offer a concrete evaluation checklist: specify the unit and cohort, isolate a locked test, retain the original decision rule, report stable errors, test threshold sensitivity and examine demographic and acquisition context.
+
+The CAUEEG label covers broad dementia rather than an independent AD-specific replication; the Isfahan SVMs are a separate analysis. These scope boundaries are developed in Chapters 4 and 8.
+
+\section{Scope and Thesis Organization}
+Chapter 2 reviews relevant work and the open evaluation problem. Chapter 3 describes requirements, impacts, resources and ethical constraints. Chapter 4 explains participant and recording cohorts and why the splits must be kept separate. Chapter 5 details the decoder, temporal controls, frozen-transfer and threshold protocol. Chapter 6 reports source and external performance. Chapter 7 examines consistency, stable errors, threshold sensitivity, eye-state associations, age and technical robustness. Chapter 8 discusses interpretation and threats to validity. Chapter 9 answers the research questions and outlines specific next steps.

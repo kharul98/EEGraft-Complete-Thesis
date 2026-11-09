@@ -1,0 +1,55 @@
+\section{Final Specifications and Requirements}
+The work is a retrospective computational investigation, not a deployed medical system. Its principal requirements are scientific and technical rather than commercial. The report must establish that data from one individual never crosses a train--test boundary in the subject-level analysis, that preprocessing and feature extraction are described clearly, and that results can be traced to the executed experiment. The model comparison must include alternatives with different complexity. A locked final test should be examined only after the model-development decisions are fixed.
+
+\begin{table}[htbp]\centering\small
+\caption{Research requirements and how the study addresses them}\label{tab:req}
+\begin{tabularx}{\textwidth}{@{}p{0.26\textwidth}X@{}}\toprule
+\textbf{Requirement}&\textbf{Implementation or evidence}\\\midrule
+Subject independence&Subject-disjoint nested repeated CV for the original reliability analysis; five development folds and one locked holdout for the later decoder study.\\
+Dataset traceability&The source is NEMAR/OpenNeuro ds004504, with analytical counts documented separately for each experiment.\\
+Reproducible processing&The later pipeline records 19 channels, 200 Hz, a 0.3--40 Hz bandpass, four-second windows and the 24-window cap.\\
+Meaningful comparison&SVM, random forest, XGBoost, EEGNet-inspired and architecture-ablation variants are evaluated.\\
+Multiple reliability criteria&Balanced accuracy, macro-F1, error persistence, label changes, Brier scores and artificial perturbation tests are kept distinct.\\
+No test-set optimization&The saved final protocol requires a frozen DSRF and XGBoost evaluation on the 13-person holdout.\\
+Claim boundaries&No external AD validation, progression prediction or clinical diagnostic approval is claimed.\\
+\bottomrule\end{tabularx}\end{table}
+
+These requirements come from the intended research question. Classification is assessed at the participant level because the desired use case would concern a new individual, not a new four-second segment from an already seen recording. Robustness conditions are measured against clean predictions because a corruption can change both confidence and class label. Calibration metrics are included because a numerical probability is not automatically a trustworthy estimate of risk \cite{guo2017calibration}.
+
+\section{Engineering Environment and Resource Constraints}
+Most model development occurred on local Linux infrastructure. The computational requirements of a frozen encoder differ from those of full foundation-model pretraining. We load existing pretrained weights and train the downstream decoder; we do not claim to have pretrained CBraMod. Freezing the encoder reduces parameter optimization and makes experiments more feasible on modest GPU resources. The same design can also constrain adaptation when the EEG acquisition distribution differs from the pretraining data.
+
+The final DSRF protocol records a batch size of eight, a learning rate of 0.001, five training epochs, weight decay 0.01 and random seed 42. It also records five fold-specific best epoch counts during development: 5, 14, 1, 6 and 4. Five epochs were chosen for the frozen final model protocol; the unequal fold-specific values show that training behavior was not identical across folds. The exact historical rationale for choosing the final epoch count beyond the saved development procedure is not recoverable from the summary alone, so it should not be presented as a theoretically optimal value.
+
+\section{Societal Impact and Responsible Interpretation}
+EEG may eventually contribute to accessible research on neurodegenerative conditions, but the present work has no verified diagnostic deployment. False positives could cause unnecessary worry, and false negatives could give false reassurance. These risks make it important not to describe the classifier as predicting future Alzheimer's disease or replacing a clinician. The observed classification concerns diagnostic labels already attached to retrospective recordings, not longitudinal conversion from healthy status to AD.
+
+A second societal issue is representativeness. The recordings come from limited cohorts and acquisition settings. Even perfect internal performance would not ensure usefulness across regions, age groups, equipment, clinics or patient populations. The small held-out sample provides particularly wide uncertainty. Future clinical usefulness would require independent multi-site data, predeclared evaluation protocols, and medical oversight.
+
+\section{Ethical Issues and Professional Responsibilities}
+The source dataset contains anonymized human EEG. We follow its public research context and avoid exposing identifiable records. Figures in this report contain user-supplied method illustrations or statistical summaries, not personally identifying clinical records. The source-data article describes anonymization and institutional collection procedures \cite{miltiadous2023dataset}. We do not invent a new ethics approval number.
+
+Professional responsibility also requires precise claims about model explanations. Zeroing one channel can reveal how much a model depends on that input, but it does not prove that the electrode corresponds to a biological cause of dementia. Similarly, the five artificial noise repetitions are technical stress tests, not evidence that the model would remain dependable with all real-world artifacts.
+
+\section{Environmental and Economic Constraints}
+The work used an existing public dataset and a pretrained encoder rather than collecting new clinical recordings or pretraining an EEG foundation model. That avoids the hardware, storage and clinical costs of those activities. On the other hand, neural inference and repeated experiments still consume electricity and storage. We cannot calculate exact energy use because full power-monitoring logs are not part of the supplied evidence. No fabricated monetary budget or carbon estimate is therefore included.
+
+\section{Project Management and Research Milestones}
+The historical project can be described in seven analytical phases without implying that all were part of one initial preregistered plan. First, spectral classification was studied under repeated subject-disjoint validation. Second, time-window behavior, recording conditions and controls were examined. Third, a separate MCI dataset and an additional EEG archive were checked for independent evidence. Fourth, a pretrained CBraMod encoder was integrated with a custom decoder. Fifth, classical and neural development baselines were compared. Sixth, masking and perturbation checks were performed. Seventh, fixed models were evaluated on the original locked holdout. This retrospective description follows the research record, but it is not a claim that all decisions were planned before any result was seen.
+
+\section{Risk Management}
+\begin{table}[H]\centering\small
+\caption{Main risks and associated controls}\label{tab:risks}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{0.25\textwidth}>{\RaggedRight\arraybackslash}X@{}}\toprule
+\textbf{Risk}&\textbf{Control and remaining concern}\\\midrule
+Window-level leakage&Partition people before creating model evaluation samples. Remaining preprocessing leakage must still be checked against source code.\\
+Small test cohort&Report counts and uncertainty intervals; do not infer small differences as proven.\\
+Model-selection bias&Use development results to choose models, then one final holdout; any earlier exploratory selection remains a limitation.\\
+Overlapping analytic cohorts&Label every result with its own cohort and do not pool unreconciled participant IDs.\\
+Artificial robustness conditions&Clearly identify synthetic noise and zeroed channels; do not call them field validation.\\
+Feature-importance overinterpretation&Describe model sensitivity only; avoid causal neurological claims.\\
+Citation or figure provenance loss&Retain code, SHA-256 and a source registry where available; mark unrecovered earlier assets separately.\\
+\bottomrule\end{tabularx}\end{table}
+
+\section{Standards and Reproducibility Practices}
+EEG-BIDS provides useful conventions for storing electrodes, events and participant records \cite{pernet2019}. Our reproducibility package records the known subject counts, source repository files, model protocols, fixed checkpoint hashes and figure provenance. It does not include the original multigigabyte EEG dataset or trained checkpoint files as they were not part of the submitted attachments. Their absence should not be confused with evidence that they were never created. The essential requirement for academic submission is that every reported result is correctly tied to an executed protocol, not merely that the document compiles.

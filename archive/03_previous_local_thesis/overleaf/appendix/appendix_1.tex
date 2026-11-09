@@ -1,0 +1,26 @@
+\chapter{Reproducibility Record and Additional Metrics}
+\label{app:reproducibility}
+\section{Source Cohorts and Decision Units}
+The full source cohort has 88 participants (36 AD, 23 FTD, 29 CN). The original SVM reliability analysis uses 64 participants (23 AD, 18 FTD, 23 CN). The later DSRF comparison uses 65 participants (36 AD, 29 CN). Only the latter has the fixed 52-development/13-holdout structure described in the saved final protocol. The original participant-ID lists have not been reconciled between tracks. Source studies and derivative analyses must therefore be documented separately when a new researcher reproduces the work.
+
+\section{Frozen Final Settings}
+The final protocol specifies the following DSRF values: five epochs, batch size eight, learning rate 0.001, weight decay 0.01, seed 42, frozen pretrained encoder, up to 24 windows per participant, four seconds per window, 200 Hz, and a 40 Hz upper passband. The execution summary documents the 0.3 Hz lower cutoff. The XGBoost values are 180 estimators, depth two, learning rate 0.05, 0.9 row subsampling, 0.9 column subsampling and seed 42. The primary metric is subject-level balanced accuracy. These are locked protocol facts; their historical tuning provenance should be read from the complete development logs before asserting why each exact value was selected.
+
+\section{Model and Data Signatures}
+\begin{longtable}{@{}p{0.35\textwidth}p{0.55\textwidth}@{}}
+\caption{Recorded SHA-256 digests from saved protocol and holdout output}\\\toprule
+\textbf{Artifact}&\textbf{Digest}\\\midrule\endfirsthead\toprule\textbf{Artifact}&\textbf{Digest}\\\midrule\endhead\bottomrule\endfoot
+CBraMod pretrained weights&\ttfamily\footnotesize \seqsplit{0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178}\normalfont\\
+Original data manifest&\ttfamily\footnotesize \seqsplit{73f9b5cf97c0ef3f9ad9fc5b031862701e258ea2538f1c8fe69c424c39f046e6}\normalfont\\
+Locked protocol&\ttfamily\footnotesize \seqsplit{d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd}\normalfont\\
+DSRF final checkpoint&\ttfamily\footnotesize \seqsplit{72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3}\normalfont\\
+XGBoost final checkpoint&\ttfamily\footnotesize \seqsplit{9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f}\normalfont\\
+\end{longtable}
+
+These hashes identify original repository artifacts and are provided for checking; the underlying model weights and raw recordings are not bundled with this report ZIP.
+
+\section{Correctness and Probability Reporting}
+The locked confusion matrices have seven AD and six CN subjects. DSRF: four true AD called AD, three true AD called CN, one CN called AD and five CN called CN. XGBoost: five true AD called AD, two true AD called CN, one CN called AD and five CN called CN. The saved test JSON includes Brier and ECE scores. The original recorded model output, not a new thesis-figure script, is the source for these numbers.
+
+\section{Figure Provenance}
+There are 13 included report figures. Four were restored directly from accessible user-provided files. The other nine are graphics reconstructed from saved project aggregate numbers and a study-cohort diagram. The file \path{reproducibility/FIGURE_PROVENANCE.json} gives a description and SHA-256 for each. The original approved 13-image conversation archive was not attached to this writing handoff; this package does not claim to be a byte-for-byte recreation of that archive. The included graphics are specifically labeled as method illustrations or aggregate-result plots rather than as newly produced raw EEG observations.

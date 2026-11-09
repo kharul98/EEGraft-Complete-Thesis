@@ -1,0 +1,67 @@
+[
+  {
+    "file": "fig06_duration.png",
+    "source": "User-provided image from personal Library, retained without redrawing; earlier duration experiment",
+    "sha256": "6c3db4aabf0e87c7ef8c7288ccca3e88a0a44e5af828352860f63d4a5a8c6cb9"
+  },
+  {
+    "file": "fig03_decoder.png",
+    "source": "User-provided image from personal Library, retained without redrawing; method schematic/illustrative EEG snippet",
+    "sha256": "098476fea1290bbd6301ae253ca66d559512b166a7ffc0f2690ed6f4669a8830"
+  },
+  {
+    "file": "fig02_preprocessing.png",
+    "source": "User-provided image from personal Library, retained without redrawing; method schematic",
+    "sha256": "c6da76c488da369b6c1fe273eae689017d07a5c89f7c568baa9495a2ef192002"
+  },
+  {
+    "file": "fig01_methodology.png",
+    "source": "User-provided image from personal Library, retained without redrawing; original method overview",
+    "sha256": "8a6c55cb1438c44af6303eca0ad0e13065f613e8168401048655ed8b5176b0f4"
+  },
+  {
+    "file": "fig04_two_studies.png",
+    "source": "PROJECT_HISTORY.md; thesis evidence brief; later execution package",
+    "sha256": "dc0a75b36095ff2182fa7ae4a322917d2c56b4415e3d327ddaf418c12cbab8aa"
+  },
+  {
+    "file": "fig05_temporal_reliability.png",
+    "source": "PROJECT_HISTORY.md Phase A; 64-person SVM retrospective track",
+    "sha256": "3f092dd5bb05ce716a785dd60569d95f769869caf391f5dd0d1fe8b8770fabfe"
+  },
+  {
+    "file": "fig07_mci_controls.png",
+    "source": "PROJECT_HISTORY.md Phase B; independent MCI task, not external AD validation",
+    "sha256": "5baa3c4a5389b63badd5d509364bf566c3440ef3a4099de8b43ad452818c9a7b"
+  },
+  {
+    "file": "fig08_development_models.png",
+    "source": "results/thesis_execution_package_2026_v1/thesis_results_ready.md; n=52",
+    "sha256": "6bbb270d4bbd75f73901042db01836438e396a0deceb4235815dfb5b33be7000"
+  },
+  {
+    "file": "fig09_decoder_ablations.png",
+    "source": "results/thesis_execution_package_2026_v1/thesis_results_ready.md; matched residual-versus-blend, additional non-matched component ablations",
+    "sha256": "ca8f7f1972c989fbaa54fcd910e901946ed5a81c9db63a014371c52cacb46367"
+  },
+  {
+    "file": "fig10_synthetic_robustness.png",
+    "source": "results/thesis_execution_package_2026_v1/thesis_results_ready.md; same n=52 for five perturbation seeds",
+    "sha256": "0b440ec9f6dd2f877109cc7e6115cb53e30736f391659f694fcb2311f675e4ac"
+  },
+  {
+    "file": "fig11_perturbation_flips.png",
+    "source": "results/thesis_execution_package_2026_v1/thesis_results_ready.md; five seeded repeats, 52 subjects",
+    "sha256": "d79c6a6fb9e3de0fa8a58784cedcf9331da3e9ca47619bbc3e85e728ccdd92e5"
+  },
+  {
+    "file": "fig12_channel_occlusion.png",
+    "source": "PROJECT_HISTORY.md Phase E and thesis_results_ready.md; n=52 input-mask sensitivity only",
+    "sha256": "e546e7259c2049ca35376b2068e4feb2511ed36324d4a9c55955b243ed0eeba8"
+  },
+  {
+    "file": "fig13_holdout_uncertainty.png",
+    "source": "results/locked_final_test_2026_v1/final_metrics.json; n=13, paired difference -7.14 pp, interval includes zero",
+    "sha256": "7f7e7a94d21fd1e2fa23381145dcbc418324fb45db56243707676b63c491c326"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "dataset": "ISFAHAN",
+    "source_file_PRIVATE": "/home/user4/alzheimers-thesis/data/external/isfahan_mci_v1/EEG_1/1.edf",
+    "sampling_frequency_hz": 256.0,
+    "original_duration_s": 1819.0,
+    "original_eeg_channel_count": 19,
+    "displayed_channels": [
+      "Fp1",
+      "F3",
+      "C3",
+      "P3",
+      "O1",
+      "O2"
+    ],
+    "start_seconds": 30.0,
+    "sample_count": 1536,
+    "displayed_source_samples_sha256": "1fad027ef7bced365ac70ccda7c72c4733c3efe142b8b19ced437fffdaadf2f4",
+    "png": "/home/user4/research/eegraft-dataset-previews/02_Isfahan_MCI_EEG_Real_EEG_Preview.png",
+    "restricted_release_review_needed": false
+  },
+  {
+    "dataset": "CAUEEG",
+    "source_file_PRIVATE": "/home/user4/research/caueeg/imported_caueeg/caueeg-dataset/signal/edf/00002.edf",
+    "sampling_frequency_hz": 200.0,
+    "original_duration_s": 1043.0,
+    "original_eeg_channel_count": 21,
+    "displayed_channels": [
+      "Fp1-AVG",
+      "F3-AVG",
+      "C3-AVG",
+      "P3-AVG",
+      "O1-AVG",
+      "O2-AVG"
+    ],
+    "start_seconds": 30.0,
+    "sample_count": 1200,
+    "displayed_source_samples_sha256": "e0752ecf6e7ceb6d1108775e4b351126aa0a6fd109ec86bf129d69f9bf3aec9c",
+    "png": "/home/user4/research/eegraft-dataset-previews/03_CAUEEG_Real_EEG_Preview.png",
+    "restricted_release_review_needed": true
+  }
+]

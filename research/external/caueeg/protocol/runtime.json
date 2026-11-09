@@ -1,0 +1,9 @@
+{
+  "model_root": "/home/user4/alzheimers-thesis/eeg_foundation_thesis_starter/eeg_foundation_thesis",
+  "extension_root": "/home/user4/research/eegraft-caueeg",
+  "dataset_root": "/home/user4/research/caueeg",
+  "python_executable": "/home/user4/alzheimers-thesis/eeg_foundation_thesis_starter/eeg_foundation_thesis/.venv/bin/python",
+  "use_frozen_original_models": true,
+  "modify_original_thesis": false,
+  "external_test_evaluated": false
+}

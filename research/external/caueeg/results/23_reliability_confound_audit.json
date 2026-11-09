@@ -1,0 +1,385 @@
+{
+  "analysis_type": "post_hoc_exploratory",
+  "cohorts": {
+    "train": 404,
+    "validation": 42
+  },
+  "controls": {
+    "cluster_unit": "recording",
+    "linear_elapsed_time_covariate": true,
+    "maximum_nearby_time_gap_seconds": 60,
+    "nearby_opposite_state_window_matching": true,
+    "original_threshold": 0.5,
+    "platt_parameters_from_frozen_plan": true,
+    "random_seed": 20261109,
+    "recording_bootstrap_resamples": 5000,
+    "recording_fixed_effects": true,
+    "training_selected_xgboost_threshold": 0.7
+  },
+  "limitations": [
+    "The research question was refined after viewing the locked test results.",
+    "Validation is not an independent prospective confirmation.",
+    "Only recordings with valid event alignment and sufficient eye-state windows are analyzed.",
+    "Eye-state windows have systematically different recording times.",
+    "Linear time adjustment cannot eliminate nonlinear confounding.",
+    "Eye-state condition is observational, not randomized.",
+    "Nearby window matching does not establish causation.",
+    "The score distributions of different model families are not necessarily on comparable scales.",
+    "Changing a decision threshold changes apparent label stability.",
+    "Recordings may not represent independent patients.",
+    "No clinical Alzheimer's biomarker or diagnostic benefit is established."
+  ],
+  "new_hyperparameters_selected": false,
+  "original_models_modified": false,
+  "provenance": {
+    "code21_windows_sha256": "82428ab28044300c7981e3e981bb07244cc615fa55df1e37761d510668902f93",
+    "code22_paired_sha256": "43eebf47fcae814ab89f57fb84ac28570fc4c2f12fb43d88cea0c1a75961ed0f",
+    "code22_report_sha256": "25ed89b7ae6f0e41bedb5d20e37fe76598252f49ddd15323dc7b81cec75972a5",
+    "plan_sha256": "94a3c63f0ee0b1de05d3babc8f7dd4cdaebd75db7689150c8d3cb28bdd6c50e1"
+  },
+  "results": {
+    "train": {
+      "close_pair_sensitivity": {
+        "DSRF": {
+          "maximum_pair_separation_seconds": 60,
+          "mean_recording_absolute_score_difference": 0.3830971323810548,
+          "mean_recording_score_difference": 0.12530217976794145,
+          "mean_recording_window_label_flip_fraction": 0.44375000000000003,
+          "median_pair_time_separation_seconds": 36.0,
+          "recording_bootstrap_95ci": [
+            0.09096460844669946,
+            0.1601015898800771
+          ],
+          "recordings_with_close_opposite_state_pairs": 348,
+          "status": "computed",
+          "total_matched_window_pairs": 1427,
+          "warning": "Nearby opposite-condition windows may still differ in elapsed time, alertness and artifacts. Matching is descriptive, not causal."
+        },
+        "XGBoost": {
+          "maximum_pair_separation_seconds": 60,
+          "mean_recording_absolute_score_difference": 0.13725360471410672,
+          "mean_recording_score_difference": 0.06945497213338298,
+          "mean_recording_window_label_flip_fraction": 0.154477969348659,
+          "median_pair_time_separation_seconds": 36.0,
+          "recording_bootstrap_95ci": [
+            0.05629777382459283,
+            0.08246387660300504
+          ],
+          "recordings_with_close_opposite_state_pairs": 348,
+          "status": "computed",
+          "total_matched_window_pairs": 1427,
+          "warning": "Nearby opposite-condition windows may still differ in elapsed time, alertness and artifacts. Matching is descriptive, not causal."
+        }
+      },
+      "threshold_sensitivity": {
+        "paired_comparisons": {
+          "calibrated_DSRF_minus_calibrated_XGBoost": {
+            "difference_in_flip_fraction": 0.034653465346534656,
+            "first_only_flip_count": 84,
+            "recording_bootstrap_95ci": [
+              -0.024752475247524754,
+              0.09405940594059406
+            ],
+            "second_only_flip_count": 70
+          },
+          "original_DSRF_minus_original_XGBoost": {
+            "difference_in_flip_fraction": 0.27970297029702973,
+            "first_only_flip_count": 132,
+            "recording_bootstrap_95ci": [
+              0.22772277227722773,
+              0.3316831683168317
+            ],
+            "second_only_flip_count": 19
+          },
+          "original_DSRF_minus_threshold_XGBoost": {
+            "difference_in_flip_fraction": 0.019801980198019802,
+            "first_only_flip_count": 89,
+            "recording_bootstrap_95ci": [
+              -0.04207920792079208,
+              0.08663366336633663
+            ],
+            "second_only_flip_count": 81
+          }
+        },
+        "variants": {
+          "DSRF_calibrated": {
+            "condition_flip_count": 131,
+            "condition_flip_fraction": 0.32425742574257427,
+            "n_recordings": 404,
+            "recording_bootstrap_95ci": [
+              0.27970297029702973,
+              0.3688118811881188
+            ],
+            "threshold": 0.5
+          },
+          "DSRF_original": {
+            "condition_flip_count": 142,
+            "condition_flip_fraction": 0.35148514851485146,
+            "n_recordings": 404,
+            "recording_bootstrap_95ci": [
+              0.30445544554455445,
+              0.39851485148514854
+            ],
+            "threshold": 0.5
+          },
+          "DSRF_training_threshold": {
+            "condition_flip_count": 142,
+            "condition_flip_fraction": 0.35148514851485146,
+            "n_recordings": 404,
+            "recording_bootstrap_95ci": [
+              0.30445544554455445,
+              0.39851485148514854
+            ],
+            "threshold": 0.5
+          },
+          "XGBoost_calibrated": {
+            "condition_flip_count": 117,
+            "condition_flip_fraction": 0.2896039603960396,
+            "n_recordings": 404,
+            "recording_bootstrap_95ci": [
+              0.24504950495049505,
+              0.3316831683168317
+            ],
+            "threshold": 0.5
+          },
+          "XGBoost_original": {
+            "condition_flip_count": 29,
+            "condition_flip_fraction": 0.07178217821782178,
+            "n_recordings": 404,
+            "recording_bootstrap_95ci": [
+              0.04702970297029703,
+              0.09900990099009901
+            ],
+            "threshold": 0.5
+          },
+          "XGBoost_training_threshold": {
+            "condition_flip_count": 134,
+            "condition_flip_fraction": 0.3316831683168317,
+            "n_recordings": 404,
+            "recording_bootstrap_95ci": [
+              0.2871287128712871,
+              0.37623762376237624
+            ],
+            "threshold": 0.7
+          }
+        }
+      },
+      "time_adjustment": {
+        "DSRF": {
+          "eligible_windows": 5590,
+          "eye_state_coefficient_95ci": [
+            0.09811726970015539,
+            0.1527340497961413
+          ],
+          "eye_state_coefficient_adjusted_for_linear_time": 0.12542565974814834,
+          "eye_state_exploratory_p": 7.222526737666471e-18,
+          "interpretation": "Exploratory time-adjusted association only. Nonlinear time trends, vigilance, artifacts, and other recording-condition factors remain potential confounders.",
+          "method": "Linear recording fixed effects, recording-clustered sandwich covariance",
+          "recordings": 404,
+          "time_coefficient_95ci": [
+            0.0047374845655459895,
+            0.01043506203582853
+          ],
+          "time_coefficient_per_minute": 0.00758627330068726,
+          "time_exploratory_p": 2.6605927146491647e-07,
+          "within_record_eye_state_time_correlation": -0.27935100678576913,
+          "within_record_state_time_vif": 1.0846422076828806
+        },
+        "XGBoost": {
+          "eligible_windows": 5590,
+          "eye_state_coefficient_95ci": [
+            0.053661121679314173,
+            0.07625873853617904
+          ],
+          "eye_state_coefficient_adjusted_for_linear_time": 0.0649599301077466,
+          "eye_state_exploratory_p": 6.454842660194837e-26,
+          "interpretation": "Exploratory time-adjusted association only. Nonlinear time trends, vigilance, artifacts, and other recording-condition factors remain potential confounders.",
+          "method": "Linear recording fixed effects, recording-clustered sandwich covariance",
+          "recordings": 404,
+          "time_coefficient_95ci": [
+            0.0029325522480297653,
+            0.005116862059959303
+          ],
+          "time_coefficient_per_minute": 0.004024707153994534,
+          "time_exploratory_p": 2.22548552910836e-12,
+          "within_record_eye_state_time_correlation": -0.27935100678576913,
+          "within_record_state_time_vif": 1.0846422076828806
+        }
+      }
+    },
+    "validation": {
+      "close_pair_sensitivity": {
+        "DSRF": {
+          "maximum_pair_separation_seconds": 60,
+          "mean_recording_absolute_score_difference": 0.32700009191198964,
+          "mean_recording_score_difference": 0.06270385685253328,
+          "mean_recording_window_label_flip_fraction": 0.3458172458172458,
+          "median_pair_time_separation_seconds": 36.0,
+          "recording_bootstrap_95ci": [
+            -0.03973721468160658,
+            0.15989863118000888
+          ],
+          "recordings_with_close_opposite_state_pairs": 37,
+          "status": "computed",
+          "total_matched_window_pairs": 141,
+          "warning": "Nearby opposite-condition windows may still differ in elapsed time, alertness and artifacts. Matching is descriptive, not causal."
+        },
+        "XGBoost": {
+          "maximum_pair_separation_seconds": 60,
+          "mean_recording_absolute_score_difference": 0.13944338506022935,
+          "mean_recording_score_difference": 0.05537764597660172,
+          "mean_recording_window_label_flip_fraction": 0.17438867438867436,
+          "median_pair_time_separation_seconds": 36.0,
+          "recording_bootstrap_95ci": [
+            0.003579922801643575,
+            0.11230403721476385
+          ],
+          "recordings_with_close_opposite_state_pairs": 37,
+          "status": "computed",
+          "total_matched_window_pairs": 141,
+          "warning": "Nearby opposite-condition windows may still differ in elapsed time, alertness and artifacts. Matching is descriptive, not causal."
+        }
+      },
+      "threshold_sensitivity": {
+        "paired_comparisons": {
+          "calibrated_DSRF_minus_calibrated_XGBoost": {
+            "difference_in_flip_fraction": -0.023809523809523808,
+            "first_only_flip_count": 6,
+            "recording_bootstrap_95ci": [
+              -0.19047619047619047,
+              0.14285714285714285
+            ],
+            "second_only_flip_count": 7
+          },
+          "original_DSRF_minus_original_XGBoost": {
+            "difference_in_flip_fraction": 0.19047619047619047,
+            "first_only_flip_count": 10,
+            "recording_bootstrap_95ci": [
+              0.047619047619047616,
+              0.3333333333333333
+            ],
+            "second_only_flip_count": 2
+          },
+          "original_DSRF_minus_threshold_XGBoost": {
+            "difference_in_flip_fraction": -0.047619047619047616,
+            "first_only_flip_count": 9,
+            "recording_bootstrap_95ci": [
+              -0.2619047619047619,
+              0.16666666666666666
+            ],
+            "second_only_flip_count": 11
+          }
+        },
+        "variants": {
+          "DSRF_calibrated": {
+            "condition_flip_count": 9,
+            "condition_flip_fraction": 0.21428571428571427,
+            "n_recordings": 42,
+            "recording_bootstrap_95ci": [
+              0.09523809523809523,
+              0.35714285714285715
+            ],
+            "threshold": 0.5
+          },
+          "DSRF_original": {
+            "condition_flip_count": 13,
+            "condition_flip_fraction": 0.30952380952380953,
+            "n_recordings": 42,
+            "recording_bootstrap_95ci": [
+              0.16666666666666666,
+              0.4523809523809524
+            ],
+            "threshold": 0.5
+          },
+          "DSRF_training_threshold": {
+            "condition_flip_count": 13,
+            "condition_flip_fraction": 0.30952380952380953,
+            "n_recordings": 42,
+            "recording_bootstrap_95ci": [
+              0.16666666666666666,
+              0.4523809523809524
+            ],
+            "threshold": 0.5
+          },
+          "XGBoost_calibrated": {
+            "condition_flip_count": 10,
+            "condition_flip_fraction": 0.23809523809523808,
+            "n_recordings": 42,
+            "recording_bootstrap_95ci": [
+              0.11904761904761904,
+              0.35714285714285715
+            ],
+            "threshold": 0.5
+          },
+          "XGBoost_original": {
+            "condition_flip_count": 5,
+            "condition_flip_fraction": 0.11904761904761904,
+            "n_recordings": 42,
+            "recording_bootstrap_95ci": [
+              0.023809523809523808,
+              0.21428571428571427
+            ],
+            "threshold": 0.5
+          },
+          "XGBoost_training_threshold": {
+            "condition_flip_count": 15,
+            "condition_flip_fraction": 0.35714285714285715,
+            "n_recordings": 42,
+            "recording_bootstrap_95ci": [
+              0.21428571428571427,
+              0.5
+            ],
+            "threshold": 0.7
+          }
+        }
+      },
+      "time_adjustment": {
+        "DSRF": {
+          "eligible_windows": 571,
+          "eye_state_coefficient_95ci": [
+            -0.021558496902665453,
+            0.16100347688225652
+          ],
+          "eye_state_coefficient_adjusted_for_linear_time": 0.06972248998979554,
+          "eye_state_exploratory_p": 0.13061878567507446,
+          "interpretation": "Exploratory time-adjusted association only. Nonlinear time trends, vigilance, artifacts, and other recording-condition factors remain potential confounders.",
+          "method": "Linear recording fixed effects, recording-clustered sandwich covariance",
+          "recordings": 42,
+          "time_coefficient_95ci": [
+            -0.006091766077996057,
+            0.011166673069703151
+          ],
+          "time_coefficient_per_minute": 0.002537453495853547,
+          "time_exploratory_p": 0.5558727222196695,
+          "within_record_eye_state_time_correlation": -0.24445006573614297,
+          "within_record_state_time_vif": 1.0635535287958144
+        },
+        "XGBoost": {
+          "eligible_windows": 571,
+          "eye_state_coefficient_95ci": [
+            -0.0037968419772876003,
+            0.09762323475645085
+          ],
+          "eye_state_coefficient_adjusted_for_linear_time": 0.04691319638958163,
+          "eye_state_exploratory_p": 0.06887323971649532,
+          "interpretation": "Exploratory time-adjusted association only. Nonlinear time trends, vigilance, artifacts, and other recording-condition factors remain potential confounders.",
+          "method": "Linear recording fixed effects, recording-clustered sandwich covariance",
+          "recordings": 42,
+          "time_coefficient_95ci": [
+            -0.0003369904067536088,
+            0.00789020164910556
+          ],
+          "time_coefficient_per_minute": 0.003776605621175976,
+          "time_exploratory_p": 0.0709284141850127,
+          "within_record_eye_state_time_correlation": -0.24445006573614297,
+          "within_record_state_time_vif": 1.0635535287958144
+        }
+      }
+    }
+  },
+  "status": "RELIABILITY_CONFOUND_AUDIT_COMPLETED",
+  "test_events_accessed": 0,
+  "test_predictions_accessed": 0,
+  "test_waveforms_accessed": 0,
+  "version": "caueeg_reliability_confound_v1"
+}

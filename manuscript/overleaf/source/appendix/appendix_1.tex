@@ -1,0 +1,31 @@
+\chapter{Reproducibility Record and Additional Metrics}
+\label{app:reproducibility}
+\section{Source Cohorts and Decision Units}
+The full source cohort has 88 participants (36 AD, 23 FTD, 29 CN). The original SVM reliability analysis uses 64 participants (23 AD, 18 FTD, 23 CN). The later DSRF comparison uses 65 participants (36 AD, 29 CN). Only the latter has the fixed 52-development/13-holdout structure described in the saved final protocol. The 88-person historical eligibility manifest marks 23 AD, 23 CN and 18 FTD participants as selected for five-minute Study A. All 46 selected AD/CN IDs occur in the separate 65-person Study B manifest. However, Study A SVM folds, 300-second temporal segments, and Study B DSRF four-second windows and locked test were not the same evaluation. Source studies and derivative analyses must therefore be reproduced separately.
+
+\section{Frozen Final Settings}
+The final protocol specifies the following DSRF values: five epochs, batch size eight, learning rate 0.001, weight decay 0.01, seed 42, frozen pretrained encoder, up to 24 windows per participant, four seconds per window, 200 Hz, and a 40 Hz upper passband. The execution summary documents the 0.3 Hz lower cutoff. The XGBoost values are 180 estimators, depth two, learning rate 0.05, 0.9 row subsampling, 0.9 column subsampling and seed 42. The primary metric is subject-level balanced accuracy. These are locked protocol facts; their historical tuning provenance should be read from the complete development logs before asserting why each exact value was selected.
+
+\section{Model and Data Signatures}
+\begin{longtable}{@{}p{0.35\textwidth}p{0.55\textwidth}@{}}
+\caption{Recorded SHA-256 digests from saved protocol and holdout output}\\\toprule
+\textbf{Artifact}&\textbf{Digest}\\\midrule\endfirsthead\toprule\textbf{Artifact}&\textbf{Digest}\\\midrule\endhead\bottomrule\endfoot
+CBraMod pretrained weights&\ttfamily\footnotesize \seqsplit{0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178}\normalfont\\
+Original data manifest&\ttfamily\footnotesize \seqsplit{73f9b5cf97c0ef3f9ad9fc5b031862701e258ea2538f1c8fe69c424c39f046e6}\normalfont\\
+Locked protocol&\ttfamily\footnotesize \seqsplit{d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd}\normalfont\\
+DSRF final checkpoint&\ttfamily\footnotesize \seqsplit{72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3}\normalfont\\
+XGBoost final checkpoint&\ttfamily\footnotesize \seqsplit{9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f}\normalfont\\
+\end{longtable}
+
+These hashes identify original repository artifacts and are provided for checking; the underlying model weights and raw recordings are not bundled with this report ZIP.
+
+\section{Correctness and Probability Reporting}
+The locked confusion matrices have seven AD and six CN subjects. DSRF: four true AD called AD, three true AD called CN, one CN called AD and five CN called CN. XGBoost: five true AD called AD, two true AD called CN, one CN called AD and five CN called CN. The saved test JSON includes Brier and ECE scores. The original recorded model output, not a new thesis-figure script, is the source for these numbers.
+
+\section{Figure Provenance}
+The report uses a curated set of current source and external aggregate figures, recorded in \path{revision_final/FIGURE_SELECTION_REGISTRY.json}. Historical superseded assets are archived separately and do not appear in the compiled manuscript. The figure registry records exact selected file hashes, figures and captions. Neither schematic diagrams nor aggregate plots create new per-patient EEG evidence.
+
+\section{Supporting Electrode-Occlusion and Provenance Figures}
+\ThesisFigure[Out-of-fold electrode-occlusion sensitivity]{fig_A_01_electrode_occlusion.pdf}{Signed changes in true-class probability when each of 19 source electrodes is replaced by its within-window mean, calculated across five development folds (29 AD and 23 CN participants). These are model input perturbations, not causal anatomical biomarkers.}{fig:occlusion}
+\ThesisFigure[Reproducibility evidence chain]{fig_A_02_reproducibility.pdf}{Excerpted Study B source manifest, adapter, frozen model and locked-test record checks. Displayed hashes are recorded provenance identifiers; the checkpoint binaries were not independently rehashed in this Overleaf revision.}{fig:reproducibility}
+\ThesisFigure[NEMAR demographic and condition-sensitivity audits]{fig_A_03_nemar_confounds.pdf}{Descriptive NEMAR age, out-of-fold performance by age stratum and matched recording-condition observations. These participant-based analyses are distinct from the CAUEEG recording-level age and eye-state audits; causal effects are not established.}{fig:nemar-confounds}

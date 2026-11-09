@@ -1,0 +1,117 @@
+\section{Model-Comparison Evidence and Evaluation Boundary}
+This chapter first reports the NEMAR source-cohort model comparison (Study B), then the frozen external transfer on CAUEEG (Study C). The original Study A SVM and separate MCI tests provide reliability evidence in Chapter 7; their model performance is not pooled with Study B or Study C. The classification unit in Study B is a participant; the CAUEEG transfer unit is a recording whose unique patient linkage cannot be fully verified.
+
+\section{Development-Set Comparison}
+The five-fold development study used 52 participants, with entire participants held out from the corresponding training fold. Table~\ref{tab:dev-results} gives the recorded pooled out-of-fold estimates and fold-level summaries.
+\begin{table}[htbp]\centering\footnotesize
+\caption{Subject-level five-fold development comparison on 52 participants}\label{tab:dev-results}
+\begin{tabular}{@{}lrrrrr@{}}\toprule
+\textbf{Model}&\textbf{Pooled BAcc}&\textbf{Mean fold}&\textbf{Fold SD}&\textbf{Macro-F1}&\textbf{Correct}\\
+&\textbf{(\%)}&\textbf{BAcc (\%)}&\textbf{(pp)}&\textbf{(\%)}&\textbf{/52}\\\midrule
+DSRF&77.06&77.17&13.71&76.79&40\\
+XGBoost&76.61&76.67&8.99&76.61&40\\
+EEGNet-inspired&74.89&74.50&10.60&74.77&39\\
+Random forest&72.71&73.00&6.84&72.71&38\\
+High-only&72.26&72.33&9.97&72.42&38\\
+SVM&71.81&72.33&12.04&72.04&38\\
+No-skip&71.44&72.33&8.05&71.06&37\\
+Low-only&62.74&62.50&10.24&62.79&33\\
+\bottomrule\end{tabular}\end{table}
+
+DSRF has the largest pooled balanced accuracy in this table, 77.06\%, with XGBoost at 76.61\%. Both correctly classify 40 of the 52 participants. The difference is only 0.45 percentage points in pooled balanced accuracy. This small descriptive difference does not establish superiority, equivalence or non-inferiority. Moreover, the fold standard deviation for DSRF is 13.71 percentage points. Fold variation is not an uncertainty interval for an independent new cohort, but it warns that the small development study is sensitive to which people are held out.
+
+\ThesisFigure[Five-fold source development comparison]{fig_06_01_development.pdf}{Pooled out-of-fold balanced accuracy for the eight recorded Study B models and variants on the same 52 NEMAR development participants. All predictions are aggregated by participant. The difference between DSRF (77.06\%) and XGBoost (76.61\%) is descriptive; neither superiority nor equivalence was established.}{fig:dev-models}
+
+Figure~\ref{fig:dev-models} makes the close comparison clear. A complex frozen-backbone decoder did not separate itself strongly from a conventional gradient-boosted tree using handcrafted EEG features. This is scientifically useful because it sets a demanding baseline for claims about architecture gains.
+
+\section{Ablations: What Does the Decoder Add?}
+The main DSRF model combines high-level pretrained tokens with low-level temporal features through learned gating and a residual path. The low-only model reached 62.74\% pooled BAcc, while the high-only model reached 72.26\%. This suggests that pretrained high-level information was useful under this experimental setup. The no-skip variant reached 71.44\%, lower than the full decoder. These are development-set observations, and the variants do not by themselves isolate every possible difference in training dynamics.
+
+A more controlled residual-versus-blend experiment used matched components and effective parameter counts. Its observed pooled results were 77.06\% BAcc for the residual rule and 73.16\% for the gated blend. Both are measured on the 52 development participants. The observed difference is inconclusive as evidence of a general architectural advantage; the matched development comparison does not establish that residual fusion will outperform the blend on an independent population.
+
+\begin{table}[htbp]\centering\small
+\caption{Matched residual-versus-blend development comparison}\label{tab:skip}
+\begin{tabular}{@{}lrrr@{}}\toprule\textbf{Fusion rule}&\textbf{BAcc (\%)}&\textbf{Macro-F1 (\%)}&\textbf{Correct/52}\\\midrule
+Additive residual (DSRF)&77.06&76.79&40\\
+Gated blend&73.16&72.92&38\\\bottomrule
+\end{tabular}\end{table}
+
+\ThesisFigure[Decoder ablations and synthetic stress tests]{fig_06_02_ablations_robustness.png}{Source-cohort development comparisons on 52 participants. The full decoder, gated blend and component variants use participant-level evaluation; only residual versus gated-blend components were explicitly capacity matched. Artificial Gaussian noise and single-channel zeroing are five-seed technical stress tests, not clinical artifact validation. Their label-flip rates are not the CAUEEG eye-condition label-flip rates.}{fig:ablations}
+
+Figure~\ref{fig:ablations} is a diagnostic tool. It supports the argument that the decoder's components are worth examining, not a claim that a particular architecture choice has been proved optimal across subjects or institutions.
+
+\section{Locked Final Assessment}
+The fixed DSRF and XGBoost models were evaluated on 13 held-out participants after the recorded selection procedure was frozen. The group contained seven AD participants and six controls. The original final-test JSON records nine correct decisions for DSRF and ten for XGBoost. The results are shown in Table~\ref{tab:holdout}.
+
+\begin{table}[htbp]\centering\scriptsize
+\caption{Original one-time 13-person locked holdout}\label{tab:holdout}
+\begin{tabular}{@{}lrrrrrrrr@{}}\toprule
+\textbf{Model}&\textbf{BAcc}&\textbf{Accuracy}&\textbf{Macro-F1}&\textbf{AD recall}&\textbf{CN recall}&\textbf{AUROC}&\textbf{Brier}&\textbf{Correct}\\
+&\textbf{(\%)}&\textbf{(\%)}&\textbf{(\%)}&\textbf{(\%)}&\textbf{(\%)}&&&\textbf{/13}\\\midrule
+DSRF&70.24&69.23&69.05&57.14&83.33&0.857&0.3146&9\\
+XGBoost&77.38&76.92&76.92&71.43&83.33&0.905&0.2976&10\\\bottomrule
+\end{tabular}\end{table}
+
+This is the most important final performance result for the architecture. XGBoost was better on the locked test, with 77.38\% BAcc compared with 70.24\% for DSRF, a difference of 7.14 percentage points in favor of XGBoost. XGBoost also had slightly higher AUROC and lower Brier score. The result does not support a claim that EEGraft's decoder outperformed the strongest classical baseline on the final unseen participants.
+
+The exact participant-level confusion matrices recorded in the final file are given below. Rows are true classes in AD, CN order and columns are predicted AD, CN:
+\begin{equation}
+\mathbf C_{\mathrm{DSRF}}=\begin{bmatrix}4&3\\1&5\end{bmatrix},\qquad
+\mathbf C_{\mathrm{XGB}}=\begin{bmatrix}5&2\\1&5\end{bmatrix}.
+\label{eq:confusion}
+\end{equation}
+
+The confusion matrices make the class-specific trade-off visible. DSRF identified four of seven AD participants and five of six controls; XGBoost identified five of seven AD participants and the same five controls. The original paired subject-prediction file shows eight people correctly classified by both models, two misclassified by both, one classified correctly by DSRF alone and two correctly by XGBoost alone. The three discordant decisions were all among the seven AD participants; no discordant decision occurred among the six controls. These are observed counts, not an explanation of why the models differed. A single participant's label affects the reported percentage substantially.
+
+\section{Uncertainty and Paired Comparison}
+The saved exploratory stratified participant bootstrap gave the following 95\% intervals: DSRF BAcc 46.43\%--92.86\%, and XGBoost BAcc 53.57\%--100.00\%. The paired difference DSRF minus XGBoost was $-7.14$ percentage points with a bootstrap interval of $-28.57$ to $+14.29$ percentage points. This interval crosses zero. The saved exact paired McNemar test had $p=1.0$, with one subject correct only for DSRF and two correct only for XGBoost. These calculations do not establish a statistically reliable difference.
+
+\ThesisFigure[Locked source confusion matrices]{fig_06_03_source_holdout.png}{Participant-level observed confusion matrices and metrics for the original 13-person NEMAR locked test (7 AD and 6 CN). EEGraft DSRF correctly classifies 9/13; XGBoost classifies 10/13. The source labels are AD/CN, and no uncertainty intervals are implied by these matrices.}{fig:holdout-ci}
+
+Figure~\ref{fig:holdout-ci} shows the exact class errors. DSRF misses three of seven AD cases and one of six controls, while XGBoost misses two AD cases and one control. The paired interval described above provides the uncertainty context missing from a confusion-matrix-only figure.
+
+\section{Confidence and Probability Quality}
+Brier scores on the holdout were 0.3146 for DSRF and 0.2976 for XGBoost. Lower is better for the reported multiclass convention. The saved 10-bin expected calibration errors were approximately 0.241 for DSRF and 0.067 for XGBoost. These values are descriptive because ten bins and 13 participants provide very little data in each occupied bin. We do not claim clinically calibrated probabilities. Rather, these measures illustrate that classification labels and the numerical reliability of predicted probabilities should be discussed separately.
+
+\section{Intermediate 46-Subject Model Audit}
+An older, different participant-level audit compared nine classifiers on an AD-versus-control set of 46 participants. Its saved out-of-fold balanced accuracies were 71.74\% for logistic regression, 76.09\% for SVM, 69.57\% for random forest, 69.57\% for nested-selection, 71.74\% for a basic CNN, 52.17\% for EEGNet V1, 69.57\% for EEGNet V2, 71.74\% for EEG Conformer and 71.74\% for a frozen-CBraMod variant. These historical numbers demonstrate that the project explored several model families. However, this older 46-person audit was not run under the later 65-person DSRF comparison protocol, so its scores are not added to Table~\ref{tab:dev-results} and are not used to rank the final model.
+
+\section{Study C: Frozen CAUEEG External Classification}
+The frozen DSRF and XGBoost source models were evaluated on the official CAUEEG no-overlap binary test of 57 \emph{recordings}: 35 Normal and 22 broad Dementia. No CAUEEG weights were trained or tuned on this locked test, and MCI was excluded from the binary scores. This was a \emph{task-shifted transfer}: NEMAR source labels are AD/CN, whereas CAUEEG uses broad Dementia/Normal categories. The evaluation cannot establish external accuracy for AD specifically.
+
+The primary rule uses a fixed threshold of 0.50 for both models. Figure~\ref{fig:caueeg-primary} and Table~\ref{tab:caueeg-primary} report the original results. DSRF correctly identified 24 of 35 Normal and 15 of 22 Dementia recordings, giving 39/57 correct (68.42\% accuracy) and 68.38\% balanced accuracy. XGBoost correctly identified 6 of 35 Normal and all 22 Dementia recordings, giving 28/57 correct (49.12\% accuracy) and 58.57\% balanced accuracy. Thus XGBoost's original external decision rule was strongly biased toward classifying recordings as Dementia; its perfect apparent Dementia sensitivity is not strong discrimination by itself.
+
+\begin{table}[!htbp]\centering\footnotesize
+\caption{Primary locked CAUEEG test: Normal versus broad Dementia (57 recordings; threshold 0.50)}\label{tab:caueeg-primary}
+\begin{tabularx}{\textwidth}{@{}Xrrrrr@{}}\toprule
+\textbf{Frozen model}&\textbf{BAcc}&\textbf{Accuracy}&\shortstack{\textbf{Dementia}\\\textbf{recall}}&\shortstack{\textbf{Normal}\\\textbf{recall}}&\textbf{AUROC}\\
+&\textbf{(\%)}&\textbf{(\%)}&\textbf{(\%)}&\textbf{(\%)}&\\\midrule
+EEGraft / DSRF&68.38&68.42&68.18&68.57&0.7481\\
+XGBoost&58.57&49.12&100.00&17.14&0.7221\\\bottomrule
+\end{tabularx}\end{table}
+
+\ThesisFigure[CAUEEG locked external classification]{fig_06_04_external.pdf}{Primary frozen CAUEEG test on 57 EEG recordings, not independently verified unique people. Rows are actual Normal and broad Dementia, columns predicted categories. DSRF has confusion matrix $\left[\begin{smallmatrix}24&11\\7&15\end{smallmatrix}\right]$ and XGBoost $\left[\begin{smallmatrix}6&29\\0&22\end{smallmatrix}\right]$, with the original 0.50 threshold for both. The two tasks and their labels differ from the NEMAR source.}{fig:caueeg-primary}
+
+\section{External Uncertainty and Comparison Limits}
+The saved Code 19 recording-stratified bootstrap produced exploratory 95\% intervals of 55.26--80.06\% for DSRF balanced accuracy and 52.86--65.71\% for XGBoost. The paired DSRF-minus-XGBoost balanced-accuracy interval was $-3.31$ to $+22.08$ percentage points. This interval crosses zero, so the observed DSRF advantage on these 57 recordings is not a statistically established cross-cohort model advantage. The uncertainty does not account fully for possible repeated patients or a completely different hospital population.
+
+The two models' reported AUROCs are 0.7481 and 0.7221, respectively. AUROC evaluates score ranking across thresholds and should not be confused with the threshold-specific balanced accuracy. The source locked test (13 \emph{people}) and CAUEEG (57 \emph{recordings}) use different tasks and denominators; the apparent BAcc difference is not evidence that the decoder improved or degraded due solely to transfer. Different recording conditions, age distributions and label definitions all change simultaneously.
+
+\section{External Decision-Rule Sensitivity and Calibration}
+The original locked external comparison is preserved above. In separate exploratory analyses, the XGBoost threshold selected on CAUEEG training scores was 0.70, giving 66.10\% balanced accuracy and 66.67\% accuracy on the same locked 57 recordings; its resulting confusion matrix is $\left[\begin{smallmatrix}24&11\\8&14\end{smallmatrix}\right]$ in Normal/Dementia order. This is a re-application of a training-selected decision rule to the already evaluated external test, not a new independent test or XGBoost retraining. DSRF's reported training-selected threshold remained 0.50.
+
+The exploratory train-fitted Platt variants produced locked-test balanced accuracies of 65.58\% for DSRF and 61.88\% for XGBoost. The \emph{binary single-class} Brier score decreased from 0.2013 to 0.1875 for DSRF and from 0.2825 to 0.1980 for XGBoost after calibration. Better Brier error does not establish correctly calibrated patient risk, particularly with a 57-recording test and unverified unique patients. The exact train-only objective for selecting XGBoost 0.70 and details of the historical Platt fitting folds were not present in the available execution records, so we do not claim independent reproduction of those steps.
+
+\begin{table}[!htbp]\centering\small
+\caption{Secondary CAUEEG decision rules, exploratory locked-test performance on 57 recordings}\label{tab:caueeg-secondary}
+\begin{tabular}{@{}llrr@{}}\toprule
+\textbf{Model}&\textbf{External rule}&\textbf{BAcc (\%)}&\textbf{Binary Brier}\\\midrule
+DSRF&Original 0.50&68.38&0.2013\\
+DSRF&Training-Platt, 0.50&65.58&0.1875\\
+XGBoost&Original 0.50&58.57&0.2825\\
+XGBoost&Training-selected 0.70&66.10&--\\
+XGBoost&Training-Platt, 0.50&61.88&0.1980\\\bottomrule
+\end{tabular}\end{table}
+
+\section{Synthesis of Source and External Performance}
+On the 52-person development cohort, the DSRF decoder had a descriptive balanced-accuracy advantage of 0.45 percentage points over XGBoost, while both classified 40 of 52 people correctly. On the one-time 13-person held-out assessment, XGBoost performed better (10/13 correct versus 9/13). Both findings are part of the same evidence record, not a contradiction to be hidden. Model selection, sampling variability and the small number of test participants all limit certainty. The external CAUEEG results add a different task and recording-level cohort, not a matched source-to-target improvement experiment. Chapter 7 examines why decision correctness and consistency still need separate reporting under both conditions.

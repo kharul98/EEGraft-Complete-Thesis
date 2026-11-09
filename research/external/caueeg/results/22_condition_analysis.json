@@ -1,0 +1,391 @@
+{
+  "analysis_type": "post_hoc_exploratory",
+  "bootstrap": {
+    "independence_verified": false,
+    "resamples": 5000,
+    "resampling_unit": "recording",
+    "seed": 20261109
+  },
+  "exploratory_inference": {
+    "caution": "These tests were designed after inspection of the final external test results. Recording independence is not verified, and recording condition was not randomized. Adjusted p-values do not establish causality or prospective statistical confirmation.",
+    "mcnemar_discordant_counts": {
+      "DSRF_only": 132,
+      "XGBoost_only": 19
+    },
+    "multiplicity_method": "Holm",
+    "test_family_size": 4,
+    "test_status": "POST_HOC_EXPLORATORY",
+    "tests": {
+      "DSRF_minus_XGBoost_absolute_shift": {
+        "holm_adjusted_exploratory_p": 3.516325090430348e-37,
+        "raw_exploratory_p": 8.79081272607587e-38
+      },
+      "DSRF_signed_state_score_shift": {
+        "holm_adjusted_exploratory_p": 4.145098892400855e-12,
+        "raw_exploratory_p": 4.145098892400855e-12
+      },
+      "XGBoost_signed_state_score_shift": {
+        "holm_adjusted_exploratory_p": 1.0523095523183747e-18,
+        "raw_exploratory_p": 5.261547761591874e-19
+      },
+      "model_difference_in_condition_flip": {
+        "holm_adjusted_exploratory_p": 1.5527588769370515e-21,
+        "raw_exploratory_p": 5.175862923123505e-22
+      }
+    }
+  },
+  "hyperparameters_modified": false,
+  "models_retrained": false,
+  "provenance": {
+    "code21_record_csv_sha256": "910b5daef302c9605046fdae03e38942b2a26913414697711766f7efc4311bad",
+    "code21_summary_sha256": "e3c682cc8b080b21f4d2b8de2884d30793cdf0a6b7982bbda77257e6eb35f46f",
+    "code21_window_csv_sha256": "82428ab28044300c7981e3e981bb07244cc615fa55df1e37761d510668902f93",
+    "final_test_plan_sha256": "94a3c63f0ee0b1de05d3babc8f7dd4cdaebd75db7689150c8d3cb28bdd6c50e1"
+  },
+  "research_question": "Are changes in frozen EEG model predictions associated with annotated eyes-open versus eyes-closed recording conditions?",
+  "scientific_boundaries": [
+    "Recording conditions were not randomized.",
+    "Eyes-open and eyes-closed occur at different recording times.",
+    "Eye state, vigilance, elapsed time and artifacts may be confounded.",
+    "The analysis excludes recordings with invalid event timestamps.",
+    "The eligible recording subset may not represent the full benchmark.",
+    "Per-window scores are correlated within recordings.",
+    "Patient-level independence cannot be verified.",
+    "Model probability ranges and calibration may differ.",
+    "Exploratory adjusted p-values are not confirmatory evidence.",
+    "Validation was previously viewed and is not a fresh independent replication.",
+    "No clinical Alzheimer diagnosis or disease biomarker is inferred."
+  ],
+  "selection": {
+    "event_status_required": "aligned",
+    "exclude_event_boundaries_seconds": 2,
+    "minimum_eligible_windows_per_state": 2,
+    "same_recordings_compared_across_conditions": true,
+    "test_split_used": false
+  },
+  "status": "CONDITION_ANALYSIS_COMPLETED",
+  "test_eeg_opened": 0,
+  "test_event_files_opened": 0,
+  "test_predictions_opened": 0,
+  "training": {
+    "class_counts": {
+      "dementia": 95,
+      "mci": 133,
+      "normal": 176
+    },
+    "fraction_open_sampled_later_than_closed": 0.19554455445544555,
+    "median_open_minus_closed_time_seconds": -95.08571428571426,
+    "models": {
+      "DSRF": {
+        "binary_correctness": {
+          "class_counts": {
+            "dementia": 95,
+            "normal": 176
+          },
+          "closed_metrics": {
+            "accuracy": 0.6273062730627307,
+            "balanced_accuracy": 0.6307117224880383,
+            "sensitivity": 0.6421052631578947,
+            "specificity": 0.6193181818181818
+          },
+          "correctness_states": {
+            "both_correct": 116,
+            "both_wrong": 64,
+            "closed_only_correct": 54,
+            "open_only_correct": 37
+          },
+          "interpretation": "Each recording contributes one mean score per condition. This is an observational subset, not an independent external test.",
+          "open_metrics": {
+            "accuracy": 0.5645756457564576,
+            "balanced_accuracy": 0.6066387559808613,
+            "sensitivity": 0.7473684210526316,
+            "specificity": 0.4659090909090909
+          },
+          "open_minus_closed_bacc": -0.02407296650717705,
+          "paired_stratified_recording_bootstrap_95ci": [
+            -0.09016148325358853,
+            0.046441387559808645
+          ],
+          "recordings": 271,
+          "status": "computed"
+        },
+        "by_class": {
+          "dementia": {
+            "condition_label_flip_fraction": 0.2736842105263158,
+            "mean_open_minus_closed_score": 0.06667416499297632,
+            "median_absolute_state_shift": 0.12265267509680533,
+            "recordings": 95
+          },
+          "mci": {
+            "condition_label_flip_fraction": 0.38345864661654133,
+            "mean_open_minus_closed_score": 0.10047233910972728,
+            "median_absolute_state_shift": 0.20681831613183022,
+            "recordings": 133
+          },
+          "normal": {
+            "condition_label_flip_fraction": 0.3693181818181818,
+            "mean_open_minus_closed_score": 0.12624855532889798,
+            "median_absolute_state_shift": 0.2440202853254353,
+            "recordings": 176
+          }
+        },
+        "condition_label_flip_count": 142,
+        "condition_label_flip_fraction": 0.35148514851485146,
+        "diagnosis_by_condition_interaction": {
+          "caution": "An observational group interaction. Age, time position, patient identity and acquisition differences may confound it.",
+          "dementia_minus_normal_state_shift": -0.059574390335921656,
+          "dementia_recordings": 95,
+          "normal_recordings": 176,
+          "recording_bootstrap_95ci": [
+            -0.12461001572210086,
+            0.004179212037611222
+          ]
+        },
+        "mean_absolute_state_score_change": 0.23112671861265188,
+        "mean_open_minus_closed_score": 0.10375399137082304,
+        "mean_score_difference_bootstrap_95ci": [
+          0.07714100326586977,
+          0.1305021852806391
+        ],
+        "median_absolute_state_score_change": 0.2184402174826819,
+        "spearman_score_shift_vs_time_offset": 0.12383400971814378
+      },
+      "XGBoost": {
+        "binary_correctness": {
+          "class_counts": {
+            "dementia": 95,
+            "normal": 176
+          },
+          "closed_metrics": {
+            "accuracy": 0.42066420664206644,
+            "balanced_accuracy": 0.5394437799043063,
+            "sensitivity": 0.9368421052631579,
+            "specificity": 0.14204545454545456
+          },
+          "correctness_states": {
+            "both_correct": 98,
+            "both_wrong": 155,
+            "closed_only_correct": 16,
+            "open_only_correct": 2
+          },
+          "interpretation": "Each recording contributes one mean score per condition. This is an observational subset, not an independent external test.",
+          "open_metrics": {
+            "accuracy": 0.36900369003690037,
+            "balanced_accuracy": 0.5045155502392344,
+            "sensitivity": 0.9578947368421052,
+            "specificity": 0.05113636363636364
+          },
+          "open_minus_closed_bacc": -0.03492822966507181,
+          "paired_stratified_recording_bootstrap_95ci": [
+            -0.06007775119617231,
+            -0.00936004784688993
+          ],
+          "recordings": 271,
+          "status": "computed"
+        },
+        "by_class": {
+          "dementia": {
+            "condition_label_flip_fraction": 0.021052631578947368,
+            "mean_open_minus_closed_score": 0.050724176280400476,
+            "median_absolute_state_shift": 0.07034636338551847,
+            "recordings": 95
+          },
+          "mci": {
+            "condition_label_flip_fraction": 0.08270676691729323,
+            "mean_open_minus_closed_score": 0.041057315582037006,
+            "median_absolute_state_shift": 0.06993805766105654,
+            "recordings": 133
+          },
+          "normal": {
+            "condition_label_flip_fraction": 0.09090909090909091,
+            "mean_open_minus_closed_score": 0.0640114726008787,
+            "median_absolute_state_shift": 0.06995826640299391,
+            "recordings": 176
+          }
+        },
+        "condition_label_flip_count": 29,
+        "condition_label_flip_fraction": 0.07178217821782178,
+        "diagnosis_by_condition_interaction": {
+          "caution": "An observational group interaction. Age, time position, patient identity and acquisition differences may confound it.",
+          "dementia_minus_normal_state_shift": -0.013287296320478217,
+          "dementia_recordings": 95,
+          "normal_recordings": 176,
+          "recording_bootstrap_95ci": [
+            -0.03950588592444721,
+            0.011713979626991267
+          ]
+        },
+        "mean_absolute_state_score_change": 0.09074361755102088,
+        "mean_open_minus_closed_score": 0.05333029429901885,
+        "mean_score_difference_bootstrap_95ci": [
+          0.043213438350037325,
+          0.06365711113781554
+        ],
+        "median_absolute_state_score_change": 0.07014221052328751,
+        "spearman_score_shift_vs_time_offset": 0.13840979817653734
+      }
+    },
+    "n_paired_recordings": 404
+  },
+  "unit": "recording",
+  "validation": {
+    "class_counts": {
+      "dementia": 9,
+      "mci": 20,
+      "normal": 13
+    },
+    "fraction_open_sampled_later_than_closed": 0.23809523809523808,
+    "median_open_minus_closed_time_seconds": -125.9,
+    "models": {
+      "DSRF": {
+        "binary_correctness": {
+          "class_counts": {
+            "dementia": 9,
+            "normal": 13
+          },
+          "closed_metrics": {
+            "accuracy": 0.5454545454545454,
+            "balanced_accuracy": 0.5811965811965812,
+            "sensitivity": 0.7777777777777778,
+            "specificity": 0.38461538461538464
+          },
+          "correctness_states": {
+            "both_correct": 10,
+            "both_wrong": 7,
+            "closed_only_correct": 2,
+            "open_only_correct": 3
+          },
+          "interpretation": "Each recording contributes one mean score per condition. This is an observational subset, not an independent external test.",
+          "open_metrics": {
+            "accuracy": 0.5909090909090909,
+            "balanced_accuracy": 0.6538461538461539,
+            "sensitivity": 1.0,
+            "specificity": 0.3076923076923077
+          },
+          "open_minus_closed_bacc": 0.07264957264957261,
+          "paired_stratified_recording_bootstrap_95ci": [
+            -0.11538461538461531,
+            0.27777777777777773
+          ],
+          "recordings": 22,
+          "status": "computed"
+        },
+        "by_class": {
+          "dementia": {
+            "condition_label_flip_fraction": 0.2222222222222222,
+            "mean_open_minus_closed_score": 0.11989864200058412,
+            "median_absolute_state_shift": 0.08739124238491058,
+            "recordings": 9
+          },
+          "mci": {
+            "condition_label_flip_fraction": 0.4,
+            "mean_open_minus_closed_score": 0.05577996647659211,
+            "median_absolute_state_shift": 0.15895891354884956,
+            "recordings": 20
+          },
+          "normal": {
+            "condition_label_flip_fraction": 0.23076923076923078,
+            "mean_open_minus_closed_score": 0.08537222279831409,
+            "median_absolute_state_shift": 0.23215229348570576,
+            "recordings": 13
+          }
+        },
+        "condition_label_flip_count": 13,
+        "condition_label_flip_fraction": 0.30952380952380953,
+        "diagnosis_by_condition_interaction": {
+          "caution": "An observational group interaction. Age, time position, patient identity and acquisition differences may confound it.",
+          "dementia_minus_normal_state_shift": 0.03452641920227002,
+          "dementia_recordings": 9,
+          "normal_recordings": 13,
+          "recording_bootstrap_95ci": [
+            -0.16903484762769513,
+            0.2370081080607842
+          ]
+        },
+        "mean_absolute_state_score_change": 0.21132672236082253,
+        "mean_open_minus_closed_score": 0.07867919056940911,
+        "mean_score_difference_bootstrap_95ci": [
+          0.002548179837615071,
+          0.1569318260106962
+        ],
+        "median_absolute_state_score_change": 0.17053432182874534,
+        "spearman_score_shift_vs_time_offset": -0.05323717689004133
+      },
+      "XGBoost": {
+        "binary_correctness": {
+          "class_counts": {
+            "dementia": 9,
+            "normal": 13
+          },
+          "closed_metrics": {
+            "accuracy": 0.5,
+            "balanced_accuracy": 0.5769230769230769,
+            "sensitivity": 1.0,
+            "specificity": 0.15384615384615385
+          },
+          "correctness_states": {
+            "both_correct": 9,
+            "both_wrong": 11,
+            "closed_only_correct": 2
+          },
+          "interpretation": "Each recording contributes one mean score per condition. This is an observational subset, not an independent external test.",
+          "open_metrics": {
+            "accuracy": 0.4090909090909091,
+            "balanced_accuracy": 0.5,
+            "sensitivity": 1.0,
+            "specificity": 0.0
+          },
+          "open_minus_closed_bacc": -0.07692307692307687,
+          "paired_stratified_recording_bootstrap_95ci": [
+            -0.1923076923076923,
+            0.0
+          ],
+          "recordings": 22,
+          "status": "computed"
+        },
+        "by_class": {
+          "dementia": {
+            "condition_label_flip_fraction": 0.0,
+            "mean_open_minus_closed_score": 0.013253615981247684,
+            "median_absolute_state_shift": 0.0672370769760825,
+            "recordings": 9
+          },
+          "mci": {
+            "condition_label_flip_fraction": 0.15,
+            "mean_open_minus_closed_score": 0.02680122511996249,
+            "median_absolute_state_shift": 0.06477644667029381,
+            "recordings": 20
+          },
+          "normal": {
+            "condition_label_flip_fraction": 0.15384615384615385,
+            "mean_open_minus_closed_score": 0.07823720331120693,
+            "median_absolute_state_shift": 0.027507081627845764,
+            "recordings": 13
+          }
+        },
+        "condition_label_flip_count": 5,
+        "condition_label_flip_fraction": 0.11904761904761904,
+        "diagnosis_by_condition_interaction": {
+          "caution": "An observational group interaction. Age, time position, patient identity and acquisition differences may confound it.",
+          "dementia_minus_normal_state_shift": -0.06498358732995924,
+          "dementia_recordings": 9,
+          "normal_recordings": 13,
+          "recording_bootstrap_95ci": [
+            -0.18399595488947454,
+            0.04630781293093287
+          ]
+        },
+        "mean_absolute_state_score_change": 0.1012134766061388,
+        "mean_open_minus_closed_score": 0.039818825935146886,
+        "mean_score_difference_bootstrap_95ci": [
+          -0.0046505643663450474,
+          0.08624828763344149
+        ],
+        "median_absolute_state_score_change": 0.06348812314016478,
+        "spearman_score_shift_vs_time_offset": 0.06587796774977717
+      }
+    },
+    "n_paired_recordings": 42
+  },
+  "version": "caueeg_condition_analysis_v1"
+}

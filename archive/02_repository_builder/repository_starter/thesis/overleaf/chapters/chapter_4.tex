@@ -1,0 +1,49 @@
+\section{Public EEG Data Source}
+The principal source is the dataset originally described by Miltiadous and colleagues and distributed as OpenNeuro ds004504 and NEMAR on004504 \cite{miltiadous2023dataset,miltiadous2026dataset}. The full public collection contains 88 participants: 36 with Alzheimer's disease (AD), 23 with frontotemporal dementia (FTD), and 29 cognitively normal controls (CN). The data paper describes resting-state EEG recorded with 19 scalp channels and an original 500 Hz sampling rate. A standard 10--20 channel layout is available. These are existing case/control recordings; the release does not constitute a longitudinal study of people who later developed Alzheimer's disease.
+
+The complete 88-participant source collection is not the same as every analytical subset. In addition, the two main parts of this thesis were developed at different times and used different inclusion choices. This distinction is required for correct denominators and reproducibility.
+
+\section{Two Main Analytical Cohorts}
+\begin{table}[htbp]\centering\small
+\caption{Separate primary experiment cohorts and objectives}\label{tab:cohorts}
+\begin{tabularx}{\textwidth}{@{}p{0.21\textwidth}p{0.29\textwidth}X@{}}\toprule
+\textbf{Item}&\textbf{Study A: temporal analysis}&\textbf{Study B: CBraMod--DSRF analysis}\\\midrule
+Analytic participants&64: 23 AD, 18 FTD, 23 CN&65: 36 AD, 29 CN\\
+Binary tasks&AD vs CN (46); FTD vs CN (41)&AD vs CN (65)\\
+Primary model&Class-balanced RBF SVM with spectral features&Frozen CBraMod plus DSRF decoder\\
+Main evaluation&Five outer folds, five repeats, three inner folds; temporal prediction comparisons&Five participant-disjoint development folds on 52, then locked 13-person holdout\\
+Main question&Is a correct early label stable across recording time?&How competitive and robust is the custom decoder?\\
+Key limitation&Early subject inclusion and saved metric provenance require source-table reconciliation&Only one source cohort; small locked holdout\\
+\bottomrule\end{tabularx}\end{table}
+
+\EvidenceFigure{fig04_two_studies.png}{Study A and Study B use separate analytical populations and answer different questions. Counts are taken from the saved project history. The overlap between the 64- and 65-person sets has not been reconciled by participant identity.}{0.98}{fig:two-studies}
+
+Figure~\ref{fig:two-studies} makes the boundary visible. Study A retains 23 of the source's 36 AD cases, 18 of 23 FTD cases and 23 of 29 controls. Study B uses 36 AD and 29 controls for the later decoder tests. Because the per-participant inclusion lists have not been formally matched across the historical tracks, an equality or subset relationship between these two analytic groups must not be assumed. The 46-person AD-versus-CN early comparison is not directly equivalent to the later 65-person AD-versus-CN experiment.
+
+\section{Study A: Subject-Disjoint Temporal Protocol}
+The first main analysis uses relative EEG band powers for delta, theta, alpha, beta and gamma, together with the theta-to-alpha ratio. A standardized class-balanced radial-basis-function support vector machine (RBF SVM) provides the principal classifier. The saved protocol describes repeated nested subject-wise cross-validation: five outer folds repeated five times, with three inner folds used for model selection. Subjects are the split unit. The first minute determines a subject's training representation; predictions on held-out subjects are examined across five minutes. The first-minute decision is therefore both a conventional classification result and a reference for subsequent stability checks.
+
+The distinction between train and evaluation participants is essential. Multiple minutes from one held-out participant are dependent observations, not five independent people. Five outer repeats also revisit the same subjects. Standard errors formed as though all fold-minute predictions were independent would be unjustifiably small. The report accordingly treats available aggregate rates as descriptive unless the saved protocol provides a defensible subject-wise interval.
+
+\section{Related Duration Analysis}
+The repository also documents a later duration experiment involving 65 participants, analysis windows of 30, 60, 120, 180 and 300 seconds, and start, center and end recording anchors. It uses a 300-second spectral feature estimate as a reference and compares spectral classification under alternative durations. This is a \emph{separate duration investigation}; its participant list was not reconciled with either primary analytical cohort. The 180-second point had the highest observed balanced accuracy in one saved SVM comparison, but uncertainty intervals and dependent windows do not establish a universal optimum. We report this work as supporting context, not as a proof that any single clinical recording length is sufficient.
+
+\section{Study B: Development and Locked Final Assessment}
+The CBraMod--DSRF analysis concerns 65 source participants: 36 AD and 29 controls. The original partition was 39 training, 13 validation and 13 locked-test participants. For the final comparative development analysis, 52 non-test participants were evaluated in five outer development folds, with inner validation for model choices. The fixed final DSRF and XGBoost models were then trained on the 52 development subjects and assessed once on the original 13-person holdout (seven AD and six controls). These counts come from the locked development and final-test records.
+
+A person cannot contribute windows to both a training fold and its held-out participants. The final subject prediction uses the average of that person's window-level softmax probabilities. The metric is therefore calculated over people, not over four-second epochs. This separation is a design choice to reduce patient-specific leakage. It does not remove potential acquisition or demographic confounding within the source cohort.
+
+\section{Preprocessing and Window Construction}
+The later model pipeline uses a 19-channel montage and retains a 0.3--40 Hz bandpass. The original 500 Hz recordings are resampled to 200 Hz; a four-second window therefore contains 800 time samples per channel. Windows are non-overlapping, with at most 24 included per participant. The resulting model input shape is 19 channels by 4 seconds by 200 samples per second. Signal scaling and preprocessing are performed according to the saved processing setup.
+
+\LandscapeEvidenceFigure{fig02_preprocessing.png}{User-supplied preprocessing illustration: nineteen-channel alignment, bandpass filtering, resampling from 500 to 200 Hz, and non-overlapping four-second windows. Numerical settings align with the saved decoder experiment description; waveform illustrations are not used as independent findings.}{0.98}{fig:preprocess}
+
+Figure~\ref{fig:preprocess} displays the processing sequence. Resampling reduces the size of each window. Limiting the number of windows also reduces training and inference cost, but it makes the later study different from the original five-minute SVM stability analysis. Twenty-four windows represent at most 96 seconds of sampled signal per participant, not the entire five-minute recording used in Study A. Four seconds is a practical window size used in the saved implementation; the available summary does not establish that it is the best duration for every patient or EEG task.
+
+\section{Separate MCI and External-Data Feasibility Checks}
+The project inspected an independent Isfahan MCI-versus-control release: 61 recordings were screened and 49 passed the fixed five-minute signal-quality check. The retained sets were EEG\_1: 11 MCI and 14 controls, and EEG\_2: 12 MCI and 12 controls. These are separate recording sets. Their participant identities across releases could not be linked confidently, and physical-unit fields required caution. The task is MCI versus healthy status, not direct AD diagnosis, so these outcomes must not be described as external validation of the EEGraft decoder.
+
+Another external archive contained 471 MATLAB files: 305 labeled AD, 56 MCI and 110 control. These are \emph{files}, not a verified count of unique participants. Channel arrangements and durations were not sufficiently compatible to establish a clean independent 19-channel AD-versus-control test. No external AD performance value is reported from that archive. The negative feasibility result should not be replaced with an invented validation number.
+
+\section{Traceability of Research Data}
+The execution repository contains the development summary, final model protocol, frozen pretrained-checkpoint SHA-256 and original final-test metrics. Additional early research records summarize the temporal SVM findings. The most important unresolved provenance detail is reconciliation of the original 64-subject participant set and its exact machine-readable metric tables. This gap is disclosed because reproducibility cannot be declared complete merely from narrative summaries. Appendix B lists the relevant file paths and hashes so that the final source audit can be conducted without changing the reported numbers.

@@ -1,0 +1,328 @@
+{
+  "all_variants_reported_without_test_based_selection": true,
+  "analysis_level": "recording_only_not_verified_patients",
+  "code18_inference_script_sha256": "1d3ac1e0714571ad9b21f71c9bd9cba4e68a020877d5c14deeae3c493b8448e5",
+  "constant_classifier_controls": {
+    "always_dementia_accuracy": 0.38596491228070173,
+    "always_dementia_balanced_accuracy": 0.5,
+    "always_normal_accuracy": 0.6140350877192983,
+    "always_normal_balanced_accuracy": 0.5
+  },
+  "experiment": "CAUEEG_dementia-no-overlap",
+  "final_test_plan_sha256": "94a3c63f0ee0b1de05d3babc8f7dd4cdaebd75db7689150c8d3cb28bdd6c50e1",
+  "hyperparameters_reselected_after_test": false,
+  "locked_test_prediction_bundle_sha256": "b6efbb637b5a449f16eba75b6f671668dd3d591cac869fe40911d67107247e27",
+  "mci_descriptive": {
+    "DSRF": {
+      "calibrated_dementia_score": {
+        "count": 33,
+        "fraction_ge_0_5": 0.21212121212121213,
+        "mean": 0.37175391485658943,
+        "median": 0.3353160100013104,
+        "q25": 0.24938511595830506,
+        "q75": 0.43223851059565715
+      },
+      "no_binary_accuracy_claim_for_mci": true,
+      "raw_fraction_ge_training_selected_threshold": 0.36363636363636365,
+      "raw_source_ad_score": {
+        "count": 33,
+        "fraction_ge_0_5": 0.36363636363636365,
+        "mean": 0.4523840243830754,
+        "median": 0.4169648738510053,
+        "q25": 0.2886014398172847,
+        "q75": 0.5556086261058226
+      }
+    },
+    "XGBoost": {
+      "calibrated_dementia_score": {
+        "count": 33,
+        "fraction_ge_0_5": 0.30303030303030304,
+        "mean": 0.4052184744963713,
+        "median": 0.44017091034293426,
+        "q25": 0.28150907504600553,
+        "q75": 0.5088161357101715
+      },
+      "no_binary_accuracy_claim_for_mci": true,
+      "raw_fraction_ge_training_selected_threshold": 0.5454545454545454,
+      "raw_source_ad_score": {
+        "count": 33,
+        "fraction_ge_0_5": 0.8787878787878788,
+        "mean": 0.6679539663924111,
+        "median": 0.7126202657818794,
+        "q25": 0.5773878693580627,
+        "q75": 0.7584354306260744
+      }
+    }
+  },
+  "model_variants": {
+    "DSRF": {
+      "calibrated": {
+        "accuracy": 0.7017543859649122,
+        "auroc": 0.748051948051948,
+        "balanced_accuracy": 0.6558441558441558,
+        "brier_vs_dementia_label": 0.187495507437661,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            30,
+            5
+          ],
+          [
+            12,
+            10
+          ]
+        ],
+        "dementia_f1": 0.5405405405405406,
+        "ece_10_bins_at_standard_0_5_rule": 0.13574050096981613,
+        "log_loss_vs_dementia_label": 0.5572479727262241,
+        "macro_f1": 0.6598806598806599,
+        "n_binary_recordings": 57,
+        "n_dementia": 22,
+        "n_normal": 35,
+        "predicted_dementia_fraction": 0.2631578947368421,
+        "sensitivity_dementia": 0.45454545454545453,
+        "specificity_normal": 0.8571428571428571,
+        "threshold": 0.5
+      },
+      "original": {
+        "accuracy": 0.6842105263157895,
+        "auroc": 0.748051948051948,
+        "balanced_accuracy": 0.6837662337662338,
+        "brier_vs_dementia_label": 0.20132827247172083,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            24,
+            11
+          ],
+          [
+            7,
+            15
+          ]
+        ],
+        "dementia_f1": 0.625,
+        "ece_10_bins_at_standard_0_5_rule": 0.0898138540690615,
+        "log_loss_vs_dementia_label": 0.5796320230045312,
+        "macro_f1": 0.6761363636363636,
+        "n_binary_recordings": 57,
+        "n_dementia": 22,
+        "n_normal": 35,
+        "predicted_dementia_fraction": 0.45614035087719296,
+        "sensitivity_dementia": 0.6818181818181818,
+        "specificity_normal": 0.6857142857142857,
+        "threshold": 0.5
+      },
+      "threshold": {
+        "accuracy": 0.6842105263157895,
+        "auroc": 0.748051948051948,
+        "balanced_accuracy": 0.6837662337662338,
+        "brier_vs_dementia_label": 0.20132827247172083,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            24,
+            11
+          ],
+          [
+            7,
+            15
+          ]
+        ],
+        "dementia_f1": 0.625,
+        "ece_10_bins_at_standard_0_5_rule": 0.0898138540690615,
+        "log_loss_vs_dementia_label": 0.5796320230045312,
+        "macro_f1": 0.6761363636363636,
+        "n_binary_recordings": 57,
+        "n_dementia": 22,
+        "n_normal": 35,
+        "predicted_dementia_fraction": 0.45614035087719296,
+        "sensitivity_dementia": 0.6818181818181818,
+        "specificity_normal": 0.6857142857142857,
+        "threshold": 0.5
+      }
+    },
+    "XGBoost": {
+      "calibrated": {
+        "accuracy": 0.6666666666666666,
+        "auroc": 0.7220779220779221,
+        "balanced_accuracy": 0.6188311688311688,
+        "brier_vs_dementia_label": 0.19797245240998146,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            29,
+            6
+          ],
+          [
+            13,
+            9
+          ]
+        ],
+        "dementia_f1": 0.4864864864864865,
+        "ece_10_bins_at_standard_0_5_rule": 0.06640130305168178,
+        "log_loss_vs_dementia_label": 0.5765545531901427,
+        "macro_f1": 0.6198666198666198,
+        "n_binary_recordings": 57,
+        "n_dementia": 22,
+        "n_normal": 35,
+        "predicted_dementia_fraction": 0.2631578947368421,
+        "sensitivity_dementia": 0.4090909090909091,
+        "specificity_normal": 0.8285714285714286,
+        "threshold": 0.5
+      },
+      "original": {
+        "accuracy": 0.49122807017543857,
+        "auroc": 0.7220779220779221,
+        "balanced_accuracy": 0.5857142857142857,
+        "brier_vs_dementia_label": 0.2824854052578585,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            6,
+            29
+          ],
+          [
+            0,
+            22
+          ]
+        ],
+        "dementia_f1": 0.6027397260273972,
+        "ece_10_bins_at_standard_0_5_rule": 0.21054104632801485,
+        "log_loss_vs_dementia_label": 0.7636006344031614,
+        "macro_f1": 0.4477113264283328,
+        "n_binary_recordings": 57,
+        "n_dementia": 22,
+        "n_normal": 35,
+        "predicted_dementia_fraction": 0.8947368421052632,
+        "sensitivity_dementia": 1.0,
+        "specificity_normal": 0.17142857142857143,
+        "threshold": 0.5
+      },
+      "threshold": {
+        "accuracy": 0.6666666666666666,
+        "auroc": 0.7220779220779221,
+        "balanced_accuracy": 0.6610389610389611,
+        "brier_vs_dementia_label": 0.2824854052578585,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            24,
+            11
+          ],
+          [
+            8,
+            14
+          ]
+        ],
+        "dementia_f1": 0.5957446808510638,
+        "ece_10_bins_at_standard_0_5_rule": null,
+        "log_loss_vs_dementia_label": 0.7636006344031614,
+        "macro_f1": 0.6560812956494124,
+        "n_binary_recordings": 57,
+        "n_dementia": 22,
+        "n_normal": 35,
+        "predicted_dementia_fraction": 0.43859649122807015,
+        "sensitivity_dementia": 0.6363636363636364,
+        "specificity_normal": 0.6857142857142857,
+        "threshold": 0.7
+      }
+    }
+  },
+  "model_weights_modified": false,
+  "original_raw_score_temporal_reliability": {
+    "DSRF": {
+      "all_24_windows_agree_and_correct_count": 4,
+      "all_24_windows_agree_but_wrong_count": 0,
+      "all_test_recordings": 90,
+      "binary_evaluable_recordings": 57,
+      "early_middle_late_agreement_fraction": 0.6777777777777778,
+      "mean_sampled_window_label_flip_fraction": 0.3545893719806763,
+      "mean_window_disagreement_with_recording_prediction": 0.28009259259259256,
+      "median_window_probability_sd": 0.33881266108048574,
+      "note": "The 24 windows were sampled across each recording, not consecutively. Stability is not correctness.",
+      "three_phases_match_recording_prediction_fraction": 0.6777777777777778
+    },
+    "XGBoost": {
+      "all_24_windows_agree_and_correct_count": 13,
+      "all_24_windows_agree_but_wrong_count": 12,
+      "all_test_recordings": 90,
+      "binary_evaluable_recordings": 57,
+      "early_middle_late_agreement_fraction": 0.8666666666666667,
+      "mean_sampled_window_label_flip_fraction": 0.15652173913043477,
+      "mean_window_disagreement_with_recording_prediction": 0.11620370370370373,
+      "median_window_probability_sd": 0.09913321518322954,
+      "note": "The 24 windows were sampled across each recording, not consecutively. Stability is not correctness.",
+      "three_phases_match_recording_prediction_fraction": 0.8666666666666667
+    }
+  },
+  "primary_binary_recordings": 57,
+  "primary_dementia_recordings": 22,
+  "primary_normal_recordings": 35,
+  "primary_variants": [
+    "DSRF/original",
+    "XGBoost/original"
+  ],
+  "scientific_limitations": [
+    "CAUEEG dementia is not equivalent to verified Alzheimer disease.",
+    "The original AD score is not a validated clinical dementia probability.",
+    "Patient identities are not independently verifiable; repeated recordings may reduce effective sample size.",
+    "Confidence intervals bootstrap recordings, not independent people.",
+    "Threshold adaptation and calibration were added after viewing initial validation outcomes.",
+    "MCI recordings are excluded from binary accuracy calculations.",
+    "Temporal stability does not imply prediction correctness.",
+    "Test results must not be used for additional tuning or post-hoc variant selection."
+  ],
+  "secondary_mci_recordings": 33,
+  "secondary_variants_are_exploratory": true,
+  "source_model_classes": [
+    "AD",
+    "CN"
+  ],
+  "status": "LOCKED_EXTERNAL_TEST_EVALUATION_COMPLETED",
+  "target_positive": "dementia",
+  "test_recordings_total": 90,
+  "uncertainty": {
+    "balanced_accuracy_95ci_by_variant": {
+      "DSRF/calibrated": [
+        0.5363636363636364,
+        0.7753246753246753
+      ],
+      "DSRF/original": [
+        0.5525974025974025,
+        0.8006493506493506
+      ],
+      "DSRF/threshold": [
+        0.5525974025974025,
+        0.8006493506493506
+      ],
+      "XGBoost/calibrated": [
+        0.4935064935064935,
+        0.740909090909091
+      ],
+      "XGBoost/original": [
+        0.5285714285714286,
+        0.6571428571428571
+      ],
+      "XGBoost/threshold": [
+        0.5272727272727272,
+        0.7863636363636364
+      ]
+    },
+    "caution": "Recording-based intervals assume independent recordings. Patient identities are unverified, so uncertainty may be understated.",
+    "method": "paired_stratified_recording_bootstrap",
+    "paired_balanced_accuracy_difference_95ci": {
+      "DSRF_calibrated_minus_DSRF_original": [
+        -0.14155844155844155,
+        0.07727272727272727
+      ],
+      "DSRF_original_minus_XGBoost_original": [
+        -0.0331168831168831,
+        0.22077922077922074
+      ],
+      "XGBoost_calibrated_minus_XGBoost_original": [
+        -0.09805194805194806,
+        0.16688311688311686
+      ],
+      "XGBoost_threshold_minus_XGBoost_original": [
+        -0.05844155844155852,
+        0.2064935064935065
+      ]
+    },
+    "resamples": 5000,
+    "seed": 20261109
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "source": "66-page EEGraft thesis PDF, reported aggregate values and existing numeric figure script",
+  "note": "Candidate figures only; original thesis unchanged. No new subject-level data or experiments.",
+  "candidates": [
+    {
+      "figure": "candidate_fig6_1_ranked_dot",
+      "description": "Replacement for Fig 6.1: ranked Cleveland dot plot"
+    },
+    {
+      "figure": "candidate_fig6_2_two_panel_dots",
+      "description": "Replacement for Fig 6.2: matched and unmatched comparisons kept distinct"
+    },
+    {
+      "figure": "candidate_fig7_1_state_composition",
+      "description": "Replacement for Fig 7.1: 100% stacked outcome composition; note correlated repeats"
+    },
+    {
+      "figure": "candidate_fig7_3_mci_dumbbell",
+      "description": "Replacement for Fig 7.3: connected dots compare separate MCI releases"
+    },
+    {
+      "figure": "candidate_fig7_4_noise_line",
+      "description": "Replacement for Fig 7.4: line over noise dose; channel zeroing separate"
+    },
+    {
+      "figure": "candidate_fig7_5_accuracy_flip_scatter",
+      "description": "Replacement for Fig 7.5: accuracy-versus-flip scatter; same 52 people"
+    },
+    {
+      "figure": "candidate_fig7_6_channel_rankings",
+      "description": "Replacement for Fig 7.6: separate channel rankings; not biomarkers"
+    }
+  ],
+  "retained_original_figures": [
+    "6.3 locked-test uncertainty",
+    "7.2 recording-duration line and interval chart"
+  ]
+}

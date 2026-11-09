@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.edf
+*.zip
+*.7z
+*.rar
+*.pt
+*.pth
+*.joblib
+*patient_map*

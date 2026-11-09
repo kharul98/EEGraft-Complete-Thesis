@@ -1,0 +1,255 @@
+{
+  "age_baseline_analysis": {
+    "fixed_cv_folds": 5,
+    "fixed_logistic_C": 1.0,
+    "incremental_eeg_score_associations": {
+      "DSRF": {
+        "validation_auroc_change_vs_age_only": 0.0117647058823529,
+        "validation_brier_change_vs_age_only": -0.004667584818698611
+      },
+      "XGBoost": {
+        "validation_auroc_change_vs_age_only": 0.007352941176470562,
+        "validation_brier_change_vs_age_only": -0.010483655962754024
+      }
+    },
+    "model_comparisons": {
+      "Age + DSRF": {
+        "features": [
+          "age",
+          "dsrf_logit"
+        ],
+        "training_5fold_out_of_fold": {
+          "accuracy": 0.7711038961038961,
+          "auroc": 0.8593939791865008,
+          "balanced_accuracy": 0.7568967969972533,
+          "brier_score": 0.14892985960454758,
+          "dementia_sensitivity": 0.6827309236947792,
+          "n_recordings": 616,
+          "normal_specificity": 0.8310626702997275
+        },
+        "validation": {
+          "accuracy": 0.7592592592592593,
+          "auroc": 0.8514705882352941,
+          "balanced_accuracy": 0.7779411764705882,
+          "brier_score": 0.16127770636061764,
+          "dementia_sensitivity": 0.85,
+          "n_recordings": 54,
+          "normal_specificity": 0.7058823529411765
+        }
+      },
+      "Age + XGBoost": {
+        "features": [
+          "age",
+          "xgb_logit"
+        ],
+        "training_5fold_out_of_fold": {
+          "accuracy": 0.7548701298701299,
+          "auroc": 0.8236105183677489,
+          "balanced_accuracy": 0.7426271844872678,
+          "brier_score": 0.1659757864045312,
+          "dementia_sensitivity": 0.678714859437751,
+          "n_recordings": 616,
+          "normal_specificity": 0.8065395095367848
+        },
+        "validation": {
+          "accuracy": 0.7777777777777778,
+          "auroc": 0.8470588235294118,
+          "balanced_accuracy": 0.7823529411764706,
+          "brier_score": 0.15546163521656223,
+          "dementia_sensitivity": 0.8,
+          "n_recordings": 54,
+          "normal_specificity": 0.7647058823529411
+        }
+      },
+      "Age only": {
+        "features": [
+          "age"
+        ],
+        "training_5fold_out_of_fold": {
+          "accuracy": 0.7451298701298701,
+          "auroc": 0.8137016731777246,
+          "balanced_accuracy": 0.7344527975662869,
+          "brier_score": 0.17025317187493536,
+          "dementia_sensitivity": 0.678714859437751,
+          "n_recordings": 616,
+          "normal_specificity": 0.7901907356948229
+        },
+        "validation": {
+          "accuracy": 0.7407407407407407,
+          "auroc": 0.8397058823529412,
+          "balanced_accuracy": 0.7426470588235294,
+          "brier_score": 0.16594529117931625,
+          "dementia_sensitivity": 0.75,
+          "n_recordings": 54,
+          "normal_specificity": 0.7352941176470589
+        }
+      }
+    },
+    "scope": "Exploratory age confounding assessment only. These are CAUEEG-trained diagnostic models, not the original frozen EEG models.",
+    "seed": 20261109,
+    "training_complete_case_count": 616,
+    "validation_complete_case_count": 54
+  },
+  "analysis_type": "post_hoc_exploratory",
+  "analysis_unit": "recording",
+  "dataset": "CAUEEG_dementia_no_overlap",
+  "demographic_summary": {
+    "train": {
+      "by_class": {
+        "dementia": {
+          "age_available": 249,
+          "age_missing": 0,
+          "age_q25": 72.0,
+          "age_q75": 82.0,
+          "age_sd": 8.012598982457922,
+          "mean_age": 76.59437751004016,
+          "median_age": 78.0,
+          "total_recordings": 249
+        },
+        "mci": {
+          "age_available": 334,
+          "age_missing": 0,
+          "age_q25": 69.0,
+          "age_q75": 79.0,
+          "age_sd": 7.8323229254261895,
+          "mean_age": 73.71556886227545,
+          "median_age": 75.0,
+          "total_recordings": 334
+        },
+        "normal": {
+          "age_available": 367,
+          "age_missing": 0,
+          "age_q25": 59.0,
+          "age_q75": 72.0,
+          "age_sd": 9.476652443166083,
+          "mean_age": 65.36784741144415,
+          "median_age": 65.0,
+          "total_recordings": 367
+        }
+      },
+      "normal_vs_dementia": {
+        "dementia_minus_normal_mean_age_years": 11.226530098596015,
+        "independent_patient_sampling_verified": false,
+        "recording_bootstrap_95ci_years": [
+          9.789390258582008,
+          12.610475690226849
+        ],
+        "standardized_mean_difference": 1.2593841179241214
+      }
+    },
+    "validation": {
+      "by_class": {
+        "dementia": {
+          "age_available": 20,
+          "age_missing": 0,
+          "age_q25": 76.25,
+          "age_q75": 85.0,
+          "age_sd": 9.577385644813186,
+          "mean_age": 79.4,
+          "median_age": 80.5,
+          "total_recordings": 20
+        },
+        "mci": {
+          "age_available": 28,
+          "age_missing": 0,
+          "age_q25": 69.75,
+          "age_q75": 80.0,
+          "age_sd": 6.6526638655456285,
+          "mean_age": 74.53571428571429,
+          "median_age": 76.0,
+          "total_recordings": 28
+        },
+        "normal": {
+          "age_available": 34,
+          "age_missing": 0,
+          "age_q25": 57.25,
+          "age_q75": 75.5,
+          "age_sd": 10.4315526434268,
+          "mean_age": 65.97058823529412,
+          "median_age": 63.5,
+          "total_recordings": 34
+        }
+      },
+      "normal_vs_dementia": {
+        "dementia_minus_normal_mean_age_years": 13.42941176470589,
+        "independent_patient_sampling_verified": false,
+        "recording_bootstrap_95ci_years": [
+          7.896397058823524,
+          18.52404411764705
+        ],
+        "standardized_mean_difference": 1.3259938072800919
+      }
+    }
+  },
+  "diagnostic_label_ontology": {
+    "train": {
+      "broad_dementia_recordings": 249,
+      "caution": "A dataset symptom tag is not independent neuropathological confirmation of AD.",
+      "common_symptom_tags_n_ge_10": {
+        "ad": 189,
+        "dementia": 249,
+        "eoad": 33,
+        "load": 156,
+        "sivd": 58,
+        "vd": 58
+      },
+      "explicit_ad_tag_recordings": 189,
+      "not_explicitly_ad_tagged": 60
+    },
+    "validation": {
+      "broad_dementia_recordings": 20,
+      "caution": "A dataset symptom tag is not independent neuropathological confirmation of AD.",
+      "common_symptom_tags_n_ge_10": {
+        "ad": 10,
+        "dementia": 20,
+        "sivd": 10,
+        "vd": 10
+      },
+      "explicit_ad_tag_recordings": 10,
+      "not_explicitly_ad_tagged": 10
+    }
+  },
+  "original_models_modified": false,
+  "provenance": {
+    "development_inference_sha256": "9c1dbadc5c02b8b6638041fc36a1ce83343e81b0652c44fcb0216c56bcb83f55",
+    "final_test_plan_sha256": "94a3c63f0ee0b1de05d3babc8f7dd4cdaebd75db7689150c8d3cb28bdd6c50e1",
+    "official_split_sha256": "df16668be52444ef974b6fdee452ba4004527422968f6b4ffbe0818f1fe1ae73"
+  },
+  "scientific_limitations": [
+    "Designed after the locked test was evaluated.",
+    "Age-only models are exploratory, fitted only on training.",
+    "Validation has already been inspected in earlier work.",
+    "Patient identities and recording independence are unverified.",
+    "Age is not the only possible demographic confound.",
+    "Diagnosis labels are clinical dataset annotations, not pathology confirmation.",
+    "Age adjustment does not prove the EEG signal is disease-specific.",
+    "Models fitted in this audit must not be evaluated on the previously used locked test.",
+    "No future Alzheimer conversion risk is estimated."
+  ],
+  "status": "AGE_LABEL_AUDIT_COMPLETED",
+  "test_eeg_files_opened": 0,
+  "test_prediction_files_opened": 0,
+  "test_records_analyzed": 0,
+  "within_class_age_score_correlations": {
+    "train": {
+      "dementia": {
+        "DSRF": -0.05226532950633644,
+        "XGBoost": 0.15825155356961793
+      },
+      "normal": {
+        "DSRF": -0.03245505984569411,
+        "XGBoost": 0.1027079210875987
+      }
+    },
+    "validation": {
+      "dementia": {
+        "DSRF": -0.1115300514023408,
+        "XGBoost": 0.12283377282825371
+      },
+      "normal": {
+        "DSRF": 0.09079794249843728,
+        "XGBoost": 0.19185467445285315
+      }
+    }
+  }
+}

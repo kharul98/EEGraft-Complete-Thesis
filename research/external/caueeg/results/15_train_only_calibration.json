@@ -1,0 +1,224 @@
+{
+  "evaluation_unit": "recording",
+  "limitations": [
+    "Calibration is for broad dementia, not verified AD.",
+    "No patient IDs are available for independent grouping.",
+    "Recording-level CV may be optimistic with repeated patients.",
+    "Calibration does not demonstrate clinical reliability.",
+    "Full-training fitted performance is in-sample.",
+    "The calibration experiment was added after validation review."
+  ],
+  "models": {
+    "DSRF": {
+      "cross_validation": {
+        "fold_details": [
+          {
+            "coefficient": 0.7091207601777405,
+            "fold": 1,
+            "heldout_brier_score": 0.20232595087124938,
+            "heldout_log_loss": 0.5879399672787525,
+            "heldout_recordings": 124,
+            "intercept": -0.43721698757269206,
+            "training_recordings": 492
+          },
+          {
+            "coefficient": 0.7259686927433975,
+            "fold": 2,
+            "heldout_brier_score": 0.2048354845933139,
+            "heldout_log_loss": 0.5964331293158951,
+            "heldout_recordings": 123,
+            "intercept": -0.4149757819332738,
+            "training_recordings": 493
+          },
+          {
+            "coefficient": 0.7898022214124041,
+            "fold": 3,
+            "heldout_brier_score": 0.2275475332954566,
+            "heldout_log_loss": 0.6420351605274829,
+            "heldout_recordings": 123,
+            "intercept": -0.4677245881840022,
+            "training_recordings": 493
+          },
+          {
+            "coefficient": 0.7021105680379894,
+            "fold": 4,
+            "heldout_brier_score": 0.19131463713745847,
+            "heldout_log_loss": 0.5693556181909972,
+            "heldout_recordings": 123,
+            "intercept": -0.422409977791077,
+            "training_recordings": 493
+          },
+          {
+            "coefficient": 0.7519666325647892,
+            "fold": 5,
+            "heldout_brier_score": 0.2130627099996837,
+            "heldout_log_loss": 0.6112648757398862,
+            "heldout_recordings": 123,
+            "intercept": -0.4456937774952876,
+            "training_recordings": 493
+          }
+        ],
+        "out_of_fold_calibrated": {
+          "auroc": 0.7077793462679054,
+          "balanced_accuracy_at_0_5": 0.6335478152391583,
+          "brier_score": 0.20780834871139964,
+          "dementia_sensitivity_at_0_5": 0.4578313253012048,
+          "ece_10_bins": 0.017778559783143574,
+          "log_loss": 0.6013838901733758,
+          "mean_probability": 0.4038750963084836,
+          "n_recordings": 616,
+          "normal_specificity_at_0_5": 0.8092643051771117
+        },
+        "out_of_fold_prevalence_baseline": {
+          "auroc": 0.496755414026679,
+          "balanced_accuracy_at_0_5": 0.5,
+          "brier_score": 0.24083203760056895,
+          "dementia_sensitivity_at_0_5": 0.0,
+          "ece_10_bins": 5.086521189801019e-07,
+          "log_loss": 0.6746977977055199,
+          "mean_probability": 0.4042212878728982,
+          "n_recordings": 616,
+          "normal_specificity_at_0_5": 1.0
+        },
+        "raw_source_scores": {
+          "auroc": 0.7096396485123053,
+          "balanced_accuracy_at_0_5": 0.6568672510204305,
+          "brier_score": 0.2202748404894701,
+          "dementia_sensitivity_at_0_5": 0.6706827309236948,
+          "ece_10_bins": 0.06931278037464488,
+          "log_loss": 0.6282892685765415,
+          "mean_probability": 0.49578436590464625,
+          "n_recordings": 616,
+          "normal_specificity_at_0_5": 0.6430517711171662
+        }
+      },
+      "final_training_fit": {
+        "coefficient": 0.7366837564399823,
+        "full_training_metrics_in_sample": {
+          "auroc": 0.7096396485123053,
+          "balanced_accuracy_at_0_5": 0.6342645787509712,
+          "brier_score": 0.20727232147281244,
+          "dementia_sensitivity_at_0_5": 0.4538152610441767,
+          "ece_10_bins": 0.023553147528021182,
+          "log_loss": 0.6001678954884881,
+          "mean_probability": 0.4041891278939302,
+          "n_recordings": 616,
+          "normal_specificity_at_0_5": 0.8147138964577657
+        },
+        "intercept": -0.43726844492229006
+      }
+    },
+    "XGBoost": {
+      "cross_validation": {
+        "fold_details": [
+          {
+            "coefficient": 1.0151141037530758,
+            "fold": 1,
+            "heldout_brier_score": 0.20579821278194632,
+            "heldout_log_loss": 0.5956097757015324,
+            "heldout_recordings": 124,
+            "intercept": -1.1792925305379804,
+            "training_recordings": 492
+          },
+          {
+            "coefficient": 1.0435612098957212,
+            "fold": 2,
+            "heldout_brier_score": 0.21447258708024006,
+            "heldout_log_loss": 0.6174694423065812,
+            "heldout_recordings": 123,
+            "intercept": -1.1877251318258293,
+            "training_recordings": 493
+          },
+          {
+            "coefficient": 1.1903799141208165,
+            "fold": 3,
+            "heldout_brier_score": 0.23006190128244453,
+            "heldout_log_loss": 0.6527894609760944,
+            "heldout_recordings": 123,
+            "intercept": -1.3346920108859648,
+            "training_recordings": 493
+          },
+          {
+            "coefficient": 1.2449287226066763,
+            "fold": 4,
+            "heldout_brier_score": 0.22991889055756945,
+            "heldout_log_loss": 0.6538886630811824,
+            "heldout_recordings": 123,
+            "intercept": -1.3485088381505559,
+            "training_recordings": 493
+          },
+          {
+            "coefficient": 1.332597973142354,
+            "fold": 5,
+            "heldout_brier_score": 0.23270428103642266,
+            "heldout_log_loss": 0.6670790514525663,
+            "heldout_recordings": 123,
+            "intercept": -1.4482555026411306,
+            "training_recordings": 493
+          }
+        ],
+        "out_of_fold_calibrated": {
+          "auroc": 0.6570806386308176,
+          "balanced_accuracy_at_0_5": 0.5846328091658186,
+          "brier_score": 0.2225639132461568,
+          "dementia_sensitivity_at_0_5": 0.2891566265060241,
+          "ece_10_bins": 0.0350184562512474,
+          "log_loss": 0.6372994905493672,
+          "mean_probability": 0.4040746962510992,
+          "n_recordings": 616,
+          "normal_specificity_at_0_5": 0.8801089918256131
+        },
+        "out_of_fold_prevalence_baseline": {
+          "auroc": 0.496755414026679,
+          "balanced_accuracy_at_0_5": 0.5,
+          "brier_score": 0.24083203760056895,
+          "dementia_sensitivity_at_0_5": 0.0,
+          "ece_10_bins": 5.086521189801019e-07,
+          "log_loss": 0.6746977977055199,
+          "mean_probability": 0.4042212878728982,
+          "n_recordings": 616,
+          "normal_specificity_at_0_5": 1.0
+        },
+        "raw_source_scores": {
+          "auroc": 0.6589518838295964,
+          "balanced_accuracy_at_0_5": 0.5290371294442073,
+          "brier_score": 0.2953364140154613,
+          "dementia_sensitivity_at_0_5": 0.9518072289156626,
+          "ece_10_bins": 0.24153400776157907,
+          "log_loss": 0.7920175941589845,
+          "mean_probability": 0.6696396763577607,
+          "n_recordings": 616,
+          "normal_specificity_at_0_5": 0.10626702997275204
+        }
+      },
+      "final_training_fit": {
+        "coefficient": 1.1684913778149255,
+        "full_training_metrics_in_sample": {
+          "auroc": 0.6589518838295964,
+          "balanced_accuracy_at_0_5": 0.5826247770373045,
+          "brier_score": 0.22151378747786443,
+          "dementia_sensitivity_at_0_5": 0.285140562248996,
+          "ece_10_bins": 0.028591904629737083,
+          "log_loss": 0.6340522354766667,
+          "mean_probability": 0.40429227171613524,
+          "n_recordings": 616,
+          "normal_specificity_at_0_5": 0.8801089918256131
+        },
+        "intercept": -1.3016271644529345
+      }
+    }
+  },
+  "source_model_hashes": {
+    "dsrf_sha256": "72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3",
+    "inference_script_sha256": "e5b758a26aa0d650a19af20f1601a5e1cc30ddb1cb51f0fc31556f107657dc74",
+    "pretrained_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+    "protocol_sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+    "task_sha256": "279be9996276abf5c3fbedf35b6d9aa4147f250a8a961302c056faaba687b671",
+    "xgboost_sha256": "9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f"
+  },
+  "status": "TRAIN_ONLY_CALIBRATION_COMPLETED",
+  "test_predictions_accessed": 0,
+  "training_recordings": 616,
+  "validation_predictions_accessed": 0,
+  "version": "caueeg_platt_calibration_v1"
+}

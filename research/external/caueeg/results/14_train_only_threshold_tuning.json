@@ -1,0 +1,159 @@
+{
+  "models": {
+    "DSRF": {
+      "cross_validation": {
+        "fold_thresholds": [
+          0.5,
+          0.53,
+          0.48,
+          0.49,
+          0.49
+        ],
+        "folds": [
+          {
+            "fold": 1,
+            "heldout_balanced_accuracy": 0.6675675675675675,
+            "heldout_recordings": 124,
+            "heldout_sensitivity": 0.7,
+            "heldout_specificity": 0.6351351351351351,
+            "selected_threshold": 0.5
+          },
+          {
+            "fold": 2,
+            "heldout_balanced_accuracy": 0.6372035300606729,
+            "heldout_recordings": 123,
+            "heldout_sensitivity": 0.6122448979591837,
+            "heldout_specificity": 0.6621621621621622,
+            "selected_threshold": 0.53
+          },
+          {
+            "fold": 3,
+            "heldout_balanced_accuracy": 0.5876712328767123,
+            "heldout_recordings": 123,
+            "heldout_sensitivity": 0.6,
+            "heldout_specificity": 0.5753424657534246,
+            "selected_threshold": 0.48
+          },
+          {
+            "fold": 4,
+            "heldout_balanced_accuracy": 0.6919178082191781,
+            "heldout_recordings": 123,
+            "heldout_sensitivity": 0.74,
+            "heldout_specificity": 0.6438356164383562,
+            "selected_threshold": 0.49
+          },
+          {
+            "fold": 5,
+            "heldout_balanced_accuracy": 0.6182191780821917,
+            "heldout_recordings": 123,
+            "heldout_sensitivity": 0.62,
+            "heldout_specificity": 0.6164383561643836,
+            "selected_threshold": 0.49
+          }
+        ],
+        "mean_balanced_accuracy": 0.6405158633612645,
+        "sd_balanced_accuracy": 0.03653662089744589
+      },
+      "full_training_adapted": {
+        "accuracy": 0.6542207792207793,
+        "balanced_accuracy": 0.6568672510204305,
+        "dementia_sensitivity": 0.6706827309236948,
+        "normal_specificity": 0.6430517711171662,
+        "positive_prediction_fraction": 0.4837662337662338
+      },
+      "full_training_fixed_0_5": {
+        "accuracy": 0.6542207792207793,
+        "balanced_accuracy": 0.6568672510204305,
+        "dementia_sensitivity": 0.6706827309236948,
+        "normal_specificity": 0.6430517711171662,
+        "positive_prediction_fraction": 0.4837662337662338
+      },
+      "selected_full_training_threshold": 0.5
+    },
+    "XGBoost": {
+      "cross_validation": {
+        "fold_thresholds": [
+          0.64,
+          0.7,
+          0.64,
+          0.72,
+          0.7
+        ],
+        "folds": [
+          {
+            "fold": 1,
+            "heldout_balanced_accuracy": 0.6156756756756757,
+            "heldout_recordings": 124,
+            "heldout_sensitivity": 0.88,
+            "heldout_specificity": 0.35135135135135137,
+            "selected_threshold": 0.64
+          },
+          {
+            "fold": 2,
+            "heldout_balanced_accuracy": 0.5999724214009928,
+            "heldout_recordings": 123,
+            "heldout_sensitivity": 0.5918367346938775,
+            "heldout_specificity": 0.6081081081081081,
+            "selected_threshold": 0.7
+          },
+          {
+            "fold": 3,
+            "heldout_balanced_accuracy": 0.5717808219178082,
+            "heldout_recordings": 123,
+            "heldout_sensitivity": 0.76,
+            "heldout_specificity": 0.3835616438356164,
+            "selected_threshold": 0.64
+          },
+          {
+            "fold": 4,
+            "heldout_balanced_accuracy": 0.5213698630136986,
+            "heldout_recordings": 123,
+            "heldout_sensitivity": 0.44,
+            "heldout_specificity": 0.6027397260273972,
+            "selected_threshold": 0.72
+          },
+          {
+            "fold": 5,
+            "heldout_balanced_accuracy": 0.5587671232876712,
+            "heldout_recordings": 123,
+            "heldout_sensitivity": 0.46,
+            "heldout_specificity": 0.6575342465753424,
+            "selected_threshold": 0.7
+          }
+        ],
+        "mean_balanced_accuracy": 0.5735131810591694,
+        "sd_balanced_accuracy": 0.03291546826809378
+      },
+      "full_training_adapted": {
+        "accuracy": 0.6168831168831169,
+        "balanced_accuracy": 0.6145563179147107,
+        "dementia_sensitivity": 0.6024096385542169,
+        "normal_specificity": 0.6267029972752044,
+        "positive_prediction_fraction": 0.4659090909090909
+      },
+      "full_training_fixed_0_5": {
+        "accuracy": 0.44805194805194803,
+        "balanced_accuracy": 0.5290371294442073,
+        "dementia_sensitivity": 0.9518072289156626,
+        "normal_specificity": 0.10626702997275204,
+        "positive_prediction_fraction": 0.9172077922077922
+      },
+      "selected_full_training_threshold": 0.7
+    }
+  },
+  "selected_thresholds": {
+    "DSRF": 0.5,
+    "XGBoost": 0.7
+  },
+  "source_model_hashes": {
+    "dsrf_sha256": "72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3",
+    "inference_script_sha256": "e5b758a26aa0d650a19af20f1601a5e1cc30ddb1cb51f0fc31556f107657dc74",
+    "pretrained_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+    "protocol_sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+    "task_sha256": "279be9996276abf5c3fbedf35b6d9aa4147f250a8a961302c056faaba687b671",
+    "xgboost_sha256": "9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f"
+  },
+  "status": "TRAIN_ONLY_THRESHOLD_SEARCH_COMPLETED",
+  "test_recordings_accessed": 0,
+  "validation_predictions_accessed": 0
+}

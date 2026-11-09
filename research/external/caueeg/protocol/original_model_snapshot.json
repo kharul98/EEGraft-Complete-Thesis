@@ -1,0 +1,29 @@
+{
+  "thesis_root": "/home/user4/alzheimers-thesis/eeg_foundation_thesis_starter/eeg_foundation_thesis",
+  "files": {
+    "results/final_protocol_2026.json": {
+      "sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+      "size_bytes": 2120
+    },
+    "checkpoints/cbramod_official.pth": {
+      "sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+      "size_bytes": 19775842
+    },
+    "results/final_development_models_2026/dsrf/final.pt": {
+      "sha256": "72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3",
+      "size_bytes": 20070407
+    },
+    "results/final_development_models_2026/xgboost/final.joblib": {
+      "sha256": "9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f",
+      "size_bytes": 172389
+    },
+    "src/data.py": {
+      "sha256": "e99fe35a10b13ba552134f27fcd92c9fa273df66daf0040af922cebeaa6908de",
+      "size_bytes": 10530
+    },
+    "src/model.py": {
+      "sha256": "059571f95e253d6a0c71cf0dfe25c7b5deb51cbf96cbeb56e7eba3d7fd1a41b5",
+      "size_bytes": 9525
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "test_name": "CAUEEG training-only waveform smoke test",
+  "model_protocol": "frozen_original_eegraft",
+  "recordings_read": 3,
+  "validation_waveforms_read": 0,
+  "test_waveforms_read": 0,
+  "total_windows": 72,
+  "window_shape": [
+    19,
+    4,
+    200
+  ],
+  "source_preprocessing_match_checked": true,
+  "recording_results": [
+    {
+      "official_class": "normal",
+      "sampling_rate_hz": 200.0,
+      "duration_seconds": 602.0,
+      "raw_shape": [
+        19,
+        120400
+      ],
+      "model_tensor_shape": [
+        24,
+        19,
+        4,
+        200
+      ],
+      "raw_abs_p99_uv": 96.0,
+      "filtered_abs_p99_uv": 57.2901,
+      "scaled_abs_p99": 0.560929,
+      "selected_window_count": 24,
+      "all_finite": true
+    },
+    {
+      "official_class": "mci",
+      "sampling_rate_hz": 200.0,
+      "duration_seconds": 861.0,
+      "raw_shape": [
+        19,
+        172200
+      ],
+      "model_tensor_shape": [
+        24,
+        19,
+        4,
+        200
+      ],
+      "raw_abs_p99_uv": 73.0,
+      "filtered_abs_p99_uv": 51.2516,
+      "scaled_abs_p99": 0.497211,
+      "selected_window_count": 24,
+      "all_finite": true
+    },
+    {
+      "official_class": "dementia",
+      "sampling_rate_hz": 200.0,
+      "duration_seconds": 364.0,
+      "raw_shape": [
+        19,
+        72800
+      ],
+      "model_tensor_shape": [
+        24,
+        19,
+        4,
+        200
+      ],
+      "raw_abs_p99_uv": 51.0,
+      "filtered_abs_p99_uv": 33.484,
+      "scaled_abs_p99": 0.304068,
+      "selected_window_count": 24,
+      "all_finite": true
+    }
+  ],
+  "smoke_status": "READY_FOR_FROZEN_MODEL_INFERENCE_SETUP",
+  "note": "Dataset uses AVG-referenced EEG. Source/target reference differences remain a domain-shift limitation."
+}

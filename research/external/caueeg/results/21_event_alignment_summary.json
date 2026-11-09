@@ -1,0 +1,115 @@
+{
+  "analysis_status": "EXPLORATORY_POST_TEST_REVIEW",
+  "benchmark": "dementia-no-overlap",
+  "by_class_eligible_windows": {
+    "train": {
+      "dementia": {
+        "eyes_closed": 1469,
+        "eyes_open": 498
+      },
+      "mci": {
+        "eyes_closed": 1503,
+        "eyes_open": 772
+      },
+      "normal": {
+        "eyes_closed": 2512,
+        "eyes_open": 1205
+      }
+    },
+    "validation": {
+      "dementia": {
+        "eyes_closed": 70,
+        "eyes_open": 53
+      },
+      "mci": {
+        "eyes_closed": 206,
+        "eyes_open": 127
+      },
+      "normal": {
+        "eyes_closed": 255,
+        "eyes_open": 83
+      }
+    }
+  },
+  "dataset": "CAUEEG",
+  "development_recordings": 1032,
+  "development_windows": 24768,
+  "eligible_window_counts": {
+    "train": {
+      "excluded": 14841,
+      "eyes_closed": 5484,
+      "eyes_open": 2475
+    },
+    "validation": {
+      "excluded": 1174,
+      "eyes_closed": 531,
+      "eyes_open": 263
+    }
+  },
+  "enough_training_pairs_for_preliminary_analysis": true,
+  "event_file_directory": "/home/user4/research/caueeg/imported_caueeg/caueeg-dataset/event",
+  "event_quality": {
+    "train": {
+      "aligned": 593,
+      "empty": 0,
+      "missing": 0,
+      "outside_duration": 357,
+      "unknown_format": 0,
+      "unordered_timestamps": 0,
+      "unreadable": 0
+    },
+    "validation": {
+      "aligned": 58,
+      "empty": 0,
+      "missing": 0,
+      "outside_duration": 24,
+      "unknown_format": 0,
+      "unordered_timestamps": 0,
+      "unreadable": 0
+    }
+  },
+  "final_test_plan_sha256": "94a3c63f0ee0b1de05d3babc8f7dd4cdaebd75db7689150c8d3cb28bdd6c50e1",
+  "limitations": [
+    "This audit was designed after viewing locked-test results.",
+    "No newly independent held-out test is available.",
+    "Event timestamps may be misaligned with EDF duration.",
+    "Recordings with invalid event chronology are excluded conservatively.",
+    "Eye state remains unknown until explicitly annotated.",
+    "Photic and disturbance annotations are not exhaustive.",
+    "Eligible windows are observational, not randomized.",
+    "Window observations from one recording are correlated.",
+    "Patient identity cannot be independently verified.",
+    "This audit does not establish causal recording-condition effects."
+  ],
+  "original_model_hashes": {
+    "dsrf_sha256": "72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3",
+    "inference_script_sha256": "e5b758a26aa0d650a19af20f1601a5e1cc30ddb1cb51f0fc31556f107657dc74",
+    "pretrained_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+    "protocol_sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+    "task_sha256": "279be9996276abf5c3fbedf35b6d9aa4147f250a8a961302c056faaba687b671",
+    "xgboost_sha256": "9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f"
+  },
+  "out_of_range_event_entries": 892,
+  "paired_state_coverage": {
+    "train": {
+      "at_least_one_window_each": 444,
+      "at_least_two_windows_each": 404
+    },
+    "validation": {
+      "at_least_one_window_each": 43,
+      "at_least_two_windows_each": 42
+    }
+  },
+  "recordings_with_timestamp_inversions": 0,
+  "status": "EVENT_ALIGNMENT_AUDIT_COMPLETED",
+  "test_event_files_opened": 0,
+  "test_prediction_files_opened": 0,
+  "test_waveforms_opened": 0,
+  "timing": {
+    "event_boundary_margin_seconds": 2,
+    "sampling_hz": 200,
+    "unit": "sample_index",
+    "window_seconds": 4
+  },
+  "version": "caueeg_event_alignment_audit_v1"
+}

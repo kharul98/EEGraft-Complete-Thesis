@@ -1,0 +1,44 @@
+\section{Background}
+Alzheimer's disease (AD) is a cause of progressive cognitive decline. Electroencephalography (EEG) records voltage changes at electrodes placed on the scalp. It is comparatively accessible and non-invasive, which makes it an interesting source of evidence for computational research. Yet scalp recordings are noisy. Measurements can change with alertness, movement, electrode contact and the part of the recording chosen for analysis. Differences among people also make the problem difficult. Earlier studies have described the slowing and altered organization of EEG activity in AD, but these patterns alone are not a reliable clinical diagnosis \cite{jeong2004,dauwels2010,cassani2018}.
+
+A classification model may distinguish recordings from people already diagnosed with AD and recordings from healthy controls. The task is to learn patterns that are useful for a previously unseen participant. Reported accuracy is only one part of that task. If an answer changes when a different minute of the same recording is examined, the reported result may hide instability. A prediction that is the same every time can also be wrong. For a research result to be credible, these cases must be measured separately. A 2026 review of work on the same public EEG cohort illustrates why evaluation design, especially separating subjects across training and testing, materially changes the interpretation of reported performance \cite{miltiadous2026benchmark}.
+
+\section{Problem Statement}
+Many EEG classification studies describe models primarily through accuracy, sensitivity or other single-point results. Some evaluate thousands of short windows but do not clearly distinguish windows from participants. This can lead to overconfidence in performance. In addition, the effect of changing recording time, applying artificial signal corruption and selecting a more complex neural architecture is not captured by one accuracy score \cite{varoquaux2018,varma2006}.
+
+Our project has two connected parts. The first is a subject-level study of how traditional spectral EEG classification behaves across recording time and related checks. The second evaluates whether a custom decoder attached to a pretrained EEG foundation-model encoder is competitive with established alternatives, and how its predictions behave under controlled perturbations. These are separate experimental tracks using different analytic cohorts. We do not combine their predictions into a single pooled estimate, nor do we claim that the first experiment directly measured the temporal behavior of the later decoder.
+
+\section{Research Aim and Unifying Logic}
+The broad aim is to examine whether a classifier's apparent accuracy is supported by reliable subject-level behavior and whether a pretrained EEG representation with a task-specific decoder offers a useful approach under that standard. In the first stage, the problem is identified and measured: a correct label at one time can become a different label later, and a stable label can remain incorrect. In the second stage, we build and evaluate an alternative representation-and-decoder pipeline instead of assuming that a larger model solves the problem automatically.
+
+\section{Research Questions}
+The report addresses four questions:
+\begin{enumerate}[label=\textbf{RQ\arabic*:},leftmargin=2cm]
+\item How much do subject-level dementia classification results depend on the EEG recording interval, and how often do predictions remain stable but incorrect?
+\item Can a custom gated dual-scale residual fusion decoder attached to a frozen CBraMod encoder achieve competitive AD-versus-control discrimination under subject-disjoint evaluation?
+\item What do component ablations, synthetic noise, channel removal and probability-based metrics reveal about the decoder's reliability beyond clean accuracy?
+\item What limits follow from the available cohorts, evaluation splits and absence of prospective or independent clinical validation?
+\end{enumerate}
+
+\section{Objectives}
+\begin{enumerate}
+\item Reconstruct and report the original subject-level temporal reliability findings, while preserving their cohort and protocol boundaries.
+\item Implement and explain a pretrained CBraMod encoder with a custom dual-scale residual fusion (DSRF) decoder. Name this decoder-centered research approach \textbf{EEGraft}.
+\item Compare the decoder with classical feature-based models and a smaller neural baseline using subject-disjoint development folds and a locked final assessment.
+\item Report correctness, stability, macro-F1, probability quality, uncertainty and robustness as different measurements rather than interchangeable claims.
+\item Document negative findings, dataset compatibility checks, implementation provenance and the limits of clinical inference.
+\end{enumerate}
+
+\LandscapeEvidenceFigure{fig01_methodology.png}{Overall study design supplied for the report. The upper branches denote distinct temporal-reliability and pretrained-decoder studies; the lower branch sketches the decoder and the subject-level evaluation criteria. The image is an explanatory illustration, not an additional experiment.}{0.98}{fig:methodology}
+
+Figure~\ref{fig:methodology} shows that the project has one research aim but two methods of investigation. The first stage supplies a failure-oriented evaluation question. The second stage supplies an architecture to compare under careful participant-level testing. This ordering is important: the decoder is not introduced as a confirmed cure for temporal instability. Instead, it is evaluated with accuracy, ablations, held-out testing, perturbation checks and input-sensitivity analysis.
+
+\section{Contributions and Boundaries}
+The first contribution is an empirical description of a gap between first-minute classification and five-minute label stability. The second is the implementation of a dual-scale gated residual fusion decoder combining pretrained representations and local temporal features. The third is a comparison with SVM, random forest, XGBoost and neural alternatives, together with a locked 13-person holdout. The fourth is a stress-test analysis of noise, channel deletion and model sensitivity to individual input channels. Negative findings and cases where the simpler baseline is stronger are part of the result.
+
+We do \emph{not} claim that CBraMod itself was invented in this thesis; its architecture was published by Wang and colleagues \cite{wang2025cbramod}. We also do not claim that EEGraft is clinically validated, detects a person's future risk of AD, or reliably outperforms XGBoost. The available final holdout in fact favored XGBoost. The wording of the title describes an implemented decoder \emph{and} a reliability assessment rather than claiming a unified system has already achieved clinical reliability.
+
+\section{Scope and Organization}
+The central dataset is the public resting-state EEG collection described by Miltiadous and colleagues \cite{miltiadous2023dataset,miltiadous2026dataset}. The temporal study includes AD-versus-control and frontotemporal-dementia-versus-control comparisons. The decoder study focuses on AD versus healthy controls. A separate mild-cognitive-impairment (MCI) investigation is included only as a reliability negative control, not as an external validation of AD prediction. Other datasets were inspected for feasibility but were not used to claim successful external AD validation.
+
+Chapter 2 reviews the relevant literature, Chapter 3 discusses requirements and constraints, and Chapter 4 explains cohorts and evaluation protocols. Chapter 5 specifies the implemented models, Chapter 6 reports the main comparison results, and Chapter 7 examines temporal reliability, perturbations and model sensitivity. Chapter 8 connects the findings and examines weaknesses. Chapter 9 states the conclusions and future research needs.

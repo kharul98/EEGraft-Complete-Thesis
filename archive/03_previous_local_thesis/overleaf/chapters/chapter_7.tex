@@ -1,0 +1,69 @@
+\section{Why Reliability Needs a Separate Chapter}
+The main scientific concern was not simply to find a model with a good average score. It was to ask whether a subject-level label stays the same, stays correct, and remains meaningful when a recording interval or signal condition changes. Stability and correctness answer different questions. The same prediction can be repeated confidently and still be wrong. Conversely, a model can have useful average discrimination yet produce inconsistent decisions for an individual. This chapter groups the original temporal findings, additional controls and later decoder stress tests under that common question while keeping their experimental methods separate.
+
+\section{Study A: First-Minute Classification Versus Five-Minute Changes}
+The original temporal experiment used a class-balanced RBF SVM on spectral EEG features from the 64-person analytical cohort. For AD versus controls, first-minute balanced accuracy was 73.48\%. For FTD versus controls it was 73.72\%. Across the five-minute analysis, 44.35\% of AD-versus-control predictions and 33.66\% of FTD-versus-control predictions changed. These are saved project-level rates, not results of the later CBraMod decoder.
+
+\begin{table}[htbp]\centering\small
+\caption{Reported original subject-level temporal-reliability findings}\label{tab:temporal}
+\begin{tabular}{@{}lrr@{}}\toprule
+\textbf{Measurement}&\textbf{AD vs CN}&\textbf{FTD vs CN}\\\midrule
+Analytical participants in binary task&46&41\\
+First-minute BAcc (\%)&73.48&73.72\\
+Predictions changing across five minutes (\%)&44.35&33.66\\
+Stable but wrong (\%)&8.70&13.17\\\bottomrule\end{tabular}\end{table}
+
+\HereEvidenceFigure{fig05_temporal_reliability.png}{Reported results of the original SVM temporal study: first-minute classification, the fraction changing labels across five minutes, and the fraction stable but wrong. These descriptive quantities are not interchangeable.}{0.97}{fig:temporal}
+
+Figure~\ref{fig:temporal} shows the central tension of the first research question. First-minute BAcc around 73\% cannot be interpreted as saying that an individual's classification will remain consistent over an extended recording. In addition, stable but wrong cases were present in both tasks. Stability by itself is thus insufficient evidence that the model is reliable.
+
+\section{Recording Duration and Temporal Position}
+The separate duration study investigated 30, 60, 120, 180 and 300-second recordings, including start, center and end anchors. It compared subject-level performance and paired differences to a 300-second reference. One saved SVM configuration reached its highest observed BAcc near 180 seconds, approximately 81.3\%. That figure must be read as an observed point in an exploratory comparison, not as proof of an optimal acquisition length. Nested prefixes share their samples, and anchor positions belong to the same participants.
+
+\LandscapeEvidenceFigure{fig06_duration.png}{User-supplied duration-analysis figure, including different temporal anchor positions and paired comparisons with a 300-second reference. The figure belongs to the separate duration experiment and does not establish a clinically optimal EEG duration.}{0.98}{fig:duration}
+
+Figure~\ref{fig:duration} is included because it shows why choosing one convenient segment can change apparent performance. The start, center and end trends differ. Some paired uncertainty intervals cross zero. A practical recommendation about recording duration would need independent participants, standardized acquisition and a prespecified acceptable error rate. We have not established those conditions here.
+
+\section{Recording Conditions and Feature Checks}
+An additional matched recording-condition comparison reported eyes-open minus eyes-closed BAcc differences of $-8.83$ percentage points for AD-versus-control classification and $-4.23$ points for FTD-versus-control classification. Both reported confidence intervals included zero. This means the observed direction does not establish a reliable difference between conditions. An eight-comparison feature-ablation set also showed no result remaining statistically significant after Holm adjustment \cite{holm1979}. These are useful negative results: they prevent the thesis from overstating the effect of a condition or one spectral feature family.
+
+\section{Independent MCI Reliability Negative Control}
+A distinct Isfahan investigation used MCI-versus-healthy classification, not AD prediction. Following five-minute quality screening, EEG\_1 retained 25 recordings (11 MCI and 14 controls) and EEG\_2 retained 24 (12 MCI and 12 controls). First-minute BAcc was 40.78\% in EEG\_1 and 55.83\% in EEG\_2. Stable-but-wrong rates were 59.20\% and 35.83\%, respectively. Prediction change rates were 5.60\% and 20.00\%.
+
+\EvidenceFigure{fig07_mci_controls.png}{Separate MCI-versus-control negative-control experiment. In EEG\_1, prediction change was low while balanced accuracy was below chance and stable-but-wrong decisions were common. This is not external Alzheimer's disease validation.}{0.96}{fig:mci}
+
+Figure~\ref{fig:mci} demonstrates a simple but important point. EEG\_1 changed labels for relatively few cases, yet it discriminated poorly. A constant-label classifier has 50\% binary balanced accuracy regardless of the class distribution (provided both classes are present). Therefore, a stability metric should always be paired with correctness or discrimination. The MCI result cannot be transferred numerically to AD because the task, cohort and acquisition details are different.
+
+\section{Study B: Synthetic Corruption of DSRF Inputs}
+The later pretrained-backbone experiment did not reproduce the exact five-minute SVM protocol. Instead, it held the subject-level development predictions fixed as a clean reference and applied seeded perturbations. There were five realizations per condition on the same 52 participants. Gaussian noise was scaled relative to the within-window EEG standard deviation, and one condition zeroed a single channel. These manipulations are diagnostic stress tests, not natural clinical acquisition artifacts.
+
+\begin{table}[htbp]\centering\small
+\caption{DSRF clean and synthetic-perturbation development results}\label{tab:robustness}
+\begin{tabular}{@{}lrrr@{}}\toprule
+\textbf{Condition}&\textbf{Mean BAcc (\%)}&\textbf{Mean flip rate (\%)}&\textbf{Mean Brier}\\\midrule
+Clean&77.06&---&---\\
+10\% Gaussian noise&71.87&23.08&0.3435\\
+20\% Gaussian noise&70.07&27.69&0.4100\\
+One channel zeroed&76.78&7.31&0.3629\\\bottomrule\end{tabular}\end{table}
+
+Under 10\% artificial noise, average BAcc decreased from 77.06\% to 71.87\%. Under 20\% noise, it decreased to 70.07\%. With a channel zeroed, average BAcc was 76.78\%, close to the clean result, although some labels still changed. The reported mean Brier scores rose with stronger noise. The five seeds estimate variation under the simulated perturbation process; they are not independent participant cohorts.
+
+\EvidenceFigure{fig10_synthetic_robustness.png}{DSRF subject-level balanced accuracy for the same 52 development participants under clean input and three artificial corruption conditions. The five seeds per corrupted condition are repeated computations, not additional patients.}{0.92}{fig:noise}
+
+Figure~\ref{fig:noise} shows that DSRF is sensitive to the noise conditions used here. However, it does not establish that the decoder would behave the same way under motion artifacts, different amplifiers or missing electrodes recorded at a new hospital.
+
+\EvidenceFigure{fig11_perturbation_flips.png}{Average class-label changes under the three synthetic perturbation conditions. A low flip rate is not automatically a good diagnostic result without accuracy and probability information.}{0.92}{fig:flips}
+
+Figure~\ref{fig:flips} makes the distinction between a changed label and an incorrect label explicit. The channel-removal condition changed fewer labels than strong Gaussian noise, but this observation alone says little about the clinical relevance of the removed channels. A model that remained constant because it ignored its input could appear stable; the 50\% balanced-accuracy constant-label control guards against that interpretation.
+
+\section{Channel-Occlusion Analysis}
+The saved out-of-fold explanation run covered the same 52 development participants as the decoder comparison, and its complete-window decisions matched the original fold-level predictions. The five largest reported channel-masking sensitivities for AD were T5 (11.03 percentage points), Pz (7.66), F8 (7.60), Fz (6.82) and C3 (5.09). For controls, they were O2 (31.50), T6 (16.01), O1 (15.90), Fp2 (14.96) and F3 (12.52). The class-specific lists differ, and the masking response depends on the operation used to zero a channel.
+
+\EvidenceFigure{fig12_channel_occlusion.png}{Top five reported per-class channel-occlusion sensitivities from the later 52-person DSRF development analysis. Rankings describe model dependence on perturbed input channels, not confirmed neurological biomarkers.}{0.97}{fig:channels}
+
+Figure~\ref{fig:channels} should not be interpreted as a causal brain map. Zeroing a sensor alters the statistics of the input and may create an out-of-distribution example. Therefore, a change in classification can arise from a model's training history, dataset acquisition properties or the artificial mask itself. True physiological explanations would need a separate controlled study.
+
+\section{Reliability Interpretation Across Experiments}
+The SVM temporal study demonstrates a discrepancy between first-minute discrimination and within-recording behavior. The MCI task gives an especially clear negative control: high stability can accompany wrong predictions. The later DSRF perturbation study shows that label consistency and probability quality change under artificial noise. These findings support one conceptual conclusion: accuracy, temporal consistency, perturbation robustness and calibration are different measurements.
+
+They do \emph{not} prove that DSRF would be more temporally stable than the original SVM on the same five-minute recordings. Such a claim would require a matched participant set, the same windows and a predefined comparison. The present thesis is strongest when it keeps that boundary visible.

@@ -1,0 +1,11 @@
+{
+  "binary_test_recordings": 57,
+  "frozen_thresholds_preserved": true,
+  "mci_descriptive_recordings": 33,
+  "original_models_preserved": true,
+  "plan_sha256": "94a3c63f0ee0b1de05d3babc8f7dd4cdaebd75db7689150c8d3cb28bdd6c50e1",
+  "status": "READY_FOR_LOCKED_TEST_INFERENCE",
+  "test_model_predictions_generated_by_this_code": 0,
+  "test_waveforms_loaded_by_this_code": 0,
+  "total_test_recordings": 90
+}

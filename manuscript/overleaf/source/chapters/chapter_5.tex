@@ -1,0 +1,115 @@
+\section{Methodology Overview}
+EEGraft is the name used for the decoder-centered research approach and its evaluation in this report. It does not rename CBraMod, and it does not claim a new pretrained foundation model. Its architectural component is a custom dual-scale residual fusion (DSRF) decoder that uses pretrained high-level EEG representations together with lower-level temporal features. Its evaluation component asks how well that decoder performs on unseen subjects and how its predictions behave when inputs are changed. The original SVM temporal analysis is a related investigation motivating the reliability questions, not an experiment run through the DSRF decoder.
+
+\section{Study A: Spectral Feature Classifier}
+Let an EEG recording have $C$ channels and a time interval $[t_0,t_1]$. For each channel, a power spectral density (PSD) estimate provides band-specific power. The feature set uses relative power in the delta, theta, alpha, beta and gamma bands and a theta/alpha ratio. A simplified relative band-power feature can be written as
+\begin{equation}
+ r_b=\frac{\int_{f\in b} P(f)\,df}{\int_{f_{\min}}^{f_{\max}}P(f)\,df},
+ \label{eq:relpower}
+\end{equation}
+where $P(f)$ is the estimated PSD and $b$ is a frequency band. The denominator makes the feature less directly dependent on absolute signal amplitude. However, relative normalization can also couple one band's change to the others. Band boundaries and cleaning choices can affect the result. The saved spectral-duration protocol uses Welch estimates from two-second epochs at 500 Hz, band bins covering 1--45 Hz and median aggregation of retained epoch/channel measurements. Full independent repetition still requires the original raw EEG and executable environment.
+
+The feature vector is standardized using statistics obtained from training participants only, then passed to an RBF support vector machine \cite{cortes1995}. Class balancing addresses different numbers of disease and control participants. Its parameters are selected in inner subject-wise folds. Its predictions are assessed in outer held-out folds. In this report, the model's first-minute balanced accuracy and subsequent five-minute prediction behavior are reported from the saved retrospective evidence. They are not new experiments created during thesis writing.
+
+\section{Study B: Pretrained CBraMod Encoder}
+CBraMod is an existing pretrained EEG foundation model that represents spatial and temporal information through a criss-cross architecture \cite{wang2025cbramod}. The downloaded pretrained weights were loaded strictly from a recorded checkpoint; the source record identifies the SHA-256 digest \texttt{\seqsplit{0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178}}. The encoder remained frozen. The project therefore trains a downstream decoder without claiming to have optimized or discovered the original CBraMod foundation-model parameters.
+
+The advantage of a frozen encoder is a stable pretrained feature source and a smaller optimization problem. The trade-off is reduced freedom to adapt low-level representations to a specific small cohort. We included a raw-signal convolutional pathway to provide task-specific lower-level features alongside pretrained features. This design gives a reason for testing dual-scale fusion; it does not guarantee an accuracy increase.
+
+\section{Custom Dual-Scale Residual Fusion Decoder}
+The implemented decoder accepts a four-second EEG window in the shape $X\in\mathbb{R}^{B\times19\times4\times200}$, where $B$ is the mini-batch size. The frozen CBraMod encoder returns one 200-dimensional vector per channel and one-second patch. A trainable linear map and layer normalization project each pretrained token to 128 dimensions. In parallel, the raw-signal pathway processes each 200-sample patch with two one-dimensional convolutions of widths 9 and 41 (16 output maps each). Their 32 maps are concatenated, group-normalized, passed through GELU, temporally averaged, and projected to 128 dimensions with layer normalization.
+
+For projected pretrained tokens $H$ and learned local tokens $L$, each in $\mathbb{R}^{B\times19\times4\times128}$, the implemented fusion is
+\begin{equation}
+G=\sigma\!\left(W_g[H;L]+b_g\right),\qquad
+F=\operatorname{Dropout}\!\left[\operatorname{LN}\!\left(H+G\odot L\right)\right],
+\label{eq:fusion}
+\end{equation}
+where the learned gate maps concatenated 256-dimensional features to 128 gates, $\sigma$ is the sigmoid, and $\odot$ means elementwise multiplication. The dropout probability is 0.2. The additive high-level skip preserves a direct route for pretrained information; the gate controls the local pathway's contribution. This description follows \texttt{src/model.py}, not merely a conceptual architecture drawing.
+
+The final decoder reshapes the 19-by-4 token grid into 76 tokens for each four-second window. A learned linear class-attention layer assigns each AD/CN class its own softmax distribution over those 76 tokens. The class-weighted token sum is combined with a trainable class-specific weight and bias to produce logits. These logits give window probabilities; Equation~\ref{eq:aggregate} explains their later participant aggregation. Attention and perturbation responses are model behavior, not clinical anatomical interpretation.
+
+\TallThesisFigure[EEGraft CBraMod--DSRF architecture]{fig_05_01_architecture.png}{EEGraft decoder as implemented for the source task: a frozen CBraMod backbone provides high-level tokens, dual-scale one-dimensional convolutions provide local tokens, learned gated residual addition fuses both paths, class-specific attention produces per-window AD/CN scores, and mean probability aggregation gives a participant decision. Feature maps and attention grids are schematic, not measured activations.}{fig:decoder}
+
+Figure~\ref{fig:decoder} shows the implemented architecture. The signal tiles and attention maps are schematics rather than measured brain responses. The engineering hypothesis is straightforward: a frozen encoder supplies broadly learned EEG tokens, while short- and longer-kernel convolutions can learn task-specific temporal information from the same input. A sigmoid gate controls the contribution of that local pathway; residual addition preserves a direct route for pretrained features, and class-specific attention maps the resulting tokens to AD/CN decisions. This design makes clear, falsifiable comparisons possible: ablate the pretrained or local path, remove residual addition, or replace it with a capacity-matched gated blend. The measured comparisons in Chapter 6 assess the implementation; they do not imply that every component has individually established universal benefit.
+
+\section{Participant-Level Probability Aggregation}
+A single participant contributes up to 24 non-overlapping four-second windows. If $p_{iwk}$ is the model's probability of class $k$ for subject $i$ and window $w$, the saved aggregation rule is
+\begin{equation}
+\bar p_{ik}=\frac{1}{W_i}\sum_{w=1}^{W_i}p_{iwk},\qquad
+\hat y_i=\arg\max_k\bar p_{ik},
+\label{eq:aggregate}
+\end{equation}
+where $W_i\leq24$. The unit of classification in Study B is therefore a participant, not a four-second window. Under the same frozen computation on CAUEEG, aggregation is over each \emph{recording}, without asserting that recordings correspond to unique patients. Averaging probabilities rather than taking an arbitrary single-window decision can reduce variance, but it may also conceal disagreement among windows; that is why temporal and perturbation behaviors still need separate assessment.
+
+\section{Baselines and Model Ablations}
+The development comparison has eight rows: DSRF, XGBoost, EEGNet-inspired, random forest, high-only, SVM, no-skip and low-only. SVM, random forest and XGBoost use classical spectral and Hjorth-style features in the later track. EEGNet-inspired is a smaller neural model trained from scratch, not a claim to reproduce every architectural and training choice from the original EEGNet paper \cite{lawhern2018}. The other three variants remove a part of the dual-path decoder to test the role of pretrained high-level information, local features and residual flow.
+
+An additional matched experiment compares additive residual fusion with a gated blend using matched component modules and effective parameter counts. This is a stronger comparison for the particular skip rule than comparing two arbitrary models with different capacity. Even here, an observed difference in one small set of development folds should not be described as a proven architecture advantage without sufficient statistical support.
+
+\section{Development and Frozen Final Model Settings}
+The saved final protocol defines the assessed model configurations. Table~\ref{tab:hyperparams} lists the recorded values.
+\begin{table}[htbp]\centering\small
+\caption{Frozen final training and model settings from the saved protocol}\label{tab:hyperparams}
+\begin{tabularx}{\textwidth}{@{}p{0.29\textwidth}X@{}}\toprule
+\textbf{Item}&\textbf{Saved value and interpretation}\\\midrule
+DSRF optimizer settings&Learning rate 0.001, weight decay 0.01, batch size 8, random seed 42. These are fixed training settings, not a clinical calibration standard.\\
+DSRF training duration&Five final epochs; development-fold selected epochs were 5, 14, 1, 6 and 4. The historical procedure selected a single final configuration.\\
+CBraMod backbone&Frozen and loaded from the recorded pretrained weights; no full backbone fine-tuning.\\
+Input windows&4 seconds at 200 Hz, 19 channels, at most 24 windows per participant; 0.3--40 Hz bandpass described in the execution summary.\\
+XGBoost&180 estimators; maximum depth 2; learning rate 0.05; subsample 0.9; column subsample 0.9; seed 42.\\
+XGBoost weighting&Inverse subject-window count and class-frequency weighting recorded in the final protocol.\\
+Primary model-selection metric&Participant-level balanced accuracy.\\
+\bottomrule\end{tabularx}\end{table}
+
+The saved final training metadata confirm 1,248 selected development windows for 52 people (24 windows per person); they also record 247 features for the final XGBoost comparator. The batch size and window cap control computational load. A shallow XGBoost tree depth limits the capacity of the classical comparator. The final values were saved as a development-selected protocol; we do not claim that every value was derived from a formal optimality proof. In particular, a four-second window, a 24-window maximum and a five-epoch final run are engineering and development choices with unknown transferability to other cohorts.
+
+\subsection{Implementation provenance of important parameter choices}
+The distinction between a recorded setting and a proven reason for choosing it is important. The 200 Hz sample rate, one-second 200-point patch and four-patch model input follow the pretrained CBraMod interface. A 19-channel ordered montage and fixed $\mu$V/100 scaling are adapter/input-compatibility rules, not fitted test-set normalizations. The two convolution widths (9 and 41 samples), 128-dimensional projection, normalization and sigmoid-gated residual are architectural choices visible in \texttt{src/model.py}; no source-supported kernel-width sweep establishes their optimality. Four-second windowing and a uniform maximum of 24 windows per person bound memory and compute, but the code does not establish a data-driven optimum. Freezing the backbone, retaining the additive residual and selecting five final training epochs are recorded development/final-protocol decisions, made before the locked holdout. The fold-selected epoch counts (5, 14, 1, 6, 4) explain why the fixed five-epoch rule should not be described as a universal training optimum. The exact historical rationale for numerical learning-rate, weight-decay, dropout, XGBoost-tree and window-cap values cannot be recovered beyond their logged settings and the stated engineering constraints; no unrecorded search or formal sensitivity analysis is asserted.
+
+\section{Final Design Adjustments and Assessment Freeze}
+The project source preserves ablations of the high-level and low-level branches, a no-skip variant and a capacity-matched gated-blend control. These were development investigations used to understand the proposed fusion, not independent clinical demonstrations of an improved architecture. The selected final assessment retained the frozen pretrained CBraMod encoder and the gated additive residual DSRF variant. The recorded final DSRF procedure used five epochs, batch size eight and seed 42; fold-specific selected epochs during earlier development differed (5, 14, 1, 6, 4). The saved final protocol also fixes an XGBoost comparator. The precise motivation for every historical hyperparameter cannot be reconstructed merely from a results table.
+
+The model choice and protocol preceded the recorded final 13-person assessment. The observed locked-test advantage of XGBoost was reported after that assessment and must not be rewritten as though it selected the DSRF architecture. Formal latency, energy and maintenance comparisons were not measured. For this reason, DSRF is the evaluated design, not a design proven preferable on every engineering criterion.
+
+\section{Evaluation Metrics}
+For a binary problem, sensitivity or true-positive rate (TPR) and specificity or true-negative rate (TNR) are kept separate. Balanced accuracy is
+\begin{equation}
+\operatorname{BAcc}=\tfrac{1}{2}(\operatorname{TPR}+\operatorname{TNR}).
+\end{equation}
+This metric is useful when the disease and control counts differ. Accuracy is the fraction of all participants classified correctly. Macro-F1 averages class-specific F1 scores, giving both classes equal weight. AUROC summarizes ranking behavior over probability thresholds. Because a model can be right but overconfident, the multiclass Brier score is also reported:
+\begin{equation}
+\operatorname{Brier}=\frac{1}{N}\sum_{i=1}^{N}\sum_{k\in\{\mathrm{AD,CN}\}}\left(\bar p_{ik}-\mathbb{1}(y_i=k)\right)^2.
+\end{equation}
+For this convention, lower values are better. Expected calibration error (ECE) is a binned approximation of confidence--accuracy mismatch; with only 13 held-out subjects its estimate is especially unstable \cite{guo2017calibration}.
+
+For the temporal study, the fraction of held-out participants whose predicted label changes during the examined interval is a \emph{change rate}. A \emph{stable-but-wrong} case keeps the same incorrect label across the examined windows. A constant-label classifier illustrates why zero changes need not mean useful discrimination: in a two-class balanced-accuracy calculation, predicting only one class gives 50\% BAcc.
+
+\section{Robustness and Sensitivity Tests}
+The later development study applies five seeded versions of three synthetic perturbations to the same 52 participants: Gaussian noise at 10\% and 20\% relative to within-window signal standard deviation, and zeroing one channel in each selected window. We compare balanced accuracy, mean label-flip rates and Brier scores with clean evaluation. The five seeds are technical repeats and do not create 260 independent patients. Masking each input channel in turn supports a descriptive sensitivity ranking. It is not a lesion experiment or proof of clinical biomarkers.
+
+\section{Study C: Frozen Cross-Cohort Transfer}
+The two source-trained models were applied without changing their learned weights to CAUEEG Normal and broad Dementia recordings. The target differs from the source in diagnostic-label scope, demographics, hardware environment and recorded channel metadata. Only the matched 19 EEG channels were used. The same 0.3--40 Hz decoder-input filter, 200 Hz target sampling and fixed microvolt scaling applied to the 24 four-second selected windows. In contrast to Study B, one output score corresponds to a \emph{recording} rather than a verified unique participant. No MCI example was labeled Dementia for the primary binary assessment.
+
+\ThesisFigure[CAUEEG frozen transfer and threshold protocol]{fig_05_02_threshold_protocol.pdf}{Frozen transfer protocol. Both source-trained models use the original 0.50 threshold in the locked CAUEEG binary test. Training-selected XGBoost 0.70 and train-fitted Platt calibration are secondary exploratory rules reported separately. The official no-overlap CAUEEG split contains 950 training, 82 validation and 90 test recordings; only 57 locked test recordings have Normal or broad Dementia labels. Source weights remain unchanged and the test is not used for tuning.}{fig:threshold-protocol}
+
+\section{Decision Thresholds and Calibration}
+Let $s_i$ be the mean window score for broad Dementia on external recording $i$. The primary decision rule is
+\begin{equation}
+\hat y_i(\tau)=\begin{cases}1,&s_i\geq\tau,\\0,&s_i<\tau,\end{cases}\quad\tau_{\mathrm{primary}}=0.50.
+\label{eq:threshold}
+\end{equation}
+The secondary XGBoost decision rule uses $\tau=0.70$, chosen from CAUEEG \emph{training} records. Because changing $\tau$ changes hard labels but not $s_i$ or the model's weights, threshold-dependent label flips should never be described as differences in score stability or fresh model training. A further exploratory Platt fit maps a frozen score through a logistic function and applies a 0.50 decision threshold on the mapped scores. The exact historical threshold-selection objective and calibration-fitting granularity are not fully documented in the available source records; no optimized validation or test selection objective is invented here.
+
+The binary Brier score uses $(s_i-y_i)^2$ averaged over recordings. This is the \emph{single-class binary} convention used in the CAUEEG audit, whereas the earlier 13-participant source report explicitly used its own saved probability-error convention. Those Brier values are therefore not compared as a matched change across datasets. Calibration is descriptive; a better Brier value does not imply clinical diagnostic validity.
+
+\section{Correctness-Aware and Threshold-Aware Consistency}
+A recording can be called \emph{unanimous} when all 24 sampled four-second window labels agree at the specified threshold. We then classify unanimity as correct or wrong by comparing the unanimous decision with the reference diagnostic label. This separates a frequently made mistake: calling every stable recording ``reliable.'' A recording with all wrong predictions is perfectly unanimous but not useful as a correct classifier.
+
+For the event-aligned development audit, a separate mean score is calculated from eligible eyes-open and eyes-closed windows within each recording. A \emph{condition-pair flip} occurs if the two thresholded mean scores disagree. This is not the same statistic as whole-recording unanimity. The event analysis requires at least two eligible windows in each state and reports each recording once. The saved event-timing offsets show that condition and elapsed time were correlated. A within-recording linear time adjustment and nearby-state comparisons were explored later, but neither makes these observational labels a randomized experiment.
+
+\section{Age Confounding and Incremental Information}
+The CAUEEG development age audit first compares Normal and Dementia recording ages, then evaluates an age-only model and age-plus-frozen-score alternatives on training cross-validation and validation. Incremental AUROC describes the difference between an age-plus-score model and its age-only comparator on the \emph{same} validation recordings. Bootstrap intervals resample recordings and cannot guarantee independence of patients whose linkage is unavailable. Since the validation intervals for the incremental score include zero, the analysis does not establish independent EEG diagnostic value beyond age. These analyses were introduced after the original frozen external test, not preregistered as primary confirmation.
+
+\section{Statistical Reporting Rules}
+Where saved, patient-level stratified bootstrap intervals and exact paired McNemar tests are reported. Their interpretation is exploratory because the holdout is small and multiple decisions were made during development. We avoid converting a difference with a confidence interval crossing zero into a statistically established advantage. Separately, the original feature-ablation checks used Holm adjustment for multiple comparisons \cite{holm1979}. The exact statistical design differs between historical tracks and should not be silently standardized after the fact.

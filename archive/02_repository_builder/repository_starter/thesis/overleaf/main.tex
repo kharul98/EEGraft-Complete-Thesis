@@ -1,0 +1,106 @@
+% EEGraft thesis, based on uploaded IdentityGate BracU LaTeX style
+% Same 12pt report class, A4 geometry, chapter-title scale, bibliography convention.
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{pdflscape}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{longtable,array,ragged2e,tabularx,booktabs}
+\usepackage{caption,subcaption,float}
+\usepackage{csquotes}
+\usepackage{url,hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{seqsplit}
+\usepackage{nomencl}
+\usepackage[nottoc]{tocbibind}
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
+\addbibresource{bibliography/references.bib}
+\geometry{a4paper,left=1.25in,right=1in,top=1in,bottom=1in}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries\raggedright}{\chaptertitlename\ \thechapter}{13pt}{\huge\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000}
+\titleformat{\section}{\normalfont\Large\bfseries\raggedright}{\thesection}{1em}{\hyphenpenalty=10000\exhyphenpenalty=10000}
+\captionsetup{font=small,labelfont=bf,skip=7pt}
+\setlength{\textfloatsep}{13pt plus 2pt minus 2pt}
+\setlength{\intextsep}{11pt plus 2pt minus 2pt}
+\widowpenalty=10000\clubpenalty=10000\displaywidowpenalty=10000
+\raggedbottom
+\hypersetup{colorlinks=true,linkcolor=black,filecolor=black,urlcolor=black,citecolor=black}
+\urlstyle{same}
+\setlength{\emergencystretch}{3em}
+\graphicspath{{images/}}
+\let\cleardoublepage\clearpage
+\pagestyle{plain}
+\makenomenclature
+\renewcommand{\nomname}{List of Abbreviations}
+\input{core/metadata}
+\newcommand{\OptionalSignature}[2]{\IfFileExists{#1}{\includegraphics[width=3.6cm,height=#2,keepaspectratio]{#1}}{\rule{0pt}{#2}}}
+\newcommand{\EvidenceFigure}[4]{%
+  \begin{figure}[!htbp]\centering
+    \includegraphics[width=#3\linewidth,keepaspectratio]{images/#1}
+    \caption{#2}\label{#4}
+  \end{figure}}
+\newcommand{\HereEvidenceFigure}[4]{%
+  \begin{figure}[H]\centering
+    \includegraphics[width=#3\linewidth,keepaspectratio]{images/#1}
+    \caption{#2}\label{#4}
+  \end{figure}}
+\newcommand{\LandscapeEvidenceFigure}[4]{%
+  \begin{landscape}
+  \begin{figure}[H]\centering
+    \includegraphics[width=0.95\linewidth,height=0.75\textheight,keepaspectratio]{images/#1}
+    \caption{#2}\label{#4}
+  \end{figure}
+  \end{landscape}}
+
+\begin{document}
+\thispagestyle{empty}\input{core/titlepage}\cleardoublepage
+\pagenumbering{roman}\setcounter{page}{1}
+\phantomsection\addcontentsline{toc}{chapter}{Declaration}\input{core/declaration}\cleardoublepage
+\phantomsection\addcontentsline{toc}{chapter}{Approval}\input{core/approval}\cleardoublepage
+\phantomsection\addcontentsline{toc}{chapter}{Ethics Statement}\input{core/ethics_statement}\cleardoublepage
+\phantomsection\addcontentsline{toc}{chapter}{Abstract}\input{core/abstract}\cleardoublepage
+\phantomsection\addcontentsline{toc}{chapter}{Dedication}\input{core/dedication}\cleardoublepage
+\phantomsection\addcontentsline{toc}{chapter}{Acknowledgment}\input{core/acknowledgement}\cleardoublepage
+\renewcommand{\contentsname}{Table of Contents}\tableofcontents\cleardoublepage
+\listoffigures\cleardoublepage
+\listoftables\cleardoublepage
+\nomenclature{AD}{Alzheimer's disease}
+\nomenclature{FTD}{Frontotemporal dementia}
+\nomenclature{CN}{Cognitively normal control}
+\nomenclature{EEG}{Electroencephalography}
+\nomenclature{DSRF}{Dual-scale residual fusion}
+\nomenclature{CBraMod}{Criss-cross brain foundation model}
+\nomenclature{BAcc}{Balanced accuracy}
+\nomenclature{CV}{Cross-validation}
+\nomenclature{SVM}{Support vector machine}
+\nomenclature{RF}{Random forest}
+\nomenclature{PSD}{Power spectral density}
+\nomenclature{AUROC}{Area under receiver operating characteristic curve}
+\nomenclature{Brier}{Brier score (probability error measure)}
+\nomenclature{ECE}{Expected calibration error}
+\nomenclature{MCI}{Mild cognitive impairment}
+\nomenclature{LOSO}{Leave-one-subject-out evaluation}
+\phantomsection\addcontentsline{toc}{chapter}{List of Abbreviations}\printnomenclature\cleardoublepage
+\pagenumbering{arabic}\setcounter{page}{1}
+\chapter{Introduction}\input{chapters/chapter_1}
+\chapter{Literature Review}\input{chapters/chapter_2}
+\chapter{Requirements, Impacts and Constraints}\input{chapters/chapter_3}
+\chapter{Dataset and Experimental Design}\input{chapters/chapter_4}
+\chapter{Proposed Methodology and EEGraft Decoder}\input{chapters/chapter_5}
+\chapter{Experimental Results}\input{chapters/chapter_6}
+\chapter{Temporal Reliability, Robustness and Explainability}\input{chapters/chapter_7}
+\chapter{Discussion and Threats to Validity}\input{chapters/chapter_8}
+\chapter{Conclusion and Future Work}\input{chapters/chapter_9}
+\cleardoublepage\phantomsection
+\printbibliography[heading=bibintoc,title={Bibliography}]
+\appendix
+\input{appendix/appendix_1}
+\input{appendix/appendix_2}
+\end{document}

@@ -1,0 +1,154 @@
+[
+  {
+    "number": "1.1",
+    "chapter": 1,
+    "file": "fig_01_roadmap.pdf",
+    "short_caption": "Overall three-study methodology",
+    "reference": "fig:methodology",
+    "summary": "Three-study roadmap; 88 NEMAR people, CAUEEG recordings; schematic"
+  },
+  {
+    "number": "4.1",
+    "chapter": 4,
+    "file": "fig_04_01_cohort_flow.pdf",
+    "short_caption": "Cohort selection across the four analyses",
+    "reference": "fig:cohort-flow",
+    "summary": "Cohort counts; A/B people, C/Isfahan recordings; simplified, source verified"
+  },
+  {
+    "number": "4.2",
+    "chapter": 4,
+    "file": "fig_04_02_dataset_evidence.pdf",
+    "short_caption": "Dataset metadata and available EEG evidence",
+    "reference": "fig:dataset-evidence",
+    "summary": "Dataset metadata and available source EEG excerpts; privacy limits noted"
+  },
+  {
+    "number": "4.3",
+    "chapter": 4,
+    "file": "fig_04_03_preprocessing.png",
+    "short_caption": "EEG preprocessing and window construction",
+    "reference": "fig:preprocess",
+    "summary": "Fixed Study B/C signal adapter and schematic windows (no measured EEG invented)"
+  },
+  {
+    "number": "5.1",
+    "chapter": 5,
+    "file": "fig_05_01_architecture.png",
+    "short_caption": "EEGraft CBraMod--DSRF architecture",
+    "reference": "fig:decoder",
+    "summary": "Frozen CBraMod + DSRF source design, 19 x 4 x 200, kernels 9/41"
+  },
+  {
+    "number": "5.2",
+    "chapter": 5,
+    "file": "fig_05_02_threshold_protocol.pdf",
+    "short_caption": "CAUEEG frozen transfer and threshold protocol",
+    "reference": "fig:threshold-protocol",
+    "summary": "Official 950/82/90 CAUEEG recordings; original 0.50, secondary 0.70"
+  },
+  {
+    "number": "6.1",
+    "chapter": 6,
+    "file": "fig_06_01_development.pdf",
+    "short_caption": "Five-fold source development comparison",
+    "reference": "fig:dev-models",
+    "summary": "52-person source development comparison; DSRF 77.06%, XGBoost 76.61%"
+  },
+  {
+    "number": "6.2",
+    "chapter": 6,
+    "file": "fig_06_02_ablations_robustness.png",
+    "short_caption": "Decoder ablations and synthetic stress tests",
+    "reference": "fig:ablations",
+    "summary": "52-person ablation and five seeded artificial stress tests"
+  },
+  {
+    "number": "6.3",
+    "chapter": 6,
+    "file": "fig_06_03_source_holdout.png",
+    "short_caption": "Locked source confusion matrices",
+    "reference": "fig:holdout-ci",
+    "summary": "13-person source holdout, DSRF 9/13, XGBoost 10/13"
+  },
+  {
+    "number": "6.4",
+    "chapter": 6,
+    "file": "fig_06_04_external.pdf",
+    "short_caption": "CAUEEG locked external classification",
+    "reference": "fig:caueeg-primary",
+    "summary": "57 CAUEEG test recordings; observed matrices 24/11/7/15; 6/29/0/22"
+  },
+  {
+    "number": "7.1",
+    "chapter": 7,
+    "file": "fig_07_01_temporal.pdf",
+    "short_caption": "Five-minute temporal accuracy and prediction states",
+    "reference": "fig:temporal",
+    "summary": "NEMAR study A 46/41 people; correlated 230/205 repeat states"
+  },
+  {
+    "number": "7.2",
+    "chapter": 7,
+    "file": "fig_07_02_mci.pdf",
+    "short_caption": "Isfahan MCI stability negative control",
+    "reference": "fig:mci",
+    "summary": "Isfahan 61 screened, 49 retained across two releases"
+  },
+  {
+    "number": "7.3",
+    "chapter": 7,
+    "file": "fig_07_04_unanimous.pdf",
+    "short_caption": "Unanimous correct and wrong external predictions",
+    "reference": "fig:unanimous",
+    "summary": "CAUEEG unanimous 4/0/53 DSRF, 13/12/32 XGBoost"
+  },
+  {
+    "number": "7.4",
+    "chapter": 7,
+    "file": "fig_07_03_threshold_results.pdf",
+    "short_caption": "CAUEEG threshold sensitivity and calibration",
+    "reference": "fig:threshold-results",
+    "summary": "CAUEEG Code 19/23 aggregates, development flips and test BAcc/Brier"
+  },
+  {
+    "number": "7.5",
+    "chapter": 7,
+    "file": "fig_07_05_eye_audit.pdf",
+    "short_caption": "Eye-state and elapsed-time audit",
+    "reference": "fig:eye-audit",
+    "summary": "CAUEEG eye-state/time 404 train, 42 validation; exploratory"
+  },
+  {
+    "number": "7.6",
+    "chapter": 7,
+    "file": "fig_07_06_age_audit.pdf",
+    "short_caption": "CAUEEG age confounding and incremental EEG value",
+    "reference": "fig:age-audit",
+    "summary": "CAUEEG age validation difference 11.23/13.43 years, AUROC gain +0.0118"
+  },
+  {
+    "number": "A.1",
+    "chapter": 10,
+    "file": "fig_A_01_electrode_occlusion.pdf",
+    "short_caption": "Out-of-fold electrode-occlusion sensitivity",
+    "reference": "fig:occlusion",
+    "summary": "NEMAR source channel occlusion 52 development people"
+  },
+  {
+    "number": "A.2",
+    "chapter": 10,
+    "file": "fig_A_02_reproducibility.pdf",
+    "short_caption": "Reproducibility evidence chain",
+    "reference": "fig:reproducibility",
+    "summary": "NEMAR reproducibility hash references; excerpted provenance"
+  },
+  {
+    "number": "A.3",
+    "chapter": 10,
+    "file": "fig_A_03_nemar_confounds.pdf",
+    "short_caption": "NEMAR demographic and condition-sensitivity audits",
+    "reference": "fig:nemar-confounds",
+    "summary": "NEMAR age/condition source audit; observational context"
+  }
+]

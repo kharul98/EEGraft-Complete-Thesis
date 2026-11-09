@@ -1,0 +1,47 @@
+{
+  "version": "caueeg_extension_v1",
+  "source_dataset": "OpenNeuro ds004504",
+  "target_dataset": "CAUEEG",
+  "target_split_file": "dementia-no-overlap.json",
+  "primary_task": "strict_AD_vs_normal",
+  "positive_class": "AD",
+  "class_order": ["AD", "CN"],
+  "primary_unit": "verified_patient",
+  "patient_id_fallback": "recording_level_exploratory_only",
+  "recording_selection": "lowest_serial_per_patient",
+  "model": "original_frozen_CBraMod_DSRF",
+  "comparator": "original_frozen_XGBoost",
+  "preprocessing": {
+    "channels": 19,
+    "low_hz": 0.3,
+    "high_hz": 40.0,
+    "target_fs_hz": 200,
+    "window_seconds": 4,
+    "max_windows_per_case": 24,
+    "apply_car": false,
+    "scale_microvolts_by": 100.0
+  },
+  "primary_metric": "patient_level_balanced_accuracy",
+  "secondary_metrics": [
+    "AD_sensitivity",
+    "CN_specificity",
+    "AUROC",
+    "Brier",
+    "ECE"
+  ],
+  "calibration": {
+    "method": "fixed_logistic_on_AD_logit",
+    "fit_split": "train",
+    "validation_split": "validation",
+    "C": 1.0
+  },
+  "robustness": {
+    "seeds": [11, 22, 33, 44, 55],
+    "conditions": [
+      "gaussian_10pct",
+      "gaussian_20pct",
+      "one_channel_zero"
+    ]
+  },
+  "test_policy": "No target-test fitting, threshold selection, or model selection."
+}

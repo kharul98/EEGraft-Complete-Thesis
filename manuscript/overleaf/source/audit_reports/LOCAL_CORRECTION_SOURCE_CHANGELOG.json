@@ -1,0 +1,146 @@
+{
+  "citations": 5,
+  "protected_title_entries": [
+    [
+      "jeong2004",
+      "EEG dynamics in patients with Alzheimer's disease",
+      "{EEG} dynamics in patients with {Alzheimer's} disease"
+    ],
+    [
+      "dauwels2010",
+      "Diagnosis of Alzheimer's disease from EEG signals: where are we standing?",
+      "Diagnosis of {Alzheimer's} disease from {EEG} signals: where are we standing?"
+    ],
+    [
+      "cassani2018",
+      "Systematic Review on Resting-State EEG for Alzheimer's Disease Diagnosis and Progression Assessment",
+      "Systematic Review on Resting-State {EEG} for {Alzheimer's} Disease Diagnosis and Progression Assessment"
+    ],
+    [
+      "tzimourta2019",
+      "EEG Window Length Evaluation for the Detection of Alzheimer's Disease over Different Brain Regions",
+      "{EEG} Window Length Evaluation for the Detection of {Alzheimer's} Disease over Different Brain Regions"
+    ],
+    [
+      "tzimourta2021review",
+      "Machine Learning Algorithms and Statistical Approaches for Alzheimer's Disease Analysis Based on Resting-State EEG Recordings: A Systematic Review",
+      "Machine Learning Algorithms and Statistical Approaches for {Alzheimer's} Disease Analysis Based on Resting-State {EEG} Recordings: A Systematic Review"
+    ],
+    [
+      "miltiadous2021",
+      "Alzheimer's Disease and Frontotemporal Dementia: A Robust Classification Method of EEG Signals and a Comparison of Validation Methods",
+      "{Alzheimer's} Disease and Frontotemporal Dementia: A Robust Classification Method of {EEG} Signals and a Comparison of Validation Methods"
+    ],
+    [
+      "miltiadous2023dataset",
+      "A Dataset of Scalp EEG Recordings of Alzheimer's Disease, Frontotemporal Dementia and Healthy Subjects from Routine EEG",
+      "A Dataset of Scalp {EEG} Recordings of {Alzheimer's} Disease, Frontotemporal Dementia and Healthy Subjects from Routine {EEG}"
+    ],
+    [
+      "miltiadous2026dataset",
+      "A dataset of EEG recordings from: Alzheimer's disease, Frontotemporal dementia and Healthy subjects",
+      "A dataset of {EEG} recordings from: {Alzheimer's} disease, Frontotemporal dementia and Healthy subjects"
+    ],
+    [
+      "dice2023",
+      "{DICE-Net}: A Novel Convolution-Transformer Architecture for Alzheimer Detection in EEG Signals",
+      "{DICE-Net}: A Novel Convolution-Transformer Architecture for Alzheimer Detection in {EEG} Signals"
+    ],
+    [
+      "zheng2023",
+      "Diagnosis of Alzheimer's disease via resting-state EEG: integration of spectrum, complexity, and synchronization signal features",
+      "Diagnosis of {Alzheimer's} disease via resting-state {EEG}: integration of spectrum, complexity, and synchronization signal features"
+    ],
+    [
+      "puri2024",
+      "{LEADNet}: Detection of Alzheimer's Disease Using Spatiotemporal EEG Analysis and Low-Complexity CNN",
+      "{LEADNet}: Detection of {Alzheimer's} Disease Using Spatiotemporal {EEG} Analysis and Low-Complexity CNN"
+    ],
+    [
+      "alidadi2026",
+      "EEG-based Alzheimer's disease detection: Past, present, and future",
+      "{EEG}-based {Alzheimer's} disease detection: Past, present, and future"
+    ],
+    [
+      "miltiadous2026benchmark",
+      "The AHEPA EEG benchmark: setting the standard for machine learning in dementia diagnosis, a scoping review",
+      "The {AHEPA} {EEG} benchmark: setting the standard for machine learning in dementia diagnosis, a scoping review"
+    ],
+    [
+      "masry2026",
+      "Montage-agnostic federated learning for privacy-preserving Alzheimer's disease classification from heterogeneous multi-site EEG",
+      "Montage-agnostic federated learning for privacy-preserving {Alzheimer's} disease classification from heterogeneous multi-site {EEG}"
+    ],
+    [
+      "akbar2026",
+      "A deep-SVM hybrid framework with enhanced EEG feature engineering and SHAP-based explainability for Alzheimer's classification",
+      "A deep-SVM hybrid framework with enhanced {EEG} feature engineering and SHAP-based explainability for {Alzheimer's} classification"
+    ],
+    [
+      "schirrmeister2017",
+      "Deep learning with convolutional neural networks for EEG decoding and visualization",
+      "Deep learning with convolutional neural networks for {EEG} decoding and visualization"
+    ],
+    [
+      "lawhern2018",
+      "{EEGNet}: a compact convolutional neural network for EEG-based brain-computer interfaces",
+      "{EEGNet}: a compact convolutional neural network for {EEG}-based brain-computer interfaces"
+    ],
+    [
+      "song2023",
+      "{EEG Conformer}: Convolutional Transformer for EEG Decoding and Visualization",
+      "{EEG Conformer}: Convolutional Transformer for {EEG} Decoding and Visualization"
+    ],
+    [
+      "kostas2021",
+      "{BENDR}: Using Transformers and a Contrastive Self-Supervised Learning Task to Learn From Massive Amounts of EEG Data",
+      "{BENDR}: Using Transformers and a Contrastive Self-Supervised Learning Task to Learn From Massive Amounts of {EEG} Data"
+    ],
+    [
+      "jiang2024labram",
+      "Large Brain Model for Learning Generic Representations with Tremendous EEG Data in BCI",
+      "Large Brain Model for Learning Generic Representations with Tremendous {EEG} Data in BCI"
+    ],
+    [
+      "wang2024eegpt",
+      "{EEGPT}: Pretrained Transformer for Universal and Reliable Representation of EEG Signals",
+      "{EEGPT}: Pretrained Transformer for Universal and Reliable Representation of {EEG} Signals"
+    ],
+    [
+      "wang2025cbramod",
+      "{CBraMod}: A Criss-Cross Brain Foundation Model for EEG Decoding",
+      "{CBraMod}: A Criss-Cross Brain Foundation Model for {EEG} Decoding"
+    ],
+    [
+      "wang2026lead",
+      "{LEAD}: An EEG Foundation Model for Alzheimer's Disease Detection",
+      "{LEAD}: An {EEG} Foundation Model for {Alzheimer's} Disease Detection"
+    ],
+    [
+      "xiong2026",
+      "{EEG-FM-Bench}: A Comprehensive Benchmark for the Systematic Evaluation and Diagnostic Analyses of EEG Foundation Models",
+      "{EEG-FM-Bench}: A Comprehensive Benchmark for the Systematic Evaluation and Diagnostic Analyses of {EEG} Foundation Models"
+    ],
+    [
+      "liu2026compass",
+      "{EEG-FM-Compass}: progress, benchmarking and future directions for EEG foundation models",
+      "{EEG-FM-Compass}: progress, benchmarking and future directions for {EEG} foundation models"
+    ],
+    [
+      "delorme2004",
+      "{EEGLAB}: an open source toolbox for analysis of single-trial EEG dynamics including independent component analysis",
+      "{EEGLAB}: an open source toolbox for analysis of single-trial {EEG} dynamics including independent component analysis"
+    ],
+    [
+      "kim2023caueeg",
+      "Deep learning-based EEG analysis to classify normal, mild cognitive impairment, and dementia: Algorithms and dataset",
+      "Deep learning-based {EEG} analysis to classify normal, mild cognitive impairment, and dementia: Algorithms and dataset"
+    ],
+    [
+      "caueegofficial",
+      "CAUEEG dataset: official research-access and benchmark files",
+      "{CAUEEG} dataset: official research-access and benchmark files"
+    ]
+  ],
+  "appendix_report_included": "revision_final/EEGraft_Scientific_Verification_Report.md"
+}

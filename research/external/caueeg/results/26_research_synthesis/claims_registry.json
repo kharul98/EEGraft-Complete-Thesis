@@ -1,0 +1,80 @@
+{
+  "claims": [
+    {
+      "classification": "technical contribution",
+      "id": "C1",
+      "not_supported": "A globally unprecedented architecture or a consistently superior classifier.",
+      "subject": "Custom EEGraft decoder",
+      "supported": "Implemented a gated dual-scale residual fusion decoder with frozen pretrained CBraMod features."
+    },
+    {
+      "classification": "primary locked-test observation",
+      "id": "C2",
+      "not_supported": "Statistically established superiority of DSRF over XGBoost or clinically valid AD diagnosis.",
+      "subject": "External discrimination",
+      "supported": "Original DSRF BAcc 68.38%; original XGBoost 58.57%."
+    },
+    {
+      "classification": "post-hoc exploratory",
+      "id": "C3",
+      "not_supported": "Threshold adjustment eliminates all instability or proves an architectural advantage.",
+      "subject": "Threshold dependence",
+      "supported": "XGBoost eyes-state flip frequency changes markedly between the frozen 0.50 rule and its training-selected 0.70 rule."
+    },
+    {
+      "classification": "descriptive reliability evidence",
+      "id": "C4",
+      "not_supported": "The more variable model is therefore always more reliable or clinically safer.",
+      "subject": "Stable but wrong",
+      "supported": "Some recordings receive unanimous incorrect window labels despite high temporal consistency."
+    },
+    {
+      "classification": "post-hoc observational",
+      "id": "C5",
+      "not_supported": "Eye state is the causal source of all variation.",
+      "subject": "Eye-state associations",
+      "supported": "Saved model scores change with annotated recording conditions in a subset with aligned event metadata."
+    },
+    {
+      "classification": "post-hoc confounding audit",
+      "id": "C6",
+      "not_supported": "EEG discrimination is age-independent, or age accounts for every EEG association.",
+      "subject": "Age confounding",
+      "supported": "Normal and Dementia groups differ substantially in age; age alone predicts CAUEEG labels."
+    },
+    {
+      "classification": "development signal, not confirmed",
+      "id": "C7",
+      "not_supported": "Independently established age-adjusted EEG diagnostic value.",
+      "subject": "Incremental EEG information",
+      "supported": "Age-plus-DSRF improves training OOF AUROC, while the small validation improvement has an uncertainty interval spanning zero."
+    },
+    {
+      "classification": "explicit limitation",
+      "id": "C8",
+      "not_supported": "Confirmed Alzheimer diagnosis, prospective risk prediction, or patient-level validation.",
+      "subject": "Clinical interpretation",
+      "supported": "CAUEEG provides a broader clinical dementia classification setting at recording level."
+    }
+  ],
+  "research_position": "Threshold-aware and error-aware EEG reliability under cross-cohort clinical task shift",
+  "source_hashes": {
+    "age": "93011bf6144bd856005fbbb72b1df36d2a0f8d8726fad6ebdf03195cab541784",
+    "condition": "25ed89b7ae6f0e41bedb5d20e37fe76598252f49ddd15323dc7b81cec75972a5",
+    "confound": "fa7a11839c17cd71c140babe1dfdda63ec75aabadfdabfc1659e7c54729391f6",
+    "event": "e3c682cc8b080b21f4d2b8de2884d30793cdf0a6b7982bbda77257e6eb35f46f",
+    "incremental": "c31e415343343c6d0a169461b0bfead0a6c918b52cae9334f061c1e26caf17cb",
+    "plan": "94a3c63f0ee0b1de05d3babc8f7dd4cdaebd75db7689150c8d3cb28bdd6c50e1",
+    "test": "80a7f23d4498cf970629eacd48e6c7d06e274f3ac9fd39ed1ad43652bd3eaeea"
+  },
+  "statistical_boundaries": {
+    "external_test_unit": "recording",
+    "more_test_tuning_allowed": false,
+    "new_test_set_available": false,
+    "post_hoc_analyses_confirmatory": false,
+    "verified_patient_identity": false,
+    "world_first_claim_supported": false
+  },
+  "status": "SCIENTIFIC_CLAIMS_FROZEN",
+  "working_title": "EEGraft: Gated Dual-Scale Residual Fusion and Threshold-Aware Reliability Assessment Across Alzheimer's and Dementia EEG Cohorts"
+}

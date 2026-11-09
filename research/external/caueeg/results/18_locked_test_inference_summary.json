@@ -1,0 +1,30 @@
+{
+  "experiment": "caueeg_final_test_plan_v1",
+  "final_test_plan_sha256": "94a3c63f0ee0b1de05d3babc8f7dd4cdaebd75db7689150c8d3cb28bdd6c50e1",
+  "inference_code_sha256": "1d3ac1e0714571ad9b21f71c9bd9cba4e68a020877d5c14deeae3c493b8448e5",
+  "model_hashes": {
+    "dsrf_sha256": "72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3",
+    "inference_script_sha256": "e5b758a26aa0d650a19af20f1601a5e1cc30ddb1cb51f0fc31556f107657dc74",
+    "pretrained_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+    "protocol_sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+    "task_sha256": "279be9996276abf5c3fbedf35b6d9aa4147f250a8a961302c056faaba687b671",
+    "xgboost_sha256": "9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f"
+  },
+  "model_names": [
+    "DSRF",
+    "XGBoost"
+  ],
+  "next_stage": "Evaluate all predeclared variants once, using the frozen final analysis plan.",
+  "original_models_retrained": false,
+  "original_thresholds_changed": false,
+  "patient_level_claims_permitted": false,
+  "private_prediction_directory": "/home/user4/research/caueeg/derived/caueeg_transfer_v1/test",
+  "source_model_classes": [
+    "AD",
+    "CN"
+  ],
+  "status": "LOCKED_TEST_INFERENCE_COMPLETED",
+  "test_eeg_windows": 2160,
+  "test_metrics_calculated": false,
+  "test_recordings": 90
+}

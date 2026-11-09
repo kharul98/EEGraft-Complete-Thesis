@@ -1,0 +1,80 @@
+\section{How the Results Are Organized}
+This chapter reports the main model-comparison findings for the later CBraMod--DSRF experiment. Chapter 7 then discusses the temporal-reliability and stress-test evidence. This division preserves the order of the research questions. The first task asked whether EEG classification decisions are reliable across time. The second asked whether a custom decoder attached to a pretrained encoder is competitive under subject-level evaluation. We do not use first-stage SVM test outcomes to claim a direct gain from the later architecture.
+
+\section{Development-Set Comparison}
+The five-fold development study used 52 participants, with entire participants held out from the corresponding training fold. Table~\ref{tab:dev-results} gives the recorded pooled out-of-fold estimates and fold-level summaries.
+\begin{table}[htbp]\centering\footnotesize
+\caption{Subject-level five-fold development comparison on 52 participants}\label{tab:dev-results}
+\begin{tabular}{@{}lrrrrr@{}}\toprule
+\textbf{Model}&\textbf{Pooled BAcc}&\textbf{Mean fold}&\textbf{Fold SD}&\textbf{Macro-F1}&\textbf{Correct}\\
+&\textbf{(\%)}&\textbf{BAcc (\%)}&\textbf{(pp)}&\textbf{(\%)}&\textbf{/52}\\\midrule
+DSRF&77.06&77.17&13.71&76.79&40\\
+XGBoost&76.61&76.67&8.99&76.61&40\\
+EEGNet-inspired&74.89&74.50&10.60&74.77&39\\
+Random forest&72.71&73.00&6.84&72.71&38\\
+High-only&72.26&72.33&9.97&72.42&38\\
+SVM&71.81&72.33&12.04&72.04&38\\
+No-skip&71.44&72.33&8.05&71.06&37\\
+Low-only&62.74&62.50&10.24&62.79&33\\
+\bottomrule\end{tabular}\end{table}
+
+DSRF has the largest pooled balanced accuracy in this table, 77.06\%, with XGBoost at 76.61\%. Both correctly classify 40 of the 52 participants. The difference is only 0.45 percentage points in pooled balanced accuracy. It is therefore more accurate to describe the decoder as \emph{competitive} than clearly superior. Moreover, the fold standard deviation for DSRF is 13.71 percentage points. Fold variation is not an uncertainty interval for an independent new cohort, but it warns that the small development study is sensitive to which people are held out.
+
+\EvidenceFigure{fig08_development_models.png}{Five-fold development balanced accuracy from the saved execution summary. Bars display the eight reported variants and use participants, rather than windows, as the prediction unit. The small lead of DSRF over XGBoost is descriptive.}{0.96}{fig:dev-models}
+
+Figure~\ref{fig:dev-models} makes the close comparison clear. A complex frozen-backbone decoder did not separate itself strongly from a conventional gradient-boosted tree using handcrafted EEG features. This is scientifically useful because it sets a demanding baseline for claims about architecture gains.
+
+\section{Ablations: What Does the Decoder Add?}
+The main DSRF model combines high-level pretrained tokens with low-level temporal features through learned gating and a residual path. The low-only model reached 62.74\% pooled BAcc, while the high-only model reached 72.26\%. This suggests that pretrained high-level information was useful under this experimental setup. The no-skip variant reached 71.44\%, lower than the full decoder. These are development-set observations, and the variants do not by themselves isolate every possible difference in training dynamics.
+
+A more controlled residual-versus-blend experiment used matched components and effective parameter counts. Its observed pooled results were 77.06\% BAcc for the residual rule and 73.16\% for the gated blend. Both are measured on the 52 development participants. The saved experiment explicitly treats the advantage as inconclusive; this report follows that restriction rather than declaring that residual fusion is a universally better design.
+
+\begin{table}[htbp]\centering\small
+\caption{Matched residual-versus-blend development comparison}\label{tab:skip}
+\begin{tabular}{@{}lrrr@{}}\toprule\textbf{Fusion rule}&\textbf{BAcc (\%)}&\textbf{Macro-F1 (\%)}&\textbf{Correct/52}\\\midrule
+Additive residual (DSRF)&77.06&76.79&40\\
+Gated blend&73.16&72.92&38\\\bottomrule
+\end{tabular}\end{table}
+
+\EvidenceFigure{fig09_decoder_ablations.png}{Development-stage architecture comparisons. Only the additive-residual versus gated-blend comparison was specifically capacity matched; other ablation bars are not interchangeable with randomized causal comparisons.}{0.95}{fig:ablations}
+
+Figure~\ref{fig:ablations} is a diagnostic tool. It supports the argument that the decoder's components are worth examining, not a claim that a particular architecture choice has been proved optimal across subjects or institutions.
+
+\section{Locked Final Assessment}
+The fixed DSRF and XGBoost models were evaluated on 13 held-out participants after the recorded selection procedure was frozen. The group contained seven AD participants and six controls. The original final-test JSON records nine correct decisions for DSRF and ten for XGBoost. The results are shown in Table~\ref{tab:holdout}.
+
+\begin{table}[htbp]\centering\scriptsize
+\caption{Original one-time 13-person locked holdout}\label{tab:holdout}
+\begin{tabular}{@{}lrrrrrrrr@{}}\toprule
+\textbf{Model}&\textbf{BAcc}&\textbf{Accuracy}&\textbf{Macro-F1}&\textbf{AD recall}&\textbf{CN recall}&\textbf{AUROC}&\textbf{Brier}&\textbf{Correct}\\
+&\textbf{(\%)}&\textbf{(\%)}&\textbf{(\%)}&\textbf{(\%)}&\textbf{(\%)}&&&\textbf{/13}\\\midrule
+DSRF&70.24&69.23&69.05&57.14&83.33&0.857&0.3146&9\\
+XGBoost&77.38&76.92&76.92&71.43&83.33&0.905&0.2976&10\\\bottomrule
+\end{tabular}\end{table}
+
+This is the most important final performance result for the architecture. XGBoost was better on the locked test, with 77.38\% BAcc compared with 70.24\% for DSRF, a difference of 7.14 percentage points in favor of XGBoost. XGBoost also had slightly higher AUROC and lower Brier score. The result does not support a claim that EEGraft's decoder outperformed the strongest classical baseline on the final unseen participants.
+
+The exact participant-level confusion matrices recorded in the final file are given below. Rows are true classes in AD, CN order and columns are predicted AD, CN:
+\begin{equation}
+\mathbf C_{\mathrm{DSRF}}=\begin{bmatrix}4&3\\1&5\end{bmatrix},\qquad
+\mathbf C_{\mathrm{XGB}}=\begin{bmatrix}5&2\\1&5\end{bmatrix}.
+\label{eq:confusion}
+\end{equation}
+
+The confusion matrices make the class-specific trade-off visible. DSRF identified four of seven AD participants and five of six controls; XGBoost identified five of seven AD participants and the same five controls. This is a difference involving very few people. A single participant's label affects the reported percentage substantially.
+
+\section{Uncertainty and Paired Comparison}
+The saved exploratory stratified participant bootstrap gave the following 95\% intervals: DSRF BAcc 46.43\%--92.86\%, and XGBoost BAcc 53.57\%--100.00\%. The paired difference DSRF minus XGBoost was $-7.14$ percentage points with a bootstrap interval of $-28.57$ to $+14.29$ percentage points. This interval crosses zero. The saved exact paired McNemar test had $p=1.0$, with one subject correct only for DSRF and two correct only for XGBoost. These calculations do not establish a statistically reliable difference.
+
+\EvidenceFigure{fig13_holdout_uncertainty.png}{Locked held-out balanced accuracy for DSRF and XGBoost with exploratory 95\% subject-level bootstrap intervals. The intervals are wide because the evaluation contains only 13 participants.}{0.9}{fig:holdout-ci}
+
+Figure~\ref{fig:holdout-ci} emphasizes uncertainty rather than only the point estimates. The correct conclusion is that XGBoost performed better in the observed locked set, while the sample is too small to settle the broader question of architecture superiority.
+
+\section{Confidence and Probability Quality}
+Brier scores on the holdout were 0.3146 for DSRF and 0.2976 for XGBoost. Lower is better for the reported multiclass convention. The saved 10-bin expected calibration errors were approximately 0.241 for DSRF and 0.067 for XGBoost. These values are descriptive because ten bins and 13 participants provide very little data in each occupied bin. We do not claim clinically calibrated probabilities. Rather, these measures illustrate that classification labels and the numerical reliability of predicted probabilities should be discussed separately.
+
+\section{Intermediate 46-Subject Model Audit}
+An older, different participant-level audit compared nine classifiers on an AD-versus-control set of 46 participants. Its saved out-of-fold balanced accuracies were 71.74\% for logistic regression, 76.09\% for SVM, 69.57\% for random forest, 69.57\% for nested-selection, 71.74\% for a basic CNN, 52.17\% for EEGNet V1, 69.57\% for EEGNet V2, 71.74\% for EEG Conformer and 71.74\% for a frozen-CBraMod variant. These historical numbers demonstrate that the project explored several model families. However, this older 46-person audit was not run under the later 65-person DSRF comparison protocol, so its scores are not added to Table~\ref{tab:dev-results} and are not used to rank the final model.
+
+\section{Main Performance Interpretation}
+On development data, the proposed decoder was competitive. On the one-time held-out test, the simpler XGBoost model performed better. Both findings are part of the same evidence record, not a contradiction to be hidden. Model selection, sampling variability and the small number of test participants all limit certainty. The next chapter tests the broader thesis claim that even these balanced-accuracy results do not fully describe how a classifier behaves under time changes or perturbations.

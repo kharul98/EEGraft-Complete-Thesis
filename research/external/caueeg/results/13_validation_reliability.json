@@ -1,0 +1,105 @@
+{
+  "existing_validation_bootstrap": {
+    "balanced_accuracy_95ci": {
+      "DSRF": [
+        0.6485294117647059,
+        0.8676470588235294
+      ],
+      "DSRF_minus_XGBoost": [
+        0.05588235294117638,
+        0.27941176470588247
+      ],
+      "XGBoost": [
+        0.5294117647058824,
+        0.6470588235294118
+      ]
+    },
+    "caution": "Recordings are not independently verified as unique patients. Intervals may underestimate uncertainty if patients contributed multiple recordings.",
+    "method": "paired_stratified_recording_bootstrap",
+    "resamples": 2000,
+    "sampling_unit": "recording",
+    "seed": 20261109
+  },
+  "model_hashes": {
+    "dsrf_sha256": "72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3",
+    "inference_script_sha256": "e5b758a26aa0d650a19af20f1601a5e1cc30ddb1cb51f0fc31556f107657dc74",
+    "pretrained_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+    "protocol_sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+    "task_sha256": "279be9996276abf5c3fbedf35b6d9aa4147f250a8a961302c056faaba687b671",
+    "xgboost_sha256": "9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f"
+  },
+  "n_binary_evaluation_recordings": 54,
+  "n_mci_descriptive_recordings": 28,
+  "n_recordings": 82,
+  "original_models_retrained": false,
+  "paired_error_analysis": {
+    "caution": "The exact McNemar test assumes independent cases. Repeated patients cannot be independently excluded, so this p-value is exploratory, not confirmatory.",
+    "constant_classifier_controls": {
+      "always_dementia": {
+        "accuracy": 0.37037037037037035,
+        "balanced_accuracy": 0.5
+      },
+      "always_normal": {
+        "accuracy": 0.6296296296296297,
+        "balanced_accuracy": 0.5
+      }
+    },
+    "discordant_recordings": 20,
+    "exact_mcnemar_pvalue_exploratory": 0.0025768280029296875,
+    "paired_correctness_counts": {
+      "DSRF_only_correct": 17,
+      "XGBoost_only_correct": 3,
+      "both_correct": 23,
+      "both_wrong": 11
+    }
+  },
+  "partition": "validation_only",
+  "recording_level_only": true,
+  "scientific_limitations": [
+    "The official labels represent a broader dementia task.",
+    "An AD-trained probability is not automatically a calibrated dementia probability.",
+    "Patient identities cannot be independently verified.",
+    "Stable predictions may be consistently wrong.",
+    "Temporal windows are sampled across recordings, not consecutively.",
+    "Validation results must not be reported as locked-test performance.",
+    "Exploratory comparisons are not evidence of clinical usefulness."
+  ],
+  "status": "VALIDATION_RELIABILITY_COMPLETED",
+  "temporal_reliability": {
+    "DSRF": {
+      "all_24_windows_agree_and_correct": 1,
+      "all_24_windows_agree_but_wrong": 2,
+      "all_three_phases_match_full_prediction_fraction": 0.6829268292682927,
+      "caution": "Temporal consistency is not equivalent to accuracy. The 24 windows were sampled across each recording.",
+      "correct_recordings": 40,
+      "early_middle_late_prediction_agreement_fraction": 0.6829268292682927,
+      "incorrect_recordings": 14,
+      "mean_window_flip_fraction": 0.34570519618239665,
+      "median_absolute_early_late_score_difference": 0.08917517485679127,
+      "median_window_probability_sd": 0.3180596566858835,
+      "median_window_sd_when_correct": 0.31970481401410666,
+      "median_window_sd_when_incorrect": 0.2921923380610665,
+      "n_all_validation_recordings": 82,
+      "n_binary_evaluable_recordings": 54
+    },
+    "XGBoost": {
+      "all_24_windows_agree_and_correct": 11,
+      "all_24_windows_agree_but_wrong": 12,
+      "all_three_phases_match_full_prediction_fraction": 0.8902439024390244,
+      "caution": "Temporal consistency is not equivalent to accuracy. The 24 windows were sampled across each recording.",
+      "correct_recordings": 26,
+      "early_middle_late_prediction_agreement_fraction": 0.8902439024390244,
+      "incorrect_recordings": 28,
+      "mean_window_flip_fraction": 0.1765641569459173,
+      "median_absolute_early_late_score_difference": 0.05118391290307045,
+      "median_window_probability_sd": 0.10261178313910865,
+      "median_window_sd_when_correct": 0.10566004342546936,
+      "median_window_sd_when_incorrect": 0.09088339200769258,
+      "n_all_validation_recordings": 82,
+      "n_binary_evaluable_recordings": 54
+    }
+  },
+  "test_prediction_files_read": 0,
+  "threshold": 0.5,
+  "version": "caueeg_transfer_v1"
+}

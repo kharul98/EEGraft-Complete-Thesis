@@ -1,0 +1,36 @@
+{
+  "benchmark": "dementia-no-overlap",
+  "completed_counts": {
+    "train": {
+      "dementia": 249,
+      "mci": 334,
+      "normal": 367
+    },
+    "validation": {
+      "dementia": 20,
+      "mci": 28,
+      "normal": 34
+    }
+  },
+  "model_hashes": {
+    "dsrf_sha256": "72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3",
+    "inference_script_sha256": "e5b758a26aa0d650a19af20f1601a5e1cc30ddb1cb51f0fc31556f107657dc74",
+    "pretrained_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+    "protocol_sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+    "task_sha256": "279be9996276abf5c3fbedf35b6d9aa4147f250a8a961302c056faaba687b671",
+    "xgboost_sha256": "9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f"
+  },
+  "note": "External recording-level inference with original frozen AD/CN models; no performance metrics or clinical validity inferred.",
+  "original_model_retraining": false,
+  "patient_level_metrics_authorized": false,
+  "private_prediction_directory": "/home/user4/research/caueeg/derived/caueeg_transfer_v1",
+  "source_classifier_classes": [
+    "AD",
+    "CN"
+  ],
+  "status": "TRAIN_VALIDATION_INFERENCE_COMPLETED",
+  "test_recordings_processed": 0,
+  "total_recordings": 1032,
+  "total_windows": 24768,
+  "version": "caueeg_transfer_v1"
+}

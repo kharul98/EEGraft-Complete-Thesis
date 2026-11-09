@@ -1,0 +1,5 @@
+Timestamp UTC: 2026-11-08T19:24:30Z
+Thesis: /home/user4/alzheimers-thesis
+CAUEEG data: /home/user4/research/caueeg
+Extension: /home/user4/research/eegraft-caueeg
+Python: Python 3.14.4

@@ -1,0 +1,221 @@
+{
+  "benchmark": "CAUEEG_dementia_no_overlap",
+  "calibration_fit_using_validation": false,
+  "comparison_not_independent_for_new_experiment_design": true,
+  "evaluation_level": "recording_not_verified_patient",
+  "interpretation": "All three fixed variants are reported separately. No post-hoc winning variant is declared.",
+  "limitations": [
+    "Dementia is not equivalent to confirmed Alzheimer's disease.",
+    "The source AD score is not a clinical diagnosis.",
+    "Patient identities are not independently verified.",
+    "Bootstrap intervals resample recordings, not independent patients.",
+    "Additional experiments were introduced after initial validation results were viewed.",
+    "MCI is excluded from binary classification metrics."
+  ],
+  "n_binary_normal_dementia": 54,
+  "n_mci_descriptive_only": 28,
+  "n_validation_recordings": 82,
+  "original_model_hashes": {
+    "dsrf_sha256": "72c19c0206089579f199e4a861913c10ff72a0bf4021ef4de9252eaa3aee0fd3",
+    "inference_script_sha256": "e5b758a26aa0d650a19af20f1601a5e1cc30ddb1cb51f0fc31556f107657dc74",
+    "pretrained_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+    "protocol_sha256": "d5a217e0a6c7f7fd20513a6456e8d3d1bf4fb81d09e70bae4eb59d03c064b7bd",
+    "task_sha256": "279be9996276abf5c3fbedf35b6d9aa4147f250a8a961302c056faaba687b671",
+    "xgboost_sha256": "9620887ca06f386cb5b1fef37a3f7b65cf71108dcabb9ca30457d9f86e913c3f"
+  },
+  "original_models_retrained": false,
+  "per_model_variants": {
+    "DSRF": {
+      "frozen_original_threshold_0_5": {
+        "accuracy": 0.7407407407407407,
+        "auroc": 0.7411764705882353,
+        "balanced_accuracy": 0.763235294117647,
+        "brier_vs_dementia": 0.22423045610271955,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            23,
+            11
+          ],
+          [
+            3,
+            17
+          ]
+        ],
+        "dementia_sensitivity": 0.85,
+        "ece_at_standard_0_5_decision": 0.1933213568634607,
+        "log_loss_vs_dementia": 0.6980448859677527,
+        "macro_f1": 0.7375,
+        "n_dementia": 20,
+        "n_normal": 34,
+        "normal_specificity": 0.6764705882352942,
+        "predicted_dementia_count": 28,
+        "threshold": 0.5
+      },
+      "mci_descriptive_not_accuracy": {
+        "count": 28,
+        "fraction_at_or_above_train_threshold": 0.35714285714285715,
+        "median_calibrated_dementia_score": 0.3485407100885384,
+        "median_original_source_ad_score": 0.4364772594393192
+      },
+      "paired_recording_bootstrap_bacc_deltas_95ci": {
+        "platt_minus_frozen": [
+          -0.1705882352941177,
+          0.04264705882352926
+        ],
+        "selected_threshold_minus_frozen": [
+          0.0,
+          0.0
+        ]
+      },
+      "train_fitted_platt_threshold_0_5": {
+        "accuracy": 0.7222222222222222,
+        "auroc": 0.7411764705882353,
+        "balanced_accuracy": 0.6970588235294117,
+        "brier_vs_dementia": 0.21074318848826706,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            27,
+            7
+          ],
+          [
+            8,
+            12
+          ]
+        ],
+        "dementia_sensitivity": 0.6,
+        "ece_at_standard_0_5_decision": 0.13327357446129623,
+        "log_loss_vs_dementia": 0.6225611741349302,
+        "macro_f1": 0.6989966555183946,
+        "n_dementia": 20,
+        "n_normal": 34,
+        "normal_specificity": 0.7941176470588235,
+        "predicted_dementia_count": 19,
+        "threshold": 0.5
+      },
+      "train_selected_score_threshold": {
+        "accuracy": 0.7407407407407407,
+        "auroc": 0.7411764705882353,
+        "balanced_accuracy": 0.763235294117647,
+        "brier_vs_dementia": 0.22423045610271955,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            23,
+            11
+          ],
+          [
+            3,
+            17
+          ]
+        ],
+        "dementia_sensitivity": 0.85,
+        "ece_at_standard_0_5_decision": 0.1933213568634607,
+        "log_loss_vs_dementia": 0.6980448859677527,
+        "macro_f1": 0.7375,
+        "n_dementia": 20,
+        "n_normal": 34,
+        "normal_specificity": 0.6764705882352942,
+        "predicted_dementia_count": 28,
+        "threshold": 0.5
+      }
+    },
+    "XGBoost": {
+      "frozen_original_threshold_0_5": {
+        "accuracy": 0.48148148148148145,
+        "auroc": 0.6705882352941176,
+        "balanced_accuracy": 0.5882352941176471,
+        "brier_vs_dementia": 0.29691403911469755,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            6,
+            28
+          ],
+          [
+            0,
+            20
+          ]
+        ],
+        "dementia_sensitivity": 1.0,
+        "ece_at_standard_0_5_decision": 0.21607796263731555,
+        "log_loss_vs_dementia": 0.8004814023161198,
+        "macro_f1": 0.4441176470588235,
+        "n_dementia": 20,
+        "n_normal": 34,
+        "normal_specificity": 0.17647058823529413,
+        "predicted_dementia_count": 48,
+        "threshold": 0.5
+      },
+      "mci_descriptive_not_accuracy": {
+        "count": 28,
+        "fraction_at_or_above_train_threshold": 0.39285714285714285,
+        "median_calibrated_dementia_score": 0.386369758530395,
+        "median_original_source_ad_score": 0.6721207499504089
+      },
+      "paired_recording_bootstrap_bacc_deltas_95ci": {
+        "platt_minus_frozen": [
+          -0.1352941176470589,
+          0.12352941176470589
+        ],
+        "selected_threshold_minus_frozen": [
+          -0.1029411764705882,
+          0.1529779411764704
+        ]
+      },
+      "train_fitted_platt_threshold_0_5": {
+        "accuracy": 0.6296296296296297,
+        "auroc": 0.6705882352941176,
+        "balanced_accuracy": 0.5823529411764705,
+        "brier_vs_dementia": 0.20894611715305833,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            26,
+            8
+          ],
+          [
+            12,
+            8
+          ]
+        ],
+        "dementia_sensitivity": 0.4,
+        "ece_at_standard_0_5_decision": 0.0684006062220446,
+        "log_loss_vs_dementia": 0.5996080840050362,
+        "macro_f1": 0.5833333333333333,
+        "n_dementia": 20,
+        "n_normal": 34,
+        "normal_specificity": 0.7647058823529411,
+        "predicted_dementia_count": 16,
+        "threshold": 0.5
+      },
+      "train_selected_score_threshold": {
+        "accuracy": 0.6111111111111112,
+        "auroc": 0.6705882352941176,
+        "balanced_accuracy": 0.6088235294117648,
+        "brier_vs_dementia": 0.29691403911469755,
+        "confusion_matrix_rows_normal_dementia": [
+          [
+            21,
+            13
+          ],
+          [
+            8,
+            12
+          ]
+        ],
+        "dementia_sensitivity": 0.6,
+        "ece_at_standard_0_5_decision": null,
+        "log_loss_vs_dementia": 0.8004814023161198,
+        "macro_f1": 0.6,
+        "n_dementia": 20,
+        "n_normal": 34,
+        "normal_specificity": 0.6176470588235294,
+        "predicted_dementia_count": 25,
+        "threshold": 0.7
+      }
+    }
+  },
+  "previous_validation_results_were_already_viewed": true,
+  "status": "VALIDATION_VARIANTS_COMPARED",
+  "test_recordings_accessed": 0,
+  "thresholds_selected_using_validation": false,
+  "training_calibration_lock_sha256": "5541b80975cf7cf3acba41e9c4d17e62fdd640a52df78e86b2d3a62e5fdea32e",
+  "training_threshold_lock_sha256": "8b715513f370600f0ed4835f4b82c2b66af43ea5305674d5a46378af5f7f2ba7"
+}

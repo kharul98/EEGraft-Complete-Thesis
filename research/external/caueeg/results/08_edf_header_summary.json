@@ -1,0 +1,33 @@
+{
+  "ad_tag_by_split_and_class": {
+    "test/dementia": 15,
+    "test/mci": 0,
+    "test/normal": 0,
+    "train/dementia": 189,
+    "train/mci": 0,
+    "train/normal": 0,
+    "validation/dementia": 10,
+    "validation/mci": 0,
+    "validation/normal": 0
+  },
+  "audit_status": "READY_FOR_WAVEFORM_SMOKE_TEST",
+  "diagnostic_note": "Official CAUEEG dementia labels are not automatically equivalent to confirmed Alzheimer diagnoses.",
+  "duration_at_least_96_seconds_count": 1379,
+  "issue_counts": {},
+  "missing_official_edf_count": 0,
+  "official_issue_counts": {},
+  "official_split_recordings": 1122,
+  "outside_official_split": 257,
+  "physical_units": {
+    "uV;uV;uV;uV;uV;uV;uV;uV;uV;uV;uV;uV;uV;uV;uV;uV;uV;uV;uV": 1379
+  },
+  "references": {
+    "AVG": 1379
+  },
+  "reordering_required_count": 1379,
+  "sampling_rates_hz": {
+    "200.0": 1379
+  },
+  "total_edf_files": 1379,
+  "waveforms_verified": false
+}
